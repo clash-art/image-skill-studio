@@ -1,0 +1,19 @@
+{
+  "name": "image-skill-studio-dev",
+  "interface": {
+    "displayName": "Image Skill Studio local"
+  },
+  "plugins": [
+    {
+      "name": "image-skill-studio",
+      "source": {
+        "source": "local",
+        "path": "."
+      },
+      "policy": {
+        "installation": "AVAILABLE"
+      },
+      "category": "Creativity"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+@import "tailwindcss";
+@import "../web/widget.css";
+
+:root {
+  --background: #f7f3ea;
+  --foreground: #202222;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}

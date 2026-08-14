@@ -1,0 +1,82 @@
+import assert from "node:assert/strict";
+import { readFile } from "node:fs/promises";
+import test from "node:test";
+
+const studioUrl = new URL("../components/image-skill-studio.tsx", import.meta.url);
+const cssUrl = new URL("../web/widget.css", import.meta.url);
+
+test("Skill detail has two tabs and no third Works route or sheet", async () => {
+  const [studio, css] = await Promise.all([
+    readFile(studioUrl, "utf8"),
+    readFile(cssUrl, "utf8"),
+  ]);
+
+  assert.match(studio, /type DetailTab = "feed" \| "creations"/);
+  assert.match(studio, /role="tablist"[^>]*aria-label="Skill 内容"/);
+  assert.match(studio, /role="tab"[\s\S]{0,620}?>Feed</);
+  assert.match(studio, /role="tab"[\s\S]{0,620}?>我的生成</);
+  assert.match(studio, /role="tabpanel"/);
+  assert.doesNotMatch(studio, /studioRoute:\s*"works"|worksSkillIdFromHash|#works\/|studio-works-sheet/);
+  assert.doesNotMatch(css, /\.studio-works-sheet|\.works-sheet__/);
+});
+
+test("both Feed collections keep four independent shared images when entering their matching tab", async () => {
+  const studio = await readFile(studioUrl, "utf8");
+
+  assert.match(studio, /type ProjectionSurface = "feed-runs" \| "feed-examples" \| "skill-runs" \| "skill-examples"/);
+  assert.match(
+    studio,
+    /onSelect=\{\(item, visibleItems\) => openSkill\(entry\.id,\s*"run",\s*item,\s*visibleItems,\s*"creations"\)\}/,
+  );
+  assert.match(
+    studio,
+    /onSelect=\{\(item, visibleItems\) => openSkill\(entry\.id,\s*"example",\s*item,\s*visibleItems,\s*"feed"\)\}/,
+  );
+  assert.match(studio, /kind === "run" \? "feed-runs" : "feed-examples"/);
+  assert.match(studio, /kind === "run" \? "skill-runs" : "skill-examples"/);
+  assert.match(studio, /routeItemFor\("skill-runs",\s*"run",\s*run\.id\)/);
+  assert.match(studio, /routeItemFor\("skill-examples",\s*"example",\s*example\.id\)/);
+  assert.match(studio, /items:\s*visibleItems\.map/);
+  assert.match(studio, /setActiveDetailTab\(targetTab\)[\s\S]{0,220}?setRoute\("skill"\)/);
+});
+
+test("detail stays a full-width feed while a non-modal Composer floats above it", async () => {
+  const [studio, css] = await Promise.all([
+    readFile(studioUrl, "utf8"),
+    readFile(cssUrl, "utf8"),
+  ]);
+
+  assert.match(studio, /className="skill-detail-shell"/);
+  assert.match(studio, /className=\{`skill-detail-composer\$\{composerOpen \? " is-open" : " is-compact"\}`\}/);
+  assert.doesNotMatch(studio, /codex-agent-backdrop/);
+  assert.match(studio, /className=\{`codex-agent-surface\$\{composerOpen \? " is-open" : " is-compact"\}`\}/);
+  assert.match(studio, /className=\{`codex-agent-surface[\s\S]{0,260}?\n\s+layout\n/);
+  assert.match(studio, /role="region"/);
+  assert.doesNotMatch(studio, /aria-modal|inert=\{[^}]*composerOpen|keepFocusInComposer/);
+  assert.doesNotMatch(studio, /agentDockReached|codex-agent-anchor|codex-agent-positioner/);
+
+  assert.match(css, /\.skill-detail-shell\s*\{[^}]*display:\s*grid/s);
+  assert.match(css, /\.skill-detail-composer\s*\{[^}]*position:\s*fixed[^}]*inset:\s*0/s);
+  assert.match(css, /\.skill-detail-composer\.is-open\s*\{[^}]*place-items:\s*end\s+center/s);
+  assert.match(css, /\.codex-agent-surface\s*\{[^}]*transform-origin:\s*50%\s+100%/s);
+  assert.match(css, /\.skill-detail-composer\.is-compact\s*\{[^}]*place-items:\s*end\s+center/s);
+  assert.match(css, /\.skill-detail-composer\s*\{[^}]*pointer-events:\s*none/s);
+  assert.match(css, /\.skill-detail-composer\s*>\s*\*\s*\{[^}]*pointer-events:\s*auto/s);
+  assert.doesNotMatch(css, /codex-agent-backdrop|has-composer-open/);
+  assert.match(css, /\.skill-image-feed\s*\{[^}]*grid-template-columns:\s*repeat\(auto-fit/s);
+  assert.doesNotMatch(css, /grid-template-areas:[^;}]*composer|position:\s*sticky[^}]*skill-detail-composer/s);
+});
+
+test("non-shared GUI clears before the four images move and stays locked until they settle", async () => {
+  const studio = await readFile(studioUrl, "utf8");
+
+  assert.match(studio, /const detailChromeHidden = routeGuiLeaving \|\| routeInteractionLocked/);
+  assert.match(studio, /const routeChangeDelayMs = reduceRouteMotion \? 0 : 80/);
+  assert.match(studio, /const routeForwardSettleMs = reduceRouteMotion \? 0 : 480/);
+  assert.match(studio, /const routeReturnMorphMs = reduceRouteMotion \? 0 : 280/);
+  assert.match(studio, /const routeReturnRevealMs = reduceRouteMotion \? 0 : 280/);
+  assert.match(studio, /setRoutePhase\("exiting"\)[\s\S]{0,420}?commit\(\)[\s\S]{0,160}?setRoutePhase\("morphing"\)/);
+  assert.match(studio, /data-route-transitioning=\{routeInteractionLocked \? "" : undefined\}/);
+  assert.match(studio, /animate=\{guiOpacityMotion\(detailChromeHidden\)\}/);
+  assert.match(studio, /disabled=\{routeInteractionLocked\}/);
+});

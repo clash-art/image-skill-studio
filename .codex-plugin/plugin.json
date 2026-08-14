@@ -1,0 +1,38 @@
+{
+  "name": "image-skill-studio",
+  "version": "0.1.0",
+  "description": "A Codex MCP App for discovering image-generation Skills, handing work to the current agent, and collecting results by Skill.",
+  "author": {
+    "name": "Image Skill Studio"
+  },
+  "license": "MIT",
+  "keywords": [
+    "image-generation",
+    "mcp-app",
+    "codex",
+    "skills",
+    "xiaohongshu"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Image Skill Studio",
+    "shortDescription": "Hand image Skill work to Codex and collect the results",
+    "longDescription": "Choose a curated image-generation Skill in an MCP App sidebar, explore prompt-backed examples, compose with optional reference images, hand the immutable work item to the current Codex agent, collect results under that Skill, and export 1080 by 1440 Xiaohongshu comparison cards.",
+    "developerName": "Image Skill Studio",
+    "category": "Creativity",
+    "capabilities": [
+      "Image Generation",
+      "Interactive",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Open Image Skill Studio",
+      "Show my image-generation Skill workbench"
+    ],
+    "brandColor": "#62B2FE",
+    "composerIcon": "./assets/icon.svg",
+    "logo": "./assets/icon.svg",
+    "screenshots": []
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "image-skill-studio": {
+      "command": "node",
+      "args": [
+        "./runtime/server.mjs"
+      ],
+      "cwd": ".",
+      "env": {
+        "PLUGIN_ROOT": "."
+      }
+    }
+  }
+}
