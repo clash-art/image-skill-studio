@@ -4,6 +4,7 @@ import test from "node:test";
 
 const studioUrl = new URL("../components/image-skill-studio.tsx", import.meta.url);
 const fanUrl = new URL("../components/ui/fan-collection.tsx", import.meta.url);
+const morphingComposerUrl = new URL("../components/ui/morphing-composer.tsx", import.meta.url);
 const cssUrl = new URL("../web/widget.css", import.meta.url);
 
 test("the Skill route is a full-width two-tab feed beneath one floating Composer", async () => {
@@ -19,8 +20,8 @@ test("the Skill route is a full-width two-tab feed beneath one floating Composer
   assert.match(studio, /<DetailTabPanel[\s\S]{0,220}?id="detail-panel-creations"/);
   assert.match(studio, /className=\{`skill-detail-composer\$\{composerOpen \? " is-open" : " is-compact"\}`\}/);
   assert.doesNotMatch(studio, /codex-agent-backdrop/);
-  assert.match(studio, /className=\{`codex-agent-surface\$\{composerOpen \? " is-open" : " is-compact"\}`\}/);
-  assert.match(studio, /className=\{`codex-agent-surface[\s\S]{0,260}?\n\s+layout\n/);
+  assert.match(studio, /<MorphingComposer[\s\S]{0,420}?open=\{composerOpen\}/);
+  assert.doesNotMatch(studio, /codex-agent-surface/);
   assert.doesNotMatch(studio, /agentDockReached|codex-agent-anchor|codex-agent-positioner|autoOpenedDockRef/);
   assert.match(css, /\.skill-detail-composer\s*\{[^}]*position:\s*fixed[^}]*inset:\s*0/s);
   assert.match(css, /\.skill-image-feed\s*\{[^}]*grid-template-columns:\s*repeat\(auto-fit/s);
@@ -155,35 +156,39 @@ test("hash deep links hydrate the Skill Feed tab without inventing a shared orig
   assert.doesNotMatch(studio, /#works\/|worksSkillIdFromHash/);
 });
 
-test("the Codex pill and expanded Composer are one stable responsive surface", async () => {
-  const [studio, css] = await Promise.all([
+test("the Codex pill uses one mature bidirectional morph for open and close", async () => {
+  const [studio, morphingComposer, css] = await Promise.all([
     readFile(studioUrl, "utf8"),
+    readFile(morphingComposerUrl, "utf8"),
     readFile(cssUrl, "utf8"),
   ]);
 
-  assert.match(studio, /<motion\.section[\s\S]{0,420}?className=\{`codex-agent-surface/);
-  assert.match(studio, /className=\{`codex-agent-surface[\s\S]{0,260}?\n\s+layout\n/);
+  assert.match(studio, /import \{ MorphingComposer \} from "@\/components\/ui\/morphing-composer"/);
+  assert.match(studio, /<MorphingComposer[\s\S]{0,420}?open=\{composerOpen\}/);
   assert.match(studio, /const \[composerOpen, setComposerOpen\] = useState\(false\)/);
   assert.doesNotMatch(studio, /ComposerPhase|composerPhase|composerBodyVisible|composerOrigin|"closing"|composerCollapseSpring|finishComposerClose/);
   assert.match(studio, /const closeComposer = useCallback\([\s\S]{0,360}?setComposerOpen\(false\)/);
-  assert.match(studio, /<AnimatePresence initial=\{false\} mode="popLayout">/);
-  assert.match(studio, /\{composerOpen \? \(/);
-  assert.match(studio, /initial=\{\{ opacity: 0 \}\}[\s\S]{0,100}?animate=\{\{ opacity: 1 \}\}[\s\S]{0,100}?exit=\{\{ opacity: 0 \}\}/);
-  assert.match(studio, /const composerBodyTransition = reduceRouteMotion \? \{ duration: 0 \} as const : composerContentTransition/);
-  assert.match(studio, /transition=\{composerBodyTransition\}/);
-  assert.match(studio, /transition=\{\{ layout: composerSpring \}\}/);
-  assert.match(studio, /aria-expanded=\{composerOpen\}/);
-  assert.match(studio, /role="region"/);
-  assert.doesNotMatch(studio, /aria-modal|inert=\{[^}]*composerOpen|keepFocusInComposer/);
-  assert.match(studio, /if \(composerOpen\) closeComposer\(\);[\s\S]{0,80}?else openComposer\("agent"\)/);
-  assert.doesNotMatch(studio, /layoutId="codex-agent-surface"|key="agent-orb"|key="agent-composer"/);
-  assert.match(css, /\.skill-detail-composer\.is-open\s*\{[^}]*place-items:\s*end\s+center/s);
-  assert.match(css, /\.codex-agent-surface\s*\{[^}]*position:\s*relative[^}]*transform-origin:\s*50%\s+100%/s);
-  assert.match(css, /\.codex-agent-surface\s*\{[^}]*transition:[^;]*background-color[^;]*border-radius[^;]*box-shadow/s);
-  assert.match(css, /\.codex-agent-surface\.is-open\s*\{[^}]*width:\s*min\(560px,\s*calc\(100vw - 32px\)\)/s);
+
+  assert.match(morphingComposer, /const MORPHING_COMPOSER_TRANSITION = \{[\s\S]{0,160}?type: "spring"[\s\S]{0,160}?duration: 0\.4/);
+  assert.match(morphingComposer, /<MotionConfig transition=\{transition\}>/);
+  assert.match(morphingComposer, /<motion\.section[\s\S]{0,360}?className=\{cn\("morphing-composer__surface"[\s\S]{0,220}?layout/);
+  assert.match(morphingComposer, /animate=\{\{[\s\S]{0,220}?backgroundColor: open \? MORPHING_COMPOSER_OPEN_BACKGROUND : MORPHING_COMPOSER_CLOSED_BACKGROUND/);
+  assert.match(morphingComposer, /const collapsedInteractive = !open && settledOpen === false/);
+  assert.match(morphingComposer, /onAnimationStart=\{handleSurfaceAnimationStart\}/);
+  assert.match(morphingComposer, /onAnimationComplete=\{handleSurfaceAnimationComplete\}/);
+  assert.match(morphingComposer, /aria-hidden=\{!open\}[\s\S]{0,80}?inert=\{!open \? true : undefined\}/);
+  assert.match(morphingComposer, /<AnimatePresence initial=\{false\} mode="popLayout">/);
+  assert.match(morphingComposer, /initial=\{\{ opacity: 0 \}\}[\s\S]{0,120}?animate=\{\{ opacity: 1 \}\}[\s\S]{0,120}?exit=\{\{ opacity: 0 \}\}/);
+  assert.doesNotMatch(morphingComposer, /height: open|layoutId=|<LayoutGroup/);
+  assert.match(morphingComposer, /onExitComplete\?\.\(\)/);
+  assert.match(morphingComposer, /useReducedMotion\(\)/);
+  assert.match(morphingComposer, /role="region"/);
+  assert.doesNotMatch(morphingComposer, /aria-modal|backdrop|composerCollapseSpring|setTimeout/);
+
+  assert.match(css, /\.morphing-composer__surface\.is-open\s*\{[^}]*width:\s*min\(620px,\s*calc\(100vw - 32px\)\)/s);
+  assert.match(css, /\.morphing-composer__surface\.is-compact\s*\{[^}]*width:\s*172px/s);
+  assert.match(css, /\.morphing-composer__launch\s*\{[^}]*pointer-events:\s*none/s);
+  assert.match(css, /\.morphing-composer__open-hit:disabled\s*\{[^}]*pointer-events:\s*none/s);
   assert.match(css, /\.skill-detail-composer\s*\{[^}]*pointer-events:\s*none/s);
-  assert.doesNotMatch(css, /codex-agent-backdrop|has-composer-open/);
-  assert.doesNotMatch(css, /\.codex-agent-surface\.is-compact:hover/);
-  assert.match(css, /\.codex-agent-surface\.is-compact\s+\.codex-agent-surface__compact:hover/);
-  assert.match(css, /\.codex-agent-surface__body\s*\{[^}]*overflow:\s*hidden/s);
+  assert.doesNotMatch(css, /codex-agent-backdrop|has-composer-open|\.codex-agent-surface/);
 });

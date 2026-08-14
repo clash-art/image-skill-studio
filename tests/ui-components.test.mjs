@@ -123,9 +123,9 @@ test("the GUI adapts across phone, tablet, desktop, and touch input", async () =
   const css = await readFile(new URL("../web/widget.css", import.meta.url), "utf8");
 
   assert.match(css, /@media \(max-width:\s*380px\)[\s\S]*?\.recent-work__rail\s*\{[^}]*grid-auto-columns:\s*minmax\(154px,\s*58%\)/s);
-  assert.match(css, /@media \(max-width:\s*639px\)[\s\S]*?\.codex-agent-surface textarea\s*\{[^}]*font-size:\s*16px/s);
+  assert.match(css, /@media \(max-width:\s*639px\)[\s\S]*?\.morphing-composer__body textarea\s*\{[^}]*font-size:\s*16px/s);
   assert.match(css, /\.skill-detail-composer\s*\{[^}]*position:\s*fixed[^}]*inset:\s*0/s);
-  assert.match(css, /\.codex-agent-surface\.is-open\s*\{[^}]*width:\s*min\(560px,\s*calc\(100vw - 32px\)\)/s);
+  assert.match(css, /\.morphing-composer__surface\.is-open\s*\{[^}]*width:\s*min\(620px,\s*calc\(100vw - 32px\)\)/s);
   assert.match(css, /\.skill-detail-shell\s*\{[^}]*grid-template-areas:\s*"nav"\s*"content"/s);
   assert.match(css, /\.skill-detail-tabs button\s*\{[^}]*min-height:\s*44px/s);
   assert.match(css, /\.skill-image-feed\s*\{[^}]*grid-template-columns:\s*repeat\(auto-fit/s);

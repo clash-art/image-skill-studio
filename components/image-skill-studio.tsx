@@ -25,6 +25,7 @@ import {
 
 import { Button } from "@/components/ui/button";
 import { FanCollection, type FanCollectionItem, type FanCollectionPhase } from "@/components/ui/fan-collection";
+import { MorphingComposer } from "@/components/ui/morphing-composer";
 import { groupRecentRunsBySkill } from "@/lib/fan-collection.mjs";
 import { fanCollectionPhase, isRouteTransitioning, rankViewportCards } from "@/lib/studio-interaction-state.mjs";
 
@@ -216,8 +217,6 @@ function reverseRouteOrigin(origin: SkillRouteOrigin): SkillRouteOrigin {
 }
 
 const routeSpring = { type: "spring", stiffness: 160, damping: 18, mass: 1 } as const;
-const composerSpring = { type: "spring", stiffness: 170, damping: 24, mass: 0.9 } as const;
-const composerContentTransition = { duration: 0.18, ease: [0.22, 1, 0.36, 1] } as const;
 
 function BrandSymbol() {
   return (
@@ -325,7 +324,6 @@ export function ImageSkillStudio({ initialState, bridge, previewMode = false }: 
   const runtime = bridge ?? previewBridge;
   const firstSkill = initialState.skills[0];
   const reduceRouteMotion = useReducedMotion();
-  const composerBodyTransition = reduceRouteMotion ? { duration: 0 } as const : composerContentTransition;
   const [routePhase, setRoutePhase] = useState<RouteTransitionPhase>("idle");
   const routeGuiLeaving = routePhase === "exiting";
   const routeInteractionLocked = isRouteTransitioning(routePhase);
@@ -388,8 +386,11 @@ export function ImageSkillStudio({ initialState, bridge, previewMode = false }: 
   const closeComposer = useCallback(() => {
     if (!composerOpen) return;
     setComposerOpen(false);
-    requestAnimationFrame(() => composerReturnFocusRef.current?.focus());
   }, [composerOpen]);
+
+  const restoreComposerFocus = useCallback(() => {
+    composerReturnFocusRef.current?.focus();
+  }, []);
 
   const skill = snapshot.skills.find((entry) => entry.id === selectedSkillId) ?? snapshot.skills[0];
   const restoreDetailScroll = useCallback((node: HTMLElement | null) => {
@@ -1271,101 +1272,70 @@ export function ImageSkillStudio({ initialState, bridge, previewMode = false }: 
                   animate={guiOpacityMotion(detailChromeHidden)}
                   inert={detailChromeHidden ? true : undefined}
                 >
-                  <motion.section
-                    id="codex-agent-composer"
-                    className={`codex-agent-surface${composerOpen ? " is-open" : " is-compact"}`}
-                    layout
-                    transition={{ layout: composerSpring }}
-                    aria-label="Codex Agent"
-                    role="region"
+                  <MorphingComposer
+                    open={composerOpen}
+                    onOpenChange={(nextOpen) => {
+                      if (nextOpen) openComposer("agent");
+                      else closeComposer();
+                    }}
+                    onExitComplete={restoreComposerFocus}
+                    brand={<BrandSymbol />}
+                    disabled={busy || detailChromeHidden}
                   >
-                    <div className="codex-agent-surface__heading">
-                      <button
-                        type="button"
-                        className="codex-agent-surface__compact"
-                        aria-label={composerOpen ? "Codex Agent 已展开" : "打开 Codex Agent"}
-                        aria-expanded={composerOpen}
-                        aria-controls="codex-agent-surface-body"
-                        onClick={() => {
-                          if (composerOpen) closeComposer();
-                          else openComposer("agent");
-                        }}
-                      >
-                        <BrandSymbol />
-                        <span>Codex</span>
-                      </button>
-                      {composerOpen ? (
-                        <button type="button" className="codex-agent-surface__close" aria-label="收起 Codex Agent" onClick={closeComposer}><X size={15} /></button>
-                      ) : null}
+                    <label className="sr-only" htmlFor="studio-prompt">提示词</label>
+                    <textarea
+                      ref={promptRef}
+                      id="studio-prompt"
+                      value={prompt}
+                      onChange={(event) => setPrompt(event.target.value)}
+                      placeholder="描述你想看见的画面…"
+                      rows={5}
+                    />
+
+                    {skill.capabilities.references ? (
+                      <div className="reference-strip">
+                        <label className="reference-add" title="添加参考图">
+                          <ImagePlus size={19} />
+                          <input
+                            type="file"
+                            accept="image/png,image/jpeg,image/webp"
+                            onChange={(event) => {
+                              const file = event.currentTarget.files?.[0];
+                              if (file) addReference(file);
+                            }}
+                          />
+                        </label>
+                        {references.map((reference) => (
+                          <figure className="reference-thumb" key={reference.file_id}>
+                            <img src={reference.preview_url || reference.download_url} alt="参考图" />
+                            <button type="button" aria-label="移除参考图" onClick={() => setReferences((current) => current.filter((entry) => entry.file_id !== reference.file_id))}><X size={11} /></button>
+                            <select
+                              aria-label="参考图角色"
+                              value={reference.role}
+                              onChange={(event) => setReferences((current) => current.map((entry) => entry.file_id === reference.file_id ? { ...entry, role: event.target.value as StudioFile["role"] } : entry))}
+                            >
+                              <option value="reference">参考</option>
+                              <option value="subject">主体</option>
+                              <option value="style">风格</option>
+                              <option value="composition">构图</option>
+                            </select>
+                          </figure>
+                        ))}
+                      </div>
+                    ) : null}
+
+                    <div className="compose-card__actions">
+                      <select aria-label="画幅" value={aspectRatio} onChange={(event) => setAspectRatio(event.target.value)}>
+                        {skill.capabilities.aspectRatios.map((ratio) => <option key={ratio}>{ratio}</option>)}
+                      </select>
+                      <Button className="handoff-button" onClick={() => generate()} disabled={busy}>
+                        {busy ? <CircleDashed className="spin" size={16} /> : <Sparkles size={16} />}
+                        {busy ? "Handing off…" : "Hand off to Codex"}
+                        <ArrowUpRight size={16} />
+                      </Button>
                     </div>
-                    <AnimatePresence initial={false} mode="popLayout">
-                      {composerOpen ? (
-                      <motion.div
-                        key="composer-body"
-                        id="codex-agent-surface-body"
-                        className="codex-agent-surface__body"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        transition={composerBodyTransition}
-                      >
-                        <label className="sr-only" htmlFor="studio-prompt">提示词</label>
-                        <textarea
-                          ref={promptRef}
-                          id="studio-prompt"
-                          value={prompt}
-                          onChange={(event) => setPrompt(event.target.value)}
-                          placeholder="描述你想看见的画面…"
-                          rows={5}
-                        />
-
-                        {skill.capabilities.references ? (
-                          <div className="reference-strip">
-                            <label className="reference-add" title="添加参考图">
-                              <ImagePlus size={19} />
-                              <input
-                                type="file"
-                                accept="image/png,image/jpeg,image/webp"
-                                onChange={(event) => {
-                                  const file = event.currentTarget.files?.[0];
-                                  if (file) addReference(file);
-                                }}
-                              />
-                            </label>
-                            {references.map((reference) => (
-                              <figure className="reference-thumb" key={reference.file_id}>
-                                <img src={reference.preview_url || reference.download_url} alt="参考图" />
-                                <button type="button" aria-label="移除参考图" onClick={() => setReferences((current) => current.filter((entry) => entry.file_id !== reference.file_id))}><X size={11} /></button>
-                                <select
-                                  aria-label="参考图角色"
-                                  value={reference.role}
-                                  onChange={(event) => setReferences((current) => current.map((entry) => entry.file_id === reference.file_id ? { ...entry, role: event.target.value as StudioFile["role"] } : entry))}
-                                >
-                                  <option value="reference">参考</option>
-                                  <option value="subject">主体</option>
-                                  <option value="style">风格</option>
-                                  <option value="composition">构图</option>
-                                </select>
-                              </figure>
-                            ))}
-                          </div>
-                        ) : null}
-
-                        <div className="compose-card__actions">
-                          <select aria-label="画幅" value={aspectRatio} onChange={(event) => setAspectRatio(event.target.value)}>
-                            {skill.capabilities.aspectRatios.map((ratio) => <option key={ratio}>{ratio}</option>)}
-                          </select>
-                          <Button className="handoff-button" onClick={() => generate()} disabled={busy}>
-                            {busy ? <CircleDashed className="spin" size={16} /> : <Sparkles size={16} />}
-                            {busy ? "Handing off…" : "Hand off to Codex"}
-                            <ArrowUpRight size={16} />
-                          </Button>
-                        </div>
-                        {error ? <p className="compose-error" role="alert">{error}</p> : null}
-                      </motion.div>
-                      ) : null}
-                    </AnimatePresence>
-                  </motion.section>
+                    {error ? <p className="compose-error" role="alert">{error}</p> : null}
+                  </MorphingComposer>
                 </motion.aside>
 
                 <DetailTabPanel

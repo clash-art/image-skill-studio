@@ -80,16 +80,14 @@ test("detail stays a full-width feed while a non-modal Composer floats above it"
   assert.match(studio, /className="skill-detail-shell"/);
   assert.match(studio, /className=\{`skill-detail-composer\$\{composerOpen \? " is-open" : " is-compact"\}`\}/);
   assert.doesNotMatch(studio, /codex-agent-backdrop/);
-  assert.match(studio, /className=\{`codex-agent-surface\$\{composerOpen \? " is-open" : " is-compact"\}`\}/);
-  assert.match(studio, /className=\{`codex-agent-surface[\s\S]{0,260}?\n\s+layout\n/);
-  assert.match(studio, /role="region"/);
-  assert.doesNotMatch(studio, /aria-modal|inert=\{[^}]*composerOpen|keepFocusInComposer/);
+  assert.match(studio, /<MorphingComposer[\s\S]{0,420}?open=\{composerOpen\}/);
+  assert.doesNotMatch(studio, /codex-agent-surface|aria-modal|inert=\{[^}]*composerOpen|keepFocusInComposer/);
   assert.doesNotMatch(studio, /agentDockReached|codex-agent-anchor|codex-agent-positioner/);
 
   assert.match(css, /\.skill-detail-shell\s*\{[^}]*display:\s*grid/s);
   assert.match(css, /\.skill-detail-composer\s*\{[^}]*position:\s*fixed[^}]*inset:\s*0/s);
   assert.match(css, /\.skill-detail-composer\.is-open\s*\{[^}]*place-items:\s*end\s+center/s);
-  assert.match(css, /\.codex-agent-surface\s*\{[^}]*transform-origin:\s*50%\s+100%/s);
+  assert.match(css, /\.morphing-composer__surface\s*\{[^}]*transform-origin:\s*50%\s+100%/s);
   assert.match(css, /\.skill-detail-composer\.is-compact\s*\{[^}]*place-items:\s*end\s+center/s);
   assert.match(css, /\.skill-detail-composer\s*\{[^}]*pointer-events:\s*none/s);
   assert.match(css, /\.skill-detail-composer\s*>\s*\*\s*\{[^}]*pointer-events:\s*auto/s);
