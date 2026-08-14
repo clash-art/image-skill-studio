@@ -281,6 +281,7 @@ select:focus-visible {
 .skill-detail-composer.is-open { place-items: end center; }
 .skill-detail-composer > * { pointer-events: auto; }
 .codex-agent-surface {
+  position: relative;
   width: max-content;
   max-width: 100%;
   overflow: hidden;
@@ -290,6 +291,7 @@ select:focus-visible {
   color: var(--paper);
   background: var(--ink);
   box-shadow: 0 16px 38px rgba(30, 35, 38, 0.18);
+  transition: color 180ms cubic-bezier(0.22, 1, 0.36, 1), background-color 180ms cubic-bezier(0.22, 1, 0.36, 1), border-radius 180ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 180ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 .codex-agent-surface.is-open {
   width: min(560px, calc(100vw - 32px));
@@ -343,6 +345,9 @@ select:focus-visible {
 .compose-error { margin: 9px 3px 1px; color: var(--danger); font-size: 9px; }
 .spin { animation: studio-spin 1.15s linear infinite; }
 
+.detail-tab-panel { position: relative; min-width: 0; }
+.detail-tab-panel.is-active { z-index: 1; pointer-events: auto; }
+.detail-tab-panel.is-inactive { z-index: 0; pointer-events: none; }
 .skill-examples { grid-area: content; min-width: 0; padding: 0 2px 5px; }
 .skill-image-feed {
   display: grid;

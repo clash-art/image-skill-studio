@@ -14,8 +14,9 @@ test("the Skill route is a full-width two-tab feed beneath one floating Composer
 
   assert.match(studio, /type DetailTab = "feed" \| "creations"/);
   assert.match(studio, /role="tablist"[^>]*aria-label="Skill 内容"/);
-  assert.match(studio, /id="detail-panel-feed"[\s\S]{0,180}?role="tabpanel"/);
-  assert.match(studio, /id="detail-panel-creations"[\s\S]{0,180}?role="tabpanel"/);
+  assert.match(studio, /function DetailTabPanel\([\s\S]{0,720}?role="tabpanel"/);
+  assert.match(studio, /<DetailTabPanel[\s\S]{0,220}?id="detail-panel-feed"/);
+  assert.match(studio, /<DetailTabPanel[\s\S]{0,220}?id="detail-panel-creations"/);
   assert.match(studio, /className=\{`skill-detail-composer\$\{composerOpen \? " is-open" : " is-compact"\}`\}/);
   assert.doesNotMatch(studio, /codex-agent-backdrop/);
   assert.match(studio, /className=\{`codex-agent-surface\$\{composerOpen \? " is-open" : " is-compact"\}`\}/);
@@ -56,8 +57,8 @@ test("both collection kinds move their first four cards and images into matching
   assert.doesNotMatch(studio, /const projectionItem = routeItemForSkill\("feed-(?:runs|examples)"/);
   assert.match(studio, /function routeSurfaceHasIdentity\(surface: ProjectionSurface\)/);
   assert.match(studio, /function routeItemForSkill\([\s\S]{0,360}?if \(!routeSurfaceHasIdentity\(surface\)/);
-  assert.match(studio, /layoutId=\{routeLayoutIdFor\("skill-examples",\s*"example",\s*example\.id\)\}/);
-  assert.match(studio, /layoutId=\{routeLayoutIdFor\("skill-runs",\s*"run",\s*run\.id\)\}/);
+  assert.match(studio, /layoutId=\{detailLayoutIdFor\("example",\s*example\.id\)\}/);
+  assert.match(studio, /layoutId=\{detailLayoutIdFor\("run",\s*run\.id\)\}/);
   assert.match(studio, /routeItemFor\("skill-runs",\s*"run",\s*run\.id\)/);
   assert.match(studio, /<LayoutGroup\s+id="studio-route">/);
   assert.doesNotMatch(studio, /<AnimatePresence\s+mode="sync"/);
@@ -95,8 +96,8 @@ test("non-shared GUI leaves before route commit and target chrome waits for proj
 test("horizontal detail rails participate in scroll-aware shared layout", async () => {
   const studio = await readFile(studioUrl, "utf8");
 
-  assert.match(studio, /<motion\.div\s+ref=\{restoreDetailRail\}\s+className="skill-examples__rail skill-image-feed"\s+layoutScroll>/);
-  assert.match(studio, /<motion\.div\s+ref=\{restoreDetailRail\}\s+className="skill-results__feed"\s+role="list"\s+layoutScroll>/);
+  assert.match(studio, /<motion\.div\s+ref=\{restoreFeedRail\}\s+className="skill-examples__rail skill-image-feed"\s+layoutScroll>/);
+  assert.match(studio, /<motion\.div\s+ref=\{restoreCreationsRail\}\s+className="skill-results__feed"\s+role="list"\s+layoutScroll>/);
 });
 
 test("return projection follows the active tab and current viewport cards", async () => {
@@ -162,22 +163,23 @@ test("the Codex pill and expanded Composer are one stable responsive surface", a
 
   assert.match(studio, /<motion\.section[\s\S]{0,420}?className=\{`codex-agent-surface/);
   assert.match(studio, /className=\{`codex-agent-surface[\s\S]{0,260}?\n\s+layout\n/);
-  assert.match(studio, /const \[composerPhase, setComposerPhase\] = useState<ComposerPhase>\("compact"\)/);
-  assert.match(studio, /const composerCollapseSpring = \{ type: "spring", stiffness: 210, damping: 24, mass: 0\.85 \} as const/);
-  assert.match(studio, /const finishComposerClose = useCallback\([\s\S]{0,360}?setComposerPhase\("compact"\)/);
-  assert.match(studio, /const closeComposer = useCallback\([\s\S]{0,360}?setComposerPhase\("closing"\)/);
-  assert.match(studio, /<AnimatePresence initial=\{false\} onExitComplete=\{finishComposerClose\}>/);
-  assert.match(studio, /\{composerBodyVisible \? \(/);
-  assert.match(studio, /exit=\{\{[\s\S]{0,180}?duration: reduceRouteMotion \? 0 : 0\.12,[\s\S]{0,80}?delay: 0/);
-  assert.match(studio, /transition=\{\{[\s\S]{0,160}?duration: reduceRouteMotion \? 0 : 0\.22,[\s\S]{0,80}?delay: reduceRouteMotion \? 0 : 0\.08/);
-  assert.match(studio, /transition=\{\{ layout: composerOpen \? composerSpring : composerCollapseSpring \}\}/);
+  assert.match(studio, /const \[composerOpen, setComposerOpen\] = useState\(false\)/);
+  assert.doesNotMatch(studio, /ComposerPhase|composerPhase|composerBodyVisible|composerOrigin|"closing"|composerCollapseSpring|finishComposerClose/);
+  assert.match(studio, /const closeComposer = useCallback\([\s\S]{0,360}?setComposerOpen\(false\)/);
+  assert.match(studio, /<AnimatePresence initial=\{false\} mode="popLayout">/);
+  assert.match(studio, /\{composerOpen \? \(/);
+  assert.match(studio, /initial=\{\{ opacity: 0 \}\}[\s\S]{0,100}?animate=\{\{ opacity: 1 \}\}[\s\S]{0,100}?exit=\{\{ opacity: 0 \}\}/);
+  assert.match(studio, /const composerBodyTransition = reduceRouteMotion \? \{ duration: 0 \} as const : composerContentTransition/);
+  assert.match(studio, /transition=\{composerBodyTransition\}/);
+  assert.match(studio, /transition=\{\{ layout: composerSpring \}\}/);
   assert.match(studio, /aria-expanded=\{composerOpen\}/);
   assert.match(studio, /role="region"/);
   assert.doesNotMatch(studio, /aria-modal|inert=\{[^}]*composerOpen|keepFocusInComposer/);
   assert.match(studio, /if \(composerOpen\) closeComposer\(\);[\s\S]{0,80}?else openComposer\("agent"\)/);
   assert.doesNotMatch(studio, /layoutId="codex-agent-surface"|key="agent-orb"|key="agent-composer"/);
   assert.match(css, /\.skill-detail-composer\.is-open\s*\{[^}]*place-items:\s*end\s+center/s);
-  assert.match(css, /\.codex-agent-surface\s*\{[^}]*transform-origin:\s*50%\s+100%/s);
+  assert.match(css, /\.codex-agent-surface\s*\{[^}]*position:\s*relative[^}]*transform-origin:\s*50%\s+100%/s);
+  assert.match(css, /\.codex-agent-surface\s*\{[^}]*transition:[^;]*background-color[^;]*border-radius[^;]*box-shadow/s);
   assert.match(css, /\.codex-agent-surface\.is-open\s*\{[^}]*width:\s*min\(560px,\s*calc\(100vw - 32px\)\)/s);
   assert.match(css, /\.skill-detail-composer\s*\{[^}]*pointer-events:\s*none/s);
   assert.doesNotMatch(css, /codex-agent-backdrop|has-composer-open/);

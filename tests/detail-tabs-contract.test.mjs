@@ -20,6 +20,37 @@ test("Skill detail has two tabs and no third Works route or sheet", async () => 
   assert.doesNotMatch(css, /\.studio-works-sheet|\.works-sheet__/);
 });
 
+test("detail tabs crossfade with opacity only while shared layout stays reserved for route motion", async () => {
+  const studio = await readFile(studioUrl, "utf8");
+
+  const panelStart = studio.indexOf("function DetailTabPanel(");
+  const panelEnd = studio.indexOf("export function ImageSkillStudio", panelStart);
+  assert.notEqual(panelStart, -1);
+  assert.notEqual(panelEnd, -1);
+  const panel = studio.slice(panelStart, panelEnd);
+
+  assert.match(panel, /active: boolean/);
+  assert.match(panel, /initial=\{false\}/);
+  assert.match(panel, /opacity: active \? 1 : 0/);
+  assert.match(panel, /duration: reduceMotion \? 0 : active \? 0\.18 : 0\.12/);
+  assert.doesNotMatch(panel, /\b(?:x|y|scale|layout|layoutId)\s*[:=]/);
+  assert.match(panel, /aria-hidden=\{!active\}/);
+  assert.match(panel, /inert=\{!active \? true : undefined\}/);
+  assert.match(panel, /tabIndex=\{active \? 0 : -1\}/);
+  assert.doesNotMatch(panel, /useIsPresent|\bexit=/);
+
+  assert.doesNotMatch(studio, /<AnimatePresence initial=\{false\} mode="sync">/);
+  assert.match(studio, /<DetailTabPanel[\s\S]{0,220}?active=\{activeDetailTab === "feed"\}/);
+  assert.match(studio, /<DetailTabPanel[\s\S]{0,220}?active=\{activeDetailTab === "creations"\}/);
+  const selectStart = studio.indexOf("function selectDetailTab(");
+  const selectEnd = studio.indexOf("function handleDetailTabKeyDown", selectStart);
+  const selectDetailTab = studio.slice(selectStart, selectEnd);
+  assert.doesNotMatch(selectDetailTab, /setRouteOrigin|captureRouteOrigin/);
+  assert.match(studio, /const detailProjectionTransition = routeInteractionLocked\s*\? routeSpring\s*:\s*\{ duration: 0 \} as const/);
+  assert.match(studio, /function detailIdentityEnabled\([\s\S]{0,260}?routePhase === "idle"/);
+  assert.ok((studio.match(/transition=\{detailProjectionTransition\}/g) ?? []).length >= 4);
+});
+
 test("both Feed collections keep four independent shared images when entering their matching tab", async () => {
   const studio = await readFile(studioUrl, "utf8");
 
@@ -34,8 +65,8 @@ test("both Feed collections keep four independent shared images when entering th
   );
   assert.match(studio, /kind === "run" \? "feed-runs" : "feed-examples"/);
   assert.match(studio, /kind === "run" \? "skill-runs" : "skill-examples"/);
-  assert.match(studio, /routeItemFor\("skill-runs",\s*"run",\s*run\.id\)/);
-  assert.match(studio, /routeItemFor\("skill-examples",\s*"example",\s*example\.id\)/);
+  assert.match(studio, /detailLayoutIdFor\("run",\s*run\.id\)/);
+  assert.match(studio, /detailLayoutIdFor\("example",\s*example\.id\)/);
   assert.match(studio, /items:\s*visibleItems\.map/);
   assert.match(studio, /setActiveDetailTab\(targetTab\)[\s\S]{0,220}?setRoute\("skill"\)/);
 });

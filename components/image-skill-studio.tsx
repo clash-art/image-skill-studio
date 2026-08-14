@@ -20,6 +20,7 @@ import {
   useRef,
   useState,
   type KeyboardEvent as ReactKeyboardEvent,
+  type ReactNode,
 } from "react";
 
 import { Button } from "@/components/ui/button";
@@ -125,7 +126,6 @@ type ImageSkillStudioProps = {
 };
 
 type ComposerOrigin = "agent" | "remix" | "same";
-type ComposerPhase = "compact" | "expanded" | "closing";
 type DetailTab = "feed" | "creations";
 
 type SkillRouteItemKind = "run" | "example";
@@ -216,8 +216,8 @@ function reverseRouteOrigin(origin: SkillRouteOrigin): SkillRouteOrigin {
 }
 
 const routeSpring = { type: "spring", stiffness: 160, damping: 18, mass: 1 } as const;
-const composerSpring = { type: "spring", stiffness: 120, damping: 18, mass: 1 } as const;
-const composerCollapseSpring = { type: "spring", stiffness: 210, damping: 24, mass: 0.85 } as const;
+const composerSpring = { type: "spring", stiffness: 170, damping: 24, mass: 0.9 } as const;
+const composerContentTransition = { duration: 0.18, ease: [0.22, 1, 0.36, 1] } as const;
 
 function BrandSymbol() {
   return (
@@ -228,6 +228,44 @@ function BrandSymbol() {
         <rect x="14.5" y="25.5" width="24" height="24" rx="7" transform="rotate(45 26.5 37.5)" opacity=".34" />
       </g>
     </svg>
+  );
+}
+
+function DetailTabPanel({
+  active,
+  children,
+  className,
+  id,
+  labelledBy,
+  reduceMotion,
+}: {
+  active: boolean;
+  children: ReactNode;
+  className: string;
+  id: string;
+  labelledBy: string;
+  reduceMotion: boolean;
+}) {
+  return (
+    <motion.section
+      id={id}
+      className={`${className} detail-tab-panel${active ? " is-active" : " is-inactive"}`}
+      role="tabpanel"
+      aria-labelledby={labelledBy}
+      aria-hidden={!active}
+      inert={!active ? true : undefined}
+      tabIndex={active ? 0 : -1}
+      initial={false}
+      animate={{
+        opacity: active ? 1 : 0,
+        transition: {
+          duration: reduceMotion ? 0 : active ? 0.18 : 0.12,
+          ease: active ? [0.22, 1, 0.36, 1] : [0.4, 0, 1, 1],
+        },
+      }}
+    >
+      {children}
+    </motion.section>
   );
 }
 
@@ -287,6 +325,7 @@ export function ImageSkillStudio({ initialState, bridge, previewMode = false }: 
   const runtime = bridge ?? previewBridge;
   const firstSkill = initialState.skills[0];
   const reduceRouteMotion = useReducedMotion();
+  const composerBodyTransition = reduceRouteMotion ? { duration: 0 } as const : composerContentTransition;
   const [routePhase, setRoutePhase] = useState<RouteTransitionPhase>("idle");
   const routeGuiLeaving = routePhase === "exiting";
   const routeInteractionLocked = isRouteTransitioning(routePhase);
@@ -315,10 +354,7 @@ export function ImageSkillStudio({ initialState, bridge, previewMode = false }: 
   const [selectedExampleId, setSelectedExampleId] = useState<string | null>(null);
   const [routeOrigin, setRouteOrigin] = useState<SkillRouteOrigin | null>(null);
   const [feedCardOrderByCollection, setFeedCardOrderByCollection] = useState<Record<string, string[]>>({});
-  const [composerPhase, setComposerPhase] = useState<ComposerPhase>("compact");
-  const composerOpen = composerPhase !== "compact";
-  const composerBodyVisible = composerPhase === "expanded";
-  const [composerOrigin, setComposerOrigin] = useState<ComposerOrigin>("agent");
+  const [composerOpen, setComposerOpen] = useState(false);
   const [prompt, setPrompt] = useState("");
   const [aspectRatio, setAspectRatio] = useState(
     firstSkill?.capabilities.aspectRatios.includes("3:4") ? "3:4" : firstSkill?.capabilities.aspectRatios[0] ?? "3:4",
@@ -331,7 +367,6 @@ export function ImageSkillStudio({ initialState, bridge, previewMode = false }: 
   const composerReturnFocusRef = useRef<HTMLElement | null>(null);
   const feedScrollRef = useRef<HTMLDivElement>(null);
   const skillScrollRef = useRef<HTMLElement>(null);
-  const detailRailRef = useRef<HTMLDivElement>(null);
   const detailViewBySkillRef = useRef(new Map<string, DetailViewState>());
   const detailCaptureRef = useRef<() => SkillRouteOrigin | null>(() => null);
   const initialRouteAppliedRef = useRef(false);
@@ -346,20 +381,15 @@ export function ImageSkillStudio({ initialState, bridge, previewMode = false }: 
   const routeReturnMorphMs = reduceRouteMotion ? 0 : 280;
   const routeReturnRevealMs = reduceRouteMotion ? 0 : 280;
   const detailChromeHidden = routeGuiLeaving || routeInteractionLocked;
-
-  const finishComposerClose = useCallback(() => {
-    setComposerPhase("compact");
-    requestAnimationFrame(() => composerReturnFocusRef.current?.focus());
-  }, []);
+  const detailProjectionTransition = routeInteractionLocked
+    ? routeSpring
+    : { duration: 0 } as const;
 
   const closeComposer = useCallback(() => {
-    if (composerPhase !== "expanded") return;
-    if (reduceRouteMotion) {
-      finishComposerClose();
-      return;
-    }
-    setComposerPhase("closing");
-  }, [composerPhase, finishComposerClose, reduceRouteMotion]);
+    if (!composerOpen) return;
+    setComposerOpen(false);
+    requestAnimationFrame(() => composerReturnFocusRef.current?.focus());
+  }, [composerOpen]);
 
   const skill = snapshot.skills.find((entry) => entry.id === selectedSkillId) ?? snapshot.skills[0];
   const restoreDetailScroll = useCallback((node: HTMLElement | null) => {
@@ -367,11 +397,18 @@ export function ImageSkillStudio({ initialState, bridge, previewMode = false }: 
     if (!node || !skill) return;
     node.scrollTop = detailViewBySkillRef.current.get(skill.id)?.scrollTopByTab[activeDetailTab] ?? 0;
   }, [activeDetailTab, skill]);
-  const restoreDetailRail = useCallback((node: HTMLDivElement | null) => {
-    detailRailRef.current = node;
+  const restoreDetailRail = useCallback((tab: DetailTab, node: HTMLDivElement | null) => {
     if (!node || !skill) return;
-    node.scrollLeft = detailViewBySkillRef.current.get(skill.id)?.railScrollLeftByTab?.[activeDetailTab] ?? 0;
-  }, [activeDetailTab, skill]);
+    node.scrollLeft = detailViewBySkillRef.current.get(skill.id)?.railScrollLeftByTab?.[tab] ?? 0;
+  }, [skill]);
+  const restoreFeedRail = useCallback(
+    (node: HTMLDivElement | null) => restoreDetailRail("feed", node),
+    [restoreDetailRail],
+  );
+  const restoreCreationsRail = useCallback(
+    (node: HTMLDivElement | null) => restoreDetailRail("creations", node),
+    [restoreDetailRail],
+  );
   const feedRuns = useMemo(() => [...snapshot.runs].sort(
     (left, right) => new Date(right.createdAt).getTime() - new Date(left.createdAt).getTime(),
   ), [snapshot.runs]);
@@ -438,14 +475,25 @@ export function ImageSkillStudio({ initialState, bridge, previewMode = false }: 
     return activeRouteOrigin.items.find((item) => item.id === itemId);
   }
 
-  function routeLayoutIdFor(surface: ProjectionSurface, kind: SkillRouteItemKind, itemId: string) {
-    if (!skill) return undefined;
-    return routeItemForSkill(surface, kind, skill.id, itemId)?.layoutId;
-  }
-
   function routeItemFor(surface: ProjectionSurface, kind: SkillRouteItemKind, itemId: string) {
     if (!skill) return undefined;
     return routeItemForSkill(surface, kind, skill.id, itemId);
+  }
+
+  function detailIdentityEnabled(kind: SkillRouteItemKind) {
+    if (routePhase === "idle") return true;
+    const surface: ProjectionSurface = kind === "run" ? "skill-runs" : "skill-examples";
+    return activeRouteOrigin?.kind === kind && routeSurfaceHasIdentity(surface);
+  }
+
+  function detailLayoutIdFor(kind: SkillRouteItemKind, itemId: string) {
+    if (!skill || !detailIdentityEnabled(kind)) return undefined;
+    return skillRouteLayoutId(kind, skill.id, itemId);
+  }
+
+  function detailImageLayoutIdFor(kind: SkillRouteItemKind, itemId: string) {
+    if (!skill || !detailIdentityEnabled(kind)) return undefined;
+    return skillRouteImageLayoutId(kind, skill.id, itemId);
   }
 
   function collectionPhase(kind: SkillRouteItemKind, skillId: string): FanCollectionPhase {
@@ -475,6 +523,8 @@ export function ImageSkillStudio({ initialState, bridge, previewMode = false }: 
         }]
     : [];
   const detailExampleEntries = detailExamples.map((example, index) => ({ example, index }));
+  const detailExampleIdentityEnabled = detailIdentityEnabled("example");
+  const detailRunIdentityEnabled = detailIdentityEnabled("run");
   const detailRunEntries: Array<{ run: StudioRun; origin: SkillRouteItem | undefined }> = selectedSkillRuns.map((run) => ({
     run,
     origin: routeItemFor("skill-runs", "run", run.id),
@@ -496,7 +546,7 @@ export function ImageSkillStudio({ initialState, bridge, previewMode = false }: 
       setSelectedExampleId(null);
       setRouteOrigin(null);
       setActiveDetailTab("feed");
-      setComposerPhase("compact");
+      setComposerOpen(false);
       setRoute("skill");
       window.history.replaceState(
         { studioRoute: "skill", skillId: nextSkillId, detailTab: "feed" },
@@ -568,15 +618,6 @@ export function ImageSkillStudio({ initialState, bridge, previewMode = false }: 
 
   useEffect(() => {
     if (!composerOpen) return;
-    const frame = requestAnimationFrame(() => {
-      promptRef.current?.focus();
-      promptRef.current?.setSelectionRange(promptRef.current.value.length, promptRef.current.value.length);
-    });
-    return () => cancelAnimationFrame(frame);
-  }, [composerOpen, composerOrigin]);
-
-  useEffect(() => {
-    if (!composerOpen) return;
     const closeOnEscape = (event: KeyboardEvent) => {
       if (event.key !== "Escape") return;
       event.preventDefault();
@@ -623,7 +664,7 @@ export function ImageSkillStudio({ initialState, bridge, previewMode = false }: 
         setActiveDetailTab(targetTab);
         setRoute(targetRoute);
         hasFeedHistoryRef.current = targetRoute === "skill" && Boolean(state?.routeOrigin || state?.forwardRouteOrigin);
-        setComposerPhase("compact");
+        setComposerOpen(false);
       });
     };
     window.addEventListener("popstate", onPopState);
@@ -737,8 +778,7 @@ export function ImageSkillStudio({ initialState, bridge, previewMode = false }: 
     if (!skill || !skillScrollRef.current) return [];
     const scroller = skillScrollRef.current;
     const kind: SkillRouteItemKind = activeDetailTab === "feed" ? "example" : "run";
-    const rail = detailRailRef.current
-      ?? scroller.querySelector<HTMLDivElement>(activeDetailTab === "feed" ? ".skill-image-feed" : ".skill-results__feed");
+    const rail = scroller.querySelector<HTMLDivElement>(activeDetailTab === "feed" ? ".skill-image-feed" : ".skill-results__feed");
     if (!rail) return [];
     const cards = [...rail.querySelectorAll<HTMLElement>(`[data-route-item-kind="${kind}"]`)].map((card) => {
       const rect = card.getBoundingClientRect();
@@ -856,7 +896,7 @@ export function ImageSkillStudio({ initialState, bridge, previewMode = false }: 
       setSelectedRunId(runId ?? null);
       setSelectedExampleId(restoredExampleId);
       setActiveDetailTab(targetTab);
-      setComposerPhase("compact");
+      setComposerOpen(false);
       setRoute("skill");
       window.history.pushState(
         { studioRoute: "skill", skillId, runId, exampleId, detailTab: targetTab, routeOrigin: nextOrigin },
@@ -878,7 +918,7 @@ export function ImageSkillStudio({ initialState, bridge, previewMode = false }: 
         ? detailViewBySkillRef.current.get(skillId)?.selectedExampleId ?? null
         : null);
       setActiveDetailTab(targetTab);
-      setComposerPhase("compact");
+      setComposerOpen(false);
       setRoute("skill");
       window.history.pushState(
         { studioRoute: "skill", skillId, detailTab: targetTab },
@@ -896,7 +936,7 @@ export function ImageSkillStudio({ initialState, bridge, previewMode = false }: 
       return;
     }
     runAfterRouteGuiExit("feed", () => {
-      setComposerPhase("compact");
+      setComposerOpen(false);
       setRoute("feed");
       hasFeedHistoryRef.current = false;
       if (!capturedReturnOrigin) setRouteOrigin(null);
@@ -955,7 +995,6 @@ export function ImageSkillStudio({ initialState, bridge, previewMode = false }: 
 
   function openComposer(origin: ComposerOrigin, example?: StudioSkillExample) {
     composerReturnFocusRef.current = document.activeElement instanceof HTMLElement ? document.activeElement : null;
-    setComposerOrigin(origin);
     if (example) {
       setPrompt(example.prompt);
       setAspectRatio(example.aspectRatio);
@@ -963,7 +1002,11 @@ export function ImageSkillStudio({ initialState, bridge, previewMode = false }: 
       setSelectedExampleId(example.id);
     }
     setError("");
-    setComposerPhase("expanded");
+    setComposerOpen(true);
+    requestAnimationFrame(() => {
+      promptRef.current?.focus();
+      promptRef.current?.setSelectionRange(promptRef.current.value.length, promptRef.current.value.length);
+    });
   }
 
   async function addReference(file: File) {
@@ -989,46 +1032,8 @@ export function ImageSkillStudio({ initialState, bridge, previewMode = false }: 
     const rememberedView = skill ? detailViewBySkillRef.current.get(skill.id) : undefined;
     setActiveDetailTab(nextTab);
     setSelectedExampleId(nextTab === "feed" ? rememberedView?.selectedExampleId ?? null : null);
-    if (!skill) return;
-    const savedIds = detailViewBySkillRef.current.get(skill.id)?.visibleItemIdsByTab[nextTab] ?? [];
-    if (nextTab === "feed") {
-      const allItems: FanCollectionItem[] = detailExampleEntries.map(({ example, index }) => ({
-        id: example.id,
-        src: examplePreview(example, skill, index),
-        alt: example.prompt,
-        meta: example.aspectRatio,
-      }));
-      const byId = new Map(allItems.map((item) => [item.id, item]));
-      const items = [
-        ...savedIds.map((id) => byId.get(id)).filter((item): item is FanCollectionItem => Boolean(item)),
-        ...allItems.filter((item) => !savedIds.includes(item.id)),
-      ].slice(0, 4);
-      if (items[0]) {
-        setRouteOrigin(captureRouteOrigin(
-          skill.id,
-          "example",
-          items[0],
-          items,
-          "skill-examples",
-          "feed-examples",
-        ));
-      }
-      return;
-    }
-    const allItems: FanCollectionItem[] = selectedSkillRuns.map((run) => ({
-      id: run.id,
-      src: artifactUrl(run) || skillPreview(skill),
-      alt: run.snapshot.prompt,
-      meta: statusLabels[run.status] ?? "作品",
-    }));
-    const byId = new Map(allItems.map((item) => [item.id, item]));
-    const items = [
-      ...savedIds.map((id) => byId.get(id)).filter((item): item is FanCollectionItem => Boolean(item)),
-      ...allItems.filter((item) => !savedIds.includes(item.id)),
-    ].slice(0, 4);
-    setRouteOrigin(items[0]
-      ? captureRouteOrigin(skill.id, "run", items[0], items, "skill-runs", "feed-runs")
-      : null);
+    const current = window.history.state && typeof window.history.state === "object" ? window.history.state : {};
+    window.history.replaceState({ ...current, detailTab: nextTab }, "", window.location.href);
   }
 
   function handleDetailTabKeyDown(event: ReactKeyboardEvent<HTMLButtonElement>) {
@@ -1192,15 +1197,14 @@ export function ImageSkillStudio({ initialState, bridge, previewMode = false }: 
                   </div>
                 </motion.header>
 
-                {activeDetailTab === "feed" && detailExamples.length ? (
-                  <section
-                    id="detail-panel-feed"
-                    className="skill-examples"
-                    role="tabpanel"
-                    aria-labelledby="detail-tab-feed"
-                    tabIndex={0}
-                  >
-                    <motion.div ref={restoreDetailRail} className="skill-examples__rail skill-image-feed" layoutScroll>
+                <DetailTabPanel
+                  active={activeDetailTab === "feed"}
+                  id="detail-panel-feed"
+                  className="skill-examples"
+                  labelledBy="detail-tab-feed"
+                  reduceMotion={Boolean(reduceRouteMotion)}
+                >
+                    <motion.div ref={restoreFeedRail} className="skill-examples__rail skill-image-feed" layoutScroll>
                       {detailExampleEntries.map(({ example, index }) => {
                         const selected = selectedExampleId === example.id;
                         const originItem = routeItemFor("skill-examples", "example", example.id);
@@ -1209,9 +1213,10 @@ export function ImageSkillStudio({ initialState, bridge, previewMode = false }: 
                             data-route-item-kind="example"
                             data-route-item-id={example.id}
                             layout
-                            layoutId={routeLayoutIdFor("skill-examples", "example", example.id)}
-                            transition={routeSpring}
-                            key={example.id}
+                            layoutId={detailLayoutIdFor("example", example.id)}
+                            transition={detailProjectionTransition}
+                            initial={false}
+                            key={`${example.id}-${detailExampleIdentityEnabled ? "projected" : "static"}`}
                             className={`skill-example-card${selected ? " is-selected" : ""}`}
                             animate={{
                               opacity: detailCardHidden("skill-examples", "example", example.id) ? 0 : 1,
@@ -1231,8 +1236,8 @@ export function ImageSkillStudio({ initialState, bridge, previewMode = false }: 
                               <motion.span
                                 className="skill-example-card__media"
                                 layout="position"
-                                layoutId={routeItemFor("skill-examples", "example", example.id)?.imageLayoutId}
-                                transition={routeSpring}
+                                layoutId={detailImageLayoutIdFor("example", example.id)}
+                                transition={detailProjectionTransition}
                               >
                                 <img src={originItem?.src ?? examplePreview(example, skill, index)} alt={example.prompt} />
                               </motion.span>
@@ -1259,8 +1264,7 @@ export function ImageSkillStudio({ initialState, bridge, previewMode = false }: 
                         );
                       })}
                     </motion.div>
-                  </section>
-                ) : null}
+                </DetailTabPanel>
 
                 <motion.aside
                   className={`skill-detail-composer${composerOpen ? " is-open" : " is-compact"}`}
@@ -1271,7 +1275,7 @@ export function ImageSkillStudio({ initialState, bridge, previewMode = false }: 
                     id="codex-agent-composer"
                     className={`codex-agent-surface${composerOpen ? " is-open" : " is-compact"}`}
                     layout
-                    transition={{ layout: composerOpen ? composerSpring : composerCollapseSpring }}
+                    transition={{ layout: composerSpring }}
                     aria-label="Codex Agent"
                     role="region"
                   >
@@ -1294,28 +1298,16 @@ export function ImageSkillStudio({ initialState, bridge, previewMode = false }: 
                         <button type="button" className="codex-agent-surface__close" aria-label="收起 Codex Agent" onClick={closeComposer}><X size={15} /></button>
                       ) : null}
                     </div>
-                    <AnimatePresence initial={false} onExitComplete={finishComposerClose}>
-                      {composerBodyVisible ? (
+                    <AnimatePresence initial={false} mode="popLayout">
+                      {composerOpen ? (
                       <motion.div
                         key="composer-body"
                         id="codex-agent-surface-body"
                         className="codex-agent-surface__body"
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{
-                          opacity: 0,
-                          y: 8,
-                          transition: {
-                            duration: reduceRouteMotion ? 0 : 0.12,
-                            delay: 0,
-                            ease: [0.7, 0, 0.84, 0],
-                          },
-                        }}
-                        transition={{
-                          duration: reduceRouteMotion ? 0 : 0.22,
-                          delay: reduceRouteMotion ? 0 : 0.08,
-                          ease: [0.22, 1, 0.36, 1],
-                        }}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={composerBodyTransition}
                       >
                         <label className="sr-only" htmlFor="studio-prompt">提示词</label>
                         <textarea
@@ -1376,31 +1368,30 @@ export function ImageSkillStudio({ initialState, bridge, previewMode = false }: 
                   </motion.section>
                 </motion.aside>
 
-                {activeDetailTab === "creations" ? (
-                  <section
-                    id="detail-panel-creations"
-                    className="skill-results"
-                    role="tabpanel"
-                    aria-labelledby="detail-tab-creations"
-                    tabIndex={0}
-                  >
+                <DetailTabPanel
+                  active={activeDetailTab === "creations"}
+                  id="detail-panel-creations"
+                  className="skill-results"
+                  labelledBy="detail-tab-creations"
+                  reduceMotion={Boolean(reduceRouteMotion)}
+                >
                     {detailRunEntries.length ? (
-                      <motion.div ref={restoreDetailRail} className="skill-results__feed" role="list" layoutScroll>
+                      <motion.div ref={restoreCreationsRail} className="skill-results__feed" role="list" layoutScroll>
                         {detailRunEntries.map(({ run, origin }, index) => {
                           const image = artifactUrl(run);
                           const running = !["succeeded", "failed", "cancelled"].includes(run.status);
                           const hidden = detailCardHidden("skill-runs", "run", run.id);
                           return (
                             <motion.article
-                              key={run.id}
+                              key={`${run.id}-${detailRunIdentityEnabled ? "projected" : "static"}`}
                               data-route-item-kind="run"
                               data-route-item-id={run.id}
                               className={`skill-result-card is-${run.status}`}
                               role="listitem"
                               aria-busy={running}
                               layout
-                              layoutId={routeLayoutIdFor("skill-runs", "run", run.id)}
-                              transition={routeSpring}
+                              layoutId={detailLayoutIdFor("run", run.id)}
+                              transition={detailProjectionTransition}
                               initial={false}
                               animate={{
                                 opacity: hidden ? 0 : 1,
@@ -1420,8 +1411,8 @@ export function ImageSkillStudio({ initialState, bridge, previewMode = false }: 
                                 <motion.span
                                   className="skill-result-card__media"
                                   layout="position"
-                                  layoutId={origin?.imageLayoutId}
-                                  transition={routeSpring}
+                                  layoutId={detailImageLayoutIdFor("run", run.id)}
+                                  transition={detailProjectionTransition}
                                 >
                                   {image || origin?.src ? (
                                     <img
@@ -1459,8 +1450,7 @@ export function ImageSkillStudio({ initialState, bridge, previewMode = false }: 
                     ) : (
                       <div className="minimal-empty"><Sparkles size={24} /><span>还没有生成</span></div>
                     )}
-                  </section>
-                ) : null}
+                </DetailTabPanel>
               </div>
             ) : (
               <div className="minimal-empty"><span>没有可用 Skill</span></div>

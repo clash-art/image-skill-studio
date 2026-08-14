@@ -84,7 +84,7 @@ test("FanCollection clears transient hover, focus, and pinned state whenever a r
   assert.doesNotMatch(fanCollection, /guiHidden\?:|cardsHidden\?:|interactionLocked\?:/);
 });
 
-test("Studio route and Composer use one explicit phase each instead of coupled booleans", async () => {
+test("Studio route uses one phase and Composer uses one boolean source of truth", async () => {
   const studio = await readFile(new URL("../components/image-skill-studio.tsx", import.meta.url), "utf8");
 
   assert.match(studio, /const \[routePhase, setRoutePhase\] = useState<RouteTransitionPhase>\("idle"\)/);
@@ -93,10 +93,8 @@ test("Studio route and Composer use one explicit phase each instead of coupled b
   assert.match(studio, /runAfterRouteGuiExit\("skill"/);
   assert.doesNotMatch(studio, /setRouteGuiLeaving|setRouteInteractionLocked/);
 
-  assert.match(studio, /const \[composerPhase, setComposerPhase\] = useState<ComposerPhase>\("compact"\)/);
-  assert.match(studio, /const composerOpen = composerPhase !== "compact"/);
-  assert.match(studio, /const composerBodyVisible = composerPhase === "expanded"/);
-  assert.doesNotMatch(studio, /setComposerClosing|setComposerOpen/);
+  assert.match(studio, /const \[composerOpen, setComposerOpen\] = useState\(false\)/);
+  assert.doesNotMatch(studio, /ComposerPhase|composerPhase|composerBodyVisible|composerOrigin|"closing"/);
 });
 
 test("return projection prefers cards actually visible in the detail viewport", () => {
