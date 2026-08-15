@@ -1,0 +1,39 @@
+{
+  "name": "image-skill-studio-dev",
+  "version": "0.1.0",
+  "description": "Live checkout of Image Skill Studio. Codex starts the project's source MCP process instead of a cached snapshot.",
+  "author": {
+    "name": "Image Skill Studio"
+  },
+  "license": "MIT",
+  "keywords": [
+    "image-generation",
+    "mcp-app",
+    "codex",
+    "skills",
+    "xiaohongshu",
+    "dev"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Image Skill Studio (dev)",
+    "shortDescription": "Open the live checkout, not the GitHub snapshot",
+    "longDescription": "Starts the Image Skill Studio MCP App from this machine's working tree. UI rebuilds on disk; reopen the App to pick them up. Server and tool changes need a new thread so Codex relaunches the process.",
+    "developerName": "Image Skill Studio",
+    "category": "Creativity",
+    "capabilities": [
+      "Image Generation",
+      "Interactive",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Open the live Image Skill Studio",
+      "Open Image Skill Studio (dev)"
+    ],
+    "brandColor": "#E8A54B",
+    "composerIcon": "./assets/icon.svg",
+    "logo": "./assets/icon.svg",
+    "screenshots": []
+  }
+}

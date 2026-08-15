@@ -38,4 +38,5 @@ yarn-error.log*
 /.wrangler/
 /outputs/
 /work/
+/dev-marketplace/plugins/image-skill-studio-dev/.mcp.json
 *.tsbuildinfo

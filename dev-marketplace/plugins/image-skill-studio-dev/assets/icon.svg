@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Image Skill Studio (dev)">
+  <rect width="128" height="128" rx="32" fill="#F7F3EA"/>
+  <g fill="none" stroke="#E8A54B" stroke-width="13" stroke-linejoin="round">
+    <rect x="37" y="37" width="54" height="54" rx="15" transform="rotate(45 64 64)"/>
+    <rect x="51" y="29" width="48" height="48" rx="14" transform="rotate(45 75 53)" opacity=".62"/>
+    <rect x="29" y="51" width="48" height="48" rx="14" transform="rotate(45 53 75)" opacity=".34"/>
+  </g>
+</svg>

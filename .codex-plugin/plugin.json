@@ -1,10 +1,12 @@
 {
   "name": "image-skill-studio",
-  "version": "0.1.0+codex.20260815073856",
+  "version": "0.1.0",
   "description": "A Codex MCP App for discovering image-generation Skills, handing work to the current agent, and collecting results by Skill.",
   "author": {
     "name": "Image Skill Studio"
   },
+  "repository": "https://github.com/hrhrng/image-skill-studio",
+  "homepage": "https://github.com/hrhrng/image-skill-studio",
   "license": "MIT",
   "keywords": [
     "image-generation",

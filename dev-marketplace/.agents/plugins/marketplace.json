@@ -1,14 +1,14 @@
 {
-  "name": "image-skill-studio",
+  "name": "image-skill-studio-local",
   "interface": {
-    "displayName": "Image Skill Studio"
+    "displayName": "Image Skill Studio local"
   },
   "plugins": [
     {
-      "name": "image-skill-studio",
+      "name": "image-skill-studio-dev",
       "source": {
         "source": "local",
-        "path": "."
+        "path": "./plugins/image-skill-studio-dev"
       },
       "policy": {
         "installation": "AVAILABLE",

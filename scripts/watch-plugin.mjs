@@ -28,7 +28,7 @@ async function rebuild() {
   try {
     console.log("[watch] rebuilding plugin…");
     await runPluginBuild();
-    console.log("[watch] ready. Reopen Image Skill Studio to load runtime/server.mjs.");
+    console.log("[watch] ready. Reopen the GitHub plugin or start a new thread to load runtime/server.mjs.");
   } catch (error) {
     console.error("[watch]", error instanceof Error ? error.message : error);
   } finally {

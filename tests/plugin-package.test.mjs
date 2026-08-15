@@ -5,6 +5,8 @@ import test from "node:test";
 test("plugin manifest packages the bundled skill and MCP App server", async () => {
   const manifest = JSON.parse(await readFile(new URL("../.codex-plugin/plugin.json", import.meta.url), "utf8"));
   assert.equal(manifest.name, "image-skill-studio");
+  assert.equal(manifest.version, "0.1.0");
+  assert.equal(manifest.repository, "https://github.com/hrhrng/image-skill-studio");
   assert.equal(manifest.skills, "./skills/");
   assert.equal(manifest.mcpServers, "./.mcp.json");
   assert.match(manifest.interface.capabilities.join(" "), /Image Generation/);
@@ -14,6 +16,15 @@ test("plugin manifest packages the bundled skill and MCP App server", async () =
   assert.equal(mcp.mcpServers["image-skill-studio"].args[0], "./runtime/server.mjs");
   assert.equal(mcp.mcpServers["image-skill-studio"].cwd, ".");
   assert.equal(mcp.mcpServers["image-skill-studio"].env, undefined);
+});
+
+test("dev wrapper is a separate plugin with its own MCP server name", async () => {
+  const manifest = JSON.parse(
+    await readFile(new URL("../dev-marketplace/plugins/image-skill-studio-dev/.codex-plugin/plugin.json", import.meta.url), "utf8"),
+  );
+  assert.equal(manifest.name, "image-skill-studio-dev");
+  assert.equal(manifest.mcpServers, "./.mcp.json");
+  assert.match(manifest.interface.displayName, /dev/i);
 });
 
 test("plugin ships featured creative Skills beside the Studio Skill", async () => {
