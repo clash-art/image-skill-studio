@@ -23,8 +23,10 @@ test("the Skill route is a full-width two-tab feed beneath one floating Composer
   assert.match(studio, /<MorphingComposer[\s\S]{0,420}?open=\{composerOpen\}/);
   assert.doesNotMatch(studio, /codex-agent-surface/);
   assert.doesNotMatch(studio, /agentDockReached|codex-agent-anchor|codex-agent-positioner|autoOpenedDockRef/);
-  assert.match(css, /\.skill-detail-composer\s*\{[^}]*position:\s*fixed[^}]*inset:\s*0/s);
-  assert.match(css, /\.skill-image-feed\s*\{[^}]*grid-template-columns:\s*repeat\(auto-fit/s);
+  assert.match(css, /\.compose-toolbar\s*\{[^}]*display:\s*flex[^}]*align-items:\s*center/s);
+  assert.match(css, /\.reference-add,\s*\n\.reference-thumb\s*\{[^}]*height:\s*44px/s);
+  assert.match(css, /\.handoff-button\s*\{[^}]*height:\s*44px/s);
+  assert.doesNotMatch(css, /reference-thumb select|compose-card__actions/);
   assert.doesNotMatch(css, /grid-template-areas:[^;}]*composer/);
 });
 
@@ -37,6 +39,14 @@ test("Remix and generate-same seed the shared Composer without dispatching gener
   assert.doesNotMatch(studio, /await\s+generate\s*\(\s*\{/);
   assert.equal((studio.match(/\bgenerate\(\)/g) ?? []).length, 1);
   assert.match(studio, /className="handoff-button"[^>]*onClick=\{\(\) => generate\(\)\}/);
+  assert.doesNotMatch(studio, /aria-label="画幅"/);
+  assert.doesNotMatch(studio, /aria-label="参考图角色"|<option value="subject">主体</);
+  assert.match(studio, /className="compose-toolbar"/);
+  assert.match(studio, /aria-label="注册 Skill"/);
+  assert.match(studio, /id="skill-register-form"/);
+  assert.match(studio, /安装到 Codex/);
+  assert.match(studio, /runtime\.registerSkill/);
+  assert.match(studio, /runtime\.installSkill/);
 });
 
 test("both collection kinds move their first four cards and images into matching Skill panels", async () => {

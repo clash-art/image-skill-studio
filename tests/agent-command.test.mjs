@@ -49,11 +49,52 @@ test("buildGenerationPrompt binds the exact skill snapshot and artifact contract
 
   assert.match(prompt, /\$paper-poster/);
   assert.match(prompt, /abc123def456/);
+  assert.match(prompt, /\$imagegen/);
   assert.match(prompt, /image_gen/);
+  assert.doesNotMatch(prompt, /\.system\/imagegen\/SKILL\.md/);
   assert.match(prompt, /A quiet studio/);
   assert.match(prompt, /3:4/);
   assert.match(prompt, /reference-0\.png/);
   assert.match(prompt, /\/tmp\/run-42\/artifacts/);
+  assert.match(prompt, /不要使用 CLI/);
+});
+
+test("MCP App handoff instructions record only successful images", () => {
+  const prompt = buildGenerationPrompt({
+    runId: "run-42",
+    skill,
+    prompt: "A quiet studio",
+    aspectRatio: "3:4",
+    artifactDir: "/tmp/run-42/artifacts",
+    transport: "mcp-app",
+  });
+
+  assert.match(prompt, /record_image_generation/);
+  assert.match(prompt, /\$imagegen/);
+  assert.match(prompt, /生成失败时不要调用这个工具/);
+  assert.doesNotMatch(prompt, /记录 failed/);
+});
+
+test("ImageGen-only runs mention $imagegen once and still require the built-in tool", () => {
+  const prompt = buildGenerationPrompt({
+    runId: "run-7",
+    skill: {
+      id: "imagegen",
+      skillPath: "/Users/me/.codex/skills/.system/imagegen/SKILL.md",
+      contentHash: "imghash12ab",
+    },
+    prompt: "A cobalt still life",
+    aspectRatio: "3:4",
+    artifactDir: "/tmp/run-7/artifacts",
+    transport: "mcp-app",
+  });
+
+  assert.equal((prompt.match(/\$imagegen/g) || []).length >= 1, true);
+  assert.doesNotMatch(prompt, /\.system\/imagegen\/SKILL\.md/);
+  assert.doesNotMatch(prompt, /imghash12ab/);
+  assert.doesNotMatch(prompt, /必须同时使用两个 Skill/);
+  assert.match(prompt, /内置 image_gen/);
+  assert.match(prompt, /不要使用 CLI/);
 });
 
 test("buildCodexInvocation attaches every immutable reference without shell interpolation", () => {

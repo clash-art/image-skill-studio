@@ -3,17 +3,22 @@ import path from "node:path";
 
 import { COLD_START_RUN_SEEDS } from "../lib/cold-start-run-seeds.mjs";
 
+const PLUGIN_ROOT = path.resolve(import.meta.dirname, "..");
+
 export const DEFAULT_RUN_SEEDS = COLD_START_RUN_SEEDS.map((seed) => ({
   ...seed,
   artifactPath: path.resolve(import.meta.dirname, "..", seed.assetPath),
 }));
 
-export const DEFAULT_CATALOG_ENTRIES = [
+export function createCatalogEntries(pluginRoot = process.env.PLUGIN_ROOT || PLUGIN_ROOT) {
+  const skillsRoot = path.join(pluginRoot, "skills");
+  return [
   {
     id: "imagegen",
     displayName: "Image Gen",
     description: "通用文生图、参考图生成与编辑。",
-    path: path.join(os.homedir(), ".codex/skills/.system/imagegen"),
+    origin: "host",
+    path: path.join(process.env.CODEX_HOME || path.join(os.homedir(), ".codex"), "skills/.system/imagegen"),
     previewPath: path.resolve(import.meta.dirname, "../assets/previews/imagegen-demo.png"),
     examples: [
       {
@@ -49,7 +54,8 @@ export const DEFAULT_CATALOG_ENTRIES = [
     id: "classic-epic-movie-poster",
     displayName: "经典史诗电影海报",
     description: "把影片概念或参考图重绘成 1930s–1970s 手绘院线海报。",
-    path: path.join(os.homedir(), ".codex/skills/classic-epic-movie-poster"),
+    origin: "bundled",
+    path: path.join(skillsRoot, "classic-epic-movie-poster"),
     previewPath: path.resolve(import.meta.dirname, "../assets/previews/classic-epic-demo.png"),
     examples: [
       {
@@ -85,7 +91,8 @@ export const DEFAULT_CATALOG_ENTRIES = [
     id: "gc-minimal-zine-poster-v0-1",
     displayName: "Minimal Zine Poster",
     description: "把一句话、物件或情绪做成诗意纸张拼贴海报。",
-    path: path.join(os.homedir(), ".codex/skills/gc-minimal-zine-poster-v0-1"),
+    origin: "bundled",
+    path: path.join(skillsRoot, "gc-minimal-zine-poster-v0-1"),
     previewPath: path.resolve(import.meta.dirname, "../assets/previews/minimal-zine-demo.jpeg"),
     examples: [
       {
@@ -121,7 +128,8 @@ export const DEFAULT_CATALOG_ENTRIES = [
     id: "baoyu-infographic",
     displayName: "专业信息图",
     description: "从内容中选择合适布局与视觉风格，生成可发布的信息图。",
-    path: path.join(os.homedir(), ".agents/skills/baoyu-infographic"),
+    origin: "bundled",
+    path: path.join(skillsRoot, "baoyu-infographic"),
     previewPath: path.resolve(import.meta.dirname, "../assets/previews/infographic-demo.png"),
     examples: [
       {
@@ -154,3 +162,6 @@ export const DEFAULT_CATALOG_ENTRIES = [
     capabilities: { references: true, maxReferences: 3, aspectRatios: ["3:4", "1:1", "16:9"] },
   },
 ];
+}
+
+export const DEFAULT_CATALOG_ENTRIES = createCatalogEntries();

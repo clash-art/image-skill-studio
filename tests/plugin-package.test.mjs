@@ -14,10 +14,65 @@ test("plugin manifest packages the bundled skill and MCP App server", async () =
   assert.equal(mcp.mcpServers["image-skill-studio"].args[0], "./runtime/server.mjs");
 });
 
+test("plugin ships featured creative Skills beside the Studio Skill", async () => {
+  const { stat } = await import("node:fs/promises");
+  for (const id of ["image-skill-studio", "classic-epic-movie-poster", "gc-minimal-zine-poster-v0-1", "baoyu-infographic"]) {
+    const info = await stat(new URL(`../skills/${id}/SKILL.md`, import.meta.url));
+    assert.ok(info.isFile(), `${id} must be bundled in the plugin`);
+  }
+});
+
+test("widget can register a Skill into Studio and install one into Codex skills", async () => {
+  const widget = await readFile(new URL("../web/widget.tsx", import.meta.url), "utf8");
+  assert.match(widget, /register_image_skill/);
+  assert.match(widget, /install_image_skill/);
+  assert.match(widget, /async registerSkill\(input\)/);
+  assert.match(widget, /async installSkill\(input\)/);
+});
+
 test("widget uses MCP Apps bridge first and OpenAI compatibility aliases second", async () => {
   const html = await readFile(new URL("../public/widget.html", import.meta.url), "utf8");
   assert.match(html, /ui\/initialize/);
   assert.match(html, /tools\/call/);
   assert.match(html, /ui\/message/);
   assert.match(html, /window\.openai/);
+});
+
+test("the bundled server embeds the workbench HTML so Codex cache path bugs cannot ENOENT it", async () => {
+  const [server, html] = await Promise.all([
+    readFile(new URL("../runtime/server.mjs", import.meta.url), "utf8"),
+    readFile(new URL("../public/widget.html", import.meta.url), "utf8"),
+  ]);
+  assert.match(server, /EMBEDDED_WIDGET_HTML/);
+  assert.ok(html.includes("ui/message"));
+  assert.ok(server.includes("ui/message"));
+});
+
+test("widget merges a recorded run from ontoolresult and can fall back to the Codex runner", async () => {
+  const widget = await readFile(new URL("../web/widget.tsx", import.meta.url), "utf8");
+  assert.match(widget, /applyStudioToolResult/);
+  assert.match(widget, /app\.ontoolresult[\s\S]{0,240}?applyStudioToolResult/);
+  assert.match(widget, /run_prepared_image_generation/);
+});
+
+test("widget callTool names the failing MCP tool instead of a bare proxy error", async () => {
+  const widget = await readFile(new URL("../web/widget.tsx", import.meta.url), "utf8");
+  assert.match(widget, /window\.openai\?\.callTool/);
+  assert.match(widget, /app\.callServerTool/);
+  assert.match(widget, /\$\{name\} 失败：\$\{failures\.join/);
+});
+
+test("widget hands off with ui/message text and does not spawn a nested Codex runner after a host message failure", async () => {
+  const widget = await readFile(new URL("../web/widget.tsx", import.meta.url), "utf8");
+  assert.match(widget, /app\.sendMessage/);
+  assert.match(widget, /sendFollowUpMessage/);
+  assert.match(widget, /content: \[\{ type: "text", text: instruction \}\]/);
+  assert.match(widget, /!app && !window\.openai\?\.sendFollowUpMessage && context\?\.runId/);
+});
+
+test("widget asks the host for fullscreen and never advertises inline", async () => {
+  const widget = await readFile(new URL("../web/widget.tsx", import.meta.url), "utf8");
+  assert.match(widget, /availableDisplayModes:\s*\["fullscreen"\]/);
+  assert.match(widget, /requestDisplayMode\(\{\s*mode:\s*"fullscreen"/);
+  assert.doesNotMatch(widget, /availableDisplayModes:\s*\[[^\]]*inline/);
 });

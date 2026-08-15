@@ -37,12 +37,14 @@ npm run build
 
 ## Install locally
 
-From the project directory:
+From `~/Proj/image-skill-studio`:
 
 ```bash
 codex plugin marketplace add .
 codex plugin add image-skill-studio@image-skill-studio-dev
 ```
+
+The workbench HTML is embedded in `runtime/server.mjs`. Codex may copy the plugin into a versioned cache and set `PLUGIN_ROOT` to a stripped `0.1.0` path; the server ignores that, serves the embedded App, and resolves Skills from the directory next to the running server.
 
 Reload Codex or start a new task, then ask to `Open Image Skill Studio`.
 
@@ -54,7 +56,8 @@ Reload Codex or start a new task, then ask to `Open Image Skill Studio`.
 - `assets/runs`: independent ImageGen cold-start work, kept separate from curated Skill examples.
 - `web/widget.tsx`: standards-first MCP Apps bridge with Codex compatibility fallback.
 - `components/image-skill-studio.tsx`: Feed and Skill routes.
-- `skills/image-skill-studio/SKILL.md`: thin orchestration Skill for the agent callback.
+- `skills/`: plugin-hosted Skills. `image-skill-studio` orchestrates the App; featured creative Skills ship beside it. Users can register more Skills into Studio and install Studio Skills into `~/.codex/skills`.
+- `lib/studio-skill-registry.mjs`: validation, registration, and install-to-Codex copy rules.
 - `server/codex-app-client.mjs`: optional direct Codex app-server client for non-recursive hosts.
 
 ## Verification

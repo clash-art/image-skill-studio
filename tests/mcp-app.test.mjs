@@ -63,9 +63,20 @@ test("MCP server exposes a standards-first app resource and useful tools", async
   assert.ok(names.includes("run_prepared_image_generation"));
   assert.ok(names.includes("get_image_generation_run"));
   assert.ok(names.includes("record_image_generation"));
+  assert.ok(names.includes("register_image_skill"));
+  assert.ok(names.includes("install_image_skill"));
   const openTool = listed.tools.find((tool) => tool.name === "open_image_skill_studio");
+  const prepareTool = listed.tools.find((tool) => tool.name === "prepare_image_generation");
+  const listTool = listed.tools.find((tool) => tool.name === "list_image_skills");
   assert.equal(openTool._meta.ui.resourceUri, STUDIO_RESOURCE_URI);
   assert.equal(openTool._meta["openai/outputTemplate"], STUDIO_RESOURCE_URI);
+  assert.equal(openTool._meta["openai/widgetAccessible"], true);
+  assert.equal(prepareTool._meta["openai/widgetAccessible"], true);
+  assert.equal(prepareTool._meta["openai/outputTemplate"], undefined);
+  assert.equal(prepareTool._meta.ui.resourceUri, undefined);
+  assert.deepEqual(prepareTool._meta.ui.visibility, ["model", "app"]);
+  assert.equal(listTool._meta["openai/widgetAccessible"], true);
+  assert.equal(listTool._meta["openai/outputTemplate"], undefined);
 
   const resource = await client.readResource({ uri: STUDIO_RESOURCE_URI });
   assert.equal(resource.contents[0].mimeType, "text/html;profile=mcp-app");
@@ -78,6 +89,35 @@ test("MCP server exposes a standards-first app resource and useful tools", async
   assert.match(example.previewResourceUri, /^image-skill-studio:\/\/examples\//);
   const exampleResource = await client.readResource({ uri: example.previewResourceUri });
   assert.equal(exampleResource.contents[0].mimeType, "image/png");
+  assert.deepEqual(resource.contents[0]._meta.ui.availableDisplayModes, ["fullscreen"]);
+});
+
+test("the workbench HTML is read on each resource request so local rebuilds can land", async (t) => {
+  const root = await mkdtemp(path.join(os.tmpdir(), "image-studio-widget-"));
+  const skillDir = path.join(root, "skill");
+  await mkdir(skillDir);
+  await writeFile(path.join(skillDir, "SKILL.md"), `---\nname: test-image-skill\ndescription: Makes a test image.\n---\nUse imagegen.`);
+  let version = 1;
+  const server = await createStudioServer({
+    dataRoot: path.join(root, "data"),
+    widgetHtml: async () => `<!doctype html><script>window.__WIDGET_VERSION__ = ${version}</script>`,
+    catalogEntries: [{
+      id: "test-image-skill",
+      path: skillDir,
+      capabilities: { references: false, maxReferences: 0, aspectRatios: ["3:4"] },
+    }],
+  });
+  const [clientTransport, serverTransport] = InMemoryTransport.createLinkedPair();
+  await server.connect(serverTransport);
+  const client = new Client({ name: "widget-reload-test", version: "1.0.0" });
+  await client.connect(clientTransport);
+  t.after(async () => { await client.close(); await server.close(); });
+
+  const first = await client.readResource({ uri: STUDIO_RESOURCE_URI });
+  version = 2;
+  const second = await client.readResource({ uri: STUDIO_RESOURCE_URI });
+  assert.match(first.contents[0].text, /__WIDGET_VERSION__ = 1/);
+  assert.match(second.contents[0].text, /__WIDGET_VERSION__ = 2/);
 });
 
 test("an empty MCP App store is seeded once from distinct generated-work assets", async (t) => {
@@ -207,8 +247,17 @@ test("prepare_image_generation snapshots input and returns an agent instruction"
   });
   assert.equal(result.structuredContent.run.status, "awaiting_agent");
   assert.match(result.structuredContent.instruction, /\$test-image-skill/);
+  assert.match(result.structuredContent.instruction, /\$imagegen/);
   assert.match(result.structuredContent.instruction, /record_image_generation/);
   assert.match(result.structuredContent.instruction, /A red paper kite/);
+  assert.match(result.structuredContent.instruction, /生成失败时不要调用这个工具/);
+  assert.doesNotMatch(result.structuredContent.instruction, /记录 failed/);
+  const skillPath = result.structuredContent.run.snapshot.skill.skillPath;
+  assert.match(skillPath, /SKILL\.md$/);
+  assert.equal(result.structuredContent.instruction.includes(skillPath), true);
+  const listed = await client.listTools();
+  const prepare = listed.tools.find((tool) => tool.name === "prepare_image_generation");
+  assert.equal(prepare._meta["openai/fileParams"], undefined);
 });
 
 test("record_image_generation persists a real saved image as an MCP resource", async (t) => {
@@ -251,4 +300,153 @@ test("record_image_generation persists a real saved image as an MCP resource", a
   const resource = await client.readResource({ uri: artifact.resourceUri });
   assert.equal(resource.contents[0].mimeType, "image/png");
   assert.deepEqual(Buffer.from(resource.contents[0].blob, "base64"), png);
+});
+
+test("record_image_generation ignores failed status instead of storing an error run", async (t) => {
+  const { client, server } = await createHarness();
+  t.after(async () => {
+    await client.close();
+    await server.close();
+  });
+
+  const prepared = await client.callTool({
+    name: "prepare_image_generation",
+    arguments: { skillId: "test-image-skill", prompt: "paper moon", aspectRatio: "3:4", references: [] },
+  });
+  const runId = prepared.structuredContent.run.id;
+  const recorded = await client.callTool({
+    name: "record_image_generation",
+    arguments: { runId, status: "failed", error: "OPENAI_API_KEY is not set" },
+  });
+  assert.equal(recorded.structuredContent.run.status, "awaiting_agent");
+  assert.match(recorded.content[0].text, /不收录/);
+});
+
+test("record_image_generation is bound to the MCP App so the widget receives the recorded run", async (t) => {
+  const { client, server } = await createHarness();
+  t.after(async () => {
+    await client.close();
+    await server.close();
+  });
+
+  const listed = await client.listTools();
+  const record = listed.tools.find((tool) => tool.name === "record_image_generation");
+  assert.equal(record._meta.ui.resourceUri, STUDIO_RESOURCE_URI);
+  assert.equal(record._meta["openai/outputTemplate"], STUDIO_RESOURCE_URI);
+});
+
+test("get_image_generation_run expires a stale handoff that never recorded an artifact", async (t) => {
+  const root = await mkdtemp(path.join(os.tmpdir(), "image-studio-stale-"));
+  const skillDir = path.join(root, "skill");
+  await mkdir(skillDir);
+  await writeFile(path.join(skillDir, "SKILL.md"), `---\nname: test-image-skill\ndescription: Makes a test image.\n---\nUse imagegen.`);
+  const server = await createStudioServer({
+    dataRoot: path.join(root, "data"),
+    widgetHtml: "<!doctype html>",
+    handoffTimeoutMs: 25,
+    catalogEntries: [{
+      id: "test-image-skill",
+      path: skillDir,
+      capabilities: { references: true, maxReferences: 2, aspectRatios: ["3:4"] },
+    }],
+  });
+  const [clientTransport, serverTransport] = InMemoryTransport.createLinkedPair();
+  await server.connect(serverTransport);
+  const client = new Client({ name: "stale-test", version: "1.0.0" });
+  await client.connect(clientTransport);
+  t.after(async () => { await client.close(); await server.close(); });
+
+  const prepared = await client.callTool({
+    name: "prepare_image_generation",
+    arguments: { skillId: "test-image-skill", prompt: "paper moon", aspectRatio: "3:4", references: [] },
+  });
+  const runId = prepared.structuredContent.run.id;
+  await client.callTool({ name: "mark_image_generation_handoff", arguments: { runId } });
+  await new Promise((resolve) => setTimeout(resolve, 40));
+
+  const stale = await client.callTool({ name: "get_image_generation_run", arguments: { runId } });
+  assert.equal(stale.structuredContent.run.status, "failed");
+  assert.match(stale.structuredContent.run.error, /时限|timeout|回写/i);
+});
+
+test("users can register a validated Skill into Studio and install it into Codex skills", async (t) => {
+  const root = await mkdtemp(path.join(os.tmpdir(), "image-studio-library-"));
+  const skillDir = path.join(root, "featured");
+  await mkdir(skillDir);
+  await writeFile(path.join(skillDir, "SKILL.md"), `---\nname: featured-poster\ndescription: Featured poster method.\n---\nUse imagegen.`);
+  const incoming = path.join(root, "incoming", "paper-poster");
+  await mkdir(incoming, { recursive: true });
+  await writeFile(
+    path.join(incoming, "SKILL.md"),
+    `---\nname: paper-poster\ndescription: Makes editorial paper posters for Codex.\n---\n# paper-poster\n`,
+  );
+  await writeFile(path.join(incoming, "notes.md"), "Keep this supporting file.\n");
+  const hostSkillsDir = path.join(root, "codex-skills");
+  const dataRoot = path.join(root, "data");
+  const server = await createStudioServer({
+    pluginRoot: root,
+    dataRoot,
+    hostSkillsDir,
+    widgetHtml: "<!doctype html>",
+    catalogEntries: [
+      {
+        id: "imagegen",
+        origin: "host",
+        path: path.join(hostSkillsDir, ".system", "imagegen"),
+        capabilities: { references: true, maxReferences: 3, aspectRatios: ["3:4"] },
+      },
+      {
+        id: "featured-poster",
+        origin: "bundled",
+        path: skillDir,
+        capabilities: { references: true, maxReferences: 2, aspectRatios: ["3:4"] },
+      },
+    ],
+  });
+  const [clientTransport, serverTransport] = InMemoryTransport.createLinkedPair();
+  await server.connect(serverTransport);
+  const client = new Client({ name: "library-test", version: "1.0.0" });
+  await client.connect(clientTransport);
+  t.after(async () => { await client.close(); await server.close(); });
+
+  const invalid = await client.callTool({
+    name: "register_image_skill",
+    arguments: { sourcePath: path.join(root, "missing-skill") },
+  });
+  assert.equal(invalid.isError, true);
+
+  const registered = await client.callTool({
+    name: "register_image_skill",
+    arguments: { sourcePath: incoming },
+  });
+  assert.ok(!registered.isError);
+  const ids = registered.structuredContent.skills.map((skill) => skill.id);
+  assert.deepEqual(ids.slice(-1), ["paper-poster"]);
+  assert.equal(registered.structuredContent.skill.origin, "registered");
+  assert.equal(registered.structuredContent.skill.canInstall, true);
+  assert.match(registered.structuredContent.skill.skillPath, /paper-poster\/SKILL\.md$/);
+
+  const duplicate = await client.callTool({
+    name: "register_image_skill",
+    arguments: { sourcePath: incoming },
+  });
+  assert.equal(duplicate.isError, true);
+  assert.match(duplicate.content[0].text, /已经注册/);
+
+  const blockedHost = await client.callTool({
+    name: "install_image_skill",
+    arguments: { skillId: "imagegen" },
+  });
+  assert.equal(blockedHost.isError, true);
+
+  const installed = await client.callTool({
+    name: "install_image_skill",
+    arguments: { skillId: "paper-poster" },
+  });
+  assert.ok(!installed.isError);
+  assert.equal(installed.structuredContent.destination, path.join(hostSkillsDir, "paper-poster"));
+  assert.equal(
+    await readFile(path.join(hostSkillsDir, "paper-poster", "notes.md"), "utf8"),
+    "Keep this supporting file.\n",
+  );
 });

@@ -9,6 +9,8 @@ const previewState: StudioSnapshot = {
       description: "把电影概念或参考图重绘成 1930s–1970s 手绘院线海报。",
       category: "海报",
       availability: "ready",
+      origin: "bundled",
+      canInstall: true,
       contentHash: "9e42b1a8b62f",
       preview: "/previews/classic-epic-demo.png",
       examples: [
@@ -25,6 +27,8 @@ const previewState: StudioSnapshot = {
       description: "把一句话、物件或情绪做成诗意纸张拼贴海报。",
       category: "杂志",
       availability: "ready",
+      origin: "bundled",
+      canInstall: true,
       contentHash: "c1d938b7d5aa",
       preview: "/previews/minimal-zine-demo.jpeg",
       examples: [
@@ -41,6 +45,8 @@ const previewState: StudioSnapshot = {
       description: "从内容中选择合适布局与视觉风格，生成清晰的信息图。",
       category: "信息图",
       availability: "ready",
+      origin: "bundled",
+      canInstall: true,
       contentHash: "811ab824d0c3",
       preview: "/previews/infographic-demo.png",
       examples: [
@@ -57,6 +63,8 @@ const previewState: StudioSnapshot = {
       description: "通用文生图、参考图编辑与风格探索。",
       category: "通用",
       availability: "ready",
+      origin: "host",
+      canInstall: false,
       contentHash: "system",
       preview: "/previews/imagegen-demo.png",
       examples: [

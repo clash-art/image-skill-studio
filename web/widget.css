@@ -17,6 +17,15 @@
 
 * { box-sizing: border-box; }
 html, body, #studio-root { min-height: 100%; margin: 0; }
+html[data-display-mode="pip"],
+html[data-display-mode="fullscreen"],
+html[data-display-mode="pip"] body,
+html[data-display-mode="fullscreen"] body,
+html[data-display-mode="pip"] #studio-root,
+html[data-display-mode="fullscreen"] #studio-root {
+  height: 100%;
+  min-height: 100%;
+}
 html, body { background: var(--cream); color: var(--ink); }
 body { font-family: var(--font-body); }
 button, input, textarea, select { font: inherit; }
@@ -99,9 +108,66 @@ select:focus-visible {
 .route-heading h1,
 .route-heading h2 { margin: 0; font-family: var(--font-display); font-size: 23px; font-weight: 550; letter-spacing: -0.035em; }
 .route-heading > span { min-width: 27px; height: 27px; display: grid; place-items: center; border-radius: 999px; color: var(--blue-deep); background: var(--blue-pale); font-size: 9px; font-weight: 800; }
+.route-heading__actions { display: flex; align-items: center; gap: 8px; }
 .icon-action,
 .back-action { border: 0; background: transparent; cursor: pointer; }
 .icon-action { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 50%; color: var(--blue-deep); background: rgba(255, 255, 255, 0.56); }
+.skill-register-form {
+  display: grid;
+  gap: 10px;
+  margin: 0 0 18px;
+  padding: 14px 15px;
+  border-radius: 22px;
+  background: rgba(255, 253, 248, 0.72);
+  box-shadow: 0 10px 28px rgba(40, 48, 54, 0.07);
+}
+.skill-register-form input[type="text"],
+.skill-register-form input:not([type]) {
+  width: 100%;
+  min-height: 44px;
+  border: 0;
+  border-radius: 14px;
+  padding: 0 14px;
+  background: var(--paper);
+  color: var(--ink);
+}
+.skill-register-form__overwrite {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 12px;
+}
+.skill-register-form__notice,
+.skill-install__notice {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.45;
+}
+.skill-install {
+  display: grid;
+  justify-items: end;
+  gap: 6px;
+  min-width: 0;
+}
+.skill-install-action {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  border: 0;
+  border-radius: 999px;
+  padding: 0 14px;
+  color: var(--ink);
+  background: rgba(255, 253, 248, 0.74);
+  box-shadow: 0 8px 24px rgba(26, 30, 32, 0.08);
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 750;
+  backdrop-filter: blur(10px);
+}
+.skill-install-action:disabled { cursor: not-allowed; opacity: 0.42; }
 
 .recent-work__rail {
   --rail-edge-fade: clamp(18px, 3vw, 34px);
@@ -239,6 +305,7 @@ select:focus-visible {
   min-height: 48px;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 10px;
 }
 .skill-detail-tabs {
@@ -329,18 +396,41 @@ select:focus-visible {
 .morphing-composer__body { overflow: hidden; border-radius: 20px; padding: 10px; background: #eee9df; }
 .morphing-composer__body textarea { width: 100%; min-height: 138px; resize: vertical; border: 0; border-radius: 15px; outline: 0; padding: 14px 15px; color: var(--ink); background: rgba(255, 253, 248, 0.92); font-family: var(--font-display); font-size: 15px; line-height: 1.55; }
 .morphing-composer__body textarea::placeholder { color: #969690; }
-.reference-strip { display: flex; gap: 8px; overflow-x: auto; min-height: 60px; margin-top: 10px; padding: 1px 1px 5px; scrollbar-width: none; }
+.compose-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 10px;
+  min-height: 44px;
+}
+.compose-toolbar__spacer { flex: 1; min-width: 0; }
+.reference-strip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+  min-width: 0;
+  flex: 1;
+  scrollbar-width: none;
+}
 .reference-add,
-.reference-thumb { position: relative; flex: 0 0 58px; height: 58px; margin: 0; overflow: hidden; border-radius: 17px; background: var(--blue-pale); }
+.reference-thumb {
+  position: relative;
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 14px;
+  background: var(--blue-pale);
+}
 .reference-add { display: grid; place-items: center; color: var(--blue-deep); cursor: pointer; }
 .reference-add input { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
 .reference-thumb { box-shadow: 0 8px 20px rgba(40, 48, 54, 0.11); }
 .reference-thumb img { width: 100%; height: 100%; object-fit: cover; }
-.reference-thumb button { position: absolute; top: 3px; right: 3px; width: 19px; height: 19px; display: grid; place-items: center; border: 0; border-radius: 50%; color: white; background: rgba(23, 26, 28, 0.78); cursor: pointer; }
-.reference-thumb select { position: absolute; right: 3px; bottom: 3px; left: 3px; width: calc(100% - 6px); border: 0; border-radius: 999px; outline: 0; padding: 2px; background: rgba(255, 255, 255, 0.9); font-size: 6px; }
-.compose-card__actions { display: flex; align-items: center; justify-content: space-between; gap: 9px; margin-top: 10px; }
-.compose-card__actions > select { flex: none; height: 42px; border: 0; border-radius: 999px; outline: 0; padding: 0 13px; color: var(--blue-deep); background: var(--blue-pale); font-size: 10px; font-weight: 750; }
-.handoff-button { min-width: 0; padding-inline: 15px; }
+.reference-thumb button { position: absolute; top: 3px; right: 3px; width: 18px; height: 18px; display: grid; place-items: center; border: 0; border-radius: 50%; color: white; background: rgba(23, 26, 28, 0.78); cursor: pointer; }
+.handoff-button { flex: none; min-width: 0; height: 44px; min-height: 44px; padding-inline: 15px; }
 .compose-error { margin: 9px 3px 1px; color: var(--danger); font-size: 9px; }
 .spin { animation: studio-spin 1.15s linear infinite; }
 
@@ -473,7 +563,6 @@ select:focus-visible {
 }
 
 @media (pointer: coarse) {
-  .compose-card__actions > select,
   .skill-results__feed .studio-button--sm { min-height: 44px; }
 }
 
@@ -502,9 +591,7 @@ select:focus-visible {
 
 @media (max-width: 380px) {
   .recent-work__rail { grid-auto-columns: minmax(154px, 58%); }
-  .compose-card__actions { align-items: stretch; flex-direction: column; }
-  .compose-card__actions > select { width: 100%; }
-  .handoff-button { width: 100%; }
+  .handoff-button { padding-inline: 12px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

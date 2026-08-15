@@ -9,7 +9,13 @@ import { z } from "zod";
 
 import { buildGenerationPrompt, validateGenerationRequest } from "../lib/agent-command.mjs";
 import { loadSkillCatalog } from "../lib/skill-catalog.mjs";
-import { DEFAULT_CATALOG_ENTRIES, DEFAULT_RUN_SEEDS } from "./catalog-config.mjs";
+import {
+  HOST_SKILL_DIR,
+  installStudioSkill,
+  listRegisteredSkillEntries,
+  registerStudioSkill,
+} from "../lib/studio-skill-registry.mjs";
+import { DEFAULT_CATALOG_ENTRIES, DEFAULT_RUN_SEEDS, createCatalogEntries } from "./catalog-config.mjs";
 import { RunStore } from "./run-store.mjs";
 
 export const STUDIO_RESOURCE_URI = "ui://image-skill-studio/v1/workbench.html";
@@ -22,16 +28,19 @@ const referenceInput = z.object({
   role: z.enum(["subject", "style", "composition", "reference"]).optional(),
 });
 
-function toolMeta({ resource = false, invoking, invoked, visibility }) {
+function toolMeta({ render = false, invoking, invoked, visibility }) {
+  const ui = { visibility: visibility || ["model", "app"] };
   const meta = {
     "openai/toolInvocation/invoking": invoking,
     "openai/toolInvocation/invoked": invoked,
-    ui: { visibility: visibility || ["model", "app"] },
+    // Codex still proxies widget tools through the Apps SDK path, where this
+    // defaults to false and the host returns MCP error -32000.
+    "openai/widgetAccessible": true,
+    ui,
   };
-  if (resource) {
-    meta.ui.resourceUri = STUDIO_RESOURCE_URI;
+  if (render) {
+    ui.resourceUri = STUDIO_RESOURCE_URI;
     meta["openai/outputTemplate"] = STUDIO_RESOURCE_URI;
-    meta["openai/widgetAccessible"] = true;
   }
   return meta;
 }
@@ -44,6 +53,8 @@ function skillSummary(skill) {
     category: skill.category,
     accent: skill.accent,
     source: skill.source,
+    origin: skill.origin,
+    canInstall: skill.canInstall,
     version: skill.version,
     contentHash: skill.contentHash,
     skillPath: skill.skillPath,
@@ -122,20 +133,33 @@ async function persistSavedArtifact({ savedPath, runId, dataRoot, artifactRoots 
 }
 
 export async function createStudioServer({
+  pluginRoot = process.env.PLUGIN_ROOT || process.cwd(),
   dataRoot = process.env.PLUGIN_DATA || path.join(os.homedir(), ".codex", "image-skill-studio"),
   widgetHtml,
-  catalogEntries = DEFAULT_CATALOG_ENTRIES,
-  runSeeds = catalogEntries === DEFAULT_CATALOG_ENTRIES ? DEFAULT_RUN_SEEDS : [],
+  catalogEntries,
+  runSeeds,
   generationRunner,
+  hostSkillsDir = HOST_SKILL_DIR,
+  handoffTimeoutMs = Number(process.env.IMAGE_SKILL_STUDIO_HANDOFF_TIMEOUT_MS) || 10 * 60_000,
   artifactRoots = [
     path.join(process.env.CODEX_HOME || path.join(os.homedir(), ".codex"), "generated_images"),
     dataRoot,
   ],
 } = {}) {
-  const catalog = await loadSkillCatalog(catalogEntries);
+  const featuredEntries = catalogEntries ?? createCatalogEntries(pluginRoot);
+  const seeds = runSeeds ?? (catalogEntries == null || catalogEntries === DEFAULT_CATALOG_ENTRIES ? DEFAULT_RUN_SEEDS : []);
+  const bundledIds = featuredEntries.filter((entry) => entry.origin !== "host").map((entry) => entry.id);
+
+  async function loadCatalog() {
+    const featuredIds = new Set(featuredEntries.map((entry) => entry.id));
+    const registered = (await listRegisteredSkillEntries(dataRoot)).filter((entry) => !featuredIds.has(entry.id));
+    return loadSkillCatalog([...featuredEntries, ...registered]);
+  }
+
+  let catalog = await loadCatalog();
   const store = new RunStore(dataRoot);
   await store.load();
-  await store.seedIfEmpty(runSeeds.flatMap((seed) => {
+  await store.seedIfEmpty(seeds.flatMap((seed) => {
     const skill = catalog.find((entry) => entry.id === seed.skillId);
     if (!skill) return [];
     const createdAt = seed.createdAt || new Date().toISOString();
@@ -240,9 +264,12 @@ export async function createStudioServer({
         {
           uri: STUDIO_RESOURCE_URI,
           mimeType: RESOURCE_MIME_TYPE,
-          text: widgetHtml,
+          text: typeof widgetHtml === "function" ? await widgetHtml() : widgetHtml,
           _meta: {
-            ui: { prefersBorder: false },
+            ui: {
+              prefersBorder: false,
+              availableDisplayModes: ["fullscreen"],
+            },
             "openai/widgetDescription": "Codex 生图侧栏：Feed 展示生成记录与 Skill 示例，Skill 详情负责 handoff、结果与小红书导出。",
             "openai/widgetPrefersBorder": false,
           },
@@ -263,9 +290,10 @@ export async function createStudioServer({
         runs: z.array(z.record(z.string(), z.unknown())),
       },
       annotations: { readOnlyHint: true, openWorldHint: false, destructiveHint: false },
-      _meta: toolMeta({ resource: true, invoking: "正在打开生图工作台…", invoked: "生图工作台已打开" }),
+      _meta: toolMeta({ render: true, invoking: "正在打开生图工作台…", invoked: "生图工作台已打开" }),
     },
     async () => {
+      await store.expireStale({ timeoutMs: handoffTimeoutMs });
       const runs = await store.list();
       return {
         structuredContent: { skills: catalog.map(skillSummary), runs },
@@ -284,7 +312,7 @@ export async function createStudioServer({
       inputSchema: { runId: z.string() },
       outputSchema: { run: z.record(z.string(), z.unknown()) },
       annotations: { readOnlyHint: false, openWorldHint: false, destructiveHint: false, idempotentHint: true },
-      _meta: toolMeta({ visibility: ["app"], invoking: "正在 hand off 给 Codex…", invoked: "Codex 已接手" }),
+      _meta: toolMeta({ invoking: "正在 hand off 给 Codex…", invoked: "Codex 已接手" }),
     },
     async ({ runId }) => {
       const current = await store.get(runId);
@@ -341,7 +369,7 @@ export async function createStudioServer({
       inputSchema: { runId: z.string() },
       outputSchema: { run: z.record(z.string(), z.unknown()) },
       annotations: { readOnlyHint: false, openWorldHint: false, destructiveHint: false, idempotentHint: true },
-      _meta: toolMeta({ visibility: ["app"], invoking: "正在记录 handoff…", invoked: "Handoff 已记录" }),
+      _meta: toolMeta({ invoking: "正在记录 handoff…", invoked: "Handoff 已记录" }),
     },
     async ({ runId }) => {
       const current = await store.get(runId);
@@ -382,6 +410,94 @@ export async function createStudioServer({
 
   registerAppTool(
     server,
+    "register_image_skill",
+    {
+      title: "Register an image skill into Studio",
+      description:
+        "Validate a local Codex Skill directory or SKILL.md, copy it into Image Skill Studio, and add it to the workbench catalog.",
+      inputSchema: {
+        sourcePath: z.string(),
+        overwrite: z.boolean().optional(),
+      },
+      outputSchema: {
+        skills: z.array(z.record(z.string(), z.unknown())),
+        skill: z.record(z.string(), z.unknown()),
+      },
+      annotations: { readOnlyHint: false, openWorldHint: false, destructiveHint: false },
+      _meta: toolMeta({ invoking: "正在校验并注册 Skill…", invoked: "Skill 已注册到 Studio" }),
+    },
+    async ({ sourcePath, overwrite }) => {
+      const result = await registerStudioSkill({
+        sourcePath,
+        dataRoot,
+        overwrite: Boolean(overwrite),
+        bundledIds,
+      });
+      if (!result.ok) {
+        return {
+          isError: true,
+          structuredContent: { skills: catalog.map(skillSummary), skill: {} },
+          content: [{ type: "text", text: result.message }],
+        };
+      }
+      catalog = await loadCatalog();
+      const skill = catalog.find((entry) => entry.id === result.skill.id);
+      return {
+        structuredContent: {
+          skills: catalog.map(skillSummary),
+          skill: skill ? skillSummary(skill) : result.skill,
+        },
+        content: [{ type: "text", text: `已把 ${result.skill.id} 注册进 Image Skill Studio。` }],
+      };
+    },
+  );
+
+  registerAppTool(
+    server,
+    "install_image_skill",
+    {
+      title: "Install a Studio skill into Codex skills",
+      description:
+        "Copy a Studio-hosted image Skill into the user's built-in Codex skills directory (~/.codex/skills).",
+      inputSchema: {
+        skillId: z.string(),
+        overwrite: z.boolean().optional(),
+      },
+      outputSchema: {
+        skills: z.array(z.record(z.string(), z.unknown())),
+        destination: z.string(),
+      },
+      annotations: { readOnlyHint: false, openWorldHint: false, destructiveHint: false },
+      _meta: toolMeta({ invoking: "正在安装到 Codex Skills…", invoked: "已安装到 Codex Skills" }),
+    },
+    async ({ skillId, overwrite }) => {
+      const result = await installStudioSkill({
+        skillId,
+        dataRoot,
+        hostSkillsDir,
+        catalog,
+        pluginRoot,
+        overwrite: Boolean(overwrite),
+      });
+      if (!result.ok) {
+        return {
+          isError: true,
+          structuredContent: { skills: catalog.map(skillSummary), destination: "" },
+          content: [{ type: "text", text: result.message }],
+        };
+      }
+      return {
+        structuredContent: {
+          skills: catalog.map(skillSummary),
+          destination: result.destination,
+        },
+        content: [{ type: "text", text: `已把 ${skillId} 安装到 ${result.destination}。` }],
+      };
+    },
+  );
+
+  registerAppTool(
+    server,
     "prepare_image_generation",
     {
       title: "Prepare image generation",
@@ -399,11 +515,7 @@ export async function createStudioServer({
         instruction: z.string(),
       },
       annotations: { readOnlyHint: false, openWorldHint: false, destructiveHint: false, idempotentHint: true },
-      _meta: {
-        ...toolMeta({ visibility: ["app"], invoking: "正在准备 Codex 指令…", invoked: "Codex 指令已准备" }),
-        "openai/fileParams": ["references"],
-        ui: { visibility: ["app"] },
-      },
+      _meta: toolMeta({ invoking: "正在准备 Codex 指令…", invoked: "Codex 指令已准备" }),
     },
     async ({ skillId, prompt, aspectRatio, clientRequestId, references }) => {
       const skill = catalog.find((entry) => entry.id === skillId);
@@ -456,12 +568,15 @@ export async function createStudioServer({
       inputSchema: { runId: z.string() },
       outputSchema: { run: z.record(z.string(), z.unknown()).nullable() },
       annotations: { readOnlyHint: true, openWorldHint: false, destructiveHint: false },
-      _meta: toolMeta({ visibility: ["app"], invoking: "正在读取生成状态…", invoked: "生成状态已更新" }),
+      _meta: toolMeta({ invoking: "正在读取生成状态…", invoked: "生成状态已更新" }),
     },
-    async ({ runId }) => ({
-      structuredContent: { run: await store.get(runId) },
-      content: [{ type: "text", text: `已读取 ${runId}。` }],
-    }),
+    async ({ runId }) => {
+      await store.expireStale({ timeoutMs: handoffTimeoutMs });
+      return {
+        structuredContent: { run: await store.get(runId) },
+        content: [{ type: "text", text: `已读取 ${runId}。` }],
+      };
+    },
   );
 
   registerAppTool(
@@ -470,7 +585,7 @@ export async function createStudioServer({
     {
       title: "Record generated image",
       description:
-        "Called by the Codex agent after image_gen finishes. Store the real image artifact against the prepared run so the right sidebar can display it.",
+        "Called by the Codex agent only after image_gen produces a real image. Store that artifact against the prepared run. Do not call this tool when generation fails.",
       inputSchema: {
         runId: z.string(),
         status: z.enum(["succeeded", "failed", "cancelled"]),
@@ -482,11 +597,21 @@ export async function createStudioServer({
       outputSchema: { run: z.record(z.string(), z.unknown()) },
       annotations: { readOnlyHint: false, openWorldHint: false, destructiveHint: false, idempotentHint: true },
       _meta: {
-        ...toolMeta({ invoking: "正在收录生成图片…", invoked: "生成图片已收录" }),
+        ...toolMeta({ render: true, invoking: "正在收录生成图片…", invoked: "生成图片已收录" }),
         "openai/fileParams": ["image"],
       },
     },
     async ({ runId, status, image, savedPath, summary, error }) => {
+      const current = await store.get(runId);
+      if (!current) {
+        return { isError: true, structuredContent: { run: {} }, content: [{ type: "text", text: `找不到 ${runId}。` }] };
+      }
+      if (status !== "succeeded") {
+        return {
+          structuredContent: { run: current },
+          content: [{ type: "text", text: "生成失败不收录。" }],
+        };
+      }
       const artifacts = savedPath
         ? [await persistSavedArtifact({ savedPath, runId, dataRoot, artifactRoots })]
         : image
@@ -502,7 +627,7 @@ export async function createStudioServer({
       for (const artifact of run.artifacts || []) registerArtifactResource(artifact);
       return {
         structuredContent: { run },
-        content: [{ type: "text", text: run.status === "succeeded" ? `图片已记录到 ${runId}。` : `${runId} 未生成图片。` }],
+        content: [{ type: "text", text: `图片已记录到 ${runId}。` }],
       };
     },
   );

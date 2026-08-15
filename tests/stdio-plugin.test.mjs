@@ -41,3 +41,27 @@ test("the built plugin serves its real MCP App over stdio", async (t) => {
   assert.match(resource.contents[0].text, /ui\/message/);
   assert.match(resource.contents[0].text, /Hand off to Codex|交给 Codex|Codex Agent/);
 });
+
+test("the built plugin still serves the MCP App when PLUGIN_ROOT points at a stripped cache version", async (t) => {
+  const dataRoot = await mkdtemp(path.join(os.tmpdir(), "image-skill-studio-stdio-ghost-"));
+  const emptyCwd = await mkdtemp(path.join(os.tmpdir(), "image-skill-studio-empty-cwd-"));
+  const ghostRoot = path.join(os.tmpdir(), "image-skill-studio-0.1.0");
+  const transport = new StdioClientTransport({
+    command: "node",
+    args: [path.join(root, "runtime", "server.mjs")],
+    cwd: emptyCwd,
+    env: { ...process.env, PLUGIN_ROOT: ghostRoot, PLUGIN_DATA: dataRoot },
+    stderr: "pipe",
+  });
+  const client = new Client({ name: "image-skill-studio-ghost-root", version: "1.0.0" });
+  await client.connect(transport);
+  t.after(async () => {
+    await client.close();
+    await rm(dataRoot, { recursive: true, force: true });
+    await rm(emptyCwd, { recursive: true, force: true });
+  });
+
+  const resource = await client.readResource({ uri: "ui://image-skill-studio/v1/workbench.html" });
+  assert.equal(resource.contents[0].mimeType, "text/html;profile=mcp-app");
+  assert.match(resource.contents[0].text, /ui\/message/);
+});

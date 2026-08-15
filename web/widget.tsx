@@ -7,6 +7,8 @@ import {
   type StudioFile,
   type StudioSnapshot,
 } from "../components/image-skill-studio";
+import { preferWorkbenchDisplayMode } from "../lib/display-mode.mjs";
+import { applyStudioToolResult } from "../lib/studio-tool-result.mjs";
 import "./widget.css";
 
 declare global {
@@ -26,7 +28,7 @@ const embedded = window.parent !== window;
 const app = embedded
   ? new App(
       { name: "Image Skill Studio", version: "0.1.0" },
-      { availableDisplayModes: ["inline", "fullscreen"] },
+      { availableDisplayModes: ["fullscreen"] },
       { strict: true, autoResize: true },
     )
   : null;
@@ -42,12 +44,9 @@ function structured<T>(value: unknown): T {
   return result.structuredContent;
 }
 
-function publish(next: Partial<StudioSnapshot>) {
-  currentState = {
-    skills: next.skills?.length ? next.skills : currentState.skills,
-    runs: next.runs ?? currentState.runs,
-  };
-  for (const listener of listeners) listener(next);
+function publish(next: Partial<StudioSnapshot> & { run?: StudioSnapshot["runs"][number] }) {
+  currentState = applyStudioToolResult(currentState, next);
+  for (const listener of listeners) listener(currentState);
   if (appReady) void resolveMediaResources();
 }
 
@@ -124,9 +123,43 @@ async function resolveMediaResources() {
   }
 }
 
+function errorDetail(error: unknown) {
+  if (error && typeof error === "object" && "message" in error) return String((error as { message: unknown }).message);
+  return String(error);
+}
+
+function toolResultError(name: string, value: unknown) {
+  const result = value as { isError?: boolean; content?: Array<{ text?: string }> } | undefined;
+  if (!result?.isError) return null;
+  return result.content?.find((entry) => entry.text)?.text || `${name} 失败。`;
+}
+
 async function callTool<T>(name: string, args: Record<string, unknown>) {
-  if (app && appReady) return structured<T>(await app.callServerTool({ name, arguments: args }));
-  if (window.openai?.callTool) return structured<T>(await window.openai.callTool(name, args));
+  const failures: string[] = [];
+  // Codex still implements the Apps SDK alias more completely than tools/call proxying.
+  if (window.openai?.callTool) {
+    try {
+      const result = await window.openai.callTool(name, args);
+      const failed = toolResultError(name, result);
+      if (failed) throw Object.assign(new Error(failed), { toolLogic: true });
+      return structured<T>(result);
+    } catch (error) {
+      if (error && typeof error === "object" && "toolLogic" in error) throw error;
+      failures.push(`callTool: ${errorDetail(error)}`);
+    }
+  }
+  if (app && appReady) {
+    try {
+      const result = await app.callServerTool({ name, arguments: args });
+      const failed = toolResultError(name, result);
+      if (failed) throw Object.assign(new Error(failed), { toolLogic: true });
+      return structured<T>(result);
+    } catch (error) {
+      if (error && typeof error === "object" && "toolLogic" in error) throw error;
+      failures.push(`tools/call: ${errorDetail(error)}`);
+    }
+  }
+  if (failures.length) throw new Error(`${name} 失败：${failures.join("；")}`);
   throw new Error("当前页面不在支持 MCP Apps 的宿主中。");
 }
 
@@ -142,12 +175,6 @@ function fileToDataUrl(file: File) {
 async function blobToBase64(blob: Blob) {
   const dataUrl = await fileToDataUrl(new File([blob], "export.png", { type: blob.type }));
   return dataUrl.slice(dataUrl.indexOf(",") + 1);
-}
-
-function imageBlock(reference: StudioFile) {
-  const value = reference.data_url || (reference.download_url.startsWith("data:") ? reference.download_url : "");
-  const match = value.match(/^data:([^;,]+);base64,(.+)$/);
-  return match ? { type: "image" as const, mimeType: match[1], data: match[2] } : null;
 }
 
 const bridge: StudioBridge = {
@@ -178,6 +205,24 @@ const bridge: StudioBridge = {
     const snapshot = { skills: next.skills, runs: currentState.runs };
     publish(snapshot);
     return snapshot;
+  },
+
+  async registerSkill(input) {
+    const next = await callTool<{ skills: StudioSnapshot["skills"]; skill?: StudioSnapshot["skills"][number] }>(
+      "register_image_skill",
+      { sourcePath: input.sourcePath, overwrite: Boolean(input.overwrite) },
+    );
+    publish({ skills: next.skills });
+    return next;
+  },
+
+  async installSkill(input) {
+    const next = await callTool<{ skills: StudioSnapshot["skills"]; destination?: string }>(
+      "install_image_skill",
+      { skillId: input.skillId, overwrite: Boolean(input.overwrite) },
+    );
+    publish({ skills: next.skills });
+    return next;
   },
 
   async uploadFile(file) {
@@ -214,13 +259,17 @@ const bridge: StudioBridge = {
         prompt: input.prompt,
         aspectRatio: input.aspectRatio,
         clientRequestId: input.clientRequestId,
-        references: input.references.map((reference) => ({
-          download_url: reference.download_url,
-          file_id: reference.file_id,
-          file_name: reference.file_name,
-          mime_type: reference.mime_type,
-          role: reference.role,
-        })),
+        ...(input.references.length
+          ? {
+              references: input.references.map((reference) => ({
+                download_url: reference.download_url,
+                file_id: reference.file_id,
+                file_name: reference.file_name,
+                mime_type: reference.mime_type,
+                role: reference.role,
+              })),
+            }
+          : {}),
       },
     );
     publish({ runs: [prepared.run, ...currentState.runs.filter((run) => run.id !== prepared.run.id)] });
@@ -228,45 +277,63 @@ const bridge: StudioBridge = {
   },
 
   async sendInstruction(instruction, context) {
+    const failures: string[] = [];
     let response: { isError?: boolean } | undefined;
+
     if (app && appReady) {
-      const images = (context?.references ?? [])
-        .map(imageBlock)
-        .filter((block): block is NonNullable<ReturnType<typeof imageBlock>> => block !== null);
-      response = await app.sendMessage({
-        role: "user",
-        content: [{ type: "text", text: instruction }, ...images],
-      });
-    } else if (window.openai?.sendFollowUpMessage) {
-      response = await window.openai.sendFollowUpMessage({ prompt: instruction });
-    } else {
-      throw new Error("宿主不支持 ui/message，无法 hand off 给 Codex。");
+      try {
+        // Codex ui/message currently accepts user text. Reference images are already
+        // named in the prepared instruction; extra image blocks trip the MCP proxy.
+        response = await app.sendMessage({
+          role: "user",
+          content: [{ type: "text", text: instruction }],
+        });
+      } catch (error) {
+        failures.push(`ui/message: ${errorDetail(error)}`);
+        response = { isError: true };
+      }
     }
 
-    if (!response?.isError && context?.runId) {
+    if ((!response || response.isError) && window.openai?.sendFollowUpMessage) {
+      try {
+        response = await window.openai.sendFollowUpMessage({ prompt: instruction });
+      } catch (error) {
+        failures.push(`sendFollowUpMessage: ${errorDetail(error)}`);
+        response = { isError: true };
+      }
+    }
+
+    if (response && !response.isError && context?.runId) {
       try {
         const marked = await callTool<{ run: StudioSnapshot["runs"][number] }>("mark_image_generation_handoff", {
           runId: context.runId,
         });
-        publish({ runs: [marked.run, ...currentState.runs.filter((run) => run.id !== marked.run.id)] });
+        publish({ run: marked.run });
       } catch {
-        // ui/message was accepted; the final agent callback remains authoritative.
+        // ui/message was accepted; record_image_generation or the timeout remains authoritative.
       }
+      return response;
     }
-    return response;
+
+    if (!app && !window.openai?.sendFollowUpMessage && context?.runId) {
+      const dispatched = await callTool<{ run: StudioSnapshot["runs"][number] }>("run_prepared_image_generation", {
+        runId: context.runId,
+      });
+      publish({ run: dispatched.run });
+      return { isError: false };
+    }
+
+    throw new Error(failures.length ? `无法 hand off 给 Codex：${failures.join("；")}` : "宿主不支持 ui/message，无法 hand off 给 Codex。");
   },
 
   async getRun(runId) {
     const result = await callTool<{ run: StudioSnapshot["runs"][number] | null }>("get_image_generation_run", { runId });
-    if (result.run) publish({ runs: [result.run, ...currentState.runs.filter((run) => run.id !== result.run?.id)] });
+    if (result.run) publish({ run: result.run });
     return result.run;
   },
 
   requestFullscreen() {
-    if (!appReady) return;
-    return app?.requestDisplayMode({ mode: "fullscreen" }).then((result) => {
-      document.documentElement.dataset.displayMode = result.mode;
-    });
+    return adoptWorkbenchSurface();
   },
 
   subscribe(listener) {
@@ -277,8 +344,8 @@ const bridge: StudioBridge = {
 
 if (app) {
   app.ontoolresult = (result) => {
-    const next = result.structuredContent as Partial<StudioSnapshot> | undefined;
-    if (next?.skills || next?.runs) publish(next);
+    const next = applyStudioToolResult(currentState, result.structuredContent);
+    if (next !== currentState) publish(next);
   };
   app.onhostcontextchanged = (context) => {
     if (context.displayMode) document.documentElement.dataset.displayMode = context.displayMode;
@@ -288,9 +355,24 @@ if (app) {
 const root = createRoot(document.getElementById("studio-root")!);
 root.render(<ImageSkillStudio initialState={currentState} bridge={bridge} />);
 
+async function adoptWorkbenchSurface() {
+  if (!app) return;
+  try {
+    const result = await app.requestDisplayMode({ mode: "fullscreen" });
+    document.documentElement.dataset.displayMode = result.mode;
+    return result;
+  } catch {
+    document.documentElement.dataset.displayMode = preferWorkbenchDisplayMode();
+  }
+}
+
 if (app) {
   app.connect(new PostMessageTransport(window.parent, window.parent))
-    .then(() => { appReady = true; void resolveMediaResources(); })
+    .then(async () => {
+      appReady = true;
+      await adoptWorkbenchSurface();
+      void resolveMediaResources();
+    })
     .catch((error) => {
       console.error("MCP App handshake failed; using window.openai compatibility bridge", error);
     });

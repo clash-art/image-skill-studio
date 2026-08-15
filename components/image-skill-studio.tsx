@@ -6,7 +6,9 @@ import {
   ArrowUpRight,
   CircleDashed,
   Download,
+  FolderDown,
   ImagePlus,
+  Plus,
   RefreshCw,
   Sparkles,
   X,
@@ -43,6 +45,8 @@ export type StudioSkill = {
   description: string;
   category: string;
   availability: "ready" | "missing" | "invalid" | string;
+  origin?: "host" | "bundled" | "registered" | "local" | string;
+  canInstall?: boolean;
   contentHash?: string;
   skillPath?: string;
   preview?: string;
@@ -118,6 +122,8 @@ export type StudioBridge = {
   ) => Promise<{ isError?: boolean } | void>;
   requestFullscreen?: () => Promise<void> | void;
   subscribe?: (listener: (snapshot: Partial<StudioSnapshot>) => void) => () => void;
+  registerSkill?(input: { sourcePath: string; overwrite?: boolean }): Promise<{ skills: StudioSkill[]; skill?: StudioSkill }>;
+  installSkill?(input: { skillId: string; overwrite?: boolean }): Promise<{ skills: StudioSkill[]; destination?: string }>;
 };
 
 type ImageSkillStudioProps = {
@@ -316,6 +322,12 @@ function createPreviewBridge(initial: StudioSnapshot): StudioBridge {
     async getRun(runId) {
       return structuredClone(snapshot.runs.find((run) => run.id === runId) ?? null);
     },
+    async registerSkill() {
+      return { skills: structuredClone(snapshot.skills), skill: structuredClone(snapshot.skills[0]) };
+    },
+    async installSkill() {
+      return { skills: structuredClone(snapshot.skills), destination: "~/.codex/skills/preview" };
+    },
   };
 }
 
@@ -360,6 +372,14 @@ export function ImageSkillStudio({ initialState, bridge, previewMode = false }: 
   const [references, setReferences] = useState<StudioFile[]>([]);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
+  const [registerOpen, setRegisterOpen] = useState(false);
+  const [registerPath, setRegisterPath] = useState("");
+  const [registerOverwrite, setRegisterOverwrite] = useState(false);
+  const [registerBusy, setRegisterBusy] = useState(false);
+  const [registerNotice, setRegisterNotice] = useState("");
+  const [installBusy, setInstallBusy] = useState(false);
+  const [installNotice, setInstallNotice] = useState("");
+  const [installCanOverwrite, setInstallCanOverwrite] = useState(false);
   const pollRef = useRef<number | null>(null);
   const promptRef = useRef<HTMLTextAreaElement>(null);
   const composerReturnFocusRef = useRef<HTMLElement | null>(null);
@@ -702,6 +722,8 @@ export function ImageSkillStudio({ initialState, bridge, previewMode = false }: 
     if (!next) return;
     setSelectedSkillId(skillId);
     setSelectedExampleId(null);
+    setInstallNotice("");
+    setInstallCanOverwrite(false);
     setAspectRatio(next.capabilities.aspectRatios.includes("3:4") ? "3:4" : next.capabilities.aspectRatios[0]);
     if (!next.capabilities.references) setReferences([]);
   }
@@ -945,6 +967,46 @@ export function ImageSkillStudio({ initialState, bridge, previewMode = false }: 
     });
   }
 
+  async function submitRegisteredSkill() {
+    if (!runtime.registerSkill || registerBusy) return;
+    const sourcePath = registerPath.trim();
+    if (!sourcePath) {
+      setRegisterNotice("请填写 Skill 目录或 SKILL.md 的绝对路径。");
+      return;
+    }
+    setRegisterBusy(true);
+    setRegisterNotice("");
+    try {
+      const result = await runtime.registerSkill({ sourcePath, overwrite: registerOverwrite });
+      if (result.skills?.length) setSnapshot((current) => ({ ...current, skills: result.skills }));
+      setRegisterNotice(`已注册 ${result.skill?.displayName || result.skill?.id || "Skill"}。`);
+      setRegisterPath("");
+      setRegisterOverwrite(false);
+    } catch (caught) {
+      setRegisterNotice(caught instanceof Error ? caught.message : String(caught));
+    } finally {
+      setRegisterBusy(false);
+    }
+  }
+
+  async function installSelectedSkill(overwrite = false) {
+    if (!skill || !runtime.installSkill || installBusy) return;
+    setInstallBusy(true);
+    setInstallNotice("");
+    try {
+      const result = await runtime.installSkill({ skillId: skill.id, overwrite });
+      if (result.skills?.length) setSnapshot((current) => ({ ...current, skills: result.skills }));
+      setInstallNotice(`已安装到 ${result.destination || "~/.codex/skills"}。`);
+      setInstallCanOverwrite(false);
+    } catch (caught) {
+      const message = caught instanceof Error ? caught.message : String(caught);
+      setInstallNotice(message);
+      setInstallCanOverwrite(/已经存在/.test(message));
+    } finally {
+      setInstallBusy(false);
+    }
+  }
+
   async function generate(draft?: { prompt?: string; aspectRatio?: string; references?: StudioFile[] }) {
     if (!skill || busy) return;
     const nextPrompt = (draft?.prompt ?? prompt).trim();
@@ -1119,10 +1181,58 @@ export function ImageSkillStudio({ initialState, bridge, previewMode = false }: 
             <section className="skill-feed" aria-labelledby="skill-feed-title">
               <motion.div {...routeGuiMotion} animate={guiOpacityMotion(feedRouteGuiHidden)} className="route-heading">
                 <h2 id="skill-feed-title">Skills</h2>
-                <button type="button" className="icon-action" aria-label="刷新 Skill" onClick={async () => setSnapshot(await runtime.refresh())}>
-                  <RefreshCw size={16} />
-                </button>
+                <div className="route-heading__actions">
+                  <button
+                    type="button"
+                    className="icon-action"
+                    aria-label="注册 Skill"
+                    aria-expanded={registerOpen}
+                    aria-controls="skill-register-form"
+                    onClick={() => {
+                      setRegisterOpen((open) => !open);
+                      setRegisterNotice("");
+                    }}
+                  >
+                    <Plus size={16} />
+                  </button>
+                  <button type="button" className="icon-action" aria-label="刷新 Skill" onClick={async () => setSnapshot(await runtime.refresh())}>
+                    <RefreshCw size={16} />
+                  </button>
+                </div>
               </motion.div>
+              {registerOpen ? (
+                <form
+                  id="skill-register-form"
+                  className="skill-register-form"
+                  onSubmit={(event) => {
+                    event.preventDefault();
+                    void submitRegisteredSkill();
+                  }}
+                >
+                  <label className="sr-only" htmlFor="skill-register-path">Skill 绝对路径</label>
+                  <input
+                    id="skill-register-path"
+                    type="text"
+                    value={registerPath}
+                    onChange={(event) => setRegisterPath(event.target.value)}
+                    placeholder="Skill 目录或 SKILL.md 的绝对路径"
+                    autoComplete="off"
+                    spellCheck={false}
+                  />
+                  <label className="skill-register-form__overwrite">
+                    <input
+                      type="checkbox"
+                      checked={registerOverwrite}
+                      onChange={(event) => setRegisterOverwrite(event.target.checked)}
+                    />
+                    覆盖已注册
+                  </label>
+                  <button type="submit" className="studio-button studio-button--default studio-button--sm" disabled={registerBusy || !runtime.registerSkill}>
+                    {registerBusy ? "校验中…" : "注册到 Studio"}
+                  </button>
+                  {registerNotice ? <p className="skill-register-form__notice" role="status">{registerNotice}</p> : null}
+                </form>
+              ) : null}
               <div className="skill-feed__cards">
                 {snapshot.skills.map((entry, index) => {
                   const examples = entry.examples?.length
@@ -1196,6 +1306,20 @@ export function ImageSkillStudio({ initialState, bridge, previewMode = false }: 
                       onKeyDown={handleDetailTabKeyDown}
                     >我的生成</button>
                   </div>
+                  {skill.canInstall !== false && skill.origin !== "host" ? (
+                    <div className="skill-install">
+                      <button
+                        type="button"
+                        className="skill-install-action"
+                        disabled={installBusy || routeInteractionLocked || !runtime.installSkill}
+                        onClick={() => installSelectedSkill(installCanOverwrite)}
+                      >
+                        {installBusy ? <CircleDashed className="spin" size={15} /> : <FolderDown size={15} />}
+                        {installCanOverwrite ? "覆盖安装" : "安装到 Codex"}
+                      </button>
+                      {installNotice ? <p className="skill-install__notice" role="status">{installNotice}</p> : null}
+                    </div>
+                  ) : null}
                 </motion.header>
 
                 <DetailTabPanel
@@ -1292,42 +1416,28 @@ export function ImageSkillStudio({ initialState, bridge, previewMode = false }: 
                       rows={5}
                     />
 
-                    {skill.capabilities.references ? (
-                      <div className="reference-strip">
-                        <label className="reference-add" title="添加参考图">
-                          <ImagePlus size={19} />
-                          <input
-                            type="file"
-                            accept="image/png,image/jpeg,image/webp"
-                            onChange={(event) => {
-                              const file = event.currentTarget.files?.[0];
-                              if (file) addReference(file);
-                            }}
-                          />
-                        </label>
-                        {references.map((reference) => (
-                          <figure className="reference-thumb" key={reference.file_id}>
-                            <img src={reference.preview_url || reference.download_url} alt="参考图" />
-                            <button type="button" aria-label="移除参考图" onClick={() => setReferences((current) => current.filter((entry) => entry.file_id !== reference.file_id))}><X size={11} /></button>
-                            <select
-                              aria-label="参考图角色"
-                              value={reference.role}
-                              onChange={(event) => setReferences((current) => current.map((entry) => entry.file_id === reference.file_id ? { ...entry, role: event.target.value as StudioFile["role"] } : entry))}
-                            >
-                              <option value="reference">参考</option>
-                              <option value="subject">主体</option>
-                              <option value="style">风格</option>
-                              <option value="composition">构图</option>
-                            </select>
-                          </figure>
-                        ))}
-                      </div>
-                    ) : null}
-
-                    <div className="compose-card__actions">
-                      <select aria-label="画幅" value={aspectRatio} onChange={(event) => setAspectRatio(event.target.value)}>
-                        {skill.capabilities.aspectRatios.map((ratio) => <option key={ratio}>{ratio}</option>)}
-                      </select>
+                    <div className="compose-toolbar">
+                      {skill.capabilities.references ? (
+                        <div className="reference-strip">
+                          <label className="reference-add" title="添加参考图">
+                            <ImagePlus size={18} />
+                            <input
+                              type="file"
+                              accept="image/png,image/jpeg,image/webp"
+                              onChange={(event) => {
+                                const file = event.currentTarget.files?.[0];
+                                if (file) addReference(file);
+                              }}
+                            />
+                          </label>
+                          {references.map((reference) => (
+                            <figure className="reference-thumb" key={reference.file_id}>
+                              <img src={reference.preview_url || reference.download_url} alt="参考图" />
+                              <button type="button" aria-label="移除参考图" onClick={() => setReferences((current) => current.filter((entry) => entry.file_id !== reference.file_id))}><X size={11} /></button>
+                            </figure>
+                          ))}
+                        </div>
+                      ) : <span className="compose-toolbar__spacer" />}
                       <Button className="handoff-button" onClick={() => generate()} disabled={busy}>
                         {busy ? <CircleDashed className="spin" size={16} /> : <Sparkles size={16} />}
                         {busy ? "Handing off…" : "Hand off to Codex"}

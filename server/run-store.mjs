@@ -2,6 +2,8 @@ import { randomUUID } from "node:crypto";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 
+const IN_FLIGHT_STATUSES = new Set(["awaiting_agent", "agent_running", "imagegen_running", "finalizing"]);
+
 function immutableCopy(value) {
   return JSON.parse(JSON.stringify(value));
 }
@@ -125,5 +127,20 @@ export class RunStore {
     });
     await this.persist();
     return immutableCopy(run);
+  }
+
+  async expireStale({ now = Date.now(), timeoutMs = 10 * 60_000 } = {}) {
+    await this.load();
+    const expired = [];
+    for (const run of [...this.runs.values()]) {
+      if (!IN_FLIGHT_STATUSES.has(run.status)) continue;
+      const started = Date.parse(run.updatedAt || run.createdAt);
+      if (!Number.isFinite(started) || now - started < timeoutMs) continue;
+      expired.push(await this.complete(run.id, {
+        status: "failed",
+        error: "Codex 没有在时限内回写生成结果",
+      }));
+    }
+    return expired;
   }
 }

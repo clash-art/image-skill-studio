@@ -44,6 +44,8 @@ test("loadSkillCatalog isolates a broken skill and fingerprints valid content", 
   assert.equal(catalog.length, 2);
   assert.equal(catalog[0].availability, "ready");
   assert.equal(catalog[0].displayName, "poster-maker");
+  assert.equal(catalog[0].origin, "local");
+  assert.equal(catalog[0].canInstall, true);
   assert.match(catalog[0].contentHash, /^[a-f0-9]{12}$/);
   assert.equal(catalog[1].availability, "missing");
   assert.match(catalog[1].error, /SKILL\.md/);
