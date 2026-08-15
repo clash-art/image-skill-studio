@@ -1,6 +1,6 @@
 {
   "name": "image-skill-studio",
-  "version": "0.1.0+codex.20260815073547",
+  "version": "0.1.0+codex.20260815073856",
   "description": "A Codex MCP App for discovering image-generation Skills, handing work to the current agent, and collecting results by Skill.",
   "author": {
     "name": "Image Skill Studio"

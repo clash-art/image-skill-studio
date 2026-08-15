@@ -8,6 +8,7 @@ import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { z } from "zod";
 
 import { buildGenerationPrompt, validateGenerationRequest } from "../lib/agent-command.mjs";
+import { PACKAGE_ROOT } from "../lib/package-root.mjs";
 import { loadSkillCatalog } from "../lib/skill-catalog.mjs";
 import {
   HOST_SKILL_DIR,
@@ -133,7 +134,7 @@ async function persistSavedArtifact({ savedPath, runId, dataRoot, artifactRoots 
 }
 
 export async function createStudioServer({
-  pluginRoot = process.env.PLUGIN_ROOT || process.cwd(),
+  pluginRoot = PACKAGE_ROOT,
   dataRoot = process.env.PLUGIN_DATA || path.join(os.homedir(), ".codex", "image-skill-studio"),
   widgetHtml,
   catalogEntries,
@@ -146,6 +147,7 @@ export async function createStudioServer({
     dataRoot,
   ],
 } = {}) {
+  if (widgetHtml == null) throw new Error("createStudioServer requires widgetHtml");
   const featuredEntries = catalogEntries ?? createCatalogEntries(pluginRoot);
   const seeds = runSeeds ?? (catalogEntries == null || catalogEntries === DEFAULT_CATALOG_ENTRIES ? DEFAULT_RUN_SEEDS : []);
   const bundledIds = featuredEntries.filter((entry) => entry.origin !== "host").map((entry) => entry.id);

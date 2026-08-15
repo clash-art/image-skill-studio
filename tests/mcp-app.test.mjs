@@ -92,7 +92,7 @@ test("MCP server exposes a standards-first app resource and useful tools", async
   assert.deepEqual(resource.contents[0]._meta.ui.availableDisplayModes, ["fullscreen"]);
 });
 
-test("the workbench HTML is read on each resource request so local rebuilds can land", async (t) => {
+test("createStudioServer can supply workbench HTML as a string or loader", async (t) => {
   const root = await mkdtemp(path.join(os.tmpdir(), "image-studio-widget-"));
   const skillDir = path.join(root, "skill");
   await mkdir(skillDir);

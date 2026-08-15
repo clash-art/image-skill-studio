@@ -3,60 +3,52 @@ import { watch } from "node:fs";
 import path from "node:path";
 
 const root = path.resolve(import.meta.dirname, "..");
-let pending = null;
+let pending = false;
 let running = false;
 
-function run(script) {
+function runPluginBuild() {
   return new Promise((resolve, reject) => {
-    const child = spawn(process.execPath, [path.join(root, "scripts", script)], {
+    const child = spawn("npm", ["run", "build:plugin"], {
       cwd: root,
       stdio: "inherit",
     });
     child.on("exit", (code) => {
       if (code === 0) resolve();
-      else reject(new Error(`${script} exited with ${code}`));
+      else reject(new Error(`build:plugin exited with ${code}`));
     });
   });
 }
 
-async function rebuild(kind) {
+async function rebuild() {
   if (running) {
-    pending = kind === "all" || pending === "all" || pending === "server" && kind === "widget" ? "all" : kind;
+    pending = true;
     return;
   }
   running = true;
   try {
-    if (kind === "widget" || kind === "all") {
-      console.log("[watch] rebuilding widget…");
-      await run("build-widget.mjs");
-    }
-    if (kind === "server" || kind === "all") {
-      console.log("[watch] rebuilding plugin server…");
-      await run("build-plugin.mjs");
-    }
-    console.log("[watch] ready. Reopen Image Skill Studio in Codex to load the new HTML.");
+    console.log("[watch] rebuilding plugin…");
+    await runPluginBuild();
+    console.log("[watch] ready. Reopen Image Skill Studio to load runtime/server.mjs.");
   } catch (error) {
     console.error("[watch]", error instanceof Error ? error.message : error);
   } finally {
     running = false;
     if (pending) {
-      const next = pending;
-      pending = null;
-      void rebuild(next);
+      pending = false;
+      void rebuild();
     }
   }
 }
 
-function schedule(kind) {
+function schedule() {
   clearTimeout(schedule.timer);
-  schedule.timer = setTimeout(() => void rebuild(kind), 120);
+  schedule.timer = setTimeout(() => void rebuild(), 120);
 }
 
-await rebuild("all");
+await rebuild();
 for (const directory of ["web", "components", "lib", "server", "skills"]) {
   watch(path.join(root, directory), { recursive: true }, (_event, filename) => {
     if (!filename || filename.endsWith(".map")) return;
-    schedule(directory === "server" ? "server" : "widget");
+    schedule();
   });
 }
-console.log("[watch] plugin sources. Codex still needs a reopen or new task after a server rebuild.");

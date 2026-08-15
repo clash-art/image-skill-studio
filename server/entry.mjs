@@ -1,29 +1,13 @@
-import { readFile } from "node:fs/promises";
-import path from "node:path";
-
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 
-import { EMBEDDED_WIDGET_HTML } from "image-skill-studio:widget-html";
-import { resolvePluginRoot } from "../lib/plugin-root.mjs";
+import { PACKAGE_ROOT } from "../lib/package-root.mjs";
+import workbenchHtml from "../public/widget.html";
 import { createCodexGenerationRunner } from "./generation-runner.mjs";
 import { createStudioServer } from "./studio-server.mjs";
 
-const pluginRoot = resolvePluginRoot({
-  moduleRoot: path.resolve(import.meta.dirname, ".."),
-});
-const widgetPath = path.join(pluginRoot, "public", "widget.html");
-
-async function loadWidgetHtml() {
-  try {
-    return await readFile(widgetPath, "utf8");
-  } catch {
-    return EMBEDDED_WIDGET_HTML;
-  }
-}
-
 const server = await createStudioServer({
-  pluginRoot,
-  widgetHtml: loadWidgetHtml,
-  generationRunner: createCodexGenerationRunner({ projectRoot: pluginRoot }),
+  pluginRoot: PACKAGE_ROOT,
+  widgetHtml: workbenchHtml,
+  generationRunner: createCodexGenerationRunner({ projectRoot: PACKAGE_ROOT }),
 });
 await server.connect(new StdioServerTransport());

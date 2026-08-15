@@ -9,13 +9,13 @@ import { StdioClientTransport } from "@modelcontextprotocol/sdk/client/stdio.js"
 
 const root = path.resolve(import.meta.dirname, "..");
 
-test("the built plugin serves its real MCP App over stdio", async (t) => {
+async function connectBuiltServer(t, { cwd, env } = {}) {
   const dataRoot = await mkdtemp(path.join(os.tmpdir(), "image-skill-studio-stdio-"));
   const transport = new StdioClientTransport({
     command: "node",
     args: [path.join(root, "runtime", "server.mjs")],
-    cwd: root,
-    env: { ...process.env, PLUGIN_ROOT: root, PLUGIN_DATA: dataRoot },
+    cwd: cwd ?? root,
+    env: { ...process.env, ...env, PLUGIN_DATA: dataRoot },
     stderr: "pipe",
   });
   const client = new Client({ name: "image-skill-studio-acceptance", version: "1.0.0" });
@@ -24,6 +24,11 @@ test("the built plugin serves its real MCP App over stdio", async (t) => {
     await client.close();
     await rm(dataRoot, { recursive: true, force: true });
   });
+  return client;
+}
+
+test("the built plugin serves its MCP App from the bundled runtime", async (t) => {
+  const client = await connectBuiltServer(t);
 
   const tools = await client.listTools();
   assert.ok(tools.tools.some((tool) => tool.name === "open_image_skill_studio"));
@@ -42,23 +47,14 @@ test("the built plugin serves its real MCP App over stdio", async (t) => {
   assert.match(resource.contents[0].text, /Hand off to Codex|交给 Codex|Codex Agent/);
 });
 
-test("the built plugin still serves the MCP App when PLUGIN_ROOT points at a stripped cache version", async (t) => {
-  const dataRoot = await mkdtemp(path.join(os.tmpdir(), "image-skill-studio-stdio-ghost-"));
+test("the bundled runtime does not depend on cwd or PLUGIN_ROOT to serve the workbench", async (t) => {
   const emptyCwd = await mkdtemp(path.join(os.tmpdir(), "image-skill-studio-empty-cwd-"));
-  const ghostRoot = path.join(os.tmpdir(), "image-skill-studio-0.1.0");
-  const transport = new StdioClientTransport({
-    command: "node",
-    args: [path.join(root, "runtime", "server.mjs")],
-    cwd: emptyCwd,
-    env: { ...process.env, PLUGIN_ROOT: ghostRoot, PLUGIN_DATA: dataRoot },
-    stderr: "pipe",
-  });
-  const client = new Client({ name: "image-skill-studio-ghost-root", version: "1.0.0" });
-  await client.connect(transport);
   t.after(async () => {
-    await client.close();
-    await rm(dataRoot, { recursive: true, force: true });
     await rm(emptyCwd, { recursive: true, force: true });
+  });
+  const client = await connectBuiltServer(t, {
+    cwd: emptyCwd,
+    env: { PLUGIN_ROOT: path.join(os.tmpdir(), "image-skill-studio-0.1.0") },
   });
 
   const resource = await client.readResource({ uri: "ui://image-skill-studio/v1/workbench.html" });

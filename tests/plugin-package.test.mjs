@@ -12,6 +12,8 @@ test("plugin manifest packages the bundled skill and MCP App server", async () =
   const mcp = JSON.parse(await readFile(new URL("../.mcp.json", import.meta.url), "utf8"));
   assert.equal(mcp.mcpServers["image-skill-studio"].command, "node");
   assert.equal(mcp.mcpServers["image-skill-studio"].args[0], "./runtime/server.mjs");
+  assert.equal(mcp.mcpServers["image-skill-studio"].cwd, ".");
+  assert.equal(mcp.mcpServers["image-skill-studio"].env, undefined);
 });
 
 test("plugin ships featured creative Skills beside the Studio Skill", async () => {
@@ -38,14 +40,15 @@ test("widget uses MCP Apps bridge first and OpenAI compatibility aliases second"
   assert.match(html, /window\.openai/);
 });
 
-test("the bundled server embeds the workbench HTML so Codex cache path bugs cannot ENOENT it", async () => {
+test("the bundled runtime inlines the workbench HTML", async () => {
   const [server, html] = await Promise.all([
     readFile(new URL("../runtime/server.mjs", import.meta.url), "utf8"),
     readFile(new URL("../public/widget.html", import.meta.url), "utf8"),
   ]);
-  assert.match(server, /EMBEDDED_WIDGET_HTML/);
   assert.ok(html.includes("ui/message"));
   assert.ok(server.includes("ui/message"));
+  assert.doesNotMatch(server, /readFile\(widgetPath/);
+  assert.doesNotMatch(server, /process\.env\.PLUGIN_ROOT/);
 });
 
 test("widget merges a recorded run from ontoolresult and can fall back to the Codex runner", async () => {

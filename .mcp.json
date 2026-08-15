@@ -5,10 +5,7 @@
       "args": [
         "./runtime/server.mjs"
       ],
-      "cwd": ".",
-      "env": {
-        "PLUGIN_ROOT": "."
-      }
+      "cwd": "."
     }
   }
 }

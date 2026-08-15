@@ -2,15 +2,14 @@ import os from "node:os";
 import path from "node:path";
 
 import { COLD_START_RUN_SEEDS } from "../lib/cold-start-run-seeds.mjs";
-
-const PLUGIN_ROOT = path.resolve(import.meta.dirname, "..");
+import { PACKAGE_ROOT } from "../lib/package-root.mjs";
 
 export const DEFAULT_RUN_SEEDS = COLD_START_RUN_SEEDS.map((seed) => ({
   ...seed,
-  artifactPath: path.resolve(import.meta.dirname, "..", seed.assetPath),
+  artifactPath: path.resolve(PACKAGE_ROOT, seed.assetPath),
 }));
 
-export function createCatalogEntries(pluginRoot = process.env.PLUGIN_ROOT || PLUGIN_ROOT) {
+export function createCatalogEntries(pluginRoot = PACKAGE_ROOT) {
   const skillsRoot = path.join(pluginRoot, "skills");
   return [
   {
