@@ -1,9 +1,15 @@
 import type { MetadataRoute } from "next";
 
-import { SEO_IMAGE_URL, seoSkills, skillPageUrl, STUDIO_URL } from "@/lib/studio-seo";
+import { SEO_IMAGE_URL, seoSkills, SITE_URL, skillPageUrl, STUDIO_URL } from "@/lib/studio-seo";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
+    {
+      url: SITE_URL,
+      changeFrequency: "weekly",
+      priority: 1,
+      images: [SEO_IMAGE_URL],
+    },
     {
       url: STUDIO_URL,
       changeFrequency: "weekly",
