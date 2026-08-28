@@ -40,7 +40,7 @@ function addAsset(target, skill, assetPath, mediaOrigin) {
 function assetKey(assetPath) {
   if (/^https:\/\//i.test(assetPath)) {
     const pathname = new URL(assetPath).pathname;
-    const marker = "/studio-assets/";
+    const marker = "/studio/image/assets/";
     const markerIndex = pathname.indexOf(marker);
     if (markerIndex === -1) throw new Error(`Unsupported Studio asset URL: ${assetPath}`);
     return decodeURIComponent(pathname.slice(markerIndex + marker.length));

@@ -11,7 +11,7 @@
       "category": "杂志",
       "accent": "cobalt",
       "stars": 6156,
-      "cover": "https://studio.clash.video/studio-assets/examples/gc-minimal-zine-poster-v0-1/txt-01.png",
+      "cover": "https://clash.art/studio/image/assets/examples/gc-minimal-zine-poster-v0-1/txt-01.png",
       "author": {
         "name": "LiamGvchi",
         "url": "https://github.com/LiamGvchi"
@@ -48,13 +48,13 @@
           "id": "gc-minimal-zine-poster-v0-1-diversity-v5",
           "title": "Still Waiting / Lost-Item Corner",
           "prompt": "Transform the supplied neighborhood-library lost-and-found shelf into exactly one complete vertical 3:5 Minimal Zine Poster v0.1. Use full-frame warm gray aged uncoated paper with 78%-84% negative space and one compact upper-right archival specimen cluster. Preserve the transparent umbrella, canvas tote, striped glove, shelf label, and autumn doorway as recognizable evidence, but translate the shelf into a soft grayscale torn-edge xerox fragment. Isolate the striped glove as one saturated opaque vermilion-orange risograph silhouette occupying roughly 2% of the canvas. Add the exact typewriter phrase 'STILL WAITING' and tiny 'LIBRARY / 08:42 / DRY', sparse fragmented letters, paper fibers, scanlines, ink bleed, and slight misregistration. Flat scanned-paper view; no border, mockup, full-bleed scene, commercial hierarchy, logo, CTA, glossy finish, 3D, cinematic lighting, neon, cartoon, dense scrapbook, many colors, long text, crop, or watermark.",
-          "preview": "https://studio.clash.video/studio-assets/catalog/diversity-20260826/gc-minimal-zine-poster-v0-1/result.png",
-          "referenceImage": "https://studio.clash.video/studio-assets/catalog/diversity-20260826/gc-minimal-zine-poster-v0-1/reference.png",
-          "referencePreview": "https://studio.clash.video/studio-assets/catalog/diversity-20260826/gc-minimal-zine-poster-v0-1/reference.png",
-          "referenceResourceUri": "https://studio.clash.video/studio-assets/catalog/diversity-20260826/gc-minimal-zine-poster-v0-1/reference.png",
+          "preview": "https://clash.art/studio/image/assets/catalog/diversity-20260826/gc-minimal-zine-poster-v0-1/result.png",
+          "referenceImage": "https://clash.art/studio/image/assets/catalog/diversity-20260826/gc-minimal-zine-poster-v0-1/reference.png",
+          "referencePreview": "https://clash.art/studio/image/assets/catalog/diversity-20260826/gc-minimal-zine-poster-v0-1/reference.png",
+          "referenceResourceUri": "https://clash.art/studio/image/assets/catalog/diversity-20260826/gc-minimal-zine-poster-v0-1/reference.png",
           "aspectRatio": "3:5",
           "mediaType": "image",
-          "image": "https://studio.clash.video/studio-assets/catalog/diversity-20260826/gc-minimal-zine-poster-v0-1/result.png",
+          "image": "https://clash.art/studio/image/assets/catalog/diversity-20260826/gc-minimal-zine-poster-v0-1/result.png",
           "mode": "image-to-image",
           "referenceRole": "reference",
           "mediaOrigin": "studio"
@@ -64,10 +64,10 @@
           "prompt": "Transform the apartment-threshold scene with the half-open door, hanging keys, grocery tote, slippers, doormat, and terrazzo floor into a sparse cobalt-accented aged-paper zine poster titled STILL ARRIVING.",
           "aspectRatio": "3:5",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/gc-minimal-zine-poster-v0-1/references/ref-agent-v4.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/gc-minimal-zine-poster-v0-1/references/ref-agent-v4.png",
           "referenceRole": "reference",
           "promptFile": "prompts/gc-minimal-zine-poster-v0-1-agent-v4.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/gc-minimal-zine-poster-v0-1/agent-v4.png",
+          "image": "https://clash.art/studio/image/assets/examples/gc-minimal-zine-poster-v0-1/agent-v4.png",
           "mediaOrigin": "studio"
         },
         {
@@ -76,7 +76,7 @@
           "aspectRatio": "3:5",
           "mode": "text-to-image",
           "promptFile": "assets/examples/gc-minimal-zine-poster-v0-1/prompts/txt-01.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/gc-minimal-zine-poster-v0-1/txt-01-v2.png",
+          "image": "https://clash.art/studio/image/assets/examples/gc-minimal-zine-poster-v0-1/txt-01-v2.png",
           "mediaOrigin": "studio"
         },
         {
@@ -85,7 +85,7 @@
           "aspectRatio": "3:5",
           "mode": "text-to-image",
           "promptFile": "assets/examples/gc-minimal-zine-poster-v0-1/prompts/txt-02.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/gc-minimal-zine-poster-v0-1/txt-02-v2.png",
+          "image": "https://clash.art/studio/image/assets/examples/gc-minimal-zine-poster-v0-1/txt-02-v2.png",
           "mediaOrigin": "studio"
         },
         {
@@ -94,7 +94,7 @@
           "aspectRatio": "3:5",
           "mode": "text-to-image",
           "promptFile": "assets/examples/gc-minimal-zine-poster-v0-1/prompts/txt-03.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/gc-minimal-zine-poster-v0-1/txt-03.png",
+          "image": "https://clash.art/studio/image/assets/examples/gc-minimal-zine-poster-v0-1/txt-03.png",
           "mediaOrigin": "studio"
         },
         {
@@ -103,7 +103,7 @@
           "aspectRatio": "3:5",
           "mode": "text-to-image",
           "promptFile": "assets/examples/gc-minimal-zine-poster-v0-1/prompts/txt-04.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/gc-minimal-zine-poster-v0-1/txt-04-v2.png",
+          "image": "https://clash.art/studio/image/assets/examples/gc-minimal-zine-poster-v0-1/txt-04-v2.png",
           "mediaOrigin": "studio"
         },
         {
@@ -112,7 +112,7 @@
           "aspectRatio": "3:2",
           "mode": "text-to-image",
           "promptFile": "assets/examples/gc-minimal-zine-poster-v0-1/prompts/txt-05.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/gc-minimal-zine-poster-v0-1/txt-05-v2.png",
+          "image": "https://clash.art/studio/image/assets/examples/gc-minimal-zine-poster-v0-1/txt-05-v2.png",
           "mediaOrigin": "studio"
         },
         {
@@ -121,8 +121,8 @@
           "aspectRatio": "3:5",
           "mode": "image-to-image",
           "promptFile": "assets/examples/gc-minimal-zine-poster-v0-1/prompts/i2i-01.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/gc-minimal-zine-poster-v0-1/i2i-01.png",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/gc-minimal-zine-poster-v0-1/references/ref-01-source.png",
+          "image": "https://clash.art/studio/image/assets/examples/gc-minimal-zine-poster-v0-1/i2i-01.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/gc-minimal-zine-poster-v0-1/references/ref-01-source.png",
           "referenceRole": "reference",
           "mediaOrigin": "studio"
         },
@@ -132,8 +132,8 @@
           "aspectRatio": "3:5",
           "mode": "image-to-image",
           "promptFile": "assets/examples/gc-minimal-zine-poster-v0-1/prompts/i2i-02.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/gc-minimal-zine-poster-v0-1/i2i-02.png",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/gc-minimal-zine-poster-v0-1/references/ref-02-source.png",
+          "image": "https://clash.art/studio/image/assets/examples/gc-minimal-zine-poster-v0-1/i2i-02.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/gc-minimal-zine-poster-v0-1/references/ref-02-source.png",
           "referenceRole": "reference",
           "mediaOrigin": "studio"
         },
@@ -143,8 +143,8 @@
           "aspectRatio": "3:5",
           "mode": "image-to-image",
           "promptFile": "assets/examples/gc-minimal-zine-poster-v0-1/prompts/i2i-03.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/gc-minimal-zine-poster-v0-1/i2i-03.png",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/gc-minimal-zine-poster-v0-1/references/ref-03-source.png",
+          "image": "https://clash.art/studio/image/assets/examples/gc-minimal-zine-poster-v0-1/i2i-03.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/gc-minimal-zine-poster-v0-1/references/ref-03-source.png",
           "referenceRole": "reference",
           "mediaOrigin": "studio"
         },
@@ -154,8 +154,8 @@
           "aspectRatio": "5:8",
           "mode": "image-to-image",
           "promptFile": "assets/examples/gc-minimal-zine-poster-v0-1/prompts/i2i-04.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/gc-minimal-zine-poster-v0-1/i2i-04.png",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/gc-minimal-zine-poster-v0-1/references/ref-04-source.png",
+          "image": "https://clash.art/studio/image/assets/examples/gc-minimal-zine-poster-v0-1/i2i-04.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/gc-minimal-zine-poster-v0-1/references/ref-04-source.png",
           "referenceRole": "reference",
           "mediaOrigin": "studio"
         },
@@ -165,8 +165,8 @@
           "aspectRatio": "3:5",
           "mode": "image-to-image",
           "promptFile": "assets/examples/gc-minimal-zine-poster-v0-1/prompts/i2i-05.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/gc-minimal-zine-poster-v0-1/i2i-05.png",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/gc-minimal-zine-poster-v0-1/references/ref-05-source.png",
+          "image": "https://clash.art/studio/image/assets/examples/gc-minimal-zine-poster-v0-1/i2i-05.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/gc-minimal-zine-poster-v0-1/references/ref-05-source.png",
           "referenceRole": "reference",
           "mediaOrigin": "studio"
         }
@@ -231,7 +231,7 @@
           "9:16"
         ]
       },
-      "cover": "https://studio.clash.video/studio-assets/examples/photo-abstract-editorial/i2i-01.png",
+      "cover": "https://clash.art/studio/image/assets/examples/photo-abstract-editorial/i2i-01.png",
       "gallery": [
         {
           "id": "case-2",
@@ -256,13 +256,13 @@
           "id": "photo-abstract-editorial-diversity-v5",
           "title": "After the Last Aisle",
           "prompt": "Create one complete vertical 2:3 Photo Abstract Editorial artwork from the supplied late-night convenience-store photograph. Keep the full original 4:3 photo faithful and uncropped in the upper 43%: preserve the crouching night clerk, waiting commuter, refrigerator doors, shelf rhythm, fluorescent light, floor, colors, and ordinary phone-camera character without redrawing, filtering, extending, or retouching it. Join it directly to a perfectly flat neutral-ivory #F3F0E8 panel below with no frame, shadow, tape, texture, gradient, grain, or mockup. Distill only source facts into sparse abstraction: cool-gray horizontal shelf bars, two irregular short vertical human marks, one thin charcoal umbrella diagonal, and four muted-orange juice-carton blocks, leaving about 70% panel whitespace. Set the exact title 'After the Last Aisle' once in a restrained dark green-gray editorial serif at lower left. No subtitle, extra text, labels, logos, watermark, generic icons, illustration, or dense decoration.",
-          "preview": "https://studio.clash.video/studio-assets/catalog/diversity-20260826/photo-abstract-editorial/result.png",
-          "referenceImage": "https://studio.clash.video/studio-assets/catalog/diversity-20260826/photo-abstract-editorial/reference.png",
-          "referencePreview": "https://studio.clash.video/studio-assets/catalog/diversity-20260826/photo-abstract-editorial/reference.png",
-          "referenceResourceUri": "https://studio.clash.video/studio-assets/catalog/diversity-20260826/photo-abstract-editorial/reference.png",
+          "preview": "https://clash.art/studio/image/assets/catalog/diversity-20260826/photo-abstract-editorial/result.png",
+          "referenceImage": "https://clash.art/studio/image/assets/catalog/diversity-20260826/photo-abstract-editorial/reference.png",
+          "referencePreview": "https://clash.art/studio/image/assets/catalog/diversity-20260826/photo-abstract-editorial/reference.png",
+          "referenceResourceUri": "https://clash.art/studio/image/assets/catalog/diversity-20260826/photo-abstract-editorial/reference.png",
           "aspectRatio": "2:3",
           "mediaType": "image",
-          "image": "https://studio.clash.video/studio-assets/catalog/diversity-20260826/photo-abstract-editorial/result.png",
+          "image": "https://clash.art/studio/image/assets/catalog/diversity-20260826/photo-abstract-editorial/result.png",
           "mode": "image-to-image",
           "referenceRole": "reference",
           "mediaOrigin": "studio"
@@ -272,10 +272,10 @@
           "prompt": "Create a vertical editorial diptych that preserves the hospital cleaner, utility cart, corridor, and early-shift atmosphere above, then distills those source elements into a sparse abstract memory panel below.",
           "aspectRatio": "2:3",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/photo-abstract-editorial/references/ref-agent-v4.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/photo-abstract-editorial/references/ref-agent-v4.png",
           "referenceRole": "reference",
           "promptFile": "prompts/photo-abstract-editorial-agent-v4.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/photo-abstract-editorial/agent-v4.png",
+          "image": "https://clash.art/studio/image/assets/examples/photo-abstract-editorial/agent-v4.png",
           "mediaOrigin": "studio"
         },
         {
@@ -283,10 +283,10 @@
           "prompt": "Create a vertical editorial diptych preserving the winter beach photo above and distilling its two figures, horizon, and diagonal footprints below; title: Between Tides.",
           "aspectRatio": "2:3",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/photo-abstract-editorial/references/ref-01-source.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/photo-abstract-editorial/references/ref-01-source.png",
           "referenceRole": "reference",
           "promptFile": "assets/examples/photo-abstract-editorial/prompts/i2i-01.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/photo-abstract-editorial/i2i-01.png",
+          "image": "https://clash.art/studio/image/assets/examples/photo-abstract-editorial/i2i-01.png",
           "mediaOrigin": "studio"
         },
         {
@@ -294,10 +294,10 @@
           "prompt": "Create a vertical editorial diptych preserving the rainy bus-shelter photo above and distilling three waiting figures, shelter axis, amber lamp, and red reflection below; title: Waiting in Rain.",
           "aspectRatio": "2:3",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/photo-abstract-editorial/references/ref-02-source.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/photo-abstract-editorial/references/ref-02-source.png",
           "referenceRole": "reference",
           "promptFile": "assets/examples/photo-abstract-editorial/prompts/i2i-03.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/photo-abstract-editorial/i2i-03.png",
+          "image": "https://clash.art/studio/image/assets/examples/photo-abstract-editorial/i2i-03.png",
           "mediaOrigin": "studio"
         },
         {
@@ -305,10 +305,10 @@
           "prompt": "Create a vertical editorial diptych preserving the desert tree photo above and distilling its flattened canopy, trunk, dune axis, and long shadow below; title: Shade Travels.",
           "aspectRatio": "2:3",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/photo-abstract-editorial/references/ref-03-source.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/photo-abstract-editorial/references/ref-03-source.png",
           "referenceRole": "reference",
           "promptFile": "assets/examples/photo-abstract-editorial/prompts/i2i-05.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/photo-abstract-editorial/i2i-05.png",
+          "image": "https://clash.art/studio/image/assets/examples/photo-abstract-editorial/i2i-05.png",
           "mediaOrigin": "studio"
         },
         {
@@ -316,10 +316,10 @@
           "prompt": "Create a vertical editorial diptych preserving the spiral-staircase photo above and distilling nested oval voids, cool light, dark center, and burgundy visitor below; title: Turning Below.",
           "aspectRatio": "2:3",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/photo-abstract-editorial/references/ref-04-source.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/photo-abstract-editorial/references/ref-04-source.png",
           "referenceRole": "reference",
           "promptFile": "assets/examples/photo-abstract-editorial/prompts/i2i-07.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/photo-abstract-editorial/i2i-07.png",
+          "image": "https://clash.art/studio/image/assets/examples/photo-abstract-editorial/i2i-07.png",
           "mediaOrigin": "studio"
         },
         {
@@ -327,10 +327,10 @@
           "prompt": "Create a vertical editorial diptych preserving the five-balloon valley photo above and distilling five ascending organic color masses, ridge bands, and river curve below; title: Five Into Morning.",
           "aspectRatio": "2:3",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/photo-abstract-editorial/references/ref-05-source.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/photo-abstract-editorial/references/ref-05-source.png",
           "referenceRole": "reference",
           "promptFile": "assets/examples/photo-abstract-editorial/prompts/i2i-09.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/photo-abstract-editorial/i2i-09.png",
+          "image": "https://clash.art/studio/image/assets/examples/photo-abstract-editorial/i2i-09.png",
           "mediaOrigin": "studio"
         }
       ],
@@ -379,7 +379,7 @@
           "9:16"
         ]
       },
-      "cover": "https://studio.clash.video/studio-assets/examples/scenes-gathered-zine-v1-3/i2i-01.png",
+      "cover": "https://clash.art/studio/image/assets/examples/scenes-gathered-zine-v1-3/i2i-01.png",
       "gallery": [
         {
           "id": "where-stone-meets-sky",
@@ -400,11 +400,11 @@
           "id": "scenes-gathered-zine-v1-3-diversity-v5",
           "title": "Small Wheel, Open Morning",
           "prompt": "Transform the supplied bicycle-repair photograph into exactly one finished vertical 3:5 Gathered Scenes Zine poster, shown as a complete flat scan with every edge visible and no crop. Keep the factual photograph truthful as an irregular lower-left anchor occupying about 38% of the poster: preserve the young male technician crouching, the complete small red bicycle, pegboard tools, green coiled hose, cream shutter, and sunlit concrete square. Make the main photo-to-paper boundary visibly hand-torn and fibrous along roughly half the photographic perimeter, with narrow warm-paper fibers and no sticker outline or drop shadow. Expand the remaining poster into a large calm abstract illustration field on warm cream paper: use one dominant charcoal wheel arc, one broken olive hose gesture, a simplified shutter rhythm, and broad unprinted space, removing nearly all small workshop clutter. Introduce exactly one added high-chroma cobalt-blue dry-print shape derived from the sunlit floor rectangle and wheel geometry; it must cross the torn boundary and redirect the eye toward the bicycle, not float as decoration. Use restrained graphite and warm-gray xerox/risograph texture, flat scan noise, paper fibers, and sparse halftone only near the material handoff. Add only one tiny paper-integrated micro-text line: SMALL WHEEL / OPEN MORNING. Preserve recognition and source spatial relationships. No generic centered photo, no full-scene tracing, no second bright hue, no decorative dots, no clean digital mask, no border, no frame, no mockup, no watermark, no extra readable text, no pottery, tram, bus, mountain lake, kayak, watercolor, glossy 3D, or polished vector art.",
-          "preview": "https://studio.clash.video/studio-assets/catalog/diversity-20260826/scenes-gathered-zine-v1-3/result.png",
-          "image": "https://studio.clash.video/studio-assets/catalog/diversity-20260826/scenes-gathered-zine-v1-3/result.png",
-          "referenceImage": "https://studio.clash.video/studio-assets/catalog/diversity-20260826/scenes-gathered-zine-v1-3/source.png",
-          "referencePreview": "https://studio.clash.video/studio-assets/catalog/diversity-20260826/scenes-gathered-zine-v1-3/source.png",
-          "referenceResourceUri": "https://studio.clash.video/studio-assets/catalog/diversity-20260826/scenes-gathered-zine-v1-3/source.png",
+          "preview": "https://clash.art/studio/image/assets/catalog/diversity-20260826/scenes-gathered-zine-v1-3/result.png",
+          "image": "https://clash.art/studio/image/assets/catalog/diversity-20260826/scenes-gathered-zine-v1-3/result.png",
+          "referenceImage": "https://clash.art/studio/image/assets/catalog/diversity-20260826/scenes-gathered-zine-v1-3/source.png",
+          "referencePreview": "https://clash.art/studio/image/assets/catalog/diversity-20260826/scenes-gathered-zine-v1-3/source.png",
+          "referenceResourceUri": "https://clash.art/studio/image/assets/catalog/diversity-20260826/scenes-gathered-zine-v1-3/source.png",
           "aspectRatio": "3:5",
           "mediaType": "image",
           "mode": "image-to-image",
@@ -416,10 +416,10 @@
           "prompt": "Transform the three roommates making a bed, their lifted striped duvet, low wooden bed, bright window, and woven laundry basket into a warm-paper Gathered Scenes zine poster.",
           "aspectRatio": "3:5",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/scenes-gathered-zine-v1-3/references/ref-agent-v4.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/scenes-gathered-zine-v1-3/references/ref-agent-v4.png",
           "referenceRole": "reference",
           "promptFile": "prompts/scenes-gathered-zine-v1-3-agent-v4.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/scenes-gathered-zine-v1-3/agent-v4.png",
+          "image": "https://clash.art/studio/image/assets/examples/scenes-gathered-zine-v1-3/agent-v4.png",
           "mediaOrigin": "studio"
         },
         {
@@ -427,10 +427,10 @@
           "prompt": "See prompts/i2i-01.txt (verbatim actual generation prompt).",
           "aspectRatio": "3:5",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/scenes-gathered-zine-v1-3/references/ref-01-source.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/scenes-gathered-zine-v1-3/references/ref-01-source.png",
           "referenceRole": "reference",
           "promptFile": "assets/examples/scenes-gathered-zine-v1-3/prompts/i2i-01.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/scenes-gathered-zine-v1-3/i2i-01.png",
+          "image": "https://clash.art/studio/image/assets/examples/scenes-gathered-zine-v1-3/i2i-01.png",
           "mediaOrigin": "studio"
         },
         {
@@ -438,10 +438,10 @@
           "prompt": "See prompts/i2i-03.txt (verbatim actual generation prompt).",
           "aspectRatio": "3:5",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/scenes-gathered-zine-v1-3/references/ref-02-source.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/scenes-gathered-zine-v1-3/references/ref-02-source.png",
           "referenceRole": "reference",
           "promptFile": "assets/examples/scenes-gathered-zine-v1-3/prompts/i2i-03.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/scenes-gathered-zine-v1-3/i2i-03.png",
+          "image": "https://clash.art/studio/image/assets/examples/scenes-gathered-zine-v1-3/i2i-03.png",
           "mediaOrigin": "studio"
         },
         {
@@ -449,10 +449,10 @@
           "prompt": "See prompts/i2i-05.txt (verbatim actual generation prompt).",
           "aspectRatio": "3:5",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/scenes-gathered-zine-v1-3/references/ref-03-source.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/scenes-gathered-zine-v1-3/references/ref-03-source.png",
           "referenceRole": "reference",
           "promptFile": "assets/examples/scenes-gathered-zine-v1-3/prompts/i2i-05.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/scenes-gathered-zine-v1-3/i2i-05.png",
+          "image": "https://clash.art/studio/image/assets/examples/scenes-gathered-zine-v1-3/i2i-05.png",
           "mediaOrigin": "studio"
         },
         {
@@ -460,10 +460,10 @@
           "prompt": "See prompts/i2i-07.txt (verbatim actual generation prompt).",
           "aspectRatio": "3:5",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/scenes-gathered-zine-v1-3/references/ref-04-source.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/scenes-gathered-zine-v1-3/references/ref-04-source.png",
           "referenceRole": "reference",
           "promptFile": "assets/examples/scenes-gathered-zine-v1-3/prompts/i2i-07.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/scenes-gathered-zine-v1-3/i2i-07.png",
+          "image": "https://clash.art/studio/image/assets/examples/scenes-gathered-zine-v1-3/i2i-07.png",
           "mediaOrigin": "studio"
         },
         {
@@ -471,10 +471,10 @@
           "prompt": "See prompts/i2i-09.txt (verbatim actual generation prompt).",
           "aspectRatio": "3:5",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/scenes-gathered-zine-v1-3/references/ref-05-source.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/scenes-gathered-zine-v1-3/references/ref-05-source.png",
           "referenceRole": "reference",
           "promptFile": "assets/examples/scenes-gathered-zine-v1-3/prompts/i2i-09.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/scenes-gathered-zine-v1-3/i2i-09.png",
+          "image": "https://clash.art/studio/image/assets/examples/scenes-gathered-zine-v1-3/i2i-09.png",
           "mediaOrigin": "studio"
         }
       ],
@@ -523,7 +523,7 @@
           "16:9"
         ]
       },
-      "cover": "https://studio.clash.video/studio-assets/examples/scene-distillation-zine-v1-3/i2i-01.png",
+      "cover": "https://clash.art/studio/image/assets/examples/scene-distillation-zine-v1-3/i2i-01.png",
       "gallery": [
         {
           "id": "snow-falls-lightly",
@@ -536,11 +536,11 @@
           "id": "scene-distillation-zine-v1-3-diversity-v5",
           "title": "After the Bell, Color Waits",
           "prompt": "Use the supplied school-corridor photograph only as a semantic reference and create exactly one finished horizontal 5:3 Scene Distillation Zine illustration on warm off-white uncoated paper, complete canvas fully visible and uncropped. Do not reproduce, embed, crop, collage, trace, or retain photographic pixels or photorealistic regions from the reference. The final image must contain original illustration, paper, and typography only. Distill the scene to the kneeling student gathering spilled colored pencils, the long one-point corridor, mustard locker rhythm, cyan floor light, and blank cork board. Express the quiet delay after the bell: the spilled pencils become a broken directional path that pulls against the corridor vanishing point, leaving the destination unresolved. Use an asymmetric low-right active island occupying about 24% of the canvas and 74% quiet paper. Primary grammar is contour-led with one supporting rhythm of blunt locker bars; redraw the girl as an angular adult-editorial paper figure with minimal anatomy, not cute or children's-book. Use charcoal and muted mustard/cyan neutrals plus exactly one saturated magenta risograph accent distributed only through three unequal pencil fragments, together under 2% of the poster, guiding entry to figure to vanishing point. Use a natural isolated contour with faint dry ink bite, no torn frame or sticker halo. Set the small fragmented text after the bell / color waits along the perspective line as a quiet countervoice, no other readable text. Matte risograph ink, broken coverage, paper grain, flat scan. No photo window, realistic shading, advertising layout, cartoon sweetness, decorative stamps, random grid, multiple bright hues, gradients, neon, glossy 3D, cinematic lighting, watermark, or border.",
-          "preview": "https://studio.clash.video/studio-assets/catalog/diversity-20260826/scene-distillation-zine-v1-3/result.png",
-          "image": "https://studio.clash.video/studio-assets/catalog/diversity-20260826/scene-distillation-zine-v1-3/result.png",
-          "referenceImage": "https://studio.clash.video/studio-assets/catalog/diversity-20260826/scene-distillation-zine-v1-3/source.png",
-          "referencePreview": "https://studio.clash.video/studio-assets/catalog/diversity-20260826/scene-distillation-zine-v1-3/source.png",
-          "referenceResourceUri": "https://studio.clash.video/studio-assets/catalog/diversity-20260826/scene-distillation-zine-v1-3/source.png",
+          "preview": "https://clash.art/studio/image/assets/catalog/diversity-20260826/scene-distillation-zine-v1-3/result.png",
+          "image": "https://clash.art/studio/image/assets/catalog/diversity-20260826/scene-distillation-zine-v1-3/result.png",
+          "referenceImage": "https://clash.art/studio/image/assets/catalog/diversity-20260826/scene-distillation-zine-v1-3/source.png",
+          "referencePreview": "https://clash.art/studio/image/assets/catalog/diversity-20260826/scene-distillation-zine-v1-3/source.png",
+          "referenceResourceUri": "https://clash.art/studio/image/assets/catalog/diversity-20260826/scene-distillation-zine-v1-3/source.png",
           "aspectRatio": "5:3",
           "mediaType": "image",
           "mode": "image-to-image",
@@ -552,10 +552,10 @@
           "prompt": "Distill the chipped sea-green enamel mug, crushed paper cup, tangerine peel, and receding stool into a minimal paper poster about the interval left between two absent people.",
           "aspectRatio": "3:5",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/scene-distillation-zine-v1-3/references/ref-agent-v4.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/scene-distillation-zine-v1-3/references/ref-agent-v4.png",
           "referenceRole": "reference",
           "promptFile": "prompts/scene-distillation-zine-v1-3-agent-v4.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/scene-distillation-zine-v1-3/agent-v4.png",
+          "image": "https://clash.art/studio/image/assets/examples/scene-distillation-zine-v1-3/agent-v4.png",
           "mediaOrigin": "studio"
         },
         {
@@ -563,10 +563,10 @@
           "prompt": "1. Expression and visible consequence: Use the supplied photo as a semantic reference only. Proposition: a person can stand before shelter and still remain outside it. Central tension: shelter / confinement. Turn the greenhouse grid into a vast interrupted barrier and the red glove into the only warm signal. Leave unresolved whether the figure is arriving or refusing entry.\n2. Canvas and attention geometry: 3:5 portrait paper poster, warm natural paper, 78% quiet space. Asymmetric island low on the page; a tiny charcoal figure faces a broad broken glass-grid mass occupying about 20%. Eye path enters at a saturated tomato-red glove, rises through the grid, then exits into blank paper.\n3. Distilled subject and creative rewrite: Preserve only the elderly figure, greenhouse panes, bent vine, and glove. Remove all photographic background detail. Primary grammar: dry-print silhouette; supporting grammar: broken contour. Compress the greenhouse into six uneven translucent-gray paper bars, enlarge the gap between figure and structure, and let one vine line cross the barrier.\n4. Transition edge, color mode, and text: Natural isolated contour with faint ink bite. Standard Accent Mode: one unmistakable high-chroma tomato red printed glove, about 1.2% of poster, no other bright hue. Set the Chinese words “门内，仍是远方” vertically in rough condensed charcoal type, partly interrupted by one grid bar; text acts as a boundary, not a caption.\n5. Reproduction and hard avoids: Flat scanned zine, dry charcoal ink, cut-paper fibers, restrained grain, tactile and non-commercial. Do not reproduce, embed, crop, collage, trace, or retain photographic pixels or photorealistic regions from the reference. The final image must contain original illustration, paper, and typography only. No realistic shading, cute cartoon, polished vector, generic dots, tape, stamps, logos, 3D, cinematic light, glossy effects, or watermark.",
           "aspectRatio": "3:5",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/scene-distillation-zine-v1-3/references/ref-01-source.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/scene-distillation-zine-v1-3/references/ref-01-source.png",
           "referenceRole": "reference",
           "promptFile": "assets/examples/scene-distillation-zine-v1-3/prompts/i2i-01.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/scene-distillation-zine-v1-3/i2i-01.png",
+          "image": "https://clash.art/studio/image/assets/examples/scene-distillation-zine-v1-3/i2i-01.png",
           "mediaOrigin": "studio"
         },
         {
@@ -574,10 +574,10 @@
           "prompt": "1. Expression and visible consequence: Use the supplied photo as a semantic reference only. Proposition: what holds us can also point toward departure. Central tension: anchoring / escape. Transform the coiled rope into a long directional sentence connecting a dense boat mass to an unreachable horizon cut. Leave unresolved whether the rope is being gathered or released.\n2. Canvas and attention geometry: 5:3 landscape warm-white paper poster, 74% quiet space. Directional-drift composition begins with a compact dry-black boat at far left, travels through a sweeping rope across the lower third, and ends at a thin horizon aperture near the right edge. Active cluster about 24%; strong asymmetric balance.\n3. Distilled subject and creative rewrite: Preserve only boat hull, rope coil, low sea line, and three unequal bird marks. Discard reflections, motors, realistic waves, and sky detail. Primary grammar: dry-print silhouette; supporting grammar: broken contour. Flatten the hull into one blunt ink mass and exaggerate the rope curve until it becomes the dominant gesture.\n4. Transition edge, color mode, and text: Natural isolated contour with slight dry ink bite; no torn frame. Standard Accent Mode: one fully saturated mustard-yellow letterpress rope, about 2.4% of poster, acting as bridge and directional cue; all else charcoal and warm gray. Place “岸没有回答” in tiny widely spaced charcoal characters following only the final upward segment of rope, partially fading before the horizon.\n5. Reproduction and hard avoids: Flat tactile scan, coarse paper fiber, restrained grain, poetic non-commercial zine. Do not reproduce, embed, crop, collage, trace, or retain photographic pixels or photorealistic regions from the reference. The final image must contain original illustration, paper, and typography only. No literal seascape, realistic shading, decorative waves, generic dots, stickers, tape, glossy effects, cinematic light, logos, or watermark.",
           "aspectRatio": "5:3",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/scene-distillation-zine-v1-3/references/ref-02-source.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/scene-distillation-zine-v1-3/references/ref-02-source.png",
           "referenceRole": "reference",
           "promptFile": "assets/examples/scene-distillation-zine-v1-3/prompts/i2i-03.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/scene-distillation-zine-v1-3/i2i-03.png",
+          "image": "https://clash.art/studio/image/assets/examples/scene-distillation-zine-v1-3/i2i-03.png",
           "mediaOrigin": "studio"
         },
         {
@@ -585,10 +585,10 @@
           "prompt": "1. Expression and visible consequence: Use the supplied photo as a semantic reference only. Proposition: repetition can hold a person still while everything inside continues turning. Central tension: stillness / circulation. Transform the washing-machine doors into an open vertical current around the seated boy; one white sheet becomes an unfinished thought escaping the final circle. Leave unresolved whether he is waiting for the cycle or hiding inside it.\n2. Canvas and attention geometry: 3:5 portrait cool off-white paper, 70% quiet space. Vertical-tension composition: a low compact seated silhouette anchors the lower right; five uneven circular fragments rise and curve leftward, stopping before closure. Active cluster about 28%. Entry at a vivid orange chair plane, movement through circles, exit at a loose white paper fold near the top.\n3. Distilled subject and creative rewrite: Preserve seated side profile, orange chair, repeating machine circles, white sheet, and rainy-window direction. Remove storefront detail, cars, fluorescent fixtures, realistic room, and facial identity. Primary grammar: fragment stack; supporting grammar: rhythm field. Reduce the boy to two charcoal paper masses and make machine circles broken dry-print rings with irregular intervals.\n4. Transition edge, color mode, and text: Layered grayscale edge along only two circle fragments, using narrow light gray, mid gray, and charcoal bands without shadow. Standard Accent Mode: saturated clear orange opaque cut-paper chair, about 2.5% of poster, as focal entry and counterweight; no other bright hue. Set “TURNING / NOT GOING” in narrow type on two opposing arcs, partly obscured and not fully legible.\n5. Reproduction and hard avoids: Flat paper scan, dry ink rings, cut fibers, tactile quietness, non-commercial. Do not reproduce, embed, crop, collage, trace, or retain photographic pixels or photorealistic regions from the reference. The final image must contain original illustration, paper, and typography only. No literal laundromat, polished vector circles, cute character, realistic light, neon, decorative grid, stickers, tape, logos, or watermark.",
           "aspectRatio": "3:5",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/scene-distillation-zine-v1-3/references/ref-03-source.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/scene-distillation-zine-v1-3/references/ref-03-source.png",
           "referenceRole": "reference",
           "promptFile": "assets/examples/scene-distillation-zine-v1-3/prompts/i2i-05.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/scene-distillation-zine-v1-3/i2i-05.png",
+          "image": "https://clash.art/studio/image/assets/examples/scene-distillation-zine-v1-3/i2i-05.png",
           "mediaOrigin": "studio"
         },
         {
@@ -596,10 +596,10 @@
           "prompt": "1. Expression and visible consequence: Use the supplied photo as a semantic reference only. Proposition: two people can hold the same shelter while the wind gives it opposing meanings. Central tension: shelter / exposure. Transform the translucent sheet into a stretched paper membrane that both connects and separates the sisters. Leave unresolved whether it will become a roof, a sail, or a tear.\n2. Canvas and attention geometry: 5:3 landscape natural rice-paper poster, 72% quiet space. Wide vertical-tension composition across the lower third: two tiny charcoal figures occupy opposite ends of a large bowed membrane, with unequal empty space pressing from above. Active cluster about 26%. Eye enters at a vivid pear-green bucket, moves against the wind through the membrane, meets the two figures, and exits into blank sky.\n3. Distilled subject and creative rewrite: Preserve two-person relation, opposing hand positions, plastic-sheet curve, narrow path, and bucket. Discard realistic field reflections, village, clothing detail, and full banana-tree line. Primary grammar: cut-paper mass; supporting grammar: broken contour. Redraw the membrane as one translucent warm-gray paper form with internal paper gaps; simplify both figures into angular ink gestures.\n4. Transition edge, color mode, and text: Natural isolated contour for figures; one torn-fiber edge only along the windward membrane side. Standard Accent Mode: fully saturated pear-green opaque bucket, about 1% of poster, acting as counterweight and visual entry; no echoes and no other bright hue. Set the short phrase “同一阵风” in tiny charcoal type stretched sparsely beneath the membrane, with one character hidden by a figure.\n5. Reproduction and hard avoids: Flat scanned zine, dry charcoal, fibrous translucent paper, restrained texture, non-commercial. Do not reproduce, embed, crop, collage, trace, or retain photographic pixels or photorealistic regions from the reference. The final image must contain original illustration, paper, and typography only. No literal landscape, realistic anatomy, cinematic storm, glossy plastic, shadows, cute characters, decorative symbols, tape, polished vector, logos, or watermark.",
           "aspectRatio": "5:3",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/scene-distillation-zine-v1-3/references/ref-04-source.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/scene-distillation-zine-v1-3/references/ref-04-source.png",
           "referenceRole": "reference",
           "promptFile": "assets/examples/scene-distillation-zine-v1-3/prompts/i2i-07.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/scene-distillation-zine-v1-3/i2i-07.png",
+          "image": "https://clash.art/studio/image/assets/examples/scene-distillation-zine-v1-3/i2i-07.png",
           "mediaOrigin": "studio"
         },
         {
@@ -607,10 +607,10 @@
           "prompt": "1. Expression and visible consequence: Use the supplied photo as a semantic reference only. Proposition: a burden of brightness can make an ordinary vehicle too large for its passage. Central tension: abundance / confinement. Turn the sunflower bundle into an expanding crown that presses against a narrow stair-shaped opening while the bicycle remains a fragile carrier below. Leave unresolved whether the flowers are ascending or blocking the way.\n2. Canvas and attention geometry: 3:5 portrait warm concrete-colored paper, 76% quiet space. Vertical-tension composition: a compact bicycle silhouette anchors the lower left; a sunflower constellation swells upward toward a narrow cut-paper light shaft at upper center. Active cluster about 23%. Eye enters through the largest yellow flower, moves upward through unequal blooms, hits the constricted opening, then drops down the broken stair rhythm.\n3. Distilled subject and creative rewrite: Preserve bicycle profile, bundled sunflowers, stair ascent, diagonal light, and petal trail. Discard realistic walls, railing detail, fabric bag, shadows, and architectural perspective. Primary grammar: fragment stack; supporting grammar: auxiliary constellation. Simplify bicycle into a dry charcoal scaffold; redraw eight flowers as rough source-derived print discs with varied scale and partial occlusion.\n4. Transition edge, color mode, and text: Layered grayscale edge along the narrow stair opening, three irregular neutral bands and no cast shadow. Standard Accent Mode using a Distributed Supporting Accent: eight fully saturated lemon-yellow risograph sunflower heads plus sparse petal echoes, together about 2.8% of poster; one color system. Place “TOO MUCH SUN / FOR ONE STAIR” as tiny broken type descending against the flower movement, partly hidden by two blooms.\n5. Reproduction and hard avoids: Flat scanned zine, charcoal dry print, paper fibers, emotionally warm but non-commercial. Do not reproduce, embed, crop, collage, trace, or retain photographic pixels or photorealistic regions from the reference. The final image must contain original illustration, paper, and typography only. No realistic flowers, decorative bouquet, cute bicycle, polished vector, hard shadows, 3D stairwell, stickers, tape, commercial poster hierarchy, logos, or watermark.",
           "aspectRatio": "3:5",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/scene-distillation-zine-v1-3/references/ref-05-source.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/scene-distillation-zine-v1-3/references/ref-05-source.png",
           "referenceRole": "reference",
           "promptFile": "assets/examples/scene-distillation-zine-v1-3/prompts/i2i-09.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/scene-distillation-zine-v1-3/i2i-09.png",
+          "image": "https://clash.art/studio/image/assets/examples/scene-distillation-zine-v1-3/i2i-09.png",
           "mediaOrigin": "studio"
         }
       ],
@@ -666,7 +666,7 @@
           "1:1"
         ]
       },
-      "cover": "https://studio.clash.video/studio-assets/examples/photo-revival/i2i-01.png",
+      "cover": "https://clash.art/studio/image/assets/examples/photo-revival/i2i-01.png",
       "gallery": [
         {
           "id": "flower-tree-paper",
@@ -691,13 +691,13 @@
           "id": "photo-revival-diversity-v5",
           "title": "Fort Escaped",
           "prompt": "Redraw the supplied playful family snapshot as one miniature 3:4 Photo Revival memory on luminous warm-white cotton paper. Preserve the older sister reaching from the left, younger brother kneeling at the right, complete tricolor beagle trotting between them with the bright yellow sock, teal blanket fort, wooden chair, and red floor cushion in simplified recognizable form. Use delicate colored pencil, translucent watercolor, and fine graphite edges; never apply a photo filter. Fit the entire scene inside a compact lower-right box no wider than 30% and no taller than 24% of the page, occupying roughly 8-10% total area, with no cropped subject. Leave at least 88% blank paper. Confine teal, yellow, red, navy, and beagle brown to the tiny cluster. Add 'fort escaped' exactly once as microscopic pencil beneath the dog's paws. No other text, date, logo, watermark, full bleed, large focal scene, dense room detail, vector treatment, collage block, or photorealism.",
-          "preview": "https://studio.clash.video/studio-assets/catalog/diversity-20260826/photo-revival/result.png",
-          "referenceImage": "https://studio.clash.video/studio-assets/catalog/diversity-20260826/photo-revival/reference.png",
-          "referencePreview": "https://studio.clash.video/studio-assets/catalog/diversity-20260826/photo-revival/reference.png",
-          "referenceResourceUri": "https://studio.clash.video/studio-assets/catalog/diversity-20260826/photo-revival/reference.png",
+          "preview": "https://clash.art/studio/image/assets/catalog/diversity-20260826/photo-revival/result.png",
+          "referenceImage": "https://clash.art/studio/image/assets/catalog/diversity-20260826/photo-revival/reference.png",
+          "referencePreview": "https://clash.art/studio/image/assets/catalog/diversity-20260826/photo-revival/reference.png",
+          "referenceResourceUri": "https://clash.art/studio/image/assets/catalog/diversity-20260826/photo-revival/reference.png",
           "aspectRatio": "3:4",
           "mediaType": "image",
-          "image": "https://studio.clash.video/studio-assets/catalog/diversity-20260826/photo-revival/result.png",
+          "image": "https://clash.art/studio/image/assets/catalog/diversity-20260826/photo-revival/result.png",
           "mode": "image-to-image",
           "referenceRole": "reference",
           "mediaOrigin": "studio"
@@ -707,10 +707,10 @@
           "prompt": "Redraw the grandmother tying a schoolgirl's bright yellow shoelaces, with the worn blue backpack on a red stool and faint shop and bicycle cues, as a tiny poetic hand-made illustration on white paper.",
           "aspectRatio": "3:4",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/photo-revival/references/ref-agent-v4.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/photo-revival/references/ref-agent-v4.png",
           "referenceRole": "reference",
           "promptFile": "prompts/photo-revival-agent-v4.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/photo-revival/agent-v4.png",
+          "image": "https://clash.art/studio/image/assets/examples/photo-revival/agent-v4.png",
           "mediaOrigin": "studio"
         },
         {
@@ -718,10 +718,10 @@
           "prompt": "Use case: style-transfer\nAsset type: strict Photo Revival image-to-image example\nInput images: Image 1: source reference photo; use only this source\nPrimary request: redraw the elderly man watering the red geranium on his balcony as a fresh poetic hand-made illustration, preserving his bowed pose, navy cardigan, green watering can, red flower, and balcony rail in simplified recognizable form\nStyle/medium: delicate transparent watercolor washes with fine graphite edges on warm white cotton paper\nComposition/framing: vertical 3:4 page; place one tiny illustrated cluster in the lower-left occupying about 12% of the page; leave 84-88% untouched white-paper negative space\nColor palette: strongest color only in the red geranium, moss-green can, and navy cardigan; all color confined to the tiny cluster\nText (verbatim): \"morning, again\" as one very tiny faint handwritten pencil note directly beneath the cluster\nConstraints: transform the source into an illustration, not a photo filter; sparse handmade texture; preserve the memorable source details; no other text; no watermark\nAvoid: full bleed, subject larger than 16%, dense layout, flat vector art, large collage, photorealistic retouching, color spreading into blank paper",
           "aspectRatio": "3:4",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/photo-revival/references/ref-01-source.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/photo-revival/references/ref-01-source.png",
           "referenceRole": "reference",
           "promptFile": "assets/examples/photo-revival/prompts/i2i-01.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/photo-revival/i2i-01.png",
+          "image": "https://clash.art/studio/image/assets/examples/photo-revival/i2i-01.png",
           "mediaOrigin": "studio"
         },
         {
@@ -729,10 +729,10 @@
           "prompt": "Use case: style-transfer\nAsset type: strict Photo Revival image-to-image example\nInput images: Image 1: source reference photo; use only this source\nPrimary request: redraw the rainy bus-stop snapshot as a poetic handmade illustration, preserving the waiting woman's mustard hooded coat, turquoise bicycle, folded ticket, shelter frame, and wet road\nStyle/medium: fine waterproof ink lines with translucent watercolor rain blooms on bright white cold-press paper\nComposition/framing: vertical 3:4 page; tiny narrow scene near the upper-right occupying 11-14% of the page; leave 84-88% clean white-paper negative space\nColor palette: mustard yellow and turquoise as vivid localized accents, with only pale gray rain; all pigment stays inside the tiny scene\nText (verbatim): \"still waiting\" exactly once as a very small handwritten note under the bicycle wheel\nConstraints: freshly redrawn and simplified yet recognizable; no photo-filter look; no extra text; no watermark\nAvoid: full bleed, subject larger than 16%, dense landscape, heavy typography, flat vector treatment, large collage, photorealism",
           "aspectRatio": "3:4",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/photo-revival/references/ref-02-source.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/photo-revival/references/ref-02-source.png",
           "referenceRole": "reference",
           "promptFile": "assets/examples/photo-revival/prompts/i2i-03.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/photo-revival/i2i-03.png",
+          "image": "https://clash.art/studio/image/assets/examples/photo-revival/i2i-03.png",
           "mediaOrigin": "studio"
         },
         {
@@ -740,10 +740,10 @@
           "prompt": "Use case: style-transfer\nAsset type: strict Photo Revival image-to-image example\nInput images: Image 1: source reference photo; use only this source\nPrimary request: create a miniaturized hand-drawn memory of the curled ginger cat asleep inside the open dark-blue suitcase, with the handle and lone striped sock still recognizable\nStyle/medium: airy sumi-ink contour, translucent watercolor, dry-brush grain on luminous white washi-like paper\nComposition/framing: vertical 3:4 page; tiny cluster centered near bottom; the entire suitcase including open lid and sock must fit inside a box one quarter of page width by one fifth of page height, about 5% of page area; leave over 90% blank white paper\nColor palette: concentrated ginger orange and deep indigo only within that tiny cluster; two short sepia floor strokes\nText (verbatim): \"packed already\" exactly once, microscopic handwriting immediately below the sock\nConstraints: poetic handmade redraw, not filtered photography; no other text; no watermark\nAvoid: wide suitcase, enlarged objects, full bleed, scene over 10%, dense room detail, large typography, vector art, collage blocks, photorealism",
           "aspectRatio": "3:4",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/photo-revival/references/ref-03-source.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/photo-revival/references/ref-03-source.png",
           "referenceRole": "reference",
           "promptFile": "assets/examples/photo-revival/prompts/i2i-05.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/photo-revival/i2i-05.png",
+          "image": "https://clash.art/studio/image/assets/examples/photo-revival/i2i-05.png",
           "mediaOrigin": "studio"
         },
         {
@@ -751,10 +751,10 @@
           "prompt": "Use case: style-transfer\nAsset type: strict Photo Revival image-to-image example\nInput images: Image 1: source reference photo; use only this source\nPrimary request: make a postage-stamp-scale hand-drawn vignette of the snowy sweet-potato vendor, preserving the bundled vendor, green apron, red cart, warm bulb, paper bag, and a few potatoes\nStyle/medium: soft opaque gouache with scratchy pencil edges on cool white watercolor paper\nComposition/framing: vertical 3:4 page; mini cluster at bottom-left; the entire vendor and cart canopy must fit within one fifth of page width and one quarter of page height, no more than 8% total area; leave over 90% blank paper\nColor palette: tiny localized brick red, apron green, amber lamp, two pale blue-gray snow marks; no pigment elsewhere\nText (verbatim): \"warm hands\" exactly once, microscopic pencil below the wheel\nConstraints: recognizable handmade illustration; white paper overwhelmingly dominates; no other text; no watermark\nAvoid: enlarged cart, full street, full bleed, cluster over 10%, dense snow, large type, vector finish, collage blocks, photorealism",
           "aspectRatio": "3:4",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/photo-revival/references/ref-04-source.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/photo-revival/references/ref-04-source.png",
           "referenceRole": "reference",
           "promptFile": "assets/examples/photo-revival/prompts/i2i-07.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/photo-revival/i2i-07.png",
+          "image": "https://clash.art/studio/image/assets/examples/photo-revival/i2i-07.png",
           "mediaOrigin": "studio"
         },
         {
@@ -762,10 +762,10 @@
           "prompt": "Use case: style-transfer\nAsset type: strict Photo Revival image-to-image example\nInput images: Image 1: source reference photo; use only this source\nPrimary request: redraw the older woman mending her fishing net as a tiny poetic illustration, preserving her seated working pose, coral headscarf, cobalt net, weathered yellow boat, and small wooden crate\nStyle/medium: translucent sea-washed watercolor with delicate pencil and threadlike ink lines on bright white deckled paper\nComposition/framing: vertical 3:4 page; tiny cluster at lower-right fitting within 24% page width and 26% page height, about 8-10% area; leave at least 88% blank white paper\nColor palette: vivid cobalt net, weathered yellow boat, coral scarf, all concentrated inside the cluster; two very pale gray-green sea strokes only\nText (verbatim): \"mend the blue\" exactly once as a tiny handwritten note below her hands\nConstraints: handmade redraw, not filtered photography; preserve the action and color anchors; no other text; no watermark\nAvoid: full beach, horizon across page, full bleed, focal area over 13%, large net mass, dense layout, heavy type, vectors, photorealism",
           "aspectRatio": "3:4",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/photo-revival/references/ref-05-source.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/photo-revival/references/ref-05-source.png",
           "referenceRole": "reference",
           "promptFile": "assets/examples/photo-revival/prompts/i2i-09.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/photo-revival/i2i-09.png",
+          "image": "https://clash.art/studio/image/assets/examples/photo-revival/i2i-09.png",
           "mediaOrigin": "studio"
         }
       ],
@@ -842,7 +842,7 @@
           "16:9"
         ]
       },
-      "cover": "https://studio.clash.video/studio-assets/examples/tait-crt-interface-skill/i2i-01.png",
+      "cover": "https://clash.art/studio/image/assets/examples/tait-crt-interface-skill/i2i-01.png",
       "gallery": [
         {
           "id": "geek-01a",
@@ -867,10 +867,10 @@
           "prompt": "Rebuild the lone convenience-store worker counting stock with an inventory scanner and clipboard beside a beverage shelf and open carton as an angular circa-1980s CRT bitmap editorial interface illustration.",
           "aspectRatio": "4:3",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/tait-crt-interface-skill/references/ref-agent-v4.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/tait-crt-interface-skill/references/ref-agent-v4.png",
           "referenceRole": "reference",
           "promptFile": "prompts/tait-crt-interface-skill-agent-v4.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/tait-crt-interface-skill/agent-v4.png",
+          "image": "https://clash.art/studio/image/assets/examples/tait-crt-interface-skill/agent-v4.png",
           "mediaOrigin": "studio"
         },
         {
@@ -878,10 +878,10 @@
           "prompt": "Bicycle mechanic rebuilt as a light-field 复古02 angular terminal caricature with four asymmetric windows and two unequal detail extractions.",
           "aspectRatio": "3:4",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/tait-crt-interface-skill/references/ref-01-source.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/tait-crt-interface-skill/references/ref-01-source.png",
           "referenceRole": "reference",
           "promptFile": "assets/examples/tait-crt-interface-skill/prompts/i2i-01.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/tait-crt-interface-skill/i2i-01.png",
+          "image": "https://clash.art/studio/image/assets/examples/tait-crt-interface-skill/i2i-01.png",
           "mediaOrigin": "studio"
         },
         {
@@ -889,10 +889,10 @@
           "prompt": "Two jazz musicians preserved as distinct identities in a 游戏01 six-window waveform cascade with three descending extractions.",
           "aspectRatio": "4:3",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/tait-crt-interface-skill/references/ref-02-source.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/tait-crt-interface-skill/references/ref-02-source.png",
           "referenceRole": "reference",
           "promptFile": "assets/examples/tait-crt-interface-skill/prompts/i2i-03.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/tait-crt-interface-skill/i2i-03.png",
+          "image": "https://clash.art/studio/image/assets/examples/tait-crt-interface-skill/i2i-03.png",
           "mediaOrigin": "studio"
         },
         {
@@ -900,10 +900,10 @@
           "prompt": "Greyhound rebuilt as an 80-percent 经典 two-color spear-mask silhouette with three sparse file windows.",
           "aspectRatio": "9:16",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/tait-crt-interface-skill/references/ref-03-source.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/tait-crt-interface-skill/references/ref-03-source.png",
           "referenceRole": "reference",
           "promptFile": "assets/examples/tait-crt-interface-skill/prompts/i2i-05.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/tait-crt-interface-skill/i2i-05.png",
+          "image": "https://clash.art/studio/image/assets/examples/tait-crt-interface-skill/i2i-05.png",
           "mediaOrigin": "studio"
         },
         {
@@ -911,10 +911,10 @@
           "prompt": "Lever espresso machine exaggerated into an 80-percent 复古01 mechanical monolith with a sparse terminal underlay.",
           "aspectRatio": "16:9",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/tait-crt-interface-skill/references/ref-04-source.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/tait-crt-interface-skill/references/ref-04-source.png",
           "referenceRole": "reference",
           "promptFile": "assets/examples/tait-crt-interface-skill/prompts/i2i-07.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/tait-crt-interface-skill/i2i-07.png",
+          "image": "https://clash.art/studio/image/assets/examples/tait-crt-interface-skill/i2i-07.png",
           "mediaOrigin": "studio"
         },
         {
@@ -922,10 +922,10 @@
           "prompt": "Botanist and giant leaf re-authored as a 复古02 geometric interaction beneath five botanical warning windows.",
           "aspectRatio": "1:1",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/tait-crt-interface-skill/references/ref-05-source.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/tait-crt-interface-skill/references/ref-05-source.png",
           "referenceRole": "reference",
           "promptFile": "assets/examples/tait-crt-interface-skill/prompts/i2i-09.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/tait-crt-interface-skill/i2i-09.png",
+          "image": "https://clash.art/studio/image/assets/examples/tait-crt-interface-skill/i2i-09.png",
           "mediaOrigin": "studio"
         }
       ],
@@ -1002,7 +1002,7 @@
           "1:1"
         ]
       },
-      "cover": "https://studio.clash.video/studio-assets/examples/ip-illustration-character-system/i2i-01.png",
+      "cover": "https://clash.art/studio/image/assets/examples/ip-illustration-character-system/i2i-01.png",
       "gallery": [
         {
           "id": "searcher",
@@ -1027,10 +1027,10 @@
           "prompt": "Lin plants one seed in a sparse 1:1 article illustration about starting small.",
           "aspectRatio": "1:1",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/ip-illustration-character-system/references/ref-01-source.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/ip-illustration-character-system/references/ref-01-source.png",
           "referenceRole": "reference",
           "promptFile": "assets/examples/ip-illustration-character-system/prompts/i2i-01.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/ip-illustration-character-system/i2i-01.png",
+          "image": "https://clash.art/studio/image/assets/examples/ip-illustration-character-system/i2i-01.png",
           "mediaOrigin": "studio"
         },
         {
@@ -1038,10 +1038,10 @@
           "prompt": "Malik compares blank contrast cards in a sparse 1:1 accessibility-testing article illustration.",
           "aspectRatio": "1:1",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/ip-illustration-character-system/references/ref-02-source.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/ip-illustration-character-system/references/ref-02-source.png",
           "referenceRole": "reference",
           "promptFile": "assets/examples/ip-illustration-character-system/prompts/i2i-03.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/ip-illustration-character-system/i2i-03.png",
+          "image": "https://clash.art/studio/image/assets/examples/ip-illustration-character-system/i2i-03.png",
           "mediaOrigin": "studio"
         },
         {
@@ -1049,10 +1049,10 @@
           "prompt": "Asha kneads dough in a sparse 1:1 article illustration about patient practice.",
           "aspectRatio": "1:1",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/ip-illustration-character-system/references/ref-03-source.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/ip-illustration-character-system/references/ref-03-source.png",
           "referenceRole": "reference",
           "promptFile": "assets/examples/ip-illustration-character-system/prompts/i2i-05.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/ip-illustration-character-system/i2i-05.png",
+          "image": "https://clash.art/studio/image/assets/examples/ip-illustration-character-system/i2i-05.png",
           "mediaOrigin": "studio"
         },
         {
@@ -1060,10 +1060,10 @@
           "prompt": "Rowan adjusts a bicycle chain in a sparse 1:1 article illustration about methodical repair.",
           "aspectRatio": "1:1",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/ip-illustration-character-system/references/ref-04-source.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/ip-illustration-character-system/references/ref-04-source.png",
           "referenceRole": "reference",
           "promptFile": "assets/examples/ip-illustration-character-system/prompts/i2i-07.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/ip-illustration-character-system/i2i-07.png",
+          "image": "https://clash.art/studio/image/assets/examples/ip-illustration-character-system/i2i-07.png",
           "mediaOrigin": "studio"
         },
         {
@@ -1071,10 +1071,10 @@
           "prompt": "Nia demonstrates an eclipse with simple objects in a sparse 1:1 science article illustration.",
           "aspectRatio": "1:1",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/ip-illustration-character-system/references/ref-05-source.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/ip-illustration-character-system/references/ref-05-source.png",
           "referenceRole": "reference",
           "promptFile": "assets/examples/ip-illustration-character-system/prompts/i2i-09.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/ip-illustration-character-system/i2i-09.png",
+          "image": "https://clash.art/studio/image/assets/examples/ip-illustration-character-system/i2i-09.png",
           "mediaOrigin": "studio"
         }
       ],
@@ -1137,11 +1137,11 @@
           "id": "surreal-pop-collage-diversity-v5",
           "title": "The Scallion in the Fridge",
           "prompt": "Use case: style-transfer\nAsset type: finished surreal pop collage\nInput images: Image 1 is the sole source photograph and reality anchor.\nPrimary request: Create a bright surreal pop collage, vertical 3:4. Keep the complete open refrigerator and its recognizable shelves, eggs, tofu containers, cherry tomatoes, lemon, pickle jar, leftover container, vegetable drawers, and grocery arrangement clearly recognizable but desaturated to black and white, preserving photographic texture and the straight-on household snapshot logic.\nFlat-color world: Replace only the surrounding kitchen and selected quiet refrigerator-background regions with two or three huge flat matte shapes derived from the groceries: a pistachio-green vertical plane, a tomato-red semicircle, and a lemon-yellow shelf band. Flat matte colors only, no gradients and no dimensional shadows on color shapes.\nOne impossible element: exactly one absurd giant scallion, derived from the real scallions already on the middle shelf, enlarges and curves upward through the open refrigerator like a single arch while remaining visibly connected to that shelf. This giant scallion is the only impossible element.\nSmall elements: three tiny lemon seeds in graduated sizes follow one loose arc near the open door, plus two short white hand-drawn wobble strokes. Keep these subordinate and away from groceries.\nComposition: vertical 3:4, complete refrigerator visible with breathing room, black-and-white domestic reality colliding cleanly with flat pistachio, tomato, and lemon fields. Bright, playful, spacious.\nConstraints: only one giant impossible object; no second surreal object; no text, letters, numbers, labels, logo, watermark, frame, dark horror tone, gradients, glossy 3D color shapes, imported decorative objects, faces, people, pottery, artisan, tram, bus stop, mountain, lake, kayak, or rain.",
-          "preview": "https://studio.clash.video/studio-assets/catalog/diversity-20260826/surreal-pop-collage/result-giant-scallion-collage.png",
-          "referenceImage": "https://studio.clash.video/studio-assets/catalog/diversity-20260826/surreal-pop-collage/source-fridge-groceries.png",
-          "referencePreview": "https://studio.clash.video/studio-assets/catalog/diversity-20260826/surreal-pop-collage/source-fridge-groceries.png",
-          "referenceResourceUri": "https://studio.clash.video/studio-assets/catalog/diversity-20260826/surreal-pop-collage/source-fridge-groceries.png",
-          "image": "https://studio.clash.video/studio-assets/catalog/diversity-20260826/surreal-pop-collage/result-giant-scallion-collage.png",
+          "preview": "https://clash.art/studio/image/assets/catalog/diversity-20260826/surreal-pop-collage/result-giant-scallion-collage.png",
+          "referenceImage": "https://clash.art/studio/image/assets/catalog/diversity-20260826/surreal-pop-collage/source-fridge-groceries.png",
+          "referencePreview": "https://clash.art/studio/image/assets/catalog/diversity-20260826/surreal-pop-collage/source-fridge-groceries.png",
+          "referenceResourceUri": "https://clash.art/studio/image/assets/catalog/diversity-20260826/surreal-pop-collage/source-fridge-groceries.png",
+          "image": "https://clash.art/studio/image/assets/catalog/diversity-20260826/surreal-pop-collage/result-giant-scallion-collage.png",
           "aspectRatio": "3:4",
           "mode": "image-to-image",
           "referenceRole": "reference",
@@ -1153,10 +1153,10 @@
           "prompt": "Transform the resident climbing terrazzo stairs with groceries into a black-and-white documentary anchor against flat celadon, kraft, and deep-green planes, with one impossible giant red-purple onion.",
           "aspectRatio": "3:4",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/surreal-pop-collage/references/ref-agent-v4.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/surreal-pop-collage/references/ref-agent-v4.png",
           "referenceRole": "reference",
           "promptFile": "prompts/surreal-pop-collage-agent-v4.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/surreal-pop-collage/agent-v4.png",
+          "image": "https://clash.art/studio/image/assets/examples/surreal-pop-collage/agent-v4.png",
           "mediaOrigin": "studio"
         },
         {
@@ -1164,10 +1164,10 @@
           "prompt": "Fisherman and village in black-and-white against cobalt, pale-turquoise, and mustard flat shapes, with one monumental source-derived blue fishing boat.",
           "aspectRatio": "3:4",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/surreal-pop-collage/references/ref-01-source.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/surreal-pop-collage/references/ref-01-source.png",
           "referenceRole": "reference",
           "promptFile": "assets/examples/surreal-pop-collage/prompts/i2i-01.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/surreal-pop-collage/i2i-01.png",
+          "image": "https://clash.art/studio/image/assets/examples/surreal-pop-collage/i2i-01.png",
           "mediaOrigin": "studio"
         },
         {
@@ -1175,10 +1175,10 @@
           "prompt": "Cyclist and desert road in black-and-white with teal, terracotta, and coral flat planes and one enormous bicycle wheel behind the cliff.",
           "aspectRatio": "3:4",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/surreal-pop-collage/references/ref-02-source.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/surreal-pop-collage/references/ref-02-source.png",
           "referenceRole": "reference",
           "promptFile": "assets/examples/surreal-pop-collage/prompts/i2i-03.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/surreal-pop-collage/i2i-03.png",
+          "image": "https://clash.art/studio/image/assets/examples/surreal-pop-collage/i2i-03.png",
           "mediaOrigin": "studio"
         },
         {
@@ -1186,10 +1186,10 @@
           "prompt": "Cafe reader in black-and-white against orange, mint, and yellow flat architecture with one building-scale espresso cup above the awning.",
           "aspectRatio": "3:4",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/surreal-pop-collage/references/ref-03-source.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/surreal-pop-collage/references/ref-03-source.png",
           "referenceRole": "reference",
           "promptFile": "assets/examples/surreal-pop-collage/prompts/i2i-05.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/surreal-pop-collage/i2i-05.png",
+          "image": "https://clash.art/studio/image/assets/examples/surreal-pop-collage/i2i-05.png",
           "mediaOrigin": "studio"
         },
         {
@@ -1197,10 +1197,10 @@
           "prompt": "Alpine station and peaks in black-and-white against red, cyan, white, and yellow shapes with one monumental gondola on the source cables.",
           "aspectRatio": "3:4",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/surreal-pop-collage/references/ref-04-source.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/surreal-pop-collage/references/ref-04-source.png",
           "referenceRole": "reference",
           "promptFile": "assets/examples/surreal-pop-collage/prompts/i2i-07.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/surreal-pop-collage/i2i-07.png",
+          "image": "https://clash.art/studio/image/assets/examples/surreal-pop-collage/i2i-07.png",
           "mediaOrigin": "studio"
         },
         {
@@ -1208,14 +1208,14 @@
           "prompt": "Greenhouse gardener in black-and-white against turquoise, emerald, and terracotta planes with one enormous coral tomato on the source vine.",
           "aspectRatio": "3:4",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/surreal-pop-collage/references/ref-05-source.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/surreal-pop-collage/references/ref-05-source.png",
           "referenceRole": "reference",
           "promptFile": "assets/examples/surreal-pop-collage/prompts/i2i-09.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/surreal-pop-collage/i2i-09.png",
+          "image": "https://clash.art/studio/image/assets/examples/surreal-pop-collage/i2i-09.png",
           "mediaOrigin": "studio"
         }
       ],
-      "cover": "https://studio.clash.video/studio-assets/examples/surreal-pop-collage/i2i-01.png",
+      "cover": "https://clash.art/studio/image/assets/examples/surreal-pop-collage/i2i-01.png",
       "coverOrigin": "studio"
     },
     {
@@ -1276,7 +1276,7 @@
           "9:16"
         ]
       },
-      "cover": "https://studio.clash.video/studio-assets/examples/heytea-doodle-poster/i2i-01.png",
+      "cover": "https://clash.art/studio/image/assets/examples/heytea-doodle-poster/i2i-01.png",
       "gallery": [
         {
           "id": "after-typography",
@@ -1289,11 +1289,11 @@
           "id": "heytea-doodle-poster-diversity-v5",
           "title": "Grapefruit Soda Maintenance Crew",
           "prompt": "Use case: style-transfer\nAsset type: no-text narrative object-and-doodle poster\nInput images: Image 1 is the sole source photograph and subject anchor.\nPrimary request: Transform the casual grapefruit-soda snack photo into a vertical 2:3 quiet object theater while preserving the exact clear ridged glass cup as a real photographic object: pale pink soda, ice cubes, condensation, grapefruit wedge, glass refraction, silhouette, and believable contact shadow. Do not redraw the drink. The rice triangle may be removed so the glass remains the single hero object.\nScene/backdrop: remove the convenience-store surroundings and isolate the complete real glass on a clean soft off-white field with generous negative space.\nLayout: vertical 2:3 portrait. Keep the entire glass fully visible and uncropped, slightly right of center and below center, about 42 percent of canvas height. Do not reserve a title area; organize the negative space around one action path.\nDoodle overlay: Add exactly one primitive black-line micro worker climbing the outside condensation of the glass with one crude short ladder and one broken rope line, reaching toward the grapefruit wedge as if maintaining it. Figure height about 13 percent of glass height. Draw the worker with separate thick uneven marker strokes: blank lumpy open head with no face, short open-segment tube body, stiff segmented arms, blocky paddle hands, short bent dash feet, blunt ends, tiny gaps, overshoots, hard bends, and bad joins. Add only two small black-line droplets beneath the action. The figure and ladder must visibly interact with the real glass.\nText constraints: no text anywhere; no Chinese characters, English letters, numbers, labels, captions, logo text, random glyphs, or watermark.\nConstraints: preserve the real photographed glass and its natural material; edit only background, placement, and primitive black doodle action. No full-cartoon conversion, no colored doodles, no polished vector, no cute sticker, no mascot, no realistic face, no dense decoration, no comic panel, no gradients, no brand package, no official HEYTEA logo or mark, no pottery, artisan, tram, bus stop, mountain, lake, kayak, or rain.",
-          "preview": "https://studio.clash.video/studio-assets/catalog/diversity-20260826/heytea-doodle-poster/result-micro-worker-soda.png",
-          "referenceImage": "https://studio.clash.video/studio-assets/catalog/diversity-20260826/heytea-doodle-poster/source-grapefruit-soda-snack.png",
-          "referencePreview": "https://studio.clash.video/studio-assets/catalog/diversity-20260826/heytea-doodle-poster/source-grapefruit-soda-snack.png",
-          "referenceResourceUri": "https://studio.clash.video/studio-assets/catalog/diversity-20260826/heytea-doodle-poster/source-grapefruit-soda-snack.png",
-          "image": "https://studio.clash.video/studio-assets/catalog/diversity-20260826/heytea-doodle-poster/result-micro-worker-soda.png",
+          "preview": "https://clash.art/studio/image/assets/catalog/diversity-20260826/heytea-doodle-poster/result-micro-worker-soda.png",
+          "referenceImage": "https://clash.art/studio/image/assets/catalog/diversity-20260826/heytea-doodle-poster/source-grapefruit-soda-snack.png",
+          "referencePreview": "https://clash.art/studio/image/assets/catalog/diversity-20260826/heytea-doodle-poster/source-grapefruit-soda-snack.png",
+          "referenceResourceUri": "https://clash.art/studio/image/assets/catalog/diversity-20260826/heytea-doodle-poster/source-grapefruit-soda-snack.png",
+          "image": "https://clash.art/studio/image/assets/catalog/diversity-20260826/heytea-doodle-poster/result-micro-worker-soda.png",
           "aspectRatio": "2:3",
           "mode": "image-to-image",
           "referenceRole": "subject",
@@ -1305,10 +1305,10 @@
           "prompt": "Isolate the photographed snack bag of orange-red fried rice-cake pieces and two bamboo skewers on warm off-white, then add only sparse black-marker micro-worker doodles and action marks.",
           "aspectRatio": "2:3",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/heytea-doodle-poster/references/ref-agent-v4.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/heytea-doodle-poster/references/ref-agent-v4.png",
           "referenceRole": "reference",
           "promptFile": "prompts/heytea-doodle-poster-agent-v4.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/heytea-doodle-poster/agent-v4.png",
+          "image": "https://clash.art/studio/image/assets/examples/heytea-doodle-poster/agent-v4.png",
           "mediaOrigin": "studio"
         },
         {
@@ -1316,10 +1316,10 @@
           "prompt": "Use case: style-transfer\nAsset type: strict I2I example, typography-led vertical object-and-doodle poster\nInput images: Image 1 is the sole source reference and subject anchor.\nPrimary request: Transform the source citrus iced-tea photo into a quiet typography-led poster while preserving the exact photographed ribbed glass, amber liquid, ice, orange wheel, condensation, material, and recognizable silhouette. Do not redraw the drink.\nScene/backdrop: remove the kitchen surroundings and isolate the real glass on a clean warm-white field with its believable soft contact shadow.\nComposition/framing: 3:4 portrait. Place the glass lower-right at about 34 percent of canvas height. Make a large upper-left title block the first visual signal, with generous breathing room.\nDoodle action: add exactly one tiny primitive faceless black-line micro worker beside the glass, quietly inspecting the orange wheel with one short pointer. Use broken blunt marker strokes, lumpy open head, stiff segmented limbs, bad joins; figure height about 10 percent of glass height.\nText (verbatim): \"慢慢喝一口\"\nLettering: render only that title as large rough crooked childlike Chinese blunt-marker lettering, loose vertical arrangement, uneven sizes and spacing, malformed but readable skeletons, flat black ink, off-grid placement. No subtitle.\nConstraints: preserve the real photographed glass; only change background, placement, lettering, and minimal doodle overlay. No official HEYTEA logo or mascot, no brand mark, no extra text, no English, no numbers, no watermark, no cute sticker style, no polished vector, no gradients, no dense decoration, no realistic person, no full-cartoon conversion.",
           "aspectRatio": "3:4",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/heytea-doodle-poster/references/ref-01-source.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/heytea-doodle-poster/references/ref-01-source.png",
           "referenceRole": "subject",
           "promptFile": "assets/examples/heytea-doodle-poster/prompts/i2i-01.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/heytea-doodle-poster/i2i-01.png",
+          "image": "https://clash.art/studio/image/assets/examples/heytea-doodle-poster/i2i-01.png",
           "mediaOrigin": "studio"
         },
         {
@@ -1327,10 +1327,10 @@
           "prompt": "Use case: style-transfer\nAsset type: strict I2I example, typography-led vertical object-and-doodle poster\nInput images: Image 1 is the sole source reference and subject anchor.\nPrimary request: Transform the source strawberry tart photo into a quiet typography-led poster while preserving the exact photographed tart, strawberry arrangement, irregular cream, pastry texture, crumbs, ceramic plate, and recognizable silhouette. Do not redraw the food.\nScene/backdrop: remove the breakfast-table surroundings and isolate the real tart and plate on a clean warm-white field with a believable delicate contact shadow.\nComposition/framing: 3:4 portrait. Place the tart and plate lower-center at about 30 percent of canvas height. Make a large upper-left title block the first visual signal.\nDoodle action: add exactly one tiny primitive faceless black-line micro worker near the plate rim, quietly sprinkling two crumb dots from a small paddle hand. Use broken blunt marker strokes, lumpy open head, stiff segmented limbs, bad joins; figure height about 9 percent of tart height.\nText (verbatim): \"小小补给站\"\nLettering: render only that title as large rough crooked childlike Chinese blunt-marker lettering, two loose staggered vertical groupings, uneven sizes, awkward spacing, malformed but readable skeletons, flat black ink. No subtitle.\nConstraints: preserve the real photographed tart and plate; only change background, placement, lettering, and minimal doodle overlay. No official HEYTEA logo or mascot, no brand mark, no extra text, no English, no numbers, no watermark, no cute sticker style, no polished vector, no gradients, no dense decoration, no realistic person, no full-cartoon conversion.",
           "aspectRatio": "3:4",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/heytea-doodle-poster/references/ref-02-source.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/heytea-doodle-poster/references/ref-02-source.png",
           "referenceRole": "subject",
           "promptFile": "assets/examples/heytea-doodle-poster/prompts/i2i-03.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/heytea-doodle-poster/i2i-03.png",
+          "image": "https://clash.art/studio/image/assets/examples/heytea-doodle-poster/i2i-03.png",
           "mediaOrigin": "studio"
         },
         {
@@ -1338,10 +1338,10 @@
           "prompt": "Use case: style-transfer\nAsset type: strict I2I example, typography-led vertical object-and-doodle poster\nInput images: Image 1 is the sole source reference and subject anchor.\nPrimary request: Transform the source pale-green soda bottle photo into a quiet typography-led poster while preserving the exact photographed transparent bottle, squat proportions, metal cap, green liquid, bubbles, condensation, glass refraction, and recognizable silhouette. Do not redraw the bottle.\nScene/backdrop: remove the cafe surroundings and isolate the real bottle on a clean chalk-white field with its believable cool contact shadow.\nComposition/framing: 3:4 portrait. Place the bottle lower-right at about 38 percent of canvas height. Make a large left-side title block the first visual signal with open white space around it.\nDoodle action: add exactly one tiny primitive faceless black-line micro worker near the cap, quietly pointing upward as if inspecting bubbles. Use broken blunt marker strokes, lumpy open head, stiff segmented limbs, bad joins; figure height about 10 percent of bottle height.\nText (verbatim): \"轻轻冒个泡\"\nLettering: render only that title as large rough crooked childlike Chinese blunt-marker lettering in one loose vertical column that drifts off-grid, uneven sizes and gaps, malformed but readable skeletons, flat black ink. No subtitle.\nConstraints: preserve the real photographed bottle; only change background, placement, lettering, and minimal doodle overlay. No official HEYTEA logo or mascot, no brand mark, no extra text, no English, no numbers, no watermark, no cute sticker style, no polished vector, no gradients, no dense decoration, no realistic person, no full-cartoon conversion.",
           "aspectRatio": "3:4",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/heytea-doodle-poster/references/ref-03-source.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/heytea-doodle-poster/references/ref-03-source.png",
           "referenceRole": "subject",
           "promptFile": "assets/examples/heytea-doodle-poster/prompts/i2i-05.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/heytea-doodle-poster/i2i-05.png",
+          "image": "https://clash.art/studio/image/assets/examples/heytea-doodle-poster/i2i-05.png",
           "mediaOrigin": "studio"
         },
         {
@@ -1349,10 +1349,10 @@
           "prompt": "Use case: style-transfer\nAsset type: strict I2I example, typography-led vertical object-and-doodle poster\nInput images: Image 1 is the sole source reference and subject anchor.\nPrimary request: Transform the source worn ivory canvas sneaker photo into a quiet typography-led daily-object poster while preserving the exact photographed shoe, canvas weave, creases, scuffs, rubber texture, untied cotton laces, and recognizable silhouette. Do not redraw or beautify the shoe and do not turn it into a drink product.\nScene/backdrop: remove the entryway surroundings and isolate the real sneaker on a clean warm-white field with its believable soft contact shadow.\nComposition/framing: 3:4 portrait. Place the sneaker lower-right on a shallow diagonal at about 32 percent of canvas height. Make a large upper-left title block the first visual signal.\nDoodle action: add exactly one tiny primitive faceless black-line micro worker near the loose lace end, quietly holding it like a rope. Use broken blunt marker strokes, lumpy open head, stiff segmented limbs, bad joins; figure height about 11 percent of shoe height.\nText (verbatim): \"慢慢走就好\"\nLettering: render only that title as large rough crooked childlike Chinese blunt-marker lettering in loose staggered vertical placement, uneven sizes and spacing, malformed but readable skeletons, flat black ink. No subtitle.\nConstraints: preserve the real photographed sneaker; only change background, placement, lettering, and minimal doodle overlay. No official HEYTEA logo or mascot, no brand mark, no extra text, no English, no numbers, no watermark, no cute sticker style, no polished vector, no gradients, no dense decoration, no realistic person, no full-cartoon conversion.",
           "aspectRatio": "3:4",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/heytea-doodle-poster/references/ref-04-source.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/heytea-doodle-poster/references/ref-04-source.png",
           "referenceRole": "subject",
           "promptFile": "assets/examples/heytea-doodle-poster/prompts/i2i-07.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/heytea-doodle-poster/i2i-07.png",
+          "image": "https://clash.art/studio/image/assets/examples/heytea-doodle-poster/i2i-07.png",
           "mediaOrigin": "studio"
         },
         {
@@ -1360,10 +1360,10 @@
           "prompt": "Use case: style-transfer\nAsset type: strict I2I example, typography-led vertical object-and-doodle poster\nInput images: Image 1 is the sole source reference and subject anchor.\nPrimary request: Transform the source mushroom-shaped ceramic table lamp photo into a quiet typography-led daily-object poster while preserving the exact photographed lamp, ochre dome, cream ceramic base, matte glaze, warm illumination, and recognizable silhouette. Do not redraw the lamp and do not turn it into a drink product.\nScene/backdrop: remove the bedside surroundings and isolate the real switched-on lamp on a clean warm-white field with a subtle pool of warm light and believable contact shadow.\nComposition/framing: 3:4 portrait. Place the lamp lower-right at about 38 percent of canvas height. Make a large upper-left title block the first visual signal.\nDoodle action: add exactly one tiny primitive faceless black-line micro worker near the base, quietly pointing toward the warm pool of light. Use broken blunt marker strokes, lumpy open head, stiff segmented limbs, bad joins; figure height about 10 percent of lamp height.\nText (verbatim): \"留一盏小灯\"\nLettering: render only that title as large rough crooked childlike Chinese blunt-marker lettering in loose staggered vertical placement, uneven sizes and awkward spacing, malformed but readable skeletons, flat black ink. No subtitle.\nConstraints: preserve the real photographed lamp; only change background, placement, lettering, light pool, and minimal doodle overlay. No official HEYTEA logo or mascot, no brand mark, no extra text, no English, no numbers, no watermark, no cute sticker style, no polished vector, no gradients beyond the lamp's natural light falloff, no dense decoration, no realistic person, no full-cartoon conversion.",
           "aspectRatio": "3:4",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/heytea-doodle-poster/references/ref-05-source.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/heytea-doodle-poster/references/ref-05-source.png",
           "referenceRole": "subject",
           "promptFile": "assets/examples/heytea-doodle-poster/prompts/i2i-09.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/heytea-doodle-poster/i2i-09.png",
+          "image": "https://clash.art/studio/image/assets/examples/heytea-doodle-poster/i2i-09.png",
           "mediaOrigin": "studio"
         }
       ],
@@ -1426,11 +1426,11 @@
           "id": "travel-memory-sticker-card-diversity-v5",
           "title": "Last Light, Quiet Court",
           "prompt": "Create exactly one finished 3:2 horizontal Travel Memory Sticker Card from the supplied neighborhood basketball-court photograph. Show the whole card with a continuous 4–5% warm off-white textured-paper margin; do not crop any edge. Left 67%: a large near-square completely unframed illustration resting directly on paper, above a shallow exposed-paper footer. Preserve the identification anchor of the Latino teenage boy in a plum hoodie tying one sneaker on the dark green bench, with orange basketball at his foot, rendered in cohesive matte gouache/cut-paper grain rather than photography. Expand the terracotta court as the broad quiet field; reduce peach dusk, green fence, hoop, tree and houses to 5–8 blunt source-derived planes with chalky edges, restrained pigment variation, soft misregistration and no gradients. Center exactly these three English keyword phrases once beneath the illustration: Plum Hoodie · Last Light · Quiet Court. Right 31%: exactly six separate source-derived die-cut stickers, all fully visible and uncropped, using full height, two large and four smaller, calm staggered spacing, thick irregular warm-white hand-cut borders and subtle flat shadows: boy tying sneaker, orange basketball, hoop with backboard, dark green bench with folded gray sweatshirt as one grouped motif, mint water bottle, and one chain-link fence corner with a plane-tree shadow. Remove all source text and logos. No other readable text, title, caption, date, postal marks, watermark, signature, extra sticker, photo patch, inner frame, marker strokes, watercolor wash, detailed leaves or anatomy, glossy 3D, gradients, anime, polished vector art, pottery, ferry terminal, tram, bus, mountain lake, or kayak.",
-          "preview": "https://studio.clash.video/studio-assets/catalog/diversity-20260826/travel-memory-sticker-card/result.png",
-          "image": "https://studio.clash.video/studio-assets/catalog/diversity-20260826/travel-memory-sticker-card/result.png",
-          "referenceImage": "https://studio.clash.video/studio-assets/catalog/diversity-20260826/travel-memory-sticker-card/source.png",
-          "referencePreview": "https://studio.clash.video/studio-assets/catalog/diversity-20260826/travel-memory-sticker-card/source.png",
-          "referenceResourceUri": "https://studio.clash.video/studio-assets/catalog/diversity-20260826/travel-memory-sticker-card/source.png",
+          "preview": "https://clash.art/studio/image/assets/catalog/diversity-20260826/travel-memory-sticker-card/result.png",
+          "image": "https://clash.art/studio/image/assets/catalog/diversity-20260826/travel-memory-sticker-card/result.png",
+          "referenceImage": "https://clash.art/studio/image/assets/catalog/diversity-20260826/travel-memory-sticker-card/source.png",
+          "referencePreview": "https://clash.art/studio/image/assets/catalog/diversity-20260826/travel-memory-sticker-card/source.png",
+          "referenceResourceUri": "https://clash.art/studio/image/assets/catalog/diversity-20260826/travel-memory-sticker-card/source.png",
           "aspectRatio": "3:2",
           "mediaType": "image",
           "mode": "image-to-image",
@@ -1442,10 +1442,10 @@
           "prompt": "Turn the rainy neighborhood-bus photograph into a horizontal collectible memory card with an unframed commute illustration and six source-derived journaling stickers.",
           "aspectRatio": "3:2",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/travel-memory-sticker-card/references/ref-agent-v4.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/travel-memory-sticker-card/references/ref-agent-v4.png",
           "referenceRole": "reference",
           "promptFile": "prompts/travel-memory-sticker-card-agent-v4.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/travel-memory-sticker-card/agent-v4.png",
+          "image": "https://clash.art/studio/image/assets/examples/travel-memory-sticker-card/agent-v4.png",
           "mediaOrigin": "studio"
         },
         {
@@ -1453,10 +1453,10 @@
           "prompt": "Use case: style-transfer. Asset type: finished horizontal collectible travel memory sticker card. Use the supplied Mediterranean tram photograph as the only source reference. Create one 3:2 horizontal card on warm off-white uncoated paper with a continuous 4-5% outer margin. Left 66-68%: one large near-square completely unframed matte gouache and cut-paper illustration above a shallow exposed-paper footer. Preserve the mustard-yellow tram as the compact identification anchor through silhouette, uphill angle, placement between buildings, and signature color, entirely redrawn in the same grainy medium; landmark text: NONE. Expand the blue sea opening and pale street into quiet fields; rebuild with 6 broad dusty color families and 3-6 oversized blunt shapes. Footer text exactly once: \"Sea Climb · Yellow Tram · Warm Facades\" in small muted ink, centered and unboxed. Right 30-32%: exactly six separate source-derived die-cut stickers with thick irregular warm-white borders and subtle flat paper shadows: tram front, paired stucco facades, cable-wire loop, striped awning, terracotta planter, two-person silhouette. Use full column height with two larger and four smaller motifs, calm staggered spacing. Add no other readable text, title, date, postal marks, watermark, signature, frame, or unrelated object. No photographic patch, photorealism, watercolor wash, marker strokes, gradients, glossy 3D, anime, clip art, or polished vector edges.",
           "aspectRatio": "3:2",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/travel-memory-sticker-card/references/ref-01-source.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/travel-memory-sticker-card/references/ref-01-source.png",
           "referenceRole": "reference",
           "promptFile": "assets/examples/travel-memory-sticker-card/prompts/i2i-01.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/travel-memory-sticker-card/i2i-01.png",
+          "image": "https://clash.art/studio/image/assets/examples/travel-memory-sticker-card/i2i-01.png",
           "mediaOrigin": "studio"
         },
         {
@@ -1464,10 +1464,10 @@
           "prompt": "Use case: style-transfer. Asset type: finished horizontal collectible travel memory sticker card. Use the supplied alpine cable-car photograph as the only source reference. Produce one 3:2 horizontal warm off-white paper card with continuous 4-5% margin. Left 66-68%: large near-square unframed illustration plus shallow exposed-paper keyword footer. Preserve the red cable car as the identification anchor through suspended silhouette, proportion, cable relationship, and red color, fully redrawn in matte gouache/cut-paper grain; landmark text: NONE. Make pale turquoise lake the dominant quiet field; reduce peak, pine shore, and station to six broad cool planes, dry chalky uneven edges, restrained contrast, one red accent. Footer exactly once: \"Glacier Water · Red Cabin · Clear Height\" in small muted ink separated by centered dots. Right 30-32%: EXACTLY SIX stickers total, count them as six separate die-cut pieces and no more: (1) cable car, (2) angular snow peak, (3) ONE single sticker containing the paired pine masses together, (4) timber station roof, (5) yellow trail marker, (6) two hikers together. Never split a listed motif into extra stickers. Give each thick irregular warm-white border and subtle flat shadow; use three larger and three smaller pieces across full height with calm irregular spacing. No other readable text, title, date, postal marks, watermark, signature, frame, photographic patch, detailed trees, gradients, watercolor, marker strokes, glossy 3D, anime, clip art, or vector polish.",
           "aspectRatio": "3:2",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/travel-memory-sticker-card/references/ref-02-source.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/travel-memory-sticker-card/references/ref-02-source.png",
           "referenceRole": "reference",
           "promptFile": "assets/examples/travel-memory-sticker-card/prompts/i2i-03-retry.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/travel-memory-sticker-card/i2i-03.png",
+          "image": "https://clash.art/studio/image/assets/examples/travel-memory-sticker-card/i2i-03.png",
           "mediaOrigin": "studio"
         },
         {
@@ -1475,10 +1475,10 @@
           "prompt": "Use case: style-transfer. Asset type: finished horizontal collectible travel memory sticker card. Use the supplied rainy old-town photograph as the only source reference. Make one 3:2 horizontal warm off-white uncoated-paper card with continuous 4-5% margin. Left 66-68%: a large near-square unframed illustration resting directly on paper with shallow footer below. Preserve the cobalt-coated umbrella figure as the compact identification anchor through posture, umbrella relation, position beside bicycle, and cobalt color, fully redrawn in matte gouache/cut-paper grain; landmark text: NONE. Expand the ochre wall and wet charcoal street as quiet fields; compress gate, bicycle, puddle, and eave into 5-8 broad planes with chalky edges and flat color shadows. Footer text exactly once: \"Rain Wall · Cobalt Coat · Still Bicycle\" in small quiet ink centered with dots. Right 30-32%: exactly six source-derived die-cut stickers with thick irregular warm-white borders and subtle flat shadows: clear umbrella, cobalt figure, cream bicycle, wooden gate fragment, red lantern without lettering, curled gray cat. Two or three large and remainder small, calm irregular full-height spacing. No other readable text, title, date, postal marks, watermark, signature, frame, photographic patch, detailed face, wet watercolor, glossy puddle, gradient, marker strokes, 3D, anime, clip art, or vector polish.",
           "aspectRatio": "3:2",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/travel-memory-sticker-card/references/ref-03-source.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/travel-memory-sticker-card/references/ref-03-source.png",
           "referenceRole": "reference",
           "promptFile": "assets/examples/travel-memory-sticker-card/prompts/i2i-05.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/travel-memory-sticker-card/i2i-05.png",
+          "image": "https://clash.art/studio/image/assets/examples/travel-memory-sticker-card/i2i-05.png",
           "mediaOrigin": "studio"
         },
         {
@@ -1486,10 +1486,10 @@
           "prompt": "Use case: style-transfer. Asset type: finished horizontal collectible travel memory sticker card. Use the supplied desert camper photograph as the only source reference. Create one 3:2 horizontal memory sticker card on warm off-white uncoated paper with continuous 4-5% margin. Left 66-68%: large near-square completely unframed illustration plus shallow exposed-paper footer. Preserve the sage-green camper as the identification anchor through boxy silhouette, roadside placement, window rhythm, and sage color, entirely redrawn in matte gouache/cut-paper grain; landmark text: NONE. Expand pale peach sky into the dominant quiet field; reduce mesas, road, and scrub to 5-7 oversized rust, sand, sage, and blue planes with hand-cut chalky edges and subtle misregistration. Footer exactly once: \"Peach Sky · Sage Camper · Mesa Pause\" small, centered, unboxed, separated by dots. Right 30-32%: exactly six source-derived die-cut stickers with thick irregular warm-white borders and flat shadows: camper front, rust mesa, blank crooked sign, folded chair, blue enamel mug, agave sprig. Two large and four small, calm irregular full-height spacing. No other text, title, date, postal marks, watermark, signature, frame, photographic patch, realistic vehicle mechanics, gradients, watercolor wash, glossy 3D, anime, clip art, or polished vector style.",
           "aspectRatio": "3:2",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/travel-memory-sticker-card/references/ref-04-source.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/travel-memory-sticker-card/references/ref-04-source.png",
           "referenceRole": "reference",
           "promptFile": "assets/examples/travel-memory-sticker-card/prompts/i2i-07.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/travel-memory-sticker-card/i2i-07.png",
+          "image": "https://clash.art/studio/image/assets/examples/travel-memory-sticker-card/i2i-07.png",
           "mediaOrigin": "studio"
         },
         {
@@ -1497,14 +1497,14 @@
           "prompt": "Use case: style-transfer. Asset type: finished horizontal collectible travel memory sticker card. Use the supplied northern harbor photograph as the only source reference. Create one 3:2 horizontal card on warm off-white textured paper with continuous 4-5% margin. Left 66-68%: a large near-square completely unframed illustration above a shallow exposed-paper footer. Preserve the shaggy rust-and-white dog as the compact identification anchor through standing profile, coat color blocks, position on pier, and gaze toward water, entirely redrawn in same matte gouache/cut-paper grain; landmark text: NONE. Expand slate-blue water and misty sky as quiet fields; compress pier, boat, boathouses, and island into 5-8 broad subdued planes with chalky uneven edges. Footer exactly once: \"Harbor Hush · Rust Dog · Slate Water\" small, centered, unboxed, separated by dots. Right 30-32%: exactly six separate source-derived die-cut stickers with thick irregular warm-white borders and subtle flat shadows: dog head profile, vermilion boat, paired boathouses, white life ring without lettering, rope coil, three-gull group. Two or three large and remainder small, relaxed full-height stagger. No other readable text, title, date, postal marks, watermark, signature, frame, photographic patch, detailed fur, realistic waves, gradients, watercolor, glossy 3D, anime, clip art, or polished vectors.",
           "aspectRatio": "3:2",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/travel-memory-sticker-card/references/ref-05-source.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/travel-memory-sticker-card/references/ref-05-source.png",
           "referenceRole": "reference",
           "promptFile": "assets/examples/travel-memory-sticker-card/prompts/i2i-09.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/travel-memory-sticker-card/i2i-09.png",
+          "image": "https://clash.art/studio/image/assets/examples/travel-memory-sticker-card/i2i-09.png",
           "mediaOrigin": "studio"
         }
       ],
-      "cover": "https://studio.clash.video/studio-assets/examples/travel-memory-sticker-card/i2i-01.png",
+      "cover": "https://clash.art/studio/image/assets/examples/travel-memory-sticker-card/i2i-01.png",
       "coverOrigin": "studio"
     },
     {
@@ -1550,7 +1550,7 @@
           "16:9"
         ]
       },
-      "cover": "https://studio.clash.video/studio-assets/examples/reality-restaged/i2i-01.png",
+      "cover": "https://clash.art/studio/image/assets/examples/reality-restaged/i2i-01.png",
       "gallery": [
         {
           "id": "restaged-2",
@@ -1575,13 +1575,13 @@
           "id": "reality-restaged-diversity-v5",
           "title": "Learning the Fold",
           "prompt": "Restage the supplied civic-plaza roller-skating lesson as a complete 4:3 Reality Restaged documentary tableau. Preserve the three distinct people, the plum-jacket teenager steadying the helmeted child, the mustard-hoodie teenager looking back, their natural proportions, realistic skates, caring gestures, and exactly four orange cones. Remove the building, benches, bicycle racks, trees, and plaza clutter. Rebuild the world from one enormous matte marigold ground plane, one monumental deep-aubergine wall, and a pale-apricot void. Establish one impossible logic only: a narrow cream skating path begins flat beneath the trio, folds upward through a ninety-degree seam, and carries continuous wheel tracks while all people retain believable upright gravity. Keep the complete trio small in the lower-right third and let huge color fields dominate. Render as believable analog documentary photography with realistic skin, fabric, skate hardware, contact shadows, subtle 35mm grain, restrained sharpness, and no text, logo, watermark, giant props, portals, spheres, cobalt formula, cloned faces, illustration, CGI, or HDR.",
-          "preview": "https://studio.clash.video/studio-assets/catalog/diversity-20260826/reality-restaged/result.png",
-          "referenceImage": "https://studio.clash.video/studio-assets/catalog/diversity-20260826/reality-restaged/reference.png",
-          "referencePreview": "https://studio.clash.video/studio-assets/catalog/diversity-20260826/reality-restaged/reference.png",
-          "referenceResourceUri": "https://studio.clash.video/studio-assets/catalog/diversity-20260826/reality-restaged/reference.png",
+          "preview": "https://clash.art/studio/image/assets/catalog/diversity-20260826/reality-restaged/result.png",
+          "referenceImage": "https://clash.art/studio/image/assets/catalog/diversity-20260826/reality-restaged/reference.png",
+          "referencePreview": "https://clash.art/studio/image/assets/catalog/diversity-20260826/reality-restaged/reference.png",
+          "referenceResourceUri": "https://clash.art/studio/image/assets/catalog/diversity-20260826/reality-restaged/reference.png",
           "aspectRatio": "4:3",
           "mediaType": "image",
-          "image": "https://studio.clash.video/studio-assets/catalog/diversity-20260826/reality-restaged/result.png",
+          "image": "https://clash.art/studio/image/assets/catalog/diversity-20260826/reality-restaged/result.png",
           "mode": "image-to-image",
           "referenceRole": "reference",
           "mediaOrigin": "studio"
@@ -1591,10 +1591,10 @@
           "prompt": "Restage the three neighbors folding chairs and gathering paper cups after a community meeting as a deliberately art-directed cinematic tableau in which the room appears to fold closed around their cleanup.",
           "aspectRatio": "3:4",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/reality-restaged/references/ref-agent-v4.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/reality-restaged/references/ref-agent-v4.png",
           "referenceRole": "reference",
           "promptFile": "prompts/reality-restaged-agent-v4.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/reality-restaged/agent-v4.png",
+          "image": "https://clash.art/studio/image/assets/examples/reality-restaged/agent-v4.png",
           "mediaOrigin": "studio"
         },
         {
@@ -1602,10 +1602,10 @@
           "prompt": "Use case: style-transfer\nAsset type: strict Reality Restaged image-to-image example\nInput images: Image 1 is the sole source photograph and documentary reality anchor.\nPrimary request: Preserve the elderly shellfish gatherer, her weathered individuality, natural full-body proportions, woven basket, practical boots, vermilion rain cape, and the two anatomically believable egrets. Rebuild the entire tidal setting as a radically simplified cinematic stage. The wet slate tidal plane rises at the horizon and continues upward as one monumental vertical cobalt wall, while the woman stands naturally at the impossible ninety-degree seam. The two egrets remain normal-sized but stand far apart on the vertical wet plane as if it were level ground: this is the one impossible spatial logic.\nScene/backdrop: no fishing huts or realistic coast; only a broad reflective charcoal floor, a monumental cobalt wall, and one thin cream horizon cut\nStyle/medium: believable analog documentary photograph taken inside an impossible world; natural skin, fabric, basket fiber and bird feathers; subtle 35mm grain and optical softness\nComposition/framing: 3:4 portrait, woman small at lower left, huge uninterrupted cobalt field above and right, strong negative space, low seam\nLighting/mood: cool overcast directional light with believable contact shadows, quiet and monumental\nColor palette: dominant cobalt blue and wet charcoal, supporting cream, source vermilion cape\nConstraints: visibly recompose rather than replace the background; color fields must construct space; preserve human identity and anatomy; exactly two egrets; one surreal proposition only; no text, logo or watermark\nAvoid: upside-down objects, floating props, portals, moons, spheres, giant animals, literal oversized cape, clutter, fantasy illustration, CGI, HDR, plastic skin, compressed body, extra limbs",
           "aspectRatio": "3:4",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/reality-restaged/references/ref-01-source.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/reality-restaged/references/ref-01-source.png",
           "referenceRole": "reference",
           "promptFile": "assets/examples/reality-restaged/prompts/i2i-01.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/reality-restaged/i2i-01.png",
+          "image": "https://clash.art/studio/image/assets/examples/reality-restaged/i2i-01.png",
           "mediaOrigin": "studio"
         },
         {
@@ -1613,10 +1613,10 @@
           "prompt": "Use case: style-transfer\nAsset type: strict Reality Restaged image-to-image example\nInput images: Image 1 is the sole source photograph and documentary reality anchor.\nPrimary request: Preserve the middle-aged street-food vendor and teenage daughter as two distinct believable individuals, their tired affectionate glance, natural hands, ordinary rain clothing, the folded yellow umbrella and one blue plastic stool. Remove the literal alley, shutters and cart clutter. Rebuild the scene as a monumental midnight stage: the stool's rectangular rhythm becomes three vast cobalt architectural steps rising into a deep teal wall, while a single wet black street plane climbs those steps without changing orientation. The pair stand together on the lowest step beneath one thin amber ceiling plane. The one impossible logic is a rain-wet street continuing upward through the architecture while its puddle reflections remain vertical.\nScene/backdrop: vast teal void, cobalt stepped structure, glossy black street ribbon, one amber overhead plane\nStyle/medium: realistic analog documentary night photograph, natural faces and wet fabric, believable fluorescent light, restrained 35mm grain, slight optical softness\nComposition/framing: 4:3 landscape, pair small at lower right, steps dominate center, two-thirds dark negative space to left and above\nLighting/mood: intimate warm pool surrounded by quiet cool darkness\nColor palette: deep teal and cobalt dominant, amber support, yellow umbrella accent\nConstraints: color fields construct architecture; visibly recompose; preserve age difference, gaze and source-specific objects; one surreal spatial contradiction only; no readable text, logo or watermark\nAvoid: literal giant stool, neon cyberpunk, floating objects, portals, random props, clutter, duplicated people, plastic skin, malformed hands, illustration, CGI, HDR",
           "aspectRatio": "4:3",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/reality-restaged/references/ref-02-source.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/reality-restaged/references/ref-02-source.png",
           "referenceRole": "reference",
           "promptFile": "assets/examples/reality-restaged/prompts/i2i-03.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/reality-restaged/i2i-03.png",
+          "image": "https://clash.art/studio/image/assets/examples/reality-restaged/i2i-03.png",
           "mediaOrigin": "studio"
         },
         {
@@ -1624,10 +1624,10 @@
           "prompt": "Use case: style-transfer\nAsset type: strict Reality Restaged image-to-image example\nInput images: Image 1 is the sole source photograph and documentary reality anchor.\nPrimary request: Preserve the young shepherd's face, natural full-body proportions, worn wool clothing, hand resting on the mule's neck, the mule's exact believable anatomy, ochre blanket and cobalt rope. Aggressively remove the literal mountain scenery. Restage them at the junction of two incompatible but clean spaces: the mule stands naturally on a broad ochre floor while the shepherd stands naturally on an upright cobalt plane, yet their touching hand and aligned walking stride cross the ninety-degree seam without distortion. A single monumental matte-black ridge cuts diagonally across the distant cream void. This contact across incompatible gravity is the one impossible relational logic.\nScene/backdrop: ochre floor, cobalt vertical field, black diagonal ridge, cream negative-space sky; no grass, rocks or clouds\nStyle/medium: analog documentary photography inside an impossible stage, realistic skin, wool, leather, rope and animal hair; fine grain, restrained contrast\nComposition/framing: 3:4 portrait, small human-animal pair near lower center, huge cream and cobalt fields, ridge occupying upper-left diagonal\nLighting/mood: cold high-altitude sidelight with coherent shadows on both planes, calm companionship\nColor palette: dominant cobalt and ochre, supporting matte black and cream\nConstraints: preserve the touch as emotional anchor; human and mule normal-sized and anatomically correct; visibly rebuilt composition; one spatial contradiction only; no text, logo or watermark\nAvoid: giant mule, literal giant rope or blanket, floating props, portal, moon, fantasy landscape, decorative surrealism, extra limbs, malformed hooves, painterly art, glossy CGI, HDR",
           "aspectRatio": "3:4",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/reality-restaged/references/ref-03-source.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/reality-restaged/references/ref-03-source.png",
           "referenceRole": "reference",
           "promptFile": "assets/examples/reality-restaged/prompts/i2i-05.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/reality-restaged/i2i-05.png",
+          "image": "https://clash.art/studio/image/assets/examples/reality-restaged/i2i-05.png",
           "mediaOrigin": "studio"
         },
         {
@@ -1635,10 +1635,10 @@
           "prompt": "Use case: style-transfer\nAsset type: strict Reality Restaged image-to-image example\nInput images: Image 1 is the sole source photograph and documentary reality anchor.\nPrimary request: Preserve the two adult sisters as distinct real individuals, their opposing working gestures, wet practical clothing, bamboo pole, translucent sheet and vivid green bucket. Remove the literal field, banana trees, houses and storm detail. Abstract the bowed sheet's tension into one monumental translucent cream membrane that begins as a roof above the left sister, curves down between them, and becomes a reflective floor beneath the right sister. A saturated cyan void and terracotta ground create the rest of the stage. The one impossible logic is that this single continuous membrane functions as roof, divider and walkable ground while both women keep natural gravity and continue pulling it taut.\nScene/backdrop: cyan negative-space field, terracotta ground, giant quiet cream membrane, one green bucket; no realistic landscape\nStyle/medium: believable rainy analog documentary photograph, realistic individual faces, hands, wet cloth, bamboo and translucent material, subtle grain\nComposition/framing: 4:3 landscape, sisters small at opposite lower edges, membrane sweeping through center and occupying half the frame, large cyan silence above\nLighting/mood: diffuse monsoon light, calm effort, restrained monumentality\nColor palette: dominant cyan and terracotta, cream membrane, leaf-green bucket accent, charcoal clothing\nConstraints: preserve documentary relationship and realistic anatomy; color builds space; substantial recomposition; one surreal spatial proposition only; no text, logo or watermark\nAvoid: literal giant plastic object spectacle, floating debris, portals, moons, random props, cloned faces, fashion poses, generic fantasy, painterly style, CGI gloss, HDR, extra fingers",
           "aspectRatio": "4:3",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/reality-restaged/references/ref-04-source.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/reality-restaged/references/ref-04-source.png",
           "referenceRole": "reference",
           "promptFile": "assets/examples/reality-restaged/prompts/i2i-07.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/reality-restaged/i2i-07.png",
+          "image": "https://clash.art/studio/image/assets/examples/reality-restaged/i2i-07.png",
           "mediaOrigin": "studio"
         },
         {
@@ -1646,10 +1646,10 @@
           "prompt": "Use case: style-transfer\nAsset type: strict Reality Restaged image-to-image example\nInput images: Image 1 is the sole source photograph and documentary reality anchor.\nPrimary request: Preserve the woman mechanic and school-age boy as distinct, believable people, their practical cooperation, natural anatomy and hands, indigo workwear, wheel repair gesture, normal-sized round metal mirror, tools, and the faded cream-vermilion bus identity. Radically simplify the desert into a terracotta floor and deep cobalt wall. The mirror's reflected sunlight becomes one monumental solid cream plane that leaves the small mirror, crosses the empty space like architecture, and supports the mechanic's working hands at the wheel. Light behaving as a physical structural plane is the single impossible logic.\nScene/backdrop: terracotta ground, cobalt vertical field, a cropped cream bus slab with vermilion band, one cream light-plane; remove road, poles, mesas and dust clutter\nStyle/medium: convincing analog documentary photograph, realistic skin, cloth, grease, metal, tire and subdued film grain; no rendered gloss\nComposition/framing: 3:4 portrait, mechanic low-right, boy smaller low-left, cream light-plane creates a strong diagonal across large cobalt negative space, cropped bus edge as monumental form\nLighting/mood: hard desert light with soft dusty falloff, resourceful and quiet\nColor palette: cobalt and terracotta dominant, cream and faded vermilion supporting, indigo clothing\nConstraints: preserve age difference and cooperation; color constructs space; normal mirror and wheel scale; one impossible proposition; realistic proportions; no readable plates, text, logo or watermark\nAvoid: giant mirror, giant wheel, floating tools, portals, celestial objects, random surreal props, heroic advertising, illustration, CGI, HDR, wax skin, distorted fingers",
           "aspectRatio": "3:4",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/reality-restaged/references/ref-05-source.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/reality-restaged/references/ref-05-source.png",
           "referenceRole": "reference",
           "promptFile": "assets/examples/reality-restaged/prompts/i2i-09.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/reality-restaged/i2i-09.png",
+          "image": "https://clash.art/studio/image/assets/examples/reality-restaged/i2i-09.png",
           "mediaOrigin": "studio"
         }
       ],
@@ -1711,11 +1711,11 @@
           "id": "travel-memory-card-duo-diversity-v5",
           "title": "First Ferry, Red Case",
           "prompt": "Create exactly one finished 3:2 horizontal Travel Memory Card Duo complete card from the supplied coastal ferry-terminal photograph. Show the complete card and continuous 4–5% warm off-white uncoated-paper margin with no crop. Left 67%: one dominant near-square completely unframed matte gouache and cut-paper illustration above a shallow exposed-paper footer. Preserve the identification anchor of the Black woman commuter with compact vermilion rolling suitcase beneath the curved corrugated canopy, beside the yellow bollard and white ferry ramp, rendered entirely in the same coarse grainy medium with no photographic patch. Simplify teal water, silver canopy, concrete pier, distant ferry and sky into 5–8 broad quiet color planes with chalky hand-cut edges, soft misregistration and flat colored shadows. Center exactly these three English keyword phrases once in the footer: Low Tide · Red Case · First Ferry. Right 31%: exactly six separate source-derived die-cut stickers, no more and no fewer, using full height with uneven hierarchy, relaxed spacing, thick irregular warm-white borders and subtle flat paper shadows: woman with vermilion suitcase, yellow mooring bollard, white ferry ramp, corrugated canopy arc, teal rope coil, and the two gulls together as one grouped motif. All six stickers fully visible and uncropped. Remove all source lettering and logos; no landmark text. No title, caption, date, address, postal marks, watermark, signature, extra sticker, inner frame, rounded illustration panel, gradients, watercolor, photorealism, glossy 3D, detailed anatomy, polished vectors, pottery, tram, bus, mountain lake, kayak, or unrelated object.",
-          "preview": "https://studio.clash.video/studio-assets/catalog/diversity-20260826/travel-memory-card-duo/result.png",
-          "image": "https://studio.clash.video/studio-assets/catalog/diversity-20260826/travel-memory-card-duo/result.png",
-          "referenceImage": "https://studio.clash.video/studio-assets/catalog/diversity-20260826/travel-memory-card-duo/source.png",
-          "referencePreview": "https://studio.clash.video/studio-assets/catalog/diversity-20260826/travel-memory-card-duo/source.png",
-          "referenceResourceUri": "https://studio.clash.video/studio-assets/catalog/diversity-20260826/travel-memory-card-duo/source.png",
+          "preview": "https://clash.art/studio/image/assets/catalog/diversity-20260826/travel-memory-card-duo/result.png",
+          "image": "https://clash.art/studio/image/assets/catalog/diversity-20260826/travel-memory-card-duo/result.png",
+          "referenceImage": "https://clash.art/studio/image/assets/catalog/diversity-20260826/travel-memory-card-duo/source.png",
+          "referencePreview": "https://clash.art/studio/image/assets/catalog/diversity-20260826/travel-memory-card-duo/source.png",
+          "referenceResourceUri": "https://clash.art/studio/image/assets/catalog/diversity-20260826/travel-memory-card-duo/source.png",
           "aspectRatio": "3:2",
           "mediaType": "image",
           "mode": "image-to-image",
@@ -1727,10 +1727,10 @@
           "prompt": "Transform the modest Saturday walk past a neighborhood bakery, preserving the mustard awning, sage doorway, bread crates, resident, street tree, baker, wet pavement, and sparrow, into a tactile horizontal memory card.",
           "aspectRatio": "3:2",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/travel-memory-card-duo/references/ref-agent-v4.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/travel-memory-card-duo/references/ref-agent-v4.png",
           "referenceRole": "reference",
           "promptFile": "prompts/travel-memory-card-duo-agent-v4.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/travel-memory-card-duo/agent-v4.png",
+          "image": "https://clash.art/studio/image/assets/examples/travel-memory-card-duo/agent-v4.png",
           "mediaOrigin": "studio"
         },
         {
@@ -1738,10 +1738,10 @@
           "prompt": "Use case: style-transfer\nAsset type: strict Travel Memory Card Duo complete-card example\nInput images: Image 1: source reference photo; use only this source\nPrimary request: rebuild the Irish coastal cycling scene as one finished horizontal collectible travel memory card. Identification anchor: the saffron-jacket cyclist with turquoise bicycle. Select exactly six right-column sticker motifs: (1) cyclist with turquoise bicycle, (2) white stone cottage, (3) dry-stone wall fragment, (4) curving wet road, (5) the three seabirds as one grouped sticker, (6) one windswept grass tuft.\nStyle/medium: opaque matte gouache and cut paper with fine uniform paper tooth, chalky hand-cut edges, light pigment variation, soft misregistration; 5-8 broad source-derived color families\nComposition/framing: exact 3:2 horizontal canvas on warm off-white uncoated paper with continuous 4-5% outer margin; left 67% is one large near-square completely unframed illustration above a shallow paper footer; right 31% contains exactly six separate die-cut stickers using full height, uneven hierarchy, relaxed spacing, thick irregular warm-white borders, subtle flat paper shadows\nText (verbatim): \"Rain Road · White Cottage · Atlantic Wind\" centered exactly once beneath the left illustration\nConstraints: scene reads first as 3-6 oversized blunt shapes and quiet space; preserve cyclist, bicycle, cottage, road, sea, wall and birds through silhouette and signature colors; only the three footer phrases are readable; no title, caption, date, address lines, postal marks, watermark, signature, photo patches, inner frame, keyline, mat, rounded panel, gradient, or extra sticker\nAvoid: photorealism, marker strokes, watercolor washes, wet blooms, glossy 3D, detailed leaves or anatomy, polished vectors, anime, clip art",
           "aspectRatio": "3:2",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/travel-memory-card-duo/references/ref-01-source.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/travel-memory-card-duo/references/ref-01-source.png",
           "referenceRole": "reference",
           "promptFile": "assets/examples/travel-memory-card-duo/prompts/i2i-01.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/travel-memory-card-duo/i2i-01.png",
+          "image": "https://clash.art/studio/image/assets/examples/travel-memory-card-duo/i2i-01.png",
           "mediaOrigin": "studio"
         },
         {
@@ -1749,10 +1749,10 @@
           "prompt": "Use case: style-transfer\nAsset type: strict Travel Memory Card Duo complete-card example\nInput images: Image 1: source reference photo; use only this source\nPrimary request: rebuild the Greek harbor net-mending scene as one finished horizontal collectible travel memory card. Identification anchor: the seated coral-headscarf woman mending the cobalt net beside the ochre hull. Select exactly six right-column sticker motifs: (1) woman mending cobalt net, (2) ochre boat bow, (3) white cat, (4) wooden crate with coiled rope as one grouped object, (5) whitewashed harbor steps, (6) three red net floats together as one grouped scale cue.\nStyle/medium: opaque matte gouache and cut paper with fine uniform paper tooth, chalky hand-cut edges, light pigment variation, soft misregistration; 5-8 broad source-derived color families\nComposition/framing: exact 3:2 horizontal canvas on warm off-white uncoated paper with continuous 4-5% outer margin; left 67% is one large near-square completely unframed illustration above a shallow paper footer; right 31% contains exactly six separate die-cut stickers using full height, uneven hierarchy, relaxed spacing, thick irregular warm-white borders, subtle flat paper shadows\nText (verbatim): \"Cobalt Net · Ochre Hull · Harbor Quiet\" centered exactly once beneath the left illustration\nConstraints: scene reads first as 3-6 oversized blunt shapes and quiet space; preserve the working pose, net, hull diagonal, cat, crate, steps and water through silhouette and signature colors; only footer phrases readable; no title, caption, date, watermark, signature, photo patches, inner frame, gradient, or extra sticker\nAvoid: photorealism, marker strokes, watercolor washes, wet blooms, glossy 3D, detailed net knots, faces or anatomy, polished vectors, anime, clip art",
           "aspectRatio": "3:2",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/travel-memory-card-duo/references/ref-02-source.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/travel-memory-card-duo/references/ref-02-source.png",
           "referenceRole": "reference",
           "promptFile": "assets/examples/travel-memory-card-duo/prompts/i2i-03.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/travel-memory-card-duo/i2i-03.png",
+          "image": "https://clash.art/studio/image/assets/examples/travel-memory-card-duo/i2i-03.png",
           "mediaOrigin": "studio"
         },
         {
@@ -1760,10 +1760,10 @@
           "prompt": "Use case: style-transfer\nAsset type: strict Travel Memory Card Duo complete-card example\nInput images: Image 1: source reference photo; use only this source\nPrimary request: rebuild the Iceland volcanic-ridge scene as one finished horizontal collectible travel memory card. Identification anchor: the rust-red and mustard hiker pair facing the cobalt crater and smoking cone. Select exactly six right-column sticker motifs: (1) the paired hikers as one grouped sticker, (2) volcanic cone with white plume, (3) cobalt crater lake, (4) arctic fox, (5) orange trail marker, (6) basalt outcrop.\nStyle/medium: opaque matte gouache and cut paper with fine uniform paper tooth, chalky hand-cut edges, light pigment variation, soft misregistration; 5-8 broad source-derived color families\nComposition/framing: exact 3:2 horizontal canvas on warm off-white uncoated paper with continuous 4-5% outer margin; left 67% is one large near-square completely unframed illustration above a shallow paper footer; right 31% contains exactly six separate die-cut stickers using full height, uneven hierarchy, relaxed spacing, thick irregular warm-white borders, subtle flat paper shadows\nText (verbatim): \"Crater Blue · Smoke Cone · Quiet Ridge\" centered exactly once beneath the left illustration\nConstraints: scene reads first as 3-6 oversized blunt shapes and quiet space; preserve hiker pairing, crater sweep, cone silhouette, plume, fox and orange marker through placement and signature colors; only footer phrases readable; no title, caption, date, watermark, signature, photo patches, inner frame, gradient, fantasy lava, or extra sticker\nAvoid: photorealism, marker strokes, watercolor washes, wet blooms, glossy 3D, detailed geology or anatomy, polished vectors, anime, clip art",
           "aspectRatio": "3:2",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/travel-memory-card-duo/references/ref-03-source.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/travel-memory-card-duo/references/ref-03-source.png",
           "referenceRole": "reference",
           "promptFile": "assets/examples/travel-memory-card-duo/prompts/i2i-05.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/travel-memory-card-duo/i2i-05.png",
+          "image": "https://clash.art/studio/image/assets/examples/travel-memory-card-duo/i2i-05.png",
           "mediaOrigin": "studio"
         },
         {
@@ -1771,10 +1771,10 @@
           "prompt": "Use case: style-transfer\nAsset type: strict Travel Memory Card Duo complete-card example\nInput images: Image 1: source reference photo; use only this source\nPrimary request: rebuild the snowy sweet-potato vendor scene as one finished horizontal collectible travel memory card. Identification anchor: the bundled vendor at the vermilion cart under the indigo canopy and amber bulb. Select exactly six right-column sticker motifs: (1) vendor with vermilion cart as one motif, (2) indigo canopy with amber bulb as one grouped motif, (3) paper bag of roasted potatoes, (4) brass kettle, (5) snow-dusted bicycle wheel, (6) black-and-white sparrow.\nStyle/medium: opaque matte gouache and cut paper with fine uniform paper tooth, chalky hand-cut edges, light pigment variation, soft misregistration; 5-8 broad source-derived color families\nComposition/framing: exact 3:2 horizontal canvas on warm off-white uncoated paper with continuous 4-5% outer margin; left 67% is one large near-square completely unframed illustration above a shallow paper footer; right 31% contains exactly six separate die-cut stickers using full height, uneven hierarchy, relaxed spacing, thick irregular warm-white borders, subtle flat paper shadows\nText (verbatim): \"Blue Snow · Amber Steam · Warm Cart\" centered exactly once beneath the left illustration\nConstraints: scene reads first as 3-6 oversized blunt shapes and quiet space; preserve cart/canopy silhouette, vendor pose, lamp, potatoes, kettle, wheel and sparrow through placement and signature colors; only footer phrases readable; no title, caption, date, signage, watermark, signature, photo patches, inner frame, gradient, or extra sticker\nAvoid: photorealism, marker strokes, watercolor washes, wet blooms, glossy 3D, detailed anatomy or mechanics, polished vectors, anime, clip art",
           "aspectRatio": "3:2",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/travel-memory-card-duo/references/ref-04-source.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/travel-memory-card-duo/references/ref-04-source.png",
           "referenceRole": "reference",
           "promptFile": "assets/examples/travel-memory-card-duo/prompts/i2i-07.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/travel-memory-card-duo/i2i-07.png",
+          "image": "https://clash.art/studio/image/assets/examples/travel-memory-card-duo/i2i-07.png",
           "mediaOrigin": "studio"
         },
         {
@@ -1782,14 +1782,14 @@
           "prompt": "Use case: style-transfer\nAsset type: strict Travel Memory Card Duo complete-card example\nInput images: Image 1: source reference photo; use only this source\nPrimary request: rebuild the Himalayan monastery tea scene as one finished horizontal collectible travel memory card. Identification anchor: the teal-coated woman pouring from the red thermos beside the cream mountain dog. Select exactly six right-column sticker motifs: (1) woman pouring red thermos into brass cup, (2) cream mountain dog, (3) three rust-red prayer wheels as one grouped sticker, (4) stone arch with snow peaks, (5) mustard satchel, (6) one irregular blue-gray paving-stone fragment.\nStyle/medium: opaque matte gouache and cut paper with fine uniform paper tooth, chalky hand-cut edges, light pigment variation, soft misregistration; 5-8 broad source-derived color families\nComposition/framing: exact 3:2 horizontal canvas on warm off-white uncoated paper with continuous 4-5% outer margin; left 67% is one large near-square completely unframed illustration above a shallow paper footer; right 31% contains exactly six separate die-cut stickers using full height, uneven hierarchy, relaxed spacing, thick irregular warm-white borders, subtle flat paper shadows\nText (verbatim): \"High Tea · Red Wheels · Snow Arch\" centered exactly once beneath the left illustration\nConstraints: scene reads first as 3-6 oversized blunt shapes and quiet space; preserve pouring pose, dog silhouette, prayer-wheel rhythm, arch/peaks, satchel and stone plane through placement and signature colors; only footer phrases readable; remove all prayer-wheel lettering; no title, caption, date, watermark, signature, photo patches, inner frame, gradient, or extra sticker\nAvoid: photorealism, marker strokes, watercolor washes, wet blooms, glossy 3D, detailed face, fur or ornament, polished vectors, anime, clip art",
           "aspectRatio": "3:2",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/travel-memory-card-duo/references/ref-05-source.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/travel-memory-card-duo/references/ref-05-source.png",
           "referenceRole": "reference",
           "promptFile": "assets/examples/travel-memory-card-duo/prompts/i2i-09.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/travel-memory-card-duo/i2i-09.png",
+          "image": "https://clash.art/studio/image/assets/examples/travel-memory-card-duo/i2i-09.png",
           "mediaOrigin": "studio"
         }
       ],
-      "cover": "https://studio.clash.video/studio-assets/examples/travel-memory-card-duo/i2i-01.png",
+      "cover": "https://clash.art/studio/image/assets/examples/travel-memory-card-duo/i2i-01.png",
       "coverOrigin": "studio"
     },
     {
@@ -1847,13 +1847,13 @@
           "id": "vinyl-image-generator-diversity-v5",
           "title": "After the Chair Moved",
           "prompt": "Turn the supplied quiet post-breakfast kitchen photograph into exactly one complete 4:3 landscape fictional vinyl-release archive image with exactly four non-overlapping objects in a strict 2-by-2 arrangement: full front sleeve, full back sleeve, full Side A record, full Side B record. Use the tea ring and blood-orange crescent as the primary anchor; carry the pulled-chair diagonal, newspaper fold, cream laminate, terracotta, and pale window light into a contemporary ambient-folk design. Fictional artist 'Cup Ring Atlas', title 'After the Chair Moved', label 'Open Window Editions', catalog OWE-017. The front uses a cup-ring interrupted by a citrus crescent and chair-leg diagonal; the back uses a distinct modular newspaper-fold grid with Side A tracks 'Tea Ring' and 'Chair Left Open' and Side B tracks 'Crumbs at Eleven' and 'Curtain Weather'. Use translucent tea-amber Side A vinyl and smoke-clear Side B vinyl with citrus-red center crescents. Uncoated cream board, offset ink, blind-debossed ring, subtle edges, natural contact shadows, solid soft sky-blue background, generous whitespace. No room scenery, people, hands, extra props, overlap, missing objects, raw source photo as cover, real artist, generic type, automatic vintage distress, shrink wrap, plastic, crop, or watermark.",
-          "preview": "https://studio.clash.video/studio-assets/catalog/diversity-20260826/vinyl-image-generator/result.png",
-          "referenceImage": "https://studio.clash.video/studio-assets/catalog/diversity-20260826/vinyl-image-generator/reference.png",
-          "referencePreview": "https://studio.clash.video/studio-assets/catalog/diversity-20260826/vinyl-image-generator/reference.png",
-          "referenceResourceUri": "https://studio.clash.video/studio-assets/catalog/diversity-20260826/vinyl-image-generator/reference.png",
+          "preview": "https://clash.art/studio/image/assets/catalog/diversity-20260826/vinyl-image-generator/result.png",
+          "referenceImage": "https://clash.art/studio/image/assets/catalog/diversity-20260826/vinyl-image-generator/reference.png",
+          "referencePreview": "https://clash.art/studio/image/assets/catalog/diversity-20260826/vinyl-image-generator/reference.png",
+          "referenceResourceUri": "https://clash.art/studio/image/assets/catalog/diversity-20260826/vinyl-image-generator/reference.png",
           "aspectRatio": "4:3",
           "mediaType": "image",
-          "image": "https://studio.clash.video/studio-assets/catalog/diversity-20260826/vinyl-image-generator/result.png",
+          "image": "https://clash.art/studio/image/assets/catalog/diversity-20260826/vinyl-image-generator/result.png",
           "mode": "image-to-image",
           "referenceRole": "reference",
           "mediaOrigin": "studio"
@@ -1863,10 +1863,10 @@
           "prompt": "Turn the Sunday apartment-balcony scene with the mint watering can, red geranium, wet tile crescent, drain, striped cloth, and railing into a cohesive four-object fictional vinyl release archive photograph.",
           "aspectRatio": "4:3",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/vinyl-image-generator/references/ref-agent-v4.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/vinyl-image-generator/references/ref-agent-v4.png",
           "referenceRole": "reference",
           "promptFile": "prompts/vinyl-image-generator-agent-v4.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/vinyl-image-generator/agent-v4.png",
+          "image": "https://clash.art/studio/image/assets/examples/vinyl-image-generator/agent-v4.png",
           "mediaOrigin": "studio"
         },
         {
@@ -1874,10 +1874,10 @@
           "prompt": "Rainy tram memory transformed through an editorial photographic crop into Window Arithmetic's nocturnal ambient-dub vinyl artifact.",
           "aspectRatio": "4:3",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/vinyl-image-generator/references/ref-01-source.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/vinyl-image-generator/references/ref-01-source.png",
           "referenceRole": "reference",
           "promptFile": "assets/examples/vinyl-image-generator/prompts/i2i-01.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/vinyl-image-generator/i2i-01.png",
+          "image": "https://clash.art/studio/image/assets/examples/vinyl-image-generator/i2i-01.png",
           "mediaOrigin": "studio"
         },
         {
@@ -1885,10 +1885,10 @@
           "prompt": "Three tide-pool keepsakes transformed into Salt Index Bureau's photographic coastal archive release.",
           "aspectRatio": "4:3",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/vinyl-image-generator/references/ref-02-source.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/vinyl-image-generator/references/ref-02-source.png",
           "referenceRole": "reference",
           "promptFile": "assets/examples/vinyl-image-generator/prompts/i2i-03.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/vinyl-image-generator/i2i-03.png",
+          "image": "https://clash.art/studio/image/assets/examples/vinyl-image-generator/i2i-03.png",
           "mediaOrigin": "studio"
         },
         {
@@ -1896,10 +1896,10 @@
           "prompt": "All-night laundromat transformed into Fluorescent Pension's intimate photographic synth-ballad release.",
           "aspectRatio": "4:3",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/vinyl-image-generator/references/ref-03-source.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/vinyl-image-generator/references/ref-03-source.png",
           "referenceRole": "reference",
           "promptFile": "assets/examples/vinyl-image-generator/prompts/i2i-05.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/vinyl-image-generator/i2i-05.png",
+          "image": "https://clash.art/studio/image/assets/examples/vinyl-image-generator/i2i-05.png",
           "mediaOrigin": "studio"
         },
         {
@@ -1907,10 +1907,10 @@
           "prompt": "Desert radio mast transformed into Distance Relay Club's spacious photographic field-session LP.",
           "aspectRatio": "4:3",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/vinyl-image-generator/references/ref-04-source.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/vinyl-image-generator/references/ref-04-source.png",
           "referenceRole": "reference",
           "promptFile": "assets/examples/vinyl-image-generator/prompts/i2i-07.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/vinyl-image-generator/i2i-07.png",
+          "image": "https://clash.art/studio/image/assets/examples/vinyl-image-generator/i2i-07.png",
           "mediaOrigin": "studio"
         },
         {
@@ -1918,14 +1918,14 @@
           "prompt": "Sunlit green stairwell transformed into Landing Echo Society's warm architectural-photo jazz release.",
           "aspectRatio": "4:3",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/vinyl-image-generator/references/ref-05-source.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/vinyl-image-generator/references/ref-05-source.png",
           "referenceRole": "reference",
           "promptFile": "assets/examples/vinyl-image-generator/prompts/i2i-09.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/vinyl-image-generator/i2i-09.png",
+          "image": "https://clash.art/studio/image/assets/examples/vinyl-image-generator/i2i-09.png",
           "mediaOrigin": "studio"
         }
       ],
-      "cover": "https://studio.clash.video/studio-assets/examples/vinyl-image-generator/i2i-01.png",
+      "cover": "https://clash.art/studio/image/assets/examples/vinyl-image-generator/i2i-01.png",
       "coverOrigin": "studio"
     },
     {
@@ -1996,11 +1996,11 @@
           "id": "scene-to-art-lab-diversity-v5",
           "title": "First Mile Commuter Linocut",
           "prompt": "Use case: style-transfer\nAsset type: finished vertical editorial art poster\nInput images: Image 1 is the sole source photograph and identity reference.\nSource fidelity: Preserve the complete recognizable silhouette and relationship of the crouching commuter, moss-green windbreaker, compact red folding bicycle, front basket, canvas tote, paper-wrapped breakfast, apartment entrance, and pale dawn doorway. Keep one person, natural anatomy, the full person, and the full bicycle visible within the finished canvas; do not crop either out and do not add objects or people.\nPoster direction: Recompose as a vertical 3:4 relief-print poster with the proposition \"an ordinary departure becomes a carved morning ritual.\" Use the DIAGONAL MOMENTUM system: let the bicycle frame and open doorway create one rising diagonal, place the complete commuter-and-bike anchor across the lower two-thirds, and reserve calm exposed paper at upper-left as an active type zone. Thumbnail silhouette: one crouched figure joined to one small bicycle against a tall dawn opening. Keep three zones: dense focal figure/bicycle, simplified carved architecture, and open paper.\nMaterial, graphic, and type system: hand-printed linocut on warm oatmeal paper, carbon-black ink plus one vermilion-red block color taken from the bicycle. Describe the moss jacket through sparse carved directional marks rather than extra color. Use chipped gouge edges, pressure variation, roller gaps, and broad paper cuts; cluster texture around hands, shoe, bicycle mechanics, basket, and doorway, while clearing quiet zones. Use only two source-derived devices: one long bicycle-frame diagonal and one repeated mailbox-slot rhythm. Create an intentional lost edge where the non-critical rear wall and shadow-side jacket contour dissolve into broken ink and exposed paper; keep face, hands, shoe, wheels, frame, basket, and doorway legible. Exact title: \"FIRST MILE\". No subtitle. Set it once in bold condensed uppercase neo-grotesk sans serif, tall narrow clean letterforms, tight readable tracking, integrated into upper-left negative space in solid vermilion ink, no text box, outline, shadow, or decoration.\nGuardrails: authored relief-print poster, not a filtered photograph. Preserve the full main subject and full bicycle in frame. No centered catalog layout, uniform distress, photographic crosshatching everywhere, vector-clean edges, extra color blocks, extra or misspelled text, logos, brands, signature, seal, watermark, date, frame, rain, tram, bus stop, mountain, lake, kayak, pottery, or artisan.",
-          "preview": "https://studio.clash.video/studio-assets/catalog/diversity-20260826/scene-to-art-lab/result-first-mile-linocut.png",
-          "referenceImage": "https://studio.clash.video/studio-assets/catalog/diversity-20260826/scene-to-art-lab/source-commuter-routine.png",
-          "referencePreview": "https://studio.clash.video/studio-assets/catalog/diversity-20260826/scene-to-art-lab/source-commuter-routine.png",
-          "referenceResourceUri": "https://studio.clash.video/studio-assets/catalog/diversity-20260826/scene-to-art-lab/source-commuter-routine.png",
-          "image": "https://studio.clash.video/studio-assets/catalog/diversity-20260826/scene-to-art-lab/result-first-mile-linocut.png",
+          "preview": "https://clash.art/studio/image/assets/catalog/diversity-20260826/scene-to-art-lab/result-first-mile-linocut.png",
+          "referenceImage": "https://clash.art/studio/image/assets/catalog/diversity-20260826/scene-to-art-lab/source-commuter-routine.png",
+          "referencePreview": "https://clash.art/studio/image/assets/catalog/diversity-20260826/scene-to-art-lab/source-commuter-routine.png",
+          "referenceResourceUri": "https://clash.art/studio/image/assets/catalog/diversity-20260826/scene-to-art-lab/source-commuter-routine.png",
+          "image": "https://clash.art/studio/image/assets/catalog/diversity-20260826/scene-to-art-lab/result-first-mile-linocut.png",
           "aspectRatio": "3:4",
           "mode": "image-to-image",
           "referenceRole": "reference",
@@ -2012,10 +2012,10 @@
           "prompt": "Recompose the three children drawing a blue chalk route, yellow sun, and house outlines in an apartment courtyard as a bold five-ink screenprinted art poster titled CHALK ROUTE.",
           "aspectRatio": "3:4",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/scene-to-art-lab/references/ref-agent-v4.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/scene-to-art-lab/references/ref-agent-v4.png",
           "referenceRole": "reference",
           "promptFile": "prompts/scene-to-art-lab-agent-v4.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/scene-to-art-lab/agent-v4.png",
+          "image": "https://clash.art/studio/image/assets/examples/scene-to-art-lab/agent-v4.png",
           "mediaOrigin": "studio"
         },
         {
@@ -2023,10 +2023,10 @@
           "prompt": "Use case: style-transfer\nAsset type: finished vertical editorial art poster\nSource fidelity: Image 1 is the sole source photograph and reference image. Preserve the cobalt-blue tram's rounded windshield, paired circular headlights, wet metal body, three-quarter approach, curved rails, and pale stone street canyon. Keep the tram recognizable; do not invent people, logos, signs, or vehicles.\nPoster direction: vertical 3:4 aspect ratio. Proposition: quiet machinery carrying the glow after rain. Use the ASYMMETRIC FIELD poster system. Enlarge and crop the tram into the lower-right half, let the curved rails pull the eye upward, compress the buildings into pale structural washes, and reserve the upper-left third as active type-safe paper. Thumbnail silhouette: one decisive blue tram nose opposed by luminous empty paper. Suppress minor windows and street furniture.\nMaterial, graphic, and type system: transparent watercolor on cold-press cotton paper. Glaze cobalt, Payne-like blue-gray, limestone beige, rain silver, and one concentrated amber accent drawn from the source window reflection. Resolve the windshield, headlights, and front blue panel; simplify the side carriage; leave upper architecture as lifted pigment and dry-brush gaps. Use only two source-derived devices: a sweeping rail wash and one faint overhead-wire pencil arc. Create an intentional lost edge where the tram's shadow-side rear contour dissolves into a pooled blue-gray wash; keep focal front edges crisp. Leave raw paper open across the upper-left and one side edge. Exact title: \"AFTER RAIN\". No subtitle. Set it once in bold condensed uppercase neo-grotesk sans serif, tall narrow proportions, clean even strokes, tight readable tracking, editorial scale contrast, aligned to the building vertical in the upper-left active negative space; solid cobalt ink, no text box, no outline, no shadow, no decorative effects.\nGuardrails: reconstruct as an authored poster, not a filtered photograph. Do not retain the original horizontal crop or centered full tram. No uniform full-image wash, no rectangular border, no arbitrary splashes, no opaque airbrush, no heavy black outline, no equal detail, no extra objects, no additional or misspelled lettering, no signature, seal, logo, watermark, date, brand, or credit. Render the exact title accurately and only once.",
           "aspectRatio": "3:4",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/scene-to-art-lab/references/ref-01-source.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/scene-to-art-lab/references/ref-01-source.png",
           "referenceRole": "reference",
           "promptFile": "assets/examples/scene-to-art-lab/prompts/i2i-01.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/scene-to-art-lab/i2i-01.png",
+          "image": "https://clash.art/studio/image/assets/examples/scene-to-art-lab/i2i-01.png",
           "mediaOrigin": "studio"
         },
         {
@@ -2034,10 +2034,10 @@
           "prompt": "Use case: identity-preserve\nAsset type: finished vertical editorial art poster\nSource fidelity: Image 1 is the sole edit target and reference. Preserve the older East Asian woman's facial identity, short silver hair, downward focused expression, rust-orange apron, exactly two natural hands, the clay bowl between them, and the circular pottery-wheel relationship. Keep anatomy and the bowl's proportions credible. Do not add people or objects.\nPoster direction: vertical 3:4 aspect ratio. Proposition: concentration turns earth into form. Use the MONUMENTAL CROP poster system. Enlarge the diagonal relationship from face to hands and crop away most shelving; place the sharp focal passage at the hands and bowl near the lower-right third, with the face as a quieter secondary mass above. Reserve a tall exposed-ground type zone at upper-left. Thumbnail silhouette: rust apron arc, two hands, one clay vessel. Let the wheel ellipse lead the eye back to the face.\nMaterial, graphic, and type system: expressive oil painting on warm raw linen ground. Build charcoal-black, terracotta, umber, warm flesh, chalk gray, and a small cool window-blue counter-temperature from the source. Use directional bristle strokes following forearms and wheel rotation, thin underpainting in the workshop, scraped passages around shelves, selective impasto only on fingertips, bowl rim, and one cheek highlight. Use only two source-derived devices: a broad wheel-ellipse brush arc and one vertical window-light stroke. Lose the non-critical shadow-side apron contour into scumbled umber ground; retain crisp hand, bowl-rim, and eye edges. Leave upper-left linen visibly open. Exact title: \"IN FORM\". No subtitle. Set it once in bold condensed uppercase neo-grotesk sans serif, tall narrow proportions, clean even strokes, tight readable tracking, editorial scale contrast, vertically aligned in the upper-left type zone; solid charcoal paint, no text box, no outline, no shadow, no decorative effects.\nGuardrails: create a painting-led poster, not photographic detail under a texture overlay. Do not distort the face, expression, hands, finger count, pose, bowl, or wheel geometry. No centered catalogue portrait, uniform impasto, arbitrary swirls, muddy color, fully outlined edges, equal finish, frame, extra or misspelled lettering, signature, seal, logo, watermark, date, brand, or credit. Render the exact title accurately and only once.",
           "aspectRatio": "3:4",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/scene-to-art-lab/references/ref-02-source.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/scene-to-art-lab/references/ref-02-source.png",
           "referenceRole": "reference",
           "promptFile": "assets/examples/scene-to-art-lab/prompts/i2i-03.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/scene-to-art-lab/i2i-03.png",
+          "image": "https://clash.art/studio/image/assets/examples/scene-to-art-lab/i2i-03.png",
           "mediaOrigin": "studio"
         },
         {
@@ -2045,10 +2045,10 @@
           "prompt": "Use case: style-transfer\nAsset type: finished vertical editorial art poster\nSource fidelity: Image 1 is the sole source photograph and reference. Preserve one mustard-yellow kayak, one dark-teal-jacketed paddler with credible body and paddle, the kayak's side-three-quarter direction, layered mountain rhythm, horizontal mist band, and narrow wake. No extra boats, people, wildlife, structures, or objects.\nPoster direction: vertical 3:4 aspect ratio. Proposition: a small warm vessel cuts through immense quiet. Use the ASYMMETRIC FIELD poster system. Compress the kayak and paddler into the lower-left third at a larger scale while allowing mountain masses to rise as a sparse vertical procession; make untouched paper dominate the upper-right and center. Let the long kayak and one wake stroke guide the eye toward the mist. Thumbnail silhouette: one mustard horizontal boat beneath two dark mountain masses. Omit minor shoreline and reflection detail.\nMaterial, graphic, and type system: ink-wash on absorbent xuan-like paper with carbon-black tonal economy and one restrained mustard-yellow accent drawn from the kayak. Use pooled mountain washes, feathered moisture at mist, dry flying-white fir strokes, crisp selective bone lines on kayak and paddle, fading ink load in distance, and complete returns to untouched paper. Use only two source-derived devices: the single horizontal mist band and one calligraphic wake stroke. Resolve paddler, paddle, kayak bow, and yellow hull; simplify distant ridges. Lose the kayak's non-critical stern wake-side contour into feathered moisture and paper white while keeping bow and paddler legible. Leave upper-right and right edge open. Exact title: \"STILL WATER\". No subtitle. Set it once in bold condensed uppercase neo-grotesk sans serif, tall narrow proportions, clean even strokes, tight readable tracking, editorial scale contrast, in the upper-right type zone; solid carbon-black, no text box, no outline, no shadow, no decorative effects.\nGuardrails: authored poster, not gray fog over a traced photograph. Do not alter person count, anatomy, paddle logic, kayak color or proportion, or direction. No pseudo-calligraphy, red seal, landscape cliché decoration, equal mid-gray values, literal full-scene tracing, uniform coverage, frame, extra or misspelled text, signature, logo, watermark, date, brand, or credit. Render the exact title accurately and only once.",
           "aspectRatio": "3:4",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/scene-to-art-lab/references/ref-03-source.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/scene-to-art-lab/references/ref-03-source.png",
           "referenceRole": "reference",
           "promptFile": "assets/examples/scene-to-art-lab/prompts/i2i-05.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/scene-to-art-lab/i2i-05.png",
+          "image": "https://clash.art/studio/image/assets/examples/scene-to-art-lab/i2i-05.png",
           "mediaOrigin": "studio"
         },
         {
@@ -2056,10 +2056,10 @@
           "prompt": "Use case: style-transfer\nAsset type: finished vertical editorial art poster\nSource fidelity: Image 1 is the sole source photograph and reference. Preserve the coral-orange curved lounge chair with slim black legs, the mature monstera's recognizable split leaves, and the black steel conservatory window-grid relationship. Keep chair geometry plausible and add no furniture, people, objects, logos, or plants.\nPoster direction: vertical 3:4 aspect ratio. Proposition: a warm human-shaped seat holds its ground against rampant green geometry. Use the FRAGMENT AND ECHO poster system. Enlarge and hard-crop the coral chair across the lower-left and center; make one dominant monstera leaf overlap its upper-right edge; echo that leaf once at smaller scale near the top. Tilt the source window-grid into one supporting diagonal field and reserve a clean pale-paper strip at upper-left for type. Thumbnail silhouette: one coral bowl shape opposed by one dark split leaf. Omit pot and floor detail.\nMaterial, graphic, and type system: hand-pulled pop screenprint on pale warm uncoated paper. Use coral-orange, deep leaf green, black, fog-white, and a small acid-lime overprint drawn from the source. Separate shapes decisively; use coarse halftone only in window condensation, slight coral/black registration offset on the chair edge, selective overprint where leaf meets chair, stencil edges, paper tooth, and uneven ink coverage. Use only two source-derived devices: one repeated split-leaf silhouette and one tilted window-grid crop. Lose the chair's non-critical shadow-side lower contour through ink starvation into pale paper; keep seat rim and front legs crisp. Keep one upper and one side edge openly paper-led. Exact title: \"OPEN ROOM\". No subtitle. Set it once in bold condensed uppercase neo-grotesk sans serif, tall narrow proportions, clean even strokes, tight readable tracking, editorial scale contrast, stacked in upper-left active negative space; solid black ink, no text box, no outline, no shadow, no decorative effects.\nGuardrails: authored screenprint poster, not a centered furniture photo or generic comic filter. Do not distort the chair, add furniture, tile leaves, use full-image dots, neon overload, unrelated rectangles, uniform coverage, border, frame, extra or misspelled lettering, signature, seal, logo, watermark, date, brand, or credit. Render the exact title accurately and only once.",
           "aspectRatio": "3:4",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/scene-to-art-lab/references/ref-04-source.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/scene-to-art-lab/references/ref-04-source.png",
           "referenceRole": "reference",
           "promptFile": "assets/examples/scene-to-art-lab/prompts/i2i-07.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/scene-to-art-lab/i2i-07.png",
+          "image": "https://clash.art/studio/image/assets/examples/scene-to-art-lab/i2i-07.png",
           "mediaOrigin": "studio"
         },
         {
@@ -2067,14 +2067,14 @@
           "prompt": "Use case: style-transfer\nAsset type: finished vertical editorial art poster\nSource fidelity: Image 1 is the sole source photograph and reference. Preserve the solitary white cylindrical lighthouse, dark lantern room and gallery, low three-quarter viewpoint, rust-red cliff, ochre wind-bent grass, indigo sea, and storm-light direction. Keep architecture and proportions credible. Add no buildings, people, birds, ships, objects, or logos.\nPoster direction: vertical 3:4 aspect ratio. Proposition: a white vertical holds against weather moving diagonally across the coast. Use the DIAGONAL MOMENTUM poster system. Enlarge the lighthouse and move it to the upper-right third, cropping some non-critical cliff; drive one decisive diagonal from lower-left sea through rust cliff and wind-bent grass toward the lantern. Counter it with a compact pale type-safe sky zone at upper-left. Thumbnail silhouette: one white tower against a dark slashing cloud and red cliff. Suppress small rock and wave detail.\nMaterial, graphic, and type system: expressive oil painting on cool gray-blue primed canvas. Derive a dominant indigo/charcoal storm field, rust-red and ochre cliff, chalk white tower, and one pale blue light counter-temperature from the source. Build large value masses, directional bristle strokes along wind and cliff, scraped sea passages, thin underpainting in sky, broken-color grass, wet-into-wet cloud joins, and selective impasto only on lighthouse light edge and cliff crest. Use only two source-derived devices: one shaft-of-light stroke and one diagonal grass rhythm. Lose the lighthouse's non-critical shadow-side lower contour where it meets similar-value scumbled cloud and cliff haze; keep lantern, gallery, and lit tower edge crisp. Leave upper-left canvas ground and a top-edge region open. Exact title: \"WEATHER LINE\". No subtitle. Set it once in bold condensed uppercase neo-grotesk sans serif, tall narrow proportions, clean even strokes, tight readable tracking, editorial scale contrast, in upper-left negative sky; solid chalk-white, no text box, no outline, no shadow, no decorative effects.\nGuardrails: authored painting poster, not a paint-texture overlay on the unchanged photo. Do not bend or deform the tower, change lantern geometry, add architecture, scatter arbitrary swirls, use uniform impasto, muddy all colors, outline every edge, fill the full rectangle evenly, add a frame, or add extra or misspelled lettering, signature, seal, logo, watermark, date, brand, factual claim, or credit. Render the exact title accurately and only once.",
           "aspectRatio": "3:4",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/scene-to-art-lab/references/ref-05-source.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/scene-to-art-lab/references/ref-05-source.png",
           "referenceRole": "reference",
           "promptFile": "assets/examples/scene-to-art-lab/prompts/i2i-09.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/scene-to-art-lab/i2i-09.png",
+          "image": "https://clash.art/studio/image/assets/examples/scene-to-art-lab/i2i-09.png",
           "mediaOrigin": "studio"
         }
       ],
-      "cover": "https://studio.clash.video/studio-assets/examples/scene-to-art-lab/i2i-01.png",
+      "cover": "https://clash.art/studio/image/assets/examples/scene-to-art-lab/i2i-01.png",
       "coverOrigin": "studio"
     },
     {
@@ -2084,7 +2084,7 @@
       "description": "把影片概念或参考图重绘成 1930s–1970s 手绘院线海报。",
       "category": "海报",
       "accent": "ochre",
-      "cover": "https://studio.clash.video/studio-assets/examples/classic-epic-movie-poster/txt-01.png",
+      "cover": "https://clash.art/studio/image/assets/examples/classic-epic-movie-poster/txt-01.png",
       "capabilities": {
         "references": true,
         "maxReferences": 3,
@@ -2100,13 +2100,13 @@
           "id": "classic-epic-movie-poster-diversity-v5",
           "title": "The Last Serve",
           "prompt": "Recompose the supplied apartment-courtyard table-tennis photograph as exactly one complete vertical 2:3 classic 1930s-1970s hand-painted theatrical one-sheet titled 'THE LAST SERVE'. Preserve the brick courtyard, green table, serving player, waiting opponent, scorekeeper, laundry line, and blue-dusk versus porch-amber atmosphere. Use an object-monument composition: a colossal green paddle in profile occupies about 55% of poster height, the serving neighbor crosses its lower edge, the opponent and scorekeeper descend as small right-edge witness vignettes, and folding chairs, thermos, brick steps, laundry, and table form a tiny bottom action frieze. Use large separate burnt-orange, deep green, cobalt, warm ivory, and ink-black masses with opaque gouache and tempera planes, dry-brush edges, lithograph grain, fine halftone, uneven ink density, and slight plate misregistration. Exact title in a tall theatrical serif; no photo collage, glossy airbrush, hyperreal portrait, sans-serif lockup, comic panels, anime, neon, 3D CGI, dense credits, logos, ratings, CTA, sepia dominance, frame, glare, crop, or watermark.",
-          "preview": "https://studio.clash.video/studio-assets/catalog/diversity-20260826/classic-epic-movie-poster/result.png",
-          "referenceImage": "https://studio.clash.video/studio-assets/catalog/diversity-20260826/classic-epic-movie-poster/reference.png",
-          "referencePreview": "https://studio.clash.video/studio-assets/catalog/diversity-20260826/classic-epic-movie-poster/reference.png",
-          "referenceResourceUri": "https://studio.clash.video/studio-assets/catalog/diversity-20260826/classic-epic-movie-poster/reference.png",
+          "preview": "https://clash.art/studio/image/assets/catalog/diversity-20260826/classic-epic-movie-poster/result.png",
+          "referenceImage": "https://clash.art/studio/image/assets/catalog/diversity-20260826/classic-epic-movie-poster/reference.png",
+          "referencePreview": "https://clash.art/studio/image/assets/catalog/diversity-20260826/classic-epic-movie-poster/reference.png",
+          "referenceResourceUri": "https://clash.art/studio/image/assets/catalog/diversity-20260826/classic-epic-movie-poster/reference.png",
           "aspectRatio": "2:3",
           "mediaType": "image",
-          "image": "https://studio.clash.video/studio-assets/catalog/diversity-20260826/classic-epic-movie-poster/result.png",
+          "image": "https://clash.art/studio/image/assets/catalog/diversity-20260826/classic-epic-movie-poster/result.png",
           "mode": "image-to-image",
           "referenceRole": "reference",
           "mediaOrigin": "studio"
@@ -2116,10 +2116,10 @@
           "prompt": "Recompose the neighborhood table-tennis game around the woman's red-paddle lunge, blue table, 10-10 scorekeeper, opponent, and young witness as a hand-painted classic epic one-sheet titled GAME POINT.",
           "aspectRatio": "2:3",
           "mode": "image-to-image",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/classic-epic-movie-poster/references/ref-agent-v4.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/classic-epic-movie-poster/references/ref-agent-v4.png",
           "referenceRole": "reference",
           "promptFile": "prompts/classic-epic-movie-poster-agent-v4.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/classic-epic-movie-poster/agent-v4.png",
+          "image": "https://clash.art/studio/image/assets/examples/classic-epic-movie-poster/agent-v4.png",
           "mediaOrigin": "studio"
         },
         {
@@ -2128,7 +2128,7 @@
           "aspectRatio": "2:3",
           "mode": "text-to-image",
           "promptFile": "assets/examples/classic-epic-movie-poster/prompts/txt-01.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/classic-epic-movie-poster/txt-01.png",
+          "image": "https://clash.art/studio/image/assets/examples/classic-epic-movie-poster/txt-01.png",
           "mediaOrigin": "studio"
         },
         {
@@ -2137,7 +2137,7 @@
           "aspectRatio": "2:3",
           "mode": "text-to-image",
           "promptFile": "assets/examples/classic-epic-movie-poster/prompts/txt-02.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/classic-epic-movie-poster/txt-02.png",
+          "image": "https://clash.art/studio/image/assets/examples/classic-epic-movie-poster/txt-02.png",
           "mediaOrigin": "studio"
         },
         {
@@ -2146,7 +2146,7 @@
           "aspectRatio": "2:3",
           "mode": "text-to-image",
           "promptFile": "assets/examples/classic-epic-movie-poster/prompts/txt-03.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/classic-epic-movie-poster/txt-03.png",
+          "image": "https://clash.art/studio/image/assets/examples/classic-epic-movie-poster/txt-03.png",
           "mediaOrigin": "studio"
         },
         {
@@ -2155,7 +2155,7 @@
           "aspectRatio": "2:3",
           "mode": "text-to-image",
           "promptFile": "assets/examples/classic-epic-movie-poster/prompts/txt-04.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/classic-epic-movie-poster/txt-04.png",
+          "image": "https://clash.art/studio/image/assets/examples/classic-epic-movie-poster/txt-04.png",
           "mediaOrigin": "studio"
         },
         {
@@ -2164,7 +2164,7 @@
           "aspectRatio": "2:3",
           "mode": "text-to-image",
           "promptFile": "assets/examples/classic-epic-movie-poster/prompts/txt-05.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/classic-epic-movie-poster/txt-05.png",
+          "image": "https://clash.art/studio/image/assets/examples/classic-epic-movie-poster/txt-05.png",
           "mediaOrigin": "studio"
         },
         {
@@ -2173,8 +2173,8 @@
           "aspectRatio": "2:3",
           "mode": "image-to-image",
           "promptFile": "assets/examples/classic-epic-movie-poster/prompts/i2i-01.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/classic-epic-movie-poster/i2i-01.png",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/classic-epic-movie-poster/references/ref-01-source.png",
+          "image": "https://clash.art/studio/image/assets/examples/classic-epic-movie-poster/i2i-01.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/classic-epic-movie-poster/references/ref-01-source.png",
           "referenceRole": "reference",
           "mediaOrigin": "studio"
         },
@@ -2184,8 +2184,8 @@
           "aspectRatio": "2:3",
           "mode": "image-to-image",
           "promptFile": "assets/examples/classic-epic-movie-poster/prompts/i2i-02.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/classic-epic-movie-poster/i2i-02.png",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/classic-epic-movie-poster/references/ref-02-source.png",
+          "image": "https://clash.art/studio/image/assets/examples/classic-epic-movie-poster/i2i-02.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/classic-epic-movie-poster/references/ref-02-source.png",
           "referenceRole": "reference",
           "mediaOrigin": "studio"
         },
@@ -2195,8 +2195,8 @@
           "aspectRatio": "2:3",
           "mode": "image-to-image",
           "promptFile": "assets/examples/classic-epic-movie-poster/prompts/i2i-03.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/classic-epic-movie-poster/i2i-03.png",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/classic-epic-movie-poster/references/ref-03-source.png",
+          "image": "https://clash.art/studio/image/assets/examples/classic-epic-movie-poster/i2i-03.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/classic-epic-movie-poster/references/ref-03-source.png",
           "referenceRole": "reference",
           "mediaOrigin": "studio"
         },
@@ -2206,8 +2206,8 @@
           "aspectRatio": "2:3",
           "mode": "image-to-image",
           "promptFile": "assets/examples/classic-epic-movie-poster/prompts/i2i-04.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/classic-epic-movie-poster/i2i-04.png",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/classic-epic-movie-poster/references/ref-04-source.png",
+          "image": "https://clash.art/studio/image/assets/examples/classic-epic-movie-poster/i2i-04.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/classic-epic-movie-poster/references/ref-04-source.png",
           "referenceRole": "reference",
           "mediaOrigin": "studio"
         },
@@ -2217,8 +2217,8 @@
           "aspectRatio": "2:3",
           "mode": "image-to-image",
           "promptFile": "assets/examples/classic-epic-movie-poster/prompts/i2i-05.txt",
-          "image": "https://studio.clash.video/studio-assets/examples/classic-epic-movie-poster/i2i-05.png",
-          "referenceImage": "https://studio.clash.video/studio-assets/examples/classic-epic-movie-poster/references/ref-05-source.png",
+          "image": "https://clash.art/studio/image/assets/examples/classic-epic-movie-poster/i2i-05.png",
+          "referenceImage": "https://clash.art/studio/image/assets/examples/classic-epic-movie-poster/references/ref-05-source.png",
           "referenceRole": "reference",
           "mediaOrigin": "studio"
         }

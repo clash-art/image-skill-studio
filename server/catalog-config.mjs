@@ -23,7 +23,7 @@ function resolveAsset(pluginRoot, assetPath) {
 
 function studioAssetUrl(assetPath) {
   if (/^https:\/\//i.test(String(assetPath))) return String(assetPath);
-  const baseUrl = (process.env.IMAGE_SKILL_STUDIO_ASSET_BASE_URL || "https://studio.clash.video/studio-assets")
+  const baseUrl = (process.env.IMAGE_SKILL_STUDIO_ASSET_BASE_URL || "https://clash.art/studio/image/assets")
     .replace(/\/+$/, "");
   const key = String(assetPath)
     .replace(/^\/+/, "")

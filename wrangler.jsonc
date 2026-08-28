@@ -7,7 +7,7 @@
   "compatibility_flags": ["nodejs_compat"],
   "routes": [
     {
-      "pattern": "studio.clash.video",
+      "pattern": "clash.art",
       "custom_domain": true
     }
   ],

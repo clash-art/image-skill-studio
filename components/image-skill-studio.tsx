@@ -282,7 +282,7 @@ function buildWebGenerationPrompt({
   const repository = skill.upstream?.repo;
   const skillUrl = skill.upstream?.homepage
     || (repository ? `https://github.com/${repository}` : skill.author?.url)
-    || `https://studio.clash.video/#skill/${encodeURIComponent(skill.id)}`;
+    || `https://clash.art/studio/image#skill/${encodeURIComponent(skill.id)}`;
   const installCommand = repository ? `npx skills add https://github.com/${repository}` : null;
   const referenceLines = references.length
     ? references.map((reference, index) => {

@@ -23638,7 +23638,7 @@ import { createHash } from "node:crypto";
 import { mkdir, readFile, rename, writeFile } from "node:fs/promises";
 import os from "node:os";
 import path2 from "node:path";
-var DEFAULT_REMOTE_WIDGET_URL = "https://studio.clash.video/widget.html";
+var DEFAULT_REMOTE_WIDGET_URL = "https://clash.art/studio/image/widget.html";
 var DEFAULT_WIDGET_MAX_AGE_MS = 5 * 6e4;
 async function readJson(file2) {
   try {
@@ -33611,9 +33611,11 @@ var CATALOG_MANIFEST_PATH = REGISTRY_MANIFEST_PATH;
 function hostImagegenPath() {
   return path9.join(process.env.CODEX_HOME || path9.join(os4.homedir(), ".codex"), "skills/.system/imagegen");
 }
-function resolveAsset(pluginRoot, assetPath) {
-  if (!assetPath) return void 0;
-  return path9.isAbsolute(assetPath) ? assetPath : path9.resolve(pluginRoot, assetPath);
+function studioAssetUrl(assetPath) {
+  if (/^https:\/\//i.test(String(assetPath))) return String(assetPath);
+  const baseUrl = (process.env.IMAGE_SKILL_STUDIO_ASSET_BASE_URL || "https://clash.art/studio/image/assets").replace(/\/+$/, "");
+  const key = String(assetPath).replace(/^\/+/, "").replace(/^public\//, "").replace(/^assets\//, "");
+  return `${baseUrl}/${key}`;
 }
 function loadCatalogManifest(pluginRoot = PACKAGE_ROOT) {
   const source = readFileSync(path9.join(pluginRoot, CATALOG_MANIFEST_PATH), "utf8");
@@ -33624,7 +33626,7 @@ function mediaFields(skill, pluginRoot, contentPath, mediaOrigin) {
   if (skill.origin === "remote" && mediaOrigin !== "studio") {
     return { previewUrl: rawContentUrl({ ...skill.source, path: contentPath }) };
   }
-  return { previewPath: resolveAsset(pluginRoot, contentPath) };
+  return { previewUrl: studioAssetUrl(contentPath) };
 }
 function skillDirectory(skill, pluginRoot, resolveRemoteSkillDir) {
   if (skill.origin === "host") return hostImagegenPath();
