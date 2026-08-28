@@ -1,0 +1,10 @@
+Use case: photorealistic-natural
+Asset type: original source reference photo for an image-to-image poster example
+Primary request: Create one completely original vertical everyday photograph of a single worn ivory canvas sneaker with untied cotton laces.
+Scene/backdrop: entryway floor of muted terracotta tiles beside a softly blurred pale blue wall, with natural household wear.
+Subject: exactly one logo-free low-top sneaker as the unmistakable anchor; realistic creases, scuffs, rubber texture; no feet or people.
+Style/medium: candid editorial lifestyle photography, understated and tactile.
+Composition/framing: 3:4 portrait, shoe diagonal from lower-left to center, full silhouette and laces visible, ordinary room context rather than poster staging.
+Lighting/mood: soft afternoon doorway light, quiet sense of returning home.
+Color palette: ivory, dusty terracotta, faded blue.
+Constraints: wholly new image; no text, letters, numbers, labels, logos, watermarks, illustrations, doodles, other shoes, bags, or clothing.

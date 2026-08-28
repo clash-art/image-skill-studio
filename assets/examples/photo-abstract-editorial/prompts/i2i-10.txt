@@ -1,0 +1,9 @@
+Use case: style-transfer
+Asset type: finished vertical photo-abstract editorial example
+Input images: Image 1 is the only content source and must stay faithful in the upper photographic section.
+Primary request: Compose one vertical photo-abstract editorial diptych from Image 1. Keep the upper source photo unchanged, never redraw, extend, reconstruct, replace, filter, recolor, or retouch it; proportional scaling or minimal crop only. Distill its relationships into the lower panel rather than illustrating its objects.
+Observed facts: repeated mountain layers receding through mist; five balloons rising at unequal heights and intervals; a pale S-bending river below; peach dawn light above blue-green depth.
+Composition/framing: photo 47% of final height, perfectly uniform ivory #F3F0E8 panel 53%, joined directly and cleanly without border, frame, shadow, tape, collage, gap, or mockup.
+Abstract system: primary family is four low overlapping horizontal ridge bands in progressively lighter muted blue-green, each irregular and offset, occupying no more than 58% panel width and little height. Supporting marks are exactly five tiny softly tapered vertical lozenges, not circles and not balloon silhouettes, rising diagonally at unequal intervals above the bands in forest, cream, coral, mustard, and dusty teal. Add one thin pale silver S stroke crossing below the bands. Keep 72% of panel blank and avoid pictorial landscape reconstruction.
+Text: render exactly "Where Air Rises" once, bottom center, refined editorial serif in deep desaturated teal. No subtitle or other text.
+Constraints: palette and all marks only from visible Image 1 facts; ivory background completely flat; no gradient, texture, noise, grain, glow, shadows, vignette, stains, paper effect, realistic miniature objects, decorative symbols, regular spacing, invented symmetry, logos, labels, dates, numbers, signature, or watermark. Return only the completed composition.

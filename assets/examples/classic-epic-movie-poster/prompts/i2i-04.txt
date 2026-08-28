@@ -1,0 +1,10 @@
+Use case: style-transfer
+Asset type: final vertical theatrical one-sheet, 2:3
+Input images: Image 1 is the sole CONTENT SOURCE. Preserve the original adult woman's forest-green belted coat, silver streak in dark waved hair, cream envelope, original adult violinist with dark overcoat and violin case, snow-covered timber station, steam train, semaphore signals, blue winter air, and amber carriage windows.
+Primary request: Recompose this source into a classic romantic theatrical poster titled exactly "WINTER TELEGRAM".
+Format and title zone: vertical one-sheet with softly exposed cream edge; exact title stacked on the upper-right 15% in a refined high-contrast serif; matte old print.
+Monument: use a modernist symbol rather than a face collage: the falling cream envelope becomes a monumental diagonal white field, dividing two opposing painted profiles of the woman and violinist; her green coat and silver hair streak, his violin-case silhouette, and their restrained expressions remain recognizable. Monument fills 55% height.
+Narrative and color: one tiny steam train curves through the envelope's paper fold; semaphore signals and two small platform figures form a narrow lower action beat. Forest green cool field 35%, winter blue field 24%, amber/vermilion warm field 25%, cream/ivory 18%, ink-black core 9%; flat gouache and lithographic transitions.
+Typography and finish: exact title "WINTER TELEGRAM", no other readable text; subtle halftone, uneven ink, plate drift, softened paper; romantic longing and quiet reunion.
+Constraints: preserve both source identities and all key costume/prop cues while changing spatial axis, crop, title zone, and narrative relation; clear thumbnail read.
+Avoid: glossy romance photography, source-layout tracing, equal floating heads, fake billing, logos, contemporary clothing, CGI, sepia dominance, framed mockup, watermark.

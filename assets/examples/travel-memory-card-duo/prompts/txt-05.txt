@@ -1,0 +1,9 @@
+Use case: photorealistic-natural
+Asset type: original source reference photograph for a travel-memory-card transformation
+Primary request: a horizontal travel photograph of a young woman in a muted teal coat pouring tea from a red enamel thermos in a quiet Himalayan monastery courtyard, with a shaggy cream mountain dog beside her, a row of rust-red prayer wheels, a mustard cloth satchel, a small brass cup, and snow peaks visible through an open stone arch
+Style/medium: natural documentary travel photography, authentic materials and human scale, no stylization
+Composition/framing: 3:2 horizontal, woman and dog center-left, prayer-wheel rhythm along right, stone arch framing distant blue-white peaks, calm foreground paving
+Lighting/mood: crisp high-altitude morning, gentle side light, contemplative and intimate
+Color palette: stone gray, teal, rust red, mustard, cream, alpine blue
+Constraints: fully original scene; prayer wheels and objects contain no readable lettering or symbols resembling text; no signs, logos, watermark, signature, border, collage, or printed-card treatment
+Avoid: illustration, costume fantasy, tourism advertising, dramatic sun rays, HDR, shallow-depth glamour portrait

@@ -1,0 +1,10 @@
+Use case: style-transfer
+Asset type: strict Photo Revival image-to-image example
+Input images: Image 1: source reference photo; use only this source
+Primary request: make an extremely small memory sketch of the woman waiting with her bicycle, retaining the mustard raincoat, turquoise bicycle, tiny ticket, shelter frame, and a hint of curved wet road
+Style/medium: sparse wax-pencil hatching, dry watercolor, and one minute ticket-paper clipping on lightly flecked ivory paper
+Composition/framing: vertical 3:4 page; place the entire vignette at middle-left; it must fit within one fifth of page width and one quarter of page height, about 10% of total page area; leave at least 88% uninterrupted blank ivory paper
+Color palette: two localized accents only, ochre and turquoise; pale graphite-gray elsewhere; absolutely no pigment outside the tiny vignette
+Text (verbatim): "7:20" exactly once, microscopic handwriting on the ticket
+Constraints: hand-redrawn illustration, recognizable but deliberately miniaturized; no extra text; no watermark
+Avoid: enlarged portrait, full scene, full bleed, focal area over 14%, dense marks, large collage, poster typography, vector polish, photorealism

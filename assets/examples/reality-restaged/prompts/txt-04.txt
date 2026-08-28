@@ -1,0 +1,11 @@
+Use case: photorealistic-natural
+Asset type: source documentary photograph for an image-to-image visual-style example
+Primary request: Create an original, candid documentary photograph of two adult sisters repairing a translucent rain sheet over seedlings in a flooded field during monsoon weather. One braces a bamboo pole while the other pulls the sheet taut; a bright green bucket sits between them. Their coordinated gesture is the story.
+Scene/backdrop: shallow flooded agricultural field, low banana trees and distant simple houses softened by rain
+Subject: two distinct adult women in practical rain clothing, natural working posture, bamboo pole, translucent sheet, green bucket
+Style/medium: human-centered analog documentary photography, subtle grain, natural skin and wet-fabric texture
+Composition/framing: 4:3 landscape, figures separated across the lower half by the bowed sheet, broad storm sky as negative space
+Lighting/mood: diffuse rain light, wind visible in fabric, determined and quiet
+Color palette: gray-blue rain, muddy ochre water, muted clothing, one vivid leaf-green bucket
+Constraints: realistic distinct anatomy, faces, hands and working gestures; no cultural costume invention; no readable text; no logos; no watermark
+Avoid: surrealism, disaster spectacle, fashion posing, tropical tourism, theatrical geometry, impossible scale, illustration, CGI, cloned faces, extra fingers

@@ -1,0 +1,6 @@
+Use case: style-transfer
+Asset type: finished vertical editorial art poster
+Source fidelity: Image 1 is the sole source photograph and reference. Preserve the solitary cylindrical lighthouse, dark lantern and gallery, low viewpoint, diagonal rust-red cliff, indigo sea horizon, and storm relationship. Add no people, birds, ships, buildings, objects, logos, or symbols.
+Poster direction: vertical 3:4. Use a bold two-block woodcut. Make the page mostly dense charcoal-black weather; carve one tall irregular ivory lighthouse cut slightly right of center; build the cliff as one rust-red diagonal block from lower-left; cut the sea into five broad horizontal gouges; carve one widening ivory beam that exits the upper-left edge. Keep coarse roller gaps and chipped cuts but no fine all-over texture. Palette strictly charcoal, ivory, and rust red.
+Text: exact title "KEEP WATCH" once only as a tiny rust-red maker's line at the bottom-left.
+Avoid: photographic clouds, beige poster field, centered conventional lighthouse, giant condensed title, border, extra birds, ships, buildings, extra or misspelled lettering, signature, logo, or watermark.

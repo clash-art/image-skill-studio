@@ -1,0 +1,10 @@
+Use case: photorealistic-natural
+Asset type: source reference photograph for a later image-to-image editorial poster
+Primary request: Create a truthful vertical roadside photograph of a small faded turquoise 1970s gas station canopy and one white compact car beside a two-lane desert highway.
+Scene/backdrop: ochre gravel plain, low rust-red mesa spanning the far horizon, immense washed beige sky, one bent utility pole and its cable creating a long diagonal.
+Subject: modest abandoned gas station canopy at lower left, parked compact car beneath it, empty road curving from bottom center toward right horizon.
+Style/medium: natural documentary landscape photography, realistic weathered materials and desert atmosphere.
+Composition/framing: vertical 3:5, very low horizon, huge quiet sky, road curve as dominant gesture, architecture small but unmistakable.
+Lighting/mood: hard dry late-morning light with short natural shadows, remote and still.
+Constraints: realistic perspective and surfaces; no people; no readable brands or signage; no text, collage, illustration, torn paper, graphic overlays, logos, watermark.
+Avoid: post-apocalyptic drama, cinematic grading, fantasy clouds, neon colors, luxury vehicles, excessive props.

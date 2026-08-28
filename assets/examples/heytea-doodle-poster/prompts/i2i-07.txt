@@ -1,0 +1,10 @@
+Use case: style-transfer
+Asset type: strict I2I example, typography-led vertical object-and-doodle poster
+Input images: Image 1 is the sole source reference and subject anchor.
+Primary request: Transform the source worn ivory canvas sneaker photo into a quiet typography-led daily-object poster while preserving the exact photographed shoe, canvas weave, creases, scuffs, rubber texture, untied cotton laces, and recognizable silhouette. Do not redraw or beautify the shoe and do not turn it into a drink product.
+Scene/backdrop: remove the entryway surroundings and isolate the real sneaker on a clean warm-white field with its believable soft contact shadow.
+Composition/framing: 3:4 portrait. Place the sneaker lower-right on a shallow diagonal at about 32 percent of canvas height. Make a large upper-left title block the first visual signal.
+Doodle action: add exactly one tiny primitive faceless black-line micro worker near the loose lace end, quietly holding it like a rope. Use broken blunt marker strokes, lumpy open head, stiff segmented limbs, bad joins; figure height about 11 percent of shoe height.
+Text (verbatim): "慢慢走就好"
+Lettering: render only that title as large rough crooked childlike Chinese blunt-marker lettering in loose staggered vertical placement, uneven sizes and spacing, malformed but readable skeletons, flat black ink. No subtitle.
+Constraints: preserve the real photographed sneaker; only change background, placement, lettering, and minimal doodle overlay. No official HEYTEA logo or mascot, no brand mark, no extra text, no English, no numbers, no watermark, no cute sticker style, no polished vector, no gradients, no dense decoration, no realistic person, no full-cartoon conversion.

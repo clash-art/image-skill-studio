@@ -1,0 +1,9 @@
+Use case: photorealistic-natural
+Asset type: original source reference photograph for a travel-memory-card transformation
+Primary request: a horizontal candid winter street photograph of a bundled sweet-potato vendor at a compact vermilion pushcart beneath a dark indigo canopy in a snowy Japanese mountain town, with a warm hanging bulb, paper bag of roasted potatoes, small brass kettle, bicycle wheel, and a black-and-white sparrow on the snow
+Style/medium: natural documentary photography, authentic humble details, no stylization
+Composition/framing: 3:2 horizontal, vendor and cart occupy center-right, open snow field left, simple timber wall and bare branch shapes behind, generous breathing room
+Lighting/mood: blue-hour snowfall with one modest amber lamp, intimate, quiet, humane
+Color palette: snow blue, indigo, vermilion, olive apron, amber, charcoal
+Constraints: fully original scene; all surfaces and bags have no readable text or logos; no watermark, signature, border, collage, or printed-card treatment
+Avoid: illustration, neon city, cinematic spectacle, heavy bokeh, Christmas signage, HDR, staged advertising

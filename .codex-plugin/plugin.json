@@ -5,8 +5,8 @@
   "author": {
     "name": "Image Skill Studio"
   },
-  "repository": "https://github.com/hrhrng/image-skill-studio",
-  "homepage": "https://github.com/hrhrng/image-skill-studio",
+  "repository": "https://github.com/hrhrng/awesome-image-skill",
+  "homepage": "https://github.com/hrhrng/awesome-image-skill",
   "license": "MIT",
   "keywords": [
     "image-generation",

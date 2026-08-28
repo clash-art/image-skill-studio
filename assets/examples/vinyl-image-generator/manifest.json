@@ -1,0 +1,102 @@
+[
+  {
+    "id": "i2i-01",
+    "prompt": "Rainy tram memory transformed through an editorial photographic crop into Window Arithmetic's nocturnal ambient-dub vinyl artifact.",
+    "aspectRatio": "4:3",
+    "mode": "i2i",
+    "referenceImage": "references/ref-01-source.png",
+    "referenceRole": "Primary visual evidence: empty blue tram seat, rain window, amber lights, red signal, and metal-frame geometry.",
+    "promptFile": "prompts/i2i-01.txt",
+    "image": "i2i-01.png"
+  },
+  {
+    "id": "i2i-02",
+    "prompt": "Rainy tram source abstracted into Blue Signal Office's screen-printed transit geometry and milky clear pressing.",
+    "aspectRatio": "4:3",
+    "mode": "i2i",
+    "referenceImage": "references/ref-01-source.png",
+    "referenceRole": "Primary visual evidence: cobalt and amber palette, red signal, right-angle frame, woven grid, and rain speckles.",
+    "promptFile": "prompts/i2i-02.txt",
+    "image": "i2i-02.png"
+  },
+  {
+    "id": "i2i-03",
+    "prompt": "Three tide-pool keepsakes transformed into Salt Index Bureau's photographic coastal archive release.",
+    "aspectRatio": "4:3",
+    "mode": "i2i",
+    "referenceImage": "references/ref-02-source.png",
+    "referenceRole": "Primary visual evidence: three basalt pools, sea glass, red thread, white shell, foam, and mineral texture.",
+    "promptFile": "prompts/i2i-03.txt",
+    "image": "i2i-03.png"
+  },
+  {
+    "id": "i2i-04",
+    "prompt": "Tide-pool source abstracted into The Tidal Inventory's measured aquatint and risograph release system.",
+    "aspectRatio": "4:3",
+    "mode": "i2i",
+    "referenceImage": "references/ref-02-source.png",
+    "referenceRole": "Primary visual evidence: ordered pool silhouettes, celadon-red-white marks, foam contour, and porous basalt grain.",
+    "promptFile": "prompts/i2i-04.txt",
+    "image": "i2i-04.png"
+  },
+  {
+    "id": "i2i-05",
+    "prompt": "All-night laundromat transformed into Fluorescent Pension's intimate photographic synth-ballad release.",
+    "aspectRatio": "4:3",
+    "mode": "i2i",
+    "referenceImage": "references/ref-03-source.png",
+    "referenceRole": "Primary visual evidence: mustard sock, warm washer drum, chrome circles, mint fluorescence, and terrazzo floor.",
+    "promptFile": "prompts/i2i-05.txt",
+    "image": "i2i-05.png"
+  },
+  {
+    "id": "i2i-06",
+    "prompt": "Laundromat source reduced into Spin Cycle Almanac's playful screen-printed service-panel geometry.",
+    "aspectRatio": "4:3",
+    "mode": "i2i",
+    "referenceImage": "references/ref-03-source.png",
+    "referenceRole": "Primary visual evidence: sock silhouette, repeating washer circles, mint-peach-chrome palette, and terrazzo speckles.",
+    "promptFile": "prompts/i2i-06.txt",
+    "image": "i2i-06.png"
+  },
+  {
+    "id": "i2i-07",
+    "prompt": "Desert radio mast transformed into Distance Relay Club's spacious photographic field-session LP.",
+    "aspectRatio": "4:3",
+    "mode": "i2i",
+    "referenceImage": "references/ref-04-source.png",
+    "referenceRole": "Primary visual evidence: T-shaped mast, vermilion cloth, salt cracks, flat horizon, cyan sky, and mauve hills.",
+    "promptFile": "prompts/i2i-07.txt",
+    "image": "i2i-07.png"
+  },
+  {
+    "id": "i2i-08",
+    "prompt": "Desert transmission source abstracted into Dry Frequency Unit's letterpressed calibration suite.",
+    "aspectRatio": "4:3",
+    "mode": "i2i",
+    "referenceImage": "references/ref-04-source.png",
+    "referenceRole": "Primary visual evidence: mast glyph, directional red cloth, horizontal bands, crack map, and dry material edges.",
+    "promptFile": "prompts/i2i-08.txt",
+    "image": "i2i-08.png"
+  },
+  {
+    "id": "i2i-09",
+    "prompt": "Sunlit green stairwell transformed into Landing Echo Society's warm architectural-photo jazz release.",
+    "aspectRatio": "4:3",
+    "mode": "i2i",
+    "referenceImage": "references/ref-05-source.png",
+    "referenceRole": "Primary visual evidence: coral umbrella, round wired-glass window, oval light, green tile, and terrazzo stairs.",
+    "promptFile": "prompts/i2i-09.txt",
+    "image": "i2i-09.png"
+  },
+  {
+    "id": "i2i-10",
+    "prompt": "Stairwell source abstracted into Greenwell Tuesday's cut-paper grid and coral-forest pinwheel pressing.",
+    "aspectRatio": "4:3",
+    "mode": "i2i",
+    "referenceImage": "references/ref-05-source.png",
+    "referenceRole": "Primary visual evidence: umbrella silhouette, bottle-green and coral palette, circle-to-oval light, stair diagonal, and grout grid.",
+    "promptFile": "prompts/i2i-10.txt",
+    "image": "i2i-10.png"
+  }
+]

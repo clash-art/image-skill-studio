@@ -1,0 +1,10 @@
+Use case: style-transfer
+Asset type: strict Photo Revival image-to-image example
+Input images: Image 1: source reference photo; use only this source
+Primary request: redraw the elderly man watering the red geranium on his balcony as a fresh poetic hand-made illustration, preserving his bowed pose, navy cardigan, green watering can, red flower, and balcony rail in simplified recognizable form
+Style/medium: delicate transparent watercolor washes with fine graphite edges on warm white cotton paper
+Composition/framing: vertical 3:4 page; place one tiny illustrated cluster in the lower-left occupying about 12% of the page; leave 84-88% untouched white-paper negative space
+Color palette: strongest color only in the red geranium, moss-green can, and navy cardigan; all color confined to the tiny cluster
+Text (verbatim): "morning, again" as one very tiny faint handwritten pencil note directly beneath the cluster
+Constraints: transform the source into an illustration, not a photo filter; sparse handmade texture; preserve the memorable source details; no other text; no watermark
+Avoid: full bleed, subject larger than 16%, dense layout, flat vector art, large collage, photorealistic retouching, color spreading into blank paper

@@ -2,6 +2,8 @@ import { randomUUID } from "node:crypto";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 
+import { publishedRuns } from "../lib/published-run.mjs";
+
 const IN_FLIGHT_STATUSES = new Set(["awaiting_agent", "agent_running", "imagegen_running", "finalizing"]);
 
 function immutableCopy(value) {
@@ -45,6 +47,10 @@ export class RunStore {
     return immutableCopy(
       [...this.runs.values()].sort((left, right) => right.createdAt.localeCompare(left.createdAt)),
     );
+  }
+
+  async listPublished() {
+    return publishedRuns(await this.list());
   }
 
   async seedIfEmpty(records) {

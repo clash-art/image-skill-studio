@@ -1,0 +1,6 @@
+Use case: style-transfer
+Asset type: finished vertical editorial art poster
+Source fidelity: Image 1 is the sole source photograph and reference. Preserve the coral-orange curved lounge chair, slim black legs, one mature monstera with recognizable split leaves, and black window-grid logic. Add no people, furniture, objects, logos, or plants.
+Poster direction: vertical 3:4. Make an airy botanical watercolor study. Place only the lower half of the chair as a coral crescent entering from the bottom-right; let one enormous translucent monstera leaf wash sweep from the upper-right to center; retain one thin black mullion down the far left; leave most cold-press white paper untouched. Use transparent coral, sap green, deep pine, graphite, clear water blooms, controlled pigment pooling, and lifted highlights.
+Text: exact title "GREEN LIGHT" once only, small serif lettering along the left mullion near mid-height.
+Avoid: giant condensed typography, centered chair, room illustration, uniform beige paper, opaque screenprint look, border, extra or misspelled lettering, signature, logo, or watermark.

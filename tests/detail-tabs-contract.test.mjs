@@ -12,9 +12,9 @@ test("Skill detail has two tabs and no third Works route or sheet", async () => 
   ]);
 
   assert.match(studio, /type DetailTab = "feed" \| "creations"/);
-  assert.match(studio, /role="tablist"[^>]*aria-label="Skill 内容"/);
+  assert.match(studio, /role="tablist"[^>]*aria-label=\{copy\.skillContent\}/);
   assert.match(studio, /role="tab"[\s\S]{0,620}?>Feed</);
-  assert.match(studio, /role="tab"[\s\S]{0,620}?>我的生成</);
+  assert.match(studio, /role="tab"[\s\S]{0,620}?>\{copy\.myGenerations\}</);
   assert.match(studio, /role="tabpanel"/);
   assert.doesNotMatch(studio, /studioRoute:\s*"works"|worksSkillIdFromHash|#works\/|studio-works-sheet/);
   assert.doesNotMatch(css, /\.studio-works-sheet|\.works-sheet__/);

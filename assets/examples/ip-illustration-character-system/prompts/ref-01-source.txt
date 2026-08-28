@@ -1,0 +1,9 @@
+Use case: illustration-story
+Asset type: original character source reference for Studio curation
+Primary request: Create one original front-facing full-body character anchor: Lin, a cheerful young East Asian urban gardener with a blunt chin-length black bob, one small leaf-shaped hair clip, warm light skin, tiny dot eyes, a small curved smile, a coral-red short jacket over a white shirt, teal ankle-length overalls, yellow socks, and black lace-up shoes. She holds one small empty terracotta plant pot at waist height.
+Scene/backdrop: pure white only
+Style/medium: mini pen-doodle illustration, tiny subject on a large pure-white canvas, hesitant wobbly black pen contours with clearly visible irregular breaks, awkward hand-drawn shapes, internally clean flat color shapes deliberately slightly misregistered from the outlines with tiny white slivers or small edge overhangs, normal clear saturation, sparse composition, childlike messy-cute charm; limited color count, not desaturated color; broken but not uniformly dashed, misregistered but still legible
+Composition/framing: square canvas, centered full body, complete silhouette, character and pot occupy about 30% of canvas, generous white space
+Identity lock: blunt black bob, leaf clip, coral jacket, teal overalls, yellow socks, black shoes, terracotta pot, chibi proportions
+Constraints: one character only; readable face and hands; clean flat fills; no shadow
+Avoid: text, letters, numbers, labels, logo, watermark, scenery, gradients, glossy anime, 3D, vector-perfect curves, closed perfect contours, painterly or grainy texture, faded beige or gray cast

@@ -4,19 +4,31 @@ import { createRoot } from "react-dom/client";
 import {
   ImageSkillStudio,
   type StudioBridge,
-  type StudioFile,
   type StudioSnapshot,
 } from "../components/image-skill-studio";
-import { preferWorkbenchDisplayMode } from "../lib/display-mode.mjs";
+import { mapWithConcurrency } from "../lib/async-pool.mjs";
+import { WORKBENCH_DISPLAY_MODES } from "../lib/display-mode.mjs";
+import { applyStudioHostAppearance } from "../lib/studio-host-appearance.mjs";
+import { applyStoredStudioAppearance } from "../lib/studio-preferences.mjs";
+import { STABLE_STUDIO_TOOLS } from "../lib/studio-identity.mjs";
+import { isPublishedRun } from "../lib/published-run.mjs";
 import { applyStudioToolResult } from "../lib/studio-tool-result.mjs";
 import "./widget.css";
 
 declare global {
   interface Window {
+    __IMAGE_SKILL_STUDIO__?: {
+      edition?: string;
+      displayName?: string;
+      tools?: Partial<typeof STABLE_STUDIO_TOOLS>;
+      resourceUri?: string;
+    };
     openai?: {
       toolOutput?: StudioSnapshot;
+      displayMode?: "inline" | "fullscreen" | "pip";
       callTool?: (name: string, args: Record<string, unknown>) => Promise<unknown>;
       sendFollowUpMessage?: (params: { prompt: string }) => Promise<{ isError?: boolean }>;
+      requestDisplayMode?: (params: { mode: "inline" | "fullscreen" | "pip" }) => Promise<{ mode?: "inline" | "fullscreen" | "pip" }>;
       uploadFile?: (file: File, options?: { library?: boolean }) => Promise<{ fileId: string }>;
       getFileDownloadUrl?: (params: { fileId: string }) => Promise<{ downloadUrl: string }>;
     };
@@ -24,17 +36,20 @@ declare global {
 }
 
 const emptyState: StudioSnapshot = { skills: [], runs: [] };
+applyStoredStudioAppearance();
 const embedded = window.parent !== window;
+const studioTools = { ...STABLE_STUDIO_TOOLS, ...window.__IMAGE_SKILL_STUDIO__?.tools };
 const app = embedded
   ? new App(
-      { name: "Image Skill Studio", version: "0.1.0" },
-      { availableDisplayModes: ["fullscreen"] },
+      { name: window.__IMAGE_SKILL_STUDIO__?.displayName || "Image Skill Studio", version: "0.1.0" },
+      { availableDisplayModes: WORKBENCH_DISPLAY_MODES },
       { strict: true, autoResize: true },
     )
   : null;
 let appReady = false;
 
-let currentState = window.openai?.toolOutput ?? emptyState;
+const initialToolOutput = window.openai?.toolOutput;
+let currentState = initialToolOutput ?? emptyState;
 const listeners = new Set<(snapshot: Partial<StudioSnapshot>) => void>();
 let resolvingMedia = false;
 
@@ -56,56 +71,80 @@ async function readImageResource(uri: string) {
   return content?.blob ? `data:${content.mimeType || "image/png"};base64,${content.blob}` : null;
 }
 
+const MEDIA_READ_CONCURRENCY = 6;
+
 async function resolveMediaResources() {
   if (!app || !appReady || resolvingMedia) return;
   const unresolvedSkills = currentState.skills.filter((skill) => !skill.preview && skill.previewResourceUri);
   const unresolvedExamples = currentState.skills.flatMap((skill) =>
+    [
+      ...(skill.examples || []).map((slot) => ({ kind: "example" as const, slot })),
+      ...(skill.gallery || []).map((slot) => ({ kind: "gallery" as const, slot })),
+    ]
+      .filter(({ slot }) => !slot.preview && slot.previewResourceUri)
+      .map(({ kind, slot }) => ({ skillId: skill.id, kind, exampleId: slot.id, uri: slot.previewResourceUri! })),
+  );
+  const unresolvedReferences = currentState.skills.flatMap((skill) =>
     (skill.examples || [])
-      .filter((example) => !example.preview && example.previewResourceUri)
-      .map((example) => ({ skillId: skill.id, exampleId: example.id, uri: example.previewResourceUri! })),
+      .filter((slot) => !slot.referencePreview && slot.referenceResourceUri)
+      .map((slot) => ({ skillId: skill.id, exampleId: slot.id, uri: slot.referenceResourceUri! })),
   );
   const unresolvedArtifacts = currentState.runs.flatMap((run) =>
     (run.artifacts || [])
       .filter((artifact) => !artifact.dataUrl && !artifact.downloadUrl && artifact.resourceUri)
       .map((artifact) => ({ runId: run.id, artifactId: artifact.id, uri: artifact.resourceUri! })),
   );
-  if (!unresolvedSkills.length && !unresolvedExamples.length && !unresolvedArtifacts.length) return;
+  if (!unresolvedSkills.length && !unresolvedExamples.length && !unresolvedReferences.length && !unresolvedArtifacts.length) return;
   resolvingMedia = true;
   try {
     const previews = new Map<string, string>();
     const examples = new Map<string, string>();
+    const references = new Map<string, string>();
     const artifacts = new Map<string, string>();
-    await Promise.all(unresolvedSkills.map(async (skill) => {
+    await mapWithConcurrency(unresolvedSkills, MEDIA_READ_CONCURRENCY, async (skill) => {
       try {
         const image = await readImageResource(skill.previewResourceUri!);
         if (image) previews.set(skill.id, image);
       } catch {
         // A missing demo image should not make the Skill unavailable.
       }
-    }));
-    await Promise.all(unresolvedExamples.map(async ({ skillId, exampleId, uri }) => {
+    });
+    await mapWithConcurrency(unresolvedExamples, MEDIA_READ_CONCURRENCY, async ({ skillId, kind, exampleId, uri }) => {
       try {
         const image = await readImageResource(uri);
-        if (image) examples.set(`${skillId}:${exampleId}`, image);
+        if (image) examples.set(`${skillId}:${kind}:${exampleId}`, image);
       } catch {
         // Examples are optional curation, not a blocker for generation.
       }
-    }));
-    await Promise.all(unresolvedArtifacts.map(async ({ runId, artifactId, uri }) => {
+    });
+    await mapWithConcurrency(unresolvedReferences, MEDIA_READ_CONCURRENCY, async ({ skillId, exampleId, uri }) => {
+      try {
+        const image = await readImageResource(uri);
+        if (image) references.set(`${skillId}:${exampleId}`, image);
+      } catch {
+        // A missing source reference disables Remix seeding but not browsing.
+      }
+    });
+    await mapWithConcurrency(unresolvedArtifacts, MEDIA_READ_CONCURRENCY, async ({ runId, artifactId, uri }) => {
       try {
         const image = await readImageResource(uri);
         if (image) artifacts.set(`${runId}:${artifactId || uri}`, image);
       } catch {
         // Keep the result card available even when one artifact cannot be read.
       }
-    }));
-    if (previews.size || examples.size || artifacts.size) {
+    });
+    if (previews.size || examples.size || references.size || artifacts.size) {
       const skills = currentState.skills.map((skill) => ({
         ...skill,
         preview: previews.get(skill.id) ?? skill.preview,
         examples: (skill.examples || []).map((example) => ({
           ...example,
-          preview: examples.get(`${skill.id}:${example.id}`) ?? example.preview,
+          preview: examples.get(`${skill.id}:example:${example.id}`) ?? example.preview,
+          referencePreview: references.get(`${skill.id}:${example.id}`) ?? example.referencePreview,
+        })),
+        gallery: (skill.gallery || []).map((item) => ({
+          ...item,
+          preview: examples.get(`${skill.id}:gallery:${item.id}`) ?? item.preview,
         })),
       }));
       const runs = currentState.runs.map((run) => ({
@@ -201,7 +240,7 @@ const bridge: StudioBridge = {
   },
 
   async refresh() {
-    const next = await callTool<{ skills: StudioSnapshot["skills"] }>("list_image_skills", {});
+    const next = await callTool<{ skills: StudioSnapshot["skills"] }>(studioTools.listSkills, {});
     const snapshot = { skills: next.skills, runs: currentState.runs };
     publish(snapshot);
     return snapshot;
@@ -209,7 +248,7 @@ const bridge: StudioBridge = {
 
   async registerSkill(input) {
     const next = await callTool<{ skills: StudioSnapshot["skills"]; skill?: StudioSnapshot["skills"][number] }>(
-      "register_image_skill",
+      studioTools.registerSkill,
       { sourcePath: input.sourcePath, overwrite: Boolean(input.overwrite) },
     );
     publish({ skills: next.skills });
@@ -218,7 +257,7 @@ const bridge: StudioBridge = {
 
   async installSkill(input) {
     const next = await callTool<{ skills: StudioSnapshot["skills"]; destination?: string }>(
-      "install_image_skill",
+      studioTools.installSkill,
       { skillId: input.skillId, overwrite: Boolean(input.overwrite) },
     );
     publish({ skills: next.skills });
@@ -253,12 +292,13 @@ const bridge: StudioBridge = {
 
   async generate(input) {
     const prepared = await callTool<{ run: StudioSnapshot["runs"][number]; instruction: string }>(
-      "prepare_image_generation",
+      studioTools.prepare,
       {
         skillId: input.skillId,
         prompt: input.prompt,
         aspectRatio: input.aspectRatio,
         clientRequestId: input.clientRequestId,
+        locale: document.documentElement.dataset.locale || document.documentElement.lang,
         ...(input.references.length
           ? {
               references: input.references.map((reference) => ({
@@ -272,7 +312,6 @@ const bridge: StudioBridge = {
           : {}),
       },
     );
-    publish({ runs: [prepared.run, ...currentState.runs.filter((run) => run.id !== prepared.run.id)] });
     return { ...prepared, dispatchMode: "host_message" };
   },
 
@@ -305,21 +344,19 @@ const bridge: StudioBridge = {
 
     if (response && !response.isError && context?.runId) {
       try {
-        const marked = await callTool<{ run: StudioSnapshot["runs"][number] }>("mark_image_generation_handoff", {
+        await callTool(studioTools.markHandoff, {
           runId: context.runId,
         });
-        publish({ run: marked.run });
       } catch {
-        // ui/message was accepted; record_image_generation or the timeout remains authoritative.
+        // ui/message was accepted; a later successful record inserts the work.
       }
       return response;
     }
 
     if (!app && !window.openai?.sendFollowUpMessage && context?.runId) {
-      const dispatched = await callTool<{ run: StudioSnapshot["runs"][number] }>("run_prepared_image_generation", {
+      await callTool(studioTools.runPrepared, {
         runId: context.runId,
       });
-      publish({ run: dispatched.run });
       return { isError: false };
     }
 
@@ -327,8 +364,8 @@ const bridge: StudioBridge = {
   },
 
   async getRun(runId) {
-    const result = await callTool<{ run: StudioSnapshot["runs"][number] | null }>("get_image_generation_run", { runId });
-    if (result.run) publish({ run: result.run });
+    const result = await callTool<{ run: StudioSnapshot["runs"][number] | null }>(studioTools.getRun, { runId });
+    if (result.run && isPublishedRun(result.run)) publish({ run: result.run });
     return result.run;
   },
 
@@ -348,21 +385,78 @@ if (app) {
     if (next !== currentState) publish(next);
   };
   app.onhostcontextchanged = (context) => {
-    if (context.displayMode) document.documentElement.dataset.displayMode = context.displayMode;
+    applyStudioHostAppearance(context);
   };
 }
 
 const root = createRoot(document.getElementById("studio-root")!);
-root.render(<ImageSkillStudio initialState={currentState} bridge={bridge} />);
+root.render(<ImageSkillStudio initialState={currentState} bridge={bridge} initialLoading={!initialToolOutput} />);
+
+function currentDisplayMode() {
+  return window.openai?.displayMode
+    || app?.getHostContext()?.displayMode
+    || document.documentElement.dataset.displayMode
+    || "inline";
+}
+
+function applyDisplayMode(mode: string) {
+  document.documentElement.dataset.displayMode = mode;
+}
+
+async function requestFullscreenFromHost() {
+  if (window.openai?.requestDisplayMode) {
+    try {
+      const result = await window.openai.requestDisplayMode({ mode: "fullscreen" });
+      if (result?.mode) {
+        applyDisplayMode(result.mode);
+        if (result.mode === "fullscreen") return result.mode;
+      }
+    } catch {
+      // Codex may still honor the MCP Apps request below.
+    }
+  }
+  if (app && appReady) {
+    try {
+      const result = await app.requestDisplayMode({ mode: "fullscreen" });
+      applyDisplayMode(result.mode);
+      return result.mode;
+    } catch {
+      applyDisplayMode(currentDisplayMode());
+    }
+  }
+  return currentDisplayMode();
+}
+
+let adoptingSurface = false;
+let gestureArmed = false;
+
+function armGestureFullscreen() {
+  if (gestureArmed || currentDisplayMode() === "fullscreen") return;
+  gestureArmed = true;
+  const promote = () => {
+    window.removeEventListener("pointerdown", promote, true);
+    gestureArmed = false;
+    void adoptWorkbenchSurface();
+  };
+  window.addEventListener("pointerdown", promote, true);
+}
 
 async function adoptWorkbenchSurface() {
-  if (!app) return;
+  if (adoptingSurface) return;
+  adoptingSurface = true;
   try {
-    const result = await app.requestDisplayMode({ mode: "fullscreen" });
-    document.documentElement.dataset.displayMode = result.mode;
-    return result;
-  } catch {
-    document.documentElement.dataset.displayMode = preferWorkbenchDisplayMode();
+    for (const delay of [0, 80, 240, 720]) {
+      if (delay) await new Promise((resolve) => window.setTimeout(resolve, delay));
+      const mode = await requestFullscreenFromHost();
+      if (mode === "fullscreen") {
+        gestureArmed = false;
+        return mode;
+      }
+    }
+    armGestureFullscreen();
+    return currentDisplayMode();
+  } finally {
+    adoptingSurface = false;
   }
 }
 
@@ -370,10 +464,14 @@ if (app) {
   app.connect(new PostMessageTransport(window.parent, window.parent))
     .then(async () => {
       appReady = true;
+      applyStudioHostAppearance(app.getHostContext() || {});
       await adoptWorkbenchSurface();
       void resolveMediaResources();
     })
     .catch((error) => {
       console.error("MCP App handshake failed; using window.openai compatibility bridge", error);
+      void adoptWorkbenchSurface();
     });
+} else {
+  void adoptWorkbenchSurface();
 }

@@ -1,0 +1,10 @@
+Use case: photorealistic-natural
+Asset type: original source reference photo for an image-to-image poster example
+Primary request: Create one completely original vertical lifestyle product photograph of a clear ribbed glass filled with pale amber citrus tea, large ice cubes, and one thin orange wheel tucked inside the glass.
+Scene/backdrop: a quiet sunlit kitchen table with warm cream plaster wall and a soft linen napkin, naturally shallow depth of field.
+Subject: exactly one unbranded clear drinking glass as the unmistakable anchor; no people.
+Style/medium: realistic editorial photography, believable condensation, glass refraction, natural imperfect tabletop texture.
+Composition/framing: 3:4 portrait, glass slightly below center, full silhouette visible, ample surrounding context but no poster layout.
+Lighting/mood: soft late-morning side light, calm and refreshing.
+Color palette: pale amber, warm cream, restrained orange accent.
+Constraints: wholly new image; no text, letters, numbers, labels, logos, watermarks, illustrations, doodles, brand packaging, or additional drinks.

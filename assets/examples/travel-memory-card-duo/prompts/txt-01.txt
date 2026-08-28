@@ -1,0 +1,9 @@
+Use case: photorealistic-natural
+Asset type: original source reference photograph for a travel-memory-card transformation
+Primary request: a candid horizontal travel photograph of a lone cyclist in a saffron rain jacket pausing beside a turquoise bicycle on a narrow coastal road in western Ireland, with a white stone cottage, low dry-stone wall, windswept grass, distant slate-blue sea, and three seabirds
+Style/medium: natural documentary photography, authentic textures, no stylization
+Composition/framing: 3:2 horizontal, cyclist and bicycle in the lower-left third, cottage mid-right, road curving toward the sea, spacious overcast sky
+Lighting/mood: soft post-rain daylight, quiet and windswept, lightly nostalgic
+Color palette: moss green, slate blue, warm white, saffron, turquoise, charcoal stone
+Constraints: fully original scene; no readable text, signs, logos, license plates, watermark, signature, border, collage, or printed-card treatment
+Avoid: illustration, painterly look, fake film frame, dramatic HDR, shallow-depth portrait blur

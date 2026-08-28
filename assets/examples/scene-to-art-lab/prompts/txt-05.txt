@@ -1,0 +1,11 @@
+Use case: photorealistic-natural
+Asset type: source reference photograph for an art-poster transformation example
+Primary request: a solitary white cylindrical lighthouse on a rust-red sea cliff under fast coastal weather
+Scene/backdrop: dark indigo ocean, ochre grass bending in wind, layered gray storm clouds opening to one pale shaft of light; no buildings besides the lighthouse
+Subject: one plain white lighthouse with a small dark lantern room and narrow gallery, seen from below at a three-quarter angle, cliff edge clearly visible
+Style/medium: photorealistic natural coastal landscape photography
+Composition/framing: wide horizontal environmental view, lighthouse on the right third, cliff rising diagonally from lower-left, broad storm sky
+Lighting/mood: dramatic but realistic late-afternoon weather, wind-scoured, monumental, one cool light break
+Materials/textures: chalked white masonry, dark metal, rough rust-red rock, coarse grass, sea spray, layered cloud
+Constraints: no people, no birds, no ships, no logos, no brands, no readable text, no watermark, no poster typography, no illustration, preserve plausible lighthouse proportions
+

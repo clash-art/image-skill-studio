@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-import { fanPlacement, groupRecentRunsBySkill } from "../lib/fan-collection.mjs";
+import { fanPlacement, groupRecentRunsBySkill, selectRenderableFanItems } from "../lib/fan-collection.mjs";
 
 const skillA = { id: "a", displayName: "A" };
 const skillB = { id: "b", displayName: "B" };
@@ -27,4 +27,22 @@ test("fan placements are symmetric and keep the newest card visually in front", 
     { x: 26, y: 12, rotation: 12, zIndex: 4 },
   ]);
   assert.deepEqual(fanPlacement(0, 1), { x: 0, y: 0, rotation: 0, zIndex: 1 });
+});
+
+test("fan cards omit empty, duplicate, and failed image sources", () => {
+  const items = [
+    { id: "empty", src: "" },
+    { id: "first", src: "data:image/png;base64,one" },
+    { id: "duplicate", src: "data:image/png;base64,one" },
+    { id: "failed", src: "https://example.test/broken.png" },
+    { id: "second", src: "data:image/png;base64,two" },
+    { id: "third", src: "data:image/png;base64,three" },
+    { id: "fourth", src: "data:image/png;base64,four" },
+    { id: "fifth", src: "data:image/png;base64,five" },
+  ];
+
+  assert.deepEqual(
+    selectRenderableFanItems(items, new Set(["https://example.test/broken.png"])).map((item) => item.id),
+    ["first", "second", "third", "fourth"],
+  );
 });

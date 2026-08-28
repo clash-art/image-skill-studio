@@ -1,0 +1,10 @@
+Use case: style-transfer
+Asset type: final vertical theatrical one-sheet, 2:3
+Input images: Image 1 is the sole CONTENT SOURCE. Preserve its original adult woman railway engineer, short dark hair, weathered orange pressure coat, brass signal lamp, silver train, flooded orbital station, curved window ribs, and ringed planet. Recompose rather than tracing its landscape frame.
+Primary request: Transform this source into an original classic hand-painted epic poster titled exactly "CINDER STATION".
+Format and title zone: narrow warm-white printed margin; title alone occupies the upper 14% in a tall high-contrast theatrical serif; aged matte paper, no framed mockup.
+Monument: use a high-concept object-monument: the brass signal lamp becomes a gigantic glowing orbital beacon, its circular lens aligned with the ringed planet; the engineer's simplified painted profile is cut into the lamp's dark body and remains recognizable from orange collar, short hair, and alert expression. Monument fills about 58% height.
+Narrative and color: two tiny subordinate scenes, the silver train bending around the beacon and the engineer wading across reflective rails; a small evacuation carriage frieze follows the lower 8%. Burnt orange warm field 43%, cyan/steel-blue filled cool field 36%, ivory 15%, ink-black core 11%; long decisive warm-cool edges; gouache, tempera, lithographic grain.
+Typography and finish: exact title "CINDER STATION", no other readable text; slightly uneven ink density, fine halftone, subtle plate misregistration; mysterious journey and industrial suspense.
+Constraints: preserve source character and world cues but create a new vertical hierarchy; one dominant monument, subordinate witnesses, thumbnail clarity.
+Avoid: photo collage, direct reuse of source composition, glossy CGI, modern streaming art, equal floating heads, fake credits, logos, review quotes, watermark, misspelled title, bundled style-reference content.

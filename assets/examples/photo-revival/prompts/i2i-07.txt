@@ -1,0 +1,10 @@
+Use case: style-transfer
+Asset type: strict Photo Revival image-to-image example
+Input images: Image 1: source reference photo; use only this source
+Primary request: make a postage-stamp-scale hand-drawn vignette of the snowy sweet-potato vendor, preserving the bundled vendor, green apron, red cart, warm bulb, paper bag, and a few potatoes
+Style/medium: soft opaque gouache with scratchy pencil edges on cool white watercolor paper
+Composition/framing: vertical 3:4 page; mini cluster at bottom-left; the entire vendor and cart canopy must fit within one fifth of page width and one quarter of page height, no more than 8% total area; leave over 90% blank paper
+Color palette: tiny localized brick red, apron green, amber lamp, two pale blue-gray snow marks; no pigment elsewhere
+Text (verbatim): "warm hands" exactly once, microscopic pencil below the wheel
+Constraints: recognizable handmade illustration; white paper overwhelmingly dominates; no other text; no watermark
+Avoid: enlarged cart, full street, full bleed, cluster over 10%, dense snow, large type, vector finish, collage blocks, photorealism

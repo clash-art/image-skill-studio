@@ -1,0 +1,16 @@
+Use case: identity-preserve
+Asset type: 3:4 portrait knowledge infographic for Studio curation
+Input images: Image 1 is the sole source reference for Lin's identity; never use any generated result as a reference
+Primary request: Create a compact hand-drawn three-step balcony planting guide, with Lin as a small guide character pointing from the lower corner toward the steps.
+Scene/backdrop: clean pure-white portrait canvas
+House style: cute mini pen-doodle infographic; narrow fine colored-pencil title strokes with subtle dry gaps and baseline drift; readable loose black marker handwriting; hesitant wobbly black pen contours with irregular breaks; individually hand-drawn boxes and arrows with uneven corners, tiny openings and overshoots; internally clean flat fills slightly misregistered on selected edges; normal clear saturation; three to five accent colors; no faded cast
+Composition/framing: exact 3:4 portrait layout, top title, three vertically connected numbered blocks, Lin at bottom occupying 12–15% of page, balanced breathing room
+Identity invariants: preserve Lin's exact blunt black bob, leaf hair clip, warm light skin, tiny face, coral jacket, white shirt, teal overalls, yellow socks, black shoes, chibi proportions and signature colors from Image 1
+Information blocks: first block shows an empty pot, second shows a seed entering soil, third shows a watering can and tiny sprout; arrows establish top-to-bottom order
+Render this text exactly, with no extra words:
+阳台种植 3 步
+1 选盆
+2 播种
+3 浇水
+Constraints: change only pose and page purpose; keep identity unchanged; keep text legible and unbroken; no invented labels or facts
+Avoid: extra text, logo, watermark, digital-font perfection, identical rounded cards, dense paragraphs, gradients, shadows, paper grain, glossy rendering, vector-perfect geometry, washed-out beige or gray cast

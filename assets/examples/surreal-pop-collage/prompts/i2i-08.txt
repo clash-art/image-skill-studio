@@ -1,0 +1,9 @@
+Use case: style-transfer
+Asset type: strict surreal-pop-collage example, vertical 3:4
+Input images: Image 1 is the sole source reference and reality anchor.
+Primary request: transform this exact alpine station photograph into a luminous surreal pop collage while preserving the red station silhouette, ordinary yellow gondola, jagged mountains, snowfields, and rising cable direction.
+Reality anchor: turn the station, its machinery, normal-size gondola, mountain, snow, and cables into textured black-and-white photography while retaining exact recognizable geometry.
+Flat world: replace the sky with a giant flat matte ice-cyan plane from the source atmosphere; replace the main snowfield with a flat golden-yellow slope shape derived from the gondola and place one flat signal-red arch behind the station derived from its facade; hard cut-paper edges; no gradients and no shadows on color shapes.
+One impossible giant element: one enormous black cable pulley wheel emerges behind the station, with the existing cable visibly running around it; the single wheel is derived from the station machinery and is the only impossible giant object.
+Small elements: 3–5 tiny snow crystals in graduated sizes follow one arc near the cable; add 2–3 sparse white hand-drawn contour strokes over empty cyan sky.
+Constraints: preserve vertical 3:4 and source identity; exactly one impossible giant element; gondola remains normal size; no giant mountain, sun, or second wheel; bright rather than ominous; no frame; no gradients; no dimensional shading on flat shapes; no dark horror; no text; no logo; no watermark; no imported photographic subject.

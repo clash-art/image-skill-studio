@@ -1,0 +1,10 @@
+Use case: style-transfer
+Asset type: strict Photo Revival image-to-image example
+Input images: Image 1: source reference photo; use only this source
+Primary request: reinterpret the balcony memory as a tiny hand-drawn vignette, preserving the elderly man's bent posture, glasses, navy cardigan, green watering can, red geranium, and angular balcony rail
+Style/medium: loose graphite contour with small opaque gouache dabs and one tiny torn-paper shadow, all on crisp cool-white sketchbook paper
+Composition/framing: vertical 3:4 page; compact focal cluster near the lower-right occupying 10-13% of the page; leave at least 86% blank white paper
+Color palette: restrained navy and gray with two vivid accents, geranium red and watering-can green, contained entirely inside the cluster
+Text (verbatim): "APR 12" handwritten exactly once, very tiny, beside the flower pot
+Constraints: render exactly those five characters and one space once only; no duplicate date fragments or other marks resembling text; freshly redrawn illustration, not filtered photography; simplified but recognizable; collage hint no larger than the flower pot; no watermark
+Avoid: full bleed, large subject, dense scenery, heavy typography, flat vector shapes, large collage blocks, realism

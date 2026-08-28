@@ -1,0 +1,12 @@
+Use case: identity-preserve
+Asset type: 1:1 sparse article illustration for Studio curation
+Input images: Image 1 is the sole source reference for Nia's identity; never use any generated result as a reference
+Primary request: Show Nia demonstrating an eclipse with one small yellow ball and one small blue ball aligned in front of a simple ring light, while her compact navy telescope rests beside her. This article illustration communicates a scientific idea through a clear physical demonstration.
+Scene/backdrop: pure white only
+Style/medium: mini pen-doodle illustration, tiny subject on a large pure-white canvas, hesitant wobbly black pen contours with clearly visible irregular breaks, awkward hand-drawn shapes, internally clean flat color shapes deliberately slightly misregistered from the outlines with tiny white slivers or small edge overhangs, normal clear saturation, sparse composition, childlike messy-cute charm; limited color count, not desaturated color; broken but not uniformly dashed, misregistered but still legible
+Composition/framing: square 1:1, complete character-and-prop group occupies 25–30% of canvas, abundant white space, nothing cropped
+Identity invariants: preserve Nia's exact dark skin, two round black puff buns, left gold star earring, violet hoodie with plain crescent patch, mint pleated skirt, mustard leggings, white high-top sneakers with blue soles, compact navy telescope, chibi proportions and signature colors from Image 1
+Action/expression: bright teaching smile, arms clearly aligning the two balls
+Props: one yellow ball, one blue ball, one simple ring light, original compact navy telescope only
+Constraints: change only pose and scene purpose; keep identity unchanged; no shadow
+Avoid: text, labels, letters, numbers, logos, watermark, starscape, dense scenery, gradients, glossy shading, vector-perfect curves, painterly or grainy texture, faded beige or gray cast, extra people or props

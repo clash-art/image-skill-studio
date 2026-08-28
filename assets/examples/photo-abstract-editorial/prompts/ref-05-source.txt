@@ -1,0 +1,10 @@
+Use case: photorealistic-natural
+Asset type: source reference photograph for a strict image-to-image editorial transformation
+Primary request: Create one original, standalone dawn photograph of five hot-air balloons at different heights drifting over a misty green valley.
+Scene/backdrop: layered blue-green ridges, a narrow silver river bend, low white mist bands, expansive pale peach sky.
+Subject: exactly five balloons with simple solid envelopes in distinct muted colors, irregularly spaced and overlapping the ridge line at varied depths; no readable markings.
+Style/medium: realistic travel editorial photography with natural atmospheric depth, no painterly treatment.
+Composition/framing: wide horizontal photograph, balloons form an ascending loose arc from lower left toward upper right, river creates a counter-curve, generous sky.
+Lighting/mood: first light, quiet buoyancy, soft atmospheric haze.
+Color palette: derived from nature: sage, blue-green, pale peach, muted coral, mustard, dusty teal, cream.
+Constraints: source photograph only; no panel, no border, no title, no typography, no collage, no graphic overlays, no watermark, no logos, no people in foreground, no famous landmark.

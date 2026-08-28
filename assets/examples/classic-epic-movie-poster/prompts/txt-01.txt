@@ -1,0 +1,11 @@
+Use case: stylized-concept
+Asset type: final vertical theatrical one-sheet, 2:3
+Primary request: Create an original classic hand-painted epic movie poster for a science-fiction mystery titled exactly "THE GLASS ORCHARD". In a frozen future, a lone botanist discovers a luminous crystal tree growing inside a shattered polar greenhouse.
+Scene/backdrop: broad golden-amber sky field colliding with an ice-blue greenhouse dome and black polar night.
+Subject: one monumental profile of the botanist in a frost-rimmed hood, the transparent profile containing the branching crystal tree; recognition cues are the frost hood, glass ribs, botanical specimen case, and crystalline branches.
+Style/medium: 1930s-1970s illustrated theatrical one-sheet, opaque gouache and tempera planes, aged offset lithograph grain, not a modern photo composite.
+Composition/framing: narrow warm-white paper margin; title alone in the upper 15%; giant profile occupies about 58% height; two tiny witnesses, a tracked snow vehicle and a kneeling assistant, descend along one edge; a small diagonal expedition trail crosses the lower 9%. Strong warm field 45%, cool filled monument 32%, ivory breathing space 16%, ink-black core 10%.
+Lighting/mood: mysterious journey and tragic grandeur.
+Text (verbatim): "THE GLASS ORCHARD"
+Constraints: tall high-contrast theatrical serif title, little or no secondary text, one dominant monument, supporting figures clearly subordinate, readable at thumbnail size, matte printed poster only.
+Avoid: misspelled title, fake credits, logos, ratings, review quotes, framed mockup, photographic collage, glossy digital airbrush, CGI, equal floating heads, muddy sepia, neon cyberpunk, existing film imagery, watermark.

@@ -1,0 +1,9 @@
+Use case: style-transfer
+Asset type: strict surreal-pop-collage example, vertical 3:4
+Input images: Image 1 is the sole source reference and reality anchor.
+Primary request: transform this exact coastal photograph into a bright surreal pop collage, preserving the fisherman pulling the rope, the normal-size boat, coastline, and white village as instantly recognizable photographic structure.
+Reality anchor: desaturate the fisherman, normal-size boat, village, rocks, and beach to black and white while preserving their real texture; keep the fisherman's face and hands unobstructed.
+Flat world: replace the sky with a huge flat matte warm-white field crossed by one cobalt-blue circular segment derived from the boat; replace the sea region with a flat mustard-yellow band derived from the jacket and the beach with a flat pale-cyan plane derived from the water; hard matte edges, no gradients, no shadows on color shapes.
+One impossible giant element: the rope in the fisherman's hands continues upward into one enormous sailor's knot suspended in the sky like a moon; the single knot is the only impossible giant element and is visibly connected to the source rope.
+Small elements: 3–5 tiny black gull silhouettes in graduated sizes follow the rope's arc; add 2–3 restrained white hand-drawn ripple strokes away from the face.
+Constraints: preserve vertical 3:4 and source identity; exactly one impossible giant element; boat remains ordinary scale; no other floating or oversized object; bright not dark; no frame; no gradient; no dimensional shadow on flat shapes; no text; no logo; no watermark; no imported photographic material.

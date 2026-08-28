@@ -24,9 +24,9 @@ An App-generated message contains an Image Skill Studio Run ID, the selected Ski
 
 1. Read the selected Skill's exact `SKILL.md` path completely.
 2. Apply that Skill's method to the prompt and attached references.
-3. Use the `$imagegen` Skill and its default built-in `image_gen` tool to generate exactly one final image at the requested ratio. Do not use the ImageGen CLI fallback.
+3. Produce one final raster image at the requested ratio. Prefer `$imagegen` and its default built-in `image_gen` tool when that skill is available. Do not use the ImageGen CLI fallback. If `$imagegen` is unavailable, or another image skill, tool, or method is a better fit, use that instead.
 4. Keep the work inside the image task. Do not edit unrelated project files.
-5. Only after a real image exists, call `record_image_generation` with the same Run ID and `status: "succeeded"`. Prefer the real absolute `savedPath` returned by ImageGen; use the image file parameter when the host exposes only a file object. If generation fails, do not call this tool and do not record a failed run.
+5. Only after a real image exists, call `record_image_generation` with the same Run ID and `status: "succeeded"`. Prefer the real absolute `savedPath` returned by the image tool; use the image file parameter when the host exposes only a file object. If generation fails, do not call this tool and do not record a failed run.
 
 The saved results are evidence-backed: never report success or invent a file until an actual image artifact exists.
 

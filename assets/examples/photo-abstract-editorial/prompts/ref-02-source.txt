@@ -1,0 +1,10 @@
+Use case: photorealistic-natural
+Asset type: source reference photograph for a strict image-to-image editorial transformation
+Primary request: Create one original, standalone cinematic documentary photograph of a solitary city bus shelter during rain at night, with three waiting commuters spaced irregularly beneath it.
+Scene/backdrop: wet urban street, one red bus-light reflection crossing the pavement, dark storefronts reduced to soft distance, rain visible in the shelter light.
+Subject: three anonymous adults in coats, seen mostly in silhouette and at different heights; no faces readable; a slim shelter roof and one vertical support.
+Style/medium: realistic low-light street photography, natural photographic grain only, no illustration or stylization.
+Composition/framing: portrait-oriented photo, shelter occupying upper-middle, strong verticals, figures clustered but uneven, reflective pavement filling lower third.
+Lighting/mood: sodium-amber shelter light against petrol-blue night, contemplative.
+Color palette: deep blue-black, muted amber, restrained red reflection, wet charcoal.
+Constraints: only the source photograph; no border, no ivory panel, no title, no typography, no graphic overlays, no collage, no watermark, no brands or readable signage.

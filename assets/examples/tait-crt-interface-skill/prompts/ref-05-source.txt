@@ -1,0 +1,9 @@
+Use case: photorealistic-natural
+Asset type: source reference for an image-to-image transformation benchmark
+Primary request: Create one original realistic editorial portrait of exactly one elderly woman botanist examining one giant split-leaf specimen in a greenhouse workroom.
+Subject: one elderly East Asian woman; broad silver-white blunt bob; large round dark glasses; square jaw; moss green sleeveless utility vest over a plain brick-red shirt; left hand supports the thick leaf stem, right hand points to one distinctive triangular tear in the leaf edge; focused sideward gaze. One enormous dark green split leaf rises beside her and partly overlaps one shoulder.
+Scene/backdrop: simple pale tiled greenhouse wall, one blurred metal shelf only, no other people or plants.
+Composition/framing: square 1:1, waist-up, woman slightly right of center and leaf mass on left, both hands visible and plausible, clear interaction and asymmetrical silhouette.
+Lighting/mood: diffuse greenhouse daylight, dry scientific editorial mood.
+Color palette: silver white, moss green, brick red, pale tile, natural skin.
+Constraints: original realistic photograph; exactly one person and one leaf specimen; anatomically plausible hands; no text, logo, watermark, CRT, pixels, interface, illustration, flowers, extra foliage, jewelry, or lab branding.

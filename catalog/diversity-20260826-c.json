@@ -1,0 +1,50 @@
+[
+  {
+    "skillId": "scene-to-art-lab",
+    "id": "scene-to-art-lab-diversity-v5",
+    "title": "First Mile Commuter Linocut",
+    "prompt": "Use case: style-transfer\nAsset type: finished vertical editorial art poster\nInput images: Image 1 is the sole source photograph and identity reference.\nSource fidelity: Preserve the complete recognizable silhouette and relationship of the crouching commuter, moss-green windbreaker, compact red folding bicycle, front basket, canvas tote, paper-wrapped breakfast, apartment entrance, and pale dawn doorway. Keep one person, natural anatomy, the full person, and the full bicycle visible within the finished canvas; do not crop either out and do not add objects or people.\nPoster direction: Recompose as a vertical 3:4 relief-print poster with the proposition \"an ordinary departure becomes a carved morning ritual.\" Use the DIAGONAL MOMENTUM system: let the bicycle frame and open doorway create one rising diagonal, place the complete commuter-and-bike anchor across the lower two-thirds, and reserve calm exposed paper at upper-left as an active type zone. Thumbnail silhouette: one crouched figure joined to one small bicycle against a tall dawn opening. Keep three zones: dense focal figure/bicycle, simplified carved architecture, and open paper.\nMaterial, graphic, and type system: hand-printed linocut on warm oatmeal paper, carbon-black ink plus one vermilion-red block color taken from the bicycle. Describe the moss jacket through sparse carved directional marks rather than extra color. Use chipped gouge edges, pressure variation, roller gaps, and broad paper cuts; cluster texture around hands, shoe, bicycle mechanics, basket, and doorway, while clearing quiet zones. Use only two source-derived devices: one long bicycle-frame diagonal and one repeated mailbox-slot rhythm. Create an intentional lost edge where the non-critical rear wall and shadow-side jacket contour dissolve into broken ink and exposed paper; keep face, hands, shoe, wheels, frame, basket, and doorway legible. Exact title: \"FIRST MILE\". No subtitle. Set it once in bold condensed uppercase neo-grotesk sans serif, tall narrow clean letterforms, tight readable tracking, integrated into upper-left negative space in solid vermilion ink, no text box, outline, shadow, or decoration.\nGuardrails: authored relief-print poster, not a filtered photograph. Preserve the full main subject and full bicycle in frame. No centered catalog layout, uniform distress, photographic crosshatching everywhere, vector-clean edges, extra color blocks, extra or misspelled text, logos, brands, signature, seal, watermark, date, frame, rain, tram, bus stop, mountain, lake, kayak, pottery, or artisan.",
+    "preview": "/catalog/diversity-20260826/scene-to-art-lab/result-first-mile-linocut.png",
+    "referenceImage": "/catalog/diversity-20260826/scene-to-art-lab/source-commuter-routine.png",
+    "referencePreview": "/catalog/diversity-20260826/scene-to-art-lab/source-commuter-routine.png",
+    "referenceResourceUri": "/catalog/diversity-20260826/scene-to-art-lab/source-commuter-routine.png",
+    "image": "/catalog/diversity-20260826/scene-to-art-lab/result-first-mile-linocut.png",
+    "aspectRatio": "3:4",
+    "mode": "image-to-image",
+    "referenceRole": "reference",
+    "mediaType": "image",
+    "mediaOrigin": "studio"
+  },
+  {
+    "skillId": "surreal-pop-collage",
+    "id": "surreal-pop-collage-diversity-v5",
+    "title": "The Scallion in the Fridge",
+    "prompt": "Use case: style-transfer\nAsset type: finished surreal pop collage\nInput images: Image 1 is the sole source photograph and reality anchor.\nPrimary request: Create a bright surreal pop collage, vertical 3:4. Keep the complete open refrigerator and its recognizable shelves, eggs, tofu containers, cherry tomatoes, lemon, pickle jar, leftover container, vegetable drawers, and grocery arrangement clearly recognizable but desaturated to black and white, preserving photographic texture and the straight-on household snapshot logic.\nFlat-color world: Replace only the surrounding kitchen and selected quiet refrigerator-background regions with two or three huge flat matte shapes derived from the groceries: a pistachio-green vertical plane, a tomato-red semicircle, and a lemon-yellow shelf band. Flat matte colors only, no gradients and no dimensional shadows on color shapes.\nOne impossible element: exactly one absurd giant scallion, derived from the real scallions already on the middle shelf, enlarges and curves upward through the open refrigerator like a single arch while remaining visibly connected to that shelf. This giant scallion is the only impossible element.\nSmall elements: three tiny lemon seeds in graduated sizes follow one loose arc near the open door, plus two short white hand-drawn wobble strokes. Keep these subordinate and away from groceries.\nComposition: vertical 3:4, complete refrigerator visible with breathing room, black-and-white domestic reality colliding cleanly with flat pistachio, tomato, and lemon fields. Bright, playful, spacious.\nConstraints: only one giant impossible object; no second surreal object; no text, letters, numbers, labels, logo, watermark, frame, dark horror tone, gradients, glossy 3D color shapes, imported decorative objects, faces, people, pottery, artisan, tram, bus stop, mountain, lake, kayak, or rain.",
+    "preview": "/catalog/diversity-20260826/surreal-pop-collage/result-giant-scallion-collage.png",
+    "referenceImage": "/catalog/diversity-20260826/surreal-pop-collage/source-fridge-groceries.png",
+    "referencePreview": "/catalog/diversity-20260826/surreal-pop-collage/source-fridge-groceries.png",
+    "referenceResourceUri": "/catalog/diversity-20260826/surreal-pop-collage/source-fridge-groceries.png",
+    "image": "/catalog/diversity-20260826/surreal-pop-collage/result-giant-scallion-collage.png",
+    "aspectRatio": "3:4",
+    "mode": "image-to-image",
+    "referenceRole": "reference",
+    "mediaType": "image",
+    "mediaOrigin": "studio"
+  },
+  {
+    "skillId": "heytea-doodle-poster",
+    "id": "heytea-doodle-poster-diversity-v5",
+    "title": "Grapefruit Soda Maintenance Crew",
+    "prompt": "Use case: style-transfer\nAsset type: no-text narrative object-and-doodle poster\nInput images: Image 1 is the sole source photograph and subject anchor.\nPrimary request: Transform the casual grapefruit-soda snack photo into a vertical 2:3 quiet object theater while preserving the exact clear ridged glass cup as a real photographic object: pale pink soda, ice cubes, condensation, grapefruit wedge, glass refraction, silhouette, and believable contact shadow. Do not redraw the drink. The rice triangle may be removed so the glass remains the single hero object.\nScene/backdrop: remove the convenience-store surroundings and isolate the complete real glass on a clean soft off-white field with generous negative space.\nLayout: vertical 2:3 portrait. Keep the entire glass fully visible and uncropped, slightly right of center and below center, about 42 percent of canvas height. Do not reserve a title area; organize the negative space around one action path.\nDoodle overlay: Add exactly one primitive black-line micro worker climbing the outside condensation of the glass with one crude short ladder and one broken rope line, reaching toward the grapefruit wedge as if maintaining it. Figure height about 13 percent of glass height. Draw the worker with separate thick uneven marker strokes: blank lumpy open head with no face, short open-segment tube body, stiff segmented arms, blocky paddle hands, short bent dash feet, blunt ends, tiny gaps, overshoots, hard bends, and bad joins. Add only two small black-line droplets beneath the action. The figure and ladder must visibly interact with the real glass.\nText constraints: no text anywhere; no Chinese characters, English letters, numbers, labels, captions, logo text, random glyphs, or watermark.\nConstraints: preserve the real photographed glass and its natural material; edit only background, placement, and primitive black doodle action. No full-cartoon conversion, no colored doodles, no polished vector, no cute sticker, no mascot, no realistic face, no dense decoration, no comic panel, no gradients, no brand package, no official HEYTEA logo or mark, no pottery, artisan, tram, bus stop, mountain, lake, kayak, or rain.",
+    "preview": "/catalog/diversity-20260826/heytea-doodle-poster/result-micro-worker-soda.png",
+    "referenceImage": "/catalog/diversity-20260826/heytea-doodle-poster/source-grapefruit-soda-snack.png",
+    "referencePreview": "/catalog/diversity-20260826/heytea-doodle-poster/source-grapefruit-soda-snack.png",
+    "referenceResourceUri": "/catalog/diversity-20260826/heytea-doodle-poster/source-grapefruit-soda-snack.png",
+    "image": "/catalog/diversity-20260826/heytea-doodle-poster/result-micro-worker-soda.png",
+    "aspectRatio": "2:3",
+    "mode": "image-to-image",
+    "referenceRole": "subject",
+    "mediaType": "image",
+    "mediaOrigin": "studio"
+  }
+]

@@ -1,0 +1,9 @@
+Use case: photorealistic-natural
+Asset type: source reference photo for an image-to-image illustration example
+Primary request: create an ordinary family snapshot of a small ginger cat curled asleep inside an open blue suitcase on a bedroom floor
+Scene/backdrop: sunlit modest bedroom, rumpled white bed edge, wooden floor, a striped sock partly visible
+Subject: sleeping ginger cat, blue suitcase, and striped sock are the memorable focal details
+Style/medium: natural unretouched smartphone photography with realistic fur, cloth, and warm domestic texture
+Composition/framing: vertical 3:4, slightly top-down candid framing, cat and suitcase fully recognizable
+Lighting/mood: late-afternoon window light, cozy and gently humorous
+Constraints: realistic photo only; no people, no illustration, no text, no logos, no watermark; do not stylize

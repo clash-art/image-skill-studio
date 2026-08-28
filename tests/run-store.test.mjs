@@ -73,4 +73,5 @@ test("RunStore expires in-flight runs that never receive a record callback", asy
   assert.match(expired[0].error, /时限|timeout|回写/i);
   assert.equal((await store.get(fresh.id)).status, "awaiting_agent");
   assert.equal((await store.get(stale.id)).status, "failed");
+  assert.equal((await store.listPublished()).length, 0);
 });

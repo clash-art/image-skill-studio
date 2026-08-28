@@ -1,0 +1,9 @@
+Use case: style-transfer
+Asset type: final Minimal Zine Poster v0.1 I2I example.
+Input image: Image 1 is the sole source reference. Preserve the moth's recognizable spread-wing specimen form and markings, plus the separate square of deep-blue glass as two clear source-derived anchors; do not replace the species with a generic butterfly.
+
+Transform into a tall vertical 3:5 full-frame faded cream aged-paper poster, no border or mockup; 78% empty paper; a dual-panel cluster occupies 18% around the lower-middle. Render the moth as a small degraded old scientific print in one panel and the blue glass as an adjacent translucent texture window, with worn clipped corners, halftone erosion, and a narrow gap.
+
+Set tiny serif phrase exactly "NIGHT LEARNS THE WING" along the panel seam, plus fragmented floating letters and one catalog date. Reinterpret one preserved lower-wing fragment in fully saturated magenta-pink risograph ink as the sole high-chroma hue, about 1.7% of the canvas and 22% of the cluster; moth body, remaining wings, and glass-derived panel become subdued charcoal tones, with letterpress ink bleed.
+
+Flat orthographic scanned-paper appearance, matte diffuse light, no depth, sparse nocturnal archival memory-zine mood. Avoid full-bleed specimen photo, museum label layout, commercial headline, logos, CTA, glossy mockup, hard shadows, 3D, cinematic glow, neon palette, cute cartoon, dense scrapbook, multiple colors, and long perfect text.

@@ -1,0 +1,10 @@
+Use case: style-transfer
+Asset type: strict Photo Revival image-to-image example
+Input images: Image 1: source reference photo; use only this source
+Primary request: redraw the rainy bus-stop snapshot as a poetic handmade illustration, preserving the waiting woman's mustard hooded coat, turquoise bicycle, folded ticket, shelter frame, and wet road
+Style/medium: fine waterproof ink lines with translucent watercolor rain blooms on bright white cold-press paper
+Composition/framing: vertical 3:4 page; tiny narrow scene near the upper-right occupying 11-14% of the page; leave 84-88% clean white-paper negative space
+Color palette: mustard yellow and turquoise as vivid localized accents, with only pale gray rain; all pigment stays inside the tiny scene
+Text (verbatim): "still waiting" exactly once as a very small handwritten note under the bicycle wheel
+Constraints: freshly redrawn and simplified yet recognizable; no photo-filter look; no extra text; no watermark
+Avoid: full bleed, subject larger than 16%, dense landscape, heavy typography, flat vector treatment, large collage, photorealism

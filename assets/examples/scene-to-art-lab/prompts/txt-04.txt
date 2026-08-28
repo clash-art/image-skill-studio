@@ -1,0 +1,11 @@
+Use case: photorealistic-natural
+Asset type: source reference photograph for an art-poster transformation example
+Primary request: a quiet modern conservatory corner with one sculptural coral-orange lounge chair beside a mature monstera plant
+Scene/backdrop: tall black steel window grid, fogged glass, pale terrazzo floor, soft exterior greenery, no signs
+Subject: one coral-orange curved lounge chair with slim black legs and one large potted monstera whose split leaves overlap the window light
+Style/medium: photorealistic natural interior editorial photography
+Composition/framing: wide three-quarter room view, chair off-center, plant leaves and window diagonals creating strong shape relationships
+Lighting/mood: diffused late-morning greenhouse light, fresh, calm, slightly humid
+Materials/textures: woven upholstery, matte black steel, waxy leaves with small imperfections, terrazzo aggregate, condensation
+Constraints: no people, no extra furniture, no logos, no brands, no readable text, no watermark, no poster typography, no illustration, keep chair geometry plausible
+

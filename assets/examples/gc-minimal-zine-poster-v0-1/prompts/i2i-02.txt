@@ -1,0 +1,9 @@
+Use case: style-transfer
+Asset type: final Minimal Zine Poster v0.1 I2I example.
+Input image: Image 1 is the sole source reference. Preserve the recognizable halved green pear, visible seeds and pale flesh, cream sealed envelope, and their quiet tabletop relationship; no replacement objects.
+
+Create a tall vertical 3:5 full-frame cool gray-beige fibrous paper poster, no border or mockup; 76% negative space; use a lower-left-float cluster occupying 20%, safely inset. Convert the pear and envelope into two adjacent old-print fragments: a halftone pear specimen overlapping a torn envelope clipping, with xerox softness and worn edges.
+
+Set the exact phrase "A LETTER CUT IN HALF" in tiny serif type along the envelope seam, with faint diagonal catalog microtext. Turn the pear skin into vivid pear-green opaque risograph ink, the only high-chroma hue, about 2% of the whole canvas and 25% of the cluster; charcoal-gray photo fragments, scan noise, and slight ink bleed elsewhere.
+
+Flat orthographic scanned-paper view, matte diffuse light, sparse afternoon-solitude zine mood. Avoid full-bleed photo, product ad, commercial headline, logos, CTA, glossy mockup, hard shadows, 3D, cinematic depth, neon, cute illustration, busy scrapbook, additional bright colors, and long perfect text.

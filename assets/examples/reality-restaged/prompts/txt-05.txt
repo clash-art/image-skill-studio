@@ -1,0 +1,11 @@
+Use case: photorealistic-natural
+Asset type: source documentary photograph for an image-to-image visual-style example
+Primary request: Create an original documentary photograph of a woman bus mechanic crouched beside an old cream-and-red rural minibus on a desert roadside, tightening a wheel nut while a young boy holds a round metal mirror to bounce sunlight toward her hands. Their practical cooperation is the central memory.
+Scene/backdrop: flat arid roadside, distant low mesas, sparse utility poles, windblown dust
+Subject: one adult mechanic and one school-age boy, distinct realistic faces, grease-marked work clothes, old minibus wheel and round mirror
+Style/medium: candid analog documentary photography, fine grain, restrained detail, realistic metal, dust, skin and cloth
+Composition/framing: 3:4 portrait, wheel and mechanic low-right, boy mid-left, large cream sky and empty road above
+Lighting/mood: hard late-afternoon desert sun softened by dusty air, resourceful, still
+Color palette: sand, cream, faded vermilion vehicle stripe, dark indigo workwear, silver mirror
+Constraints: realistic human proportions and hands; safe non-moving roadside repair; no readable branding or plates; no logos; no watermark
+Avoid: surrealism, adventure advertising, melodrama, heroic pose, theatrical geometry, giant mirror, illustration, CGI, HDR, plastic skin, duplicated tools, extra limbs

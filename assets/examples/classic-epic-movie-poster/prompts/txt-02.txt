@@ -1,0 +1,11 @@
+Use case: historical-scene
+Asset type: final vertical theatrical one-sheet, 2:3
+Primary request: Create an original classic hand-painted epic movie poster for a desert adventure titled exactly "ASHES OF THE SUN". During a total eclipse, a masked courier must carry a forbidden flame across a city buried by dunes.
+Scene/backdrop: a vast vermilion eclipse sky over ochre dunes, cut by a cobalt city shadow.
+Subject: one monumental black solar disc fused with the silhouette of a veiled rider climbing a steep dune; recognition cues are a brass flame reliquary, striped desert veil, crescent city gates, and wind-whipped banner.
+Style/medium: mid-century theatrical lithograph, flat gouache blocks, dry-brush edges, slightly uneven ink, subtle plate misregistration.
+Composition/framing: exposed warm-white paper edge; exact title aligned vertically in the upper-left 16%; object-monument/eclipsed sun occupies 52% height; three tiny pursuers appear as conflict flanks; a narrow camel-and-motorcycle chase frieze arcs through the lower 10%. Warm field 52%, cobalt cool field 27%, ivory 15%, ink-black core 12%.
+Lighting/mood: epic adventure, political tension, scorching urgency.
+Text (verbatim): "ASHES OF THE SUN"
+Constraints: elegant condensed display serif, no other readable text, bold long edges between warm and cool masses, one immediately legible high-concept image, aged matte stock.
+Avoid: fake billing, logos, framed wall art, photoreal celebrity faces, streaming-thumbnail collage, anime, comic panels, 3D CGI, generic sepia, copied existing poster composition, watermark.

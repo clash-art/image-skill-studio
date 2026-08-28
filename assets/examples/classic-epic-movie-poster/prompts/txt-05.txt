@@ -1,0 +1,11 @@
+Use case: stylized-concept
+Asset type: final vertical theatrical one-sheet, 2:3
+Primary request: Create an original classic hand-painted epic movie poster for a gothic romance titled exactly "MOON OVER VESPER". A widowed astronomer discovers that every lunar eclipse erases one memory of the lover waiting in an abandoned hilltop observatory.
+Scene/backdrop: deep midnight-blue sky, a huge moon-ivory eclipse, and a vermilion interior glow from the observatory slit.
+Subject: dual-confrontation monument: the astronomer's moonlit profile and the lover's nearly erased negative-space profile face across the black telescope barrel; recognition cues are a brass star map, high-collared coat, cracked observatory dome, and pressed white flower.
+Style/medium: 1950s-1970s expressionist theatrical one-sheet, opaque gouache, ink wash, tempera highlights, fine halftone and subtle plate misregistration.
+Composition/framing: softly exposed ivory edge; exact title occupies the upper 13% in a tall romantic display serif; opposed profiles fill 57% height; one tiny assistant vignette and one falling photograph sit far below; a small winding road and lone car form the lower 7% action beat. Midnight cool field 43%, vermilion warm field 32%, ivory/moon field 19%, charcoal core 10%.
+Lighting/mood: gothic dread, romantic longing, surreal melancholy.
+Text (verbatim): "MOON OVER VESPER"
+Constraints: title only, strong negative space, no dense montage, matte aged stock, clear scale hierarchy, substantial filled warm and cool masses.
+Avoid: fake billing, streaming poster photography, glossy digital portrait, horror gore, anime, neon cyberpunk, equal floating heads, framed wall art, existing actors or films, watermark.

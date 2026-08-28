@@ -69,8 +69,10 @@ test("the live MCP process serves the workbench from this checkout", async (t) =
   });
 
   const tools = await client.listTools();
-  assert.ok(tools.tools.some((tool) => tool.name === "open_image_skill_studio"));
-  const resource = await client.readResource({ uri: "ui://image-skill-studio/v1/workbench.html" });
+  assert.ok(tools.tools.some((tool) => tool.name === "open_image_skill_studio_dev"));
+  assert.ok(!tools.tools.some((tool) => tool.name === "open_image_skill_studio"));
+  const resource = await client.readResource({ uri: "ui://image-skill-studio-dev/v1/workbench.html" });
   assert.equal(resource.contents[0].mimeType, "text/html;profile=mcp-app");
   assert.match(resource.contents[0].text, /ui\/message/);
+  assert.match(resource.contents[0].text, /open_image_skill_studio_dev/);
 });

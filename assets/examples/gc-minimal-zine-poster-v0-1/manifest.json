@@ -1,0 +1,92 @@
+[
+  {
+    "id": "txt-01",
+    "prompt": "A wind-bent gingko leaf and torn transit ticket on warm ivory aged paper, with cobalt risograph ink and sparse archive type.",
+    "aspectRatio": "3:5",
+    "mode": "t2i",
+    "promptFile": "prompts/txt-01.txt",
+    "image": "txt-01.png"
+  },
+  {
+    "id": "txt-02",
+    "prompt": "A split pear specimen on cool fibrous paper, with vivid pear-green ink and drifting afternoon typography.",
+    "aspectRatio": "3:5",
+    "mode": "t2i",
+    "promptFile": "prompts/txt-02.txt",
+    "image": "txt-02.png"
+  },
+  {
+    "id": "txt-03",
+    "prompt": "An empty seaside chair in an upper-right archival photo block with a saturated ultramarine cutout.",
+    "aspectRatio": "3:5",
+    "mode": "t2i",
+    "promptFile": "prompts/txt-03.txt",
+    "image": "txt-03.png"
+  },
+  {
+    "id": "txt-04",
+    "prompt": "A nocturnal dual-panel moth-wing field note with a saturated magenta risograph fragment.",
+    "aspectRatio": "3:5",
+    "mode": "t2i",
+    "promptFile": "prompts/txt-04.txt",
+    "image": "txt-04.png"
+  },
+  {
+    "id": "txt-05",
+    "prompt": "A type-led matchbox archive specimen with one spent match and a tomato-red printed block.",
+    "aspectRatio": "3:5",
+    "mode": "t2i",
+    "promptFile": "prompts/txt-05.txt",
+    "image": "txt-05.png"
+  },
+  {
+    "id": "i2i-01",
+    "prompt": "Transform the rainy rural platform, wooden bench, and single gingko leaf into a sparse cobalt-accented archival zine poster.",
+    "aspectRatio": "3:5",
+    "mode": "i2i",
+    "referenceImage": "references/ref-01-source.png",
+    "referenceRole": "sole source reference for the rainy railway platform, foreground bench, and single leaf; never a generated result",
+    "promptFile": "prompts/i2i-01.txt",
+    "image": "i2i-01.png"
+  },
+  {
+    "id": "i2i-02",
+    "prompt": "Transform the halved pear and sealed envelope still life into a pear-green lower-left zine fragment.",
+    "aspectRatio": "3:5",
+    "mode": "i2i",
+    "referenceImage": "references/ref-02-source.png",
+    "referenceRole": "sole source reference for the halved pear, visible seeds, and sealed envelope relationship; never a generated result",
+    "promptFile": "prompts/i2i-02.txt",
+    "image": "i2i-02.png"
+  },
+  {
+    "id": "i2i-03",
+    "prompt": "Transform the empty chair, concrete seawall, and open sea horizon into an ultramarine seaside memory poster.",
+    "aspectRatio": "3:5",
+    "mode": "i2i",
+    "referenceImage": "references/ref-03-source.png",
+    "referenceRole": "sole source reference for the rear-view empty chair, seawall, horizon, and unoccupied coastal mood; never a generated result",
+    "promptFile": "prompts/i2i-03.txt",
+    "image": "i2i-03.png"
+  },
+  {
+    "id": "i2i-04",
+    "prompt": "Transform the preserved moth specimen and separate blue glass square into a magenta-accented dual-panel night archive.",
+    "aspectRatio": "3:5",
+    "mode": "i2i",
+    "referenceImage": "references/ref-04-source.png",
+    "referenceRole": "sole source reference for the moth species markings and separate square glass anchor; never a generated result",
+    "promptFile": "prompts/i2i-04.txt",
+    "image": "i2i-04.png"
+  },
+  {
+    "id": "i2i-05",
+    "prompt": "Transform the partly opened red matchbox and separate burned match into a type-led tomato-red memory zine.",
+    "aspectRatio": "3:5",
+    "mode": "i2i",
+    "referenceImage": "references/ref-05-source.png",
+    "referenceRole": "sole source reference for the red matchbox, visible match tray, and separate burned match; never a generated result",
+    "promptFile": "prompts/i2i-05.txt",
+    "image": "i2i-05.png"
+  }
+]

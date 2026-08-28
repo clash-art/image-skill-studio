@@ -1,0 +1,6 @@
+Use case: stylized-concept
+Asset type: official upstream example for Minimal Zine Poster v0.1, pure T2I with no reference image.
+Tall vertical 3:5 phone-poster, full-frame warm ivory aged paper, no border or mockup; more than 85% plain paper; a tiny upper-center cluster occupies less than 12% of the canvas.
+A narrow cobalt door-like rectangle sits inside a faint photocopied paper fragment, surrounded by fragmented charcoal microtype and loose archival marks; a quiet nocturnal threshold metaphor.
+Sparse lowercase typewriter fragments drift beside the door without forming a commercial headline. Saturated cobalt blue is the only high-chroma hue; all other ink stays charcoal gray with xerox softness, paper fibers, and slight print misregistration.
+Flat orthographic scanned-paper appearance, matte absorbent stock, diffuse light, restrained contrast, quiet Japanese/Korean indie-zine mood. Avoid full-bleed scenes, ad hierarchy, logos, CTA, glossy mockup, hard shadows, 3D, cinematic lighting, neon, cartoon, dense scrapbook, many colors, and long clean text.

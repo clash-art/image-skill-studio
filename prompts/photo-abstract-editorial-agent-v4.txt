@@ -1,0 +1,40 @@
+Use case: compositing
+Asset type: finished vertical photo-abstract editorial artwork
+Input image: Image 1 is the sole content source and the original documentary photograph. It must appear faithfully and recognizably in the finished composition and must be the only source for every abstract mark and color.
+
+Primary request: Create one complete vertical editorial composition made of an unchanged original-photo area above, a sparse abstract memory panel below, and one poetic English title. This is not a style transfer, photo filter, posterized photo, vector trace, illustration, collage, mockup, or abstract painting by itself.
+
+SOURCE OBSERVATION AND REQUIRED ANCHORS
+The source is a candid landscape 4:3 documentary photograph of one hospital environmental-services cleaner beginning an early shift in a plain service corridor. The worker stands left of center in a worn slate-blue uniform, fitting a dark liner over a gray rectangular bin. A practical gray two-shelf cleaning cart sits immediately to the worker's right. Distinctive anchors are the open blue-gray utility door behind the worker, the worker's single dark vertical mass, the stacked gray cart frame and shelves, the low yellow mop bucket, the short folded teal cloth band, the tall muted-red mop handle, the pale green-gray wall division, the repeated dark door intervals receding down the right side, the white fluorescent ceiling bands, and the cool blue opening at the far end of the corridor.
+
+ORIGINAL PHOTO AREA
+Place Image 1 as the upper photographic region. Preserve the photograph's subjects, person, face, pose, clothing, cart, objects, doors, corridor, lighting, colors, perspective, spatial relationships, and candid photographic character. Treat the supplied pixels as the original photograph: do not redraw, reconstruct, replace, extend, retouch, beautify, relight, recolor, sharpen, soften, stylize, filter, posterize, or add content. Use proportional scaling and, only if unavoidable, a very slight crop that still keeps the worker, full cart, yellow bucket, red handle, open door, and corridor depth intact. Do not invent any other person, object, architecture, light, color, or symbol.
+
+CANVAS AND JOIN
+Create one vertical canvas whose proportions follow the landscape photograph plus the lower panel. Let the photo occupy about 42%-47% of final height and the abstract panel about 53%-58%, adjusted only for balance and complete subject retention. Join the two areas directly with one clean edge. No frame, border, gap, divider, shadow, torn edge, tape, dimensional card, collage artifact, or mockup treatment.
+
+ABSTRACT MEMORY PANEL
+Use a completely flat, continuous, uniform neutral ivory background, exactly #F3F0E8 or the closest harmonious neutral ivory. No gradients, lighting variation, shadow, glow, vignette, bands, seams, paper texture, fibers, grain, noise, watercolor wash, fog, stain, fading, haze, scan marks, or compression artifacts.
+
+Internally deconstruct the source through relationships first, contours discarded. Reconstruct only these decisive spatial facts:
+1. A dark slate human presence left of the cart, compressed into one continuous irregular gently tapered short vertical mark; never draw a head, face, limbs, clothing, or a capsule-shaped person.
+2. The open blue-gray door as one offset planar block behind that human mark.
+3. The cleaning cart as a sparse relationship of two or three muted gray stacked horizontal blocks with restrained vertical support intervals, not a recognizable illustrated cart and not a thumbnail.
+4. The yellow bucket as one low muted ochre-yellow mass and the folded teal cloth as one small horizontal blue-green band, maintaining their actual relative positions on the cart.
+5. The red mop handle as one slender muted-red vertical axis rising above the cart.
+6. The corridor's rightward recession as one or two fine blue-gray perspective axes with a few irregularly spaced short dark intervals, plus a few pale narrow bars echoing the fluorescent rhythm. Keep this subordinate and do not depict a literal hallway.
+
+Use flat or slightly organic color blocks as the single primary mark family. Use only two supporting families: fine structural axes and one restrained irregular human ink mark. Every mark must trace to a visible fact listed above. Keep variations natural and slightly irregular; no regular grid, generic icon, decorative geometry, fabricated symmetry, ornamental pattern, or complete object silhouette.
+
+MOTIF LAYOUT AND SCALE
+Place the abstract motif in the lower-middle of the ivory panel, centered slightly left to retain the source's left-weighted worker-and-cart center of gravity while leaving an open pause to the right. The complete motif may occupy about 40%-46% of panel width and no more than 30%-34% of panel height. Preserve about 68%-76% clean ivory whitespace. Preserve the source hierarchy: blue-gray doorway behind, dark human mark in front-left, stacked gray cart relation beside it, yellow mass low, teal band above, red axis rising, and corridor rhythm receding right. The abstraction must read first as a minimal composition and only on second glance evoke this exact shift-beginning scene.
+
+COLOR SYSTEM
+Extract the palette only from Image 1 and lower saturation: dominant slate blue and blue-gray, dark charcoal-blue for structure, pale green-gray and ivory neutrals, one small muted ochre-yellow accent from the bucket, one small dusty-teal accent from the cloth, and one very restrained muted-red accent from the mop handle. Introduce no unsupported hue, neon color, complementary flourish, metallic highlight, or realistic material rendering.
+
+TITLE
+Render exactly one title, exactly once: "Fluorescent First Light"
+Place it only on the ivory panel, bottom-centered below the motif and aligned with the motif's visual axis, with generous breathing room and safe distance from the lower edge. Use a restrained fine editorial serif in a dark desaturated slate-blue sampled from the worker's uniform. Keep it modest, legible, and subordinate to the composition. No subtitle.
+
+STRICT OUTPUT LIMITS
+Return only one finished composition. Apart from the exact title, include no other text, numbers, dates, serials, labels, location descriptions, color swatches, legends, signatures, logos, or watermarks. No photo redrawing, generative outpainting, photo manipulation, commercial styling, complete illustration, realistic miniatures, dense decoration, regularized infographic, generic icon, or extra scene content.

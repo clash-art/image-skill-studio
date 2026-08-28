@@ -1,0 +1,9 @@
+Use case: style-transfer
+Asset type: finished vertical photo-abstract editorial example
+Input images: Image 1 is the sole source photograph and must remain faithful as the upper photographic region.
+Primary request: Build a clean vertical editorial artwork from Image 1: original photograph above, sparse photo-derived memory panel below. Do not redraw, extend, replace, retouch, recolor, or filter the photograph; permit only proportional scaling or minimal crop.
+Observed facts to retain: broad gray sky and wet shore as horizontal layers; a large rust figure left of center; a much smaller navy figure far right; the charged empty distance between them; faint diagonal footsteps.
+Composition/framing: source photo approximately 48% of total height and uniform neutral ivory #F3F0E8 panel approximately 52%, joined directly without border, frame, shadow, collage, tape, or mockup.
+Abstract system: primary family is two low horizontal color bands with irregular interruptions, one cool blue-gray and one wet taupe, compressed into the upper half of the panel. Supporting marks are two irregular continuous vertical ink-like blocks set very far apart: muted rust tall block and deep navy tiny block. Add only three tiny taupe pauses between them, not a full trail. Preserve strong asymmetry and 75% whitespace; do not trace objects or illustrate people.
+Text: render exactly "Distance Holds" once, centered near the bottom in an elegant restrained book serif, charcoal-blue. No subtitle and no additional text.
+Constraints: palette only from Image 1 and desaturated; perfectly flat continuous ivory ground; no gradients, texture, grain, glow, shadows, stains, decoration, invented symbols, logos, dates, labels, numbers, signature, or watermark. Return only the finished composition.

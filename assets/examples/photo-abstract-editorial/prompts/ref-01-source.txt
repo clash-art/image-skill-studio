@@ -1,0 +1,10 @@
+Use case: photorealistic-natural
+Asset type: source reference photograph for a strict image-to-image editorial transformation
+Primary request: Create one original, standalone documentary-style color photograph of two small adult figures walking far apart along a windswept winter beach at low tide.
+Scene/backdrop: broad pale-gray sea, low horizon, wet reflective sand, a single long diagonal trail of footprints, distant headland barely visible.
+Subject: two anonymous adults seen from behind, one in a muted rust coat and one in a deep navy coat; they occupy different depths and do not overlap.
+Style/medium: faithful natural editorial photography, realistic optics and textures, no stylization.
+Composition/framing: horizontal landscape photo, generous negative sky and lateral space, horizon in upper third, figures small and asymmetrically placed.
+Lighting/mood: overcast late afternoon, soft diffuse light, quiet and observational.
+Color palette: colors arising naturally from the scene only: cool gray-blue, wet taupe, muted rust, deep navy.
+Constraints: this must be only the source photograph itself; no borders, no panel, no typography, no collage, no graphic marks, no watermark; no identifiable person; no famous location.

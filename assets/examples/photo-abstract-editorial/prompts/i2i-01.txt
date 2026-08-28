@@ -1,0 +1,9 @@
+Use case: style-transfer
+Asset type: finished vertical photo-abstract editorial example
+Input images: Image 1 is the sole source photograph and must remain faithful as the upper photographic region.
+Primary request: Create one complete vertical editorial diptych using Image 1 unchanged above and a restrained abstract memory panel below. Preserve the source photo content exactly: no redraw, extension, retouch, filter, replacement, or invented content; only proportional scaling or a slight crop if essential.
+Observed facts to distill: low sea horizon; two people at unequal depth with a wide interval; rust and navy color roles; one diagonal cadence of footprints; broad cool-gray negative space.
+Composition/framing: photograph occupies about 44% of total height; flat ivory #F3F0E8 panel occupies about 56%; direct edge-to-edge join with no frame, seam effect, shadow, tape, or mockup.
+Abstract system: primary family is a sparse diagonal chain of small irregular muted taupe marks echoing footprint intervals; supporting family is exactly two continuous gently tapered short vertical blocks, rust larger at left and deep navy smaller at right; one thin interrupted blue-gray horizontal axis. Keep the motif low and narrow with at least 70% clean panel whitespace. Every mark must trace to the photo; no silhouettes, illustration, icons, symmetry, decoration, gradient, texture, grain, glow, stains, or paper effect.
+Text: render exactly one title, "Between Tides", once only, in a restrained fine editorial serif, dark blue-gray, left aligned near the lower left with safe margins. No subtitle and no other text.
+Constraints: only colors derived and muted from Image 1; the ivory panel is completely uniform; no logo, date, label, number, signature, or watermark. Return only the finished composition.

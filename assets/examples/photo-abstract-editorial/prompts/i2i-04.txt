@@ -1,0 +1,9 @@
+Use case: style-transfer
+Asset type: finished vertical photo-abstract editorial example
+Input images: Image 1 is the only content source and must remain an unaltered photograph in the principal upper section.
+Primary request: Compose one vertical editorial diptych from Image 1 and a sparse abstract lower panel. Preserve every visible photographic fact; no redrawing, scene reconstruction, generative extension, filter, recoloring, retouching, or replacement. Only proportional scaling or a restrained crop is allowed.
+Observed facts: broad dark shelter canopy; three human masses below it at irregular intervals; amber light descending centrally; rain-dark vertical structure; one red reflected line receding along the right pavement.
+Composition/framing: photo 58% of total height, uniform ivory #F3F0E8 panel 42%; sections touch directly with no frame, gap, border, shadow, tape, collage, or mockup.
+Abstract system: primary family is a single simplified charcoal shelter mass: one low horizontal bar with one vertical support descending off-center, reduced to planar marks. Supporting family is three tiny irregular continuous blue-black short vertical marks below the bar, never heads-and-bodies. A second supporting family is one very thin muted red line descending diagonally toward the lower right, interrupted twice, with a small amber square near its origin. Keep all marks sparse, geometric but subtly irregular, with 72% empty panel.
+Text: render exactly "Red Afterlight" once, in a refined thin editorial serif, muted dark amber-charcoal, placed bottom center. No subtitle, no other text.
+Constraints: derive every color and mark only from Image 1; completely flat ivory background; no gradient, paper texture, noise, grain, glow, shadows, vignette, stains, realistic miniature scene, decoration, symbols, symmetry, logos, labels, dates, numbers, signature, or watermark. Return only the finished artwork.

@@ -1,0 +1,10 @@
+Use case: photorealistic-natural
+Asset type: source reference photograph for a later image-to-image editorial poster
+Primary request: Create a truthful vertical documentary photograph of a solitary adult fisherman in a dark weathered coat standing on the lower-left edge of a pale concrete breakwater, facing right toward a small red fishing boat in a misty gray-green sea.
+Scene/backdrop: cold overcast coastal harbor at dawn; low horizon; distant headland nearly erased by fog; broad quiet sky and water; a single diagonal mooring rope links foreground to boat.
+Subject: one anonymous adult seen from behind, small red boat, concrete breakwater, sea mist.
+Style/medium: natural documentary photography, realistic optics and textures, restrained color, no stylization.
+Composition/framing: vertical 3:5, fisherman lower left, boat mid-right, horizon in upper third, generous negative space, clear diagonal eye path.
+Lighting/mood: soft diffuse dawn light, contemplative, cool and damp.
+Constraints: preserve plausible anatomy, perspective, weather and material detail; no text, no collage, no illustration, no torn paper, no graphic overlays, no logos, no watermark.
+Avoid: cinematic color grading, shallow depth of field, fashion pose, dramatic clouds, extra people, decorative objects.

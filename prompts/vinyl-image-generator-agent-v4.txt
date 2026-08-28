@@ -1,0 +1,85 @@
+Use case: product-mockup
+Asset type: one finished independent-label vinyl archive/catalog photograph derived from a single documentary source image
+
+PRIMARY REQUEST
+Create exactly one 4:3 landscape image, width:height = 4:3. Show one cohesive fictional vinyl release as four separate physical objects in a clean centered 2-by-2 arrangement:
+
+Front sleeve     Vinyl Side A
+Vinyl Side B     Back sleeve
+
+Exactly four objects total. The front sleeve is top left, Vinyl Side A is top right, Vinyl Side B is bottom left, and the back sleeve is bottom right. Keep every object fully visible, separate, evenly scaled, physically consistent, and free of overlap or cropping. Both square sleeves have identical dimensions. Both 12-inch records have identical true circular diameters and pressing styles and are completely removed from the sleeves. Photograph the objects front-facing from a very slight overhead angle with generous balanced whitespace.
+
+INPUT IMAGE
+Image 1 is the sole source/reference image and sole visual evidence. Use only Image 1 and the instructions in this prompt. Do not introduce another source scene, another photograph, or the visual language of any other catalog skill. Image 1 documents an ordinary Sunday-morning apartment balcony just after houseplant watering.
+
+SOURCE-DERIVED ANALYSIS AND INVARIANTS
+Primary anchor: preserve the recognizable scuffed mint-green plastic watering can, especially its rounded handle and long left-pointing spout, in a transformed editorial crop on the front sleeve. Preserve the visual relationship between the watering can, the red geranium, and the crescent of spilled water leading to the small circular floor drain.
+Supporting motifs: carry the source's narrow vertical gray railing bars into the typographic grid and rules; carry the faded blue-and-white striped cleaning cloth into restrained indigo stripe headers; carry the geranium red into small registration marks and Side B accents; carry the wet crescent and circular drain into a recurring arc-and-dot symbol on the front, back, and labels.
+Material cue: translate the porous terracotta tile darkened by water, scuffed plastic, chipped cream glaze, dull reused tin, and faded woven cloth into uncoated board, absorbed offset ink, restrained halftone texture, and selective gloss only where the source floor is wet.
+Emotional tension: fresh domestic care versus the quiet emptiness after the routine; damp movement versus Sunday stillness.
+Transformation degree: editorial crop plus graphic color reconstruction. The source must remain visibly recognizable through the watering can, geranium, tile grid, drain, wet arc, striped cloth, railing bars, and sliding-door light, but it must become a newly designed release system rather than a raw full photograph with type placed on top.
+Privacy: there are no people or identifying details in the source. Do not add people, hands, faces, names, addresses, readable environmental text, logos, or personal facts.
+
+FICTIONAL RELEASE IDENTITY
+Artist: "NARROW SUNDAY". This artist is wholly invented and is not a real musician, singer, producer, DJ, composer, band, group, alias, tribute act, or side project.
+Title: "WATER FINDS THE LOW TILE"
+Format: 12-inch 33 1/3 RPM LP, contemporary first pressing, 2026
+Catalog number: "PRE-014"
+Label: "PLAIN RAIL EDITIONS", wholly fictional
+Sonic character: intimate ambient folk and quiet bedroom electronics built from soft nylon-string figures, brushed percussion, low tape hum, balcony railing resonance, and subtle field recordings of water moving across tile.
+Design history: a small contemporary neighborhood label documents an apartment-recorded Sunday suite in 2026. The sleeve is designed as a functional modern artifact, not a vintage imitation: source photography is separated into a restrained four-color offset palette, aligned to the balcony's railing and tile grid, then printed on warm recycled uncoated board. Slight registration drift appears only around the wet arc and geranium red, as a causal echo of water slipping outside the tile grid.
+
+TRACKLIST, PRINT VERBATIM
+Side A
+A1 "LOW TILE" 03:12
+A2 "THE CLOTH KEPT MOVING" 06:48
+
+Side B
+B1 "DRAIN CIRCLE" 04:05
+B2 "I LEFT THE WINDOW OPEN UNTIL THE FLOOR DRIED" 08:17
+
+FRONT SLEEVE
+Build one dominant visual world from an off-center editorial crop of Image 1: the mint watering can occupies the lower-left field; its spout points toward the wet crescent and circular drain; the red geranium survives as a compact upper accent; a few vertical railing bars and the tile grid structure the negative space. Reconstruct the photograph in muted terracotta, watering-can mint, geranium red, faded indigo, warm cream, and soft gray. Use a controlled coarse photographic halftone in some areas while retaining enough natural detail for the source anchors to be recognizable. Integrate "NARROW SUNDAY" in small tracked uppercase along one vertical railing-derived rule. Set "WATER FINDS THE LOW TILE" in a larger warm humanist grotesk, broken across the tile-grid boundary and partly interacting with the wet arc without obscuring the watering can or drain. Add one small arc-and-dot registration symbol. Do not use the untouched full source image.
+
+BACK SLEEVE
+Create a fundamentally different functional back-cover structure; do not repeat the front crop or use the same main image. Use a disciplined asymmetric grid derived from railing bars and square tile joints. Put the Side A and Side B tracklists in separate readable columns with clear hierarchy. Use a narrow faded-indigo stripe header derived from the cleaning cloth, one small geranium-red registration mark, and a thin mint arc ending in a drain-like dot. Include believable small-print recording information and credits:
+"Recorded at home, Sunday morning, 2026"
+"Written and performed by Narrow Sunday"
+"Recorded and mixed by M. Vale"
+"Mastered by Ivo Pell"
+"Design and image treatment by Plain Rail Editions"
+"PLAIN RAIL EDITIONS  PRE-014"
+"33 1/3 RPM  STEREO"
+Include a small unobtrusive barcode if space permits. Keep information plausible, aligned, and readable. The back is packaging design, not a poster.
+
+TYPOGRAPHY SYSTEM
+Use one coherent contemporary type system across front, back, and center labels: a warm humanist grotesk with open counters for titles and artist identity, paired only with compact monospaced numerals for track numbers, durations, catalog number, and RPM. Use deliberate scale, tracking, vertical alignment, and the source-derived grid. Essential release information must remain legible. Avoid generic centered album typography, ornate display lettering, script, and fake handwriting.
+
+PRINT AND PHYSICAL PRODUCTION
+Primary method: four-color offset lithography with a deliberately restricted source-derived palette of terracotta, mint, geranium red, faded indigo, warm cream, and soft gray.
+Paper: 350 gsm warm-gray 100% recycled uncoated sleeve board with visible but fine paper fiber and naturally absorbed ink.
+Supporting finish: one restrained spot-clear varnish following only the wet crescent and drain symbol, catching light subtly. No foil, embossing, die cuts, collage scraps, or unrelated finishes.
+Show realistic exposed unwrapped paper, absorbed ink, tiny manufacturing tolerances, subtle fold and edge thickness, natural contact shadows, and clean but not weightless corners. No artificial aging, random distress, excessive wear, glossy paper, or plastic-looking sleeves. Explicitly no shrink wrap or plastic packaging: no cellophane, protective bags, plastic film, folded plastic edges, sealing seams, or wrapper reflections.
+
+VINYL SIDE A AND SIDE B
+Both records are a restrained translucent smoke-mint pressing with faint cloudy swirls and one subtle oxide-red radial wisp, physically believable rather than candy-like. Use the identical material and diameter for Side A and Side B. Maintain perfectly true circular shapes with accurate center holes and restrained vinyl grooves.
+Side A center label: warm cream uncoated paper, mint outer ring, faded-indigo arc-and-dot mark.
+Side B center label: warm cream uncoated paper, geranium-red outer ring, mint arc-and-dot mark.
+Each center label must include readable coherent text: "NARROW SUNDAY", "WATER FINDS THE LOW TILE", the correct "SIDE A" or "SIDE B", "PRE-014", and "PLAIN RAIL EDITIONS". Use the same humanist grotesk and monospaced numerals as the sleeves.
+
+PRODUCT-PHOTOGRAPH ENVIRONMENT
+Use one flat solid-color background only: quiet warm stone gray, approximately #CEC8BA. No gradient, pattern, scenery, room, floor, wall, furniture, props, plants, hands, people, stands, or decorative objects around the four release components. Lighting is soft neutral archive photography from upper left, revealing paper tooth, sleeve edges, grooves, translucency, spot varnish, and natural contact shadows without luxury drama or excessive reflection.
+
+FINAL CONSTRAINTS
+Exactly one 4:3 landscape image, width:height = 4:3.
+Exactly four connected objects in the specified 2-by-2 arrangement: front sleeve, Vinyl Side A, Vinyl Side B, back sleeve.
+No extra inner sleeve, insert, booklet, obi, sticker, loose label, duplicate record, extra sleeve, record inside a sleeve, cropped edge, overlap, mismatched scale, warped disc, or missing object.
+No portrait or vertical canvas.
+No album poster, streaming cover, advertisement, lifestyle scene, luxury mockup, glossy CGI, sealed retail product, or generic template.
+No raw unchanged source photo used as a complete sleeve and no unsupported source additions.
+No people or hands in the product-photo environment or cover artwork.
+No gradients, decorative background patterns, room, scenery, furniture, or random props.
+No real artist names and no imitation of another catalog skill.
+No tram, pottery, pottery-making, kayak, designer chair, monstera, lighthouse, tourist vista, or glossy commercial setup.
+No unrelated film grain, collage clutter, blur, light leaks, scratches, vintage fading, photocopy distress, or arbitrary mixed techniques.
+No generic typography, weak hierarchy, illegible essential release text, fake brands, signatures, or watermarks.

@@ -1,0 +1,9 @@
+Use case: style-transfer
+Asset type: strict surreal-pop-collage example, vertical 3:4
+Input images: Image 1 is the sole source reference and reality anchor.
+Primary request: transform this exact greenhouse portrait into a spacious surreal pop collage while preserving the gardener's face and posture, tomato rows, glass roof, central aisle, and workbench as immediately recognizable.
+Reality anchor: desaturate the gardener, plants, tomatoes, greenhouse ribs, aisle, and workbench to textured black-and-white photography; keep her face, hat, and hands unobstructed.
+Flat world: replace the roof panes with one huge flat matte coral-red plane derived from ripe tomatoes; replace foliage regions with broad flat turquoise and emerald shapes derived from the bench and leaves; keep the aisle as a clean warm-cream shape derived from her overalls; crisp matte cut-paper edges, no gradients and no shadows.
+One impossible giant element: enlarge the terracotta watering can held by the gardener into one monumental watering can that she still holds naturally, extending beside her body without covering her face; it is the only impossible giant object.
+Small elements: 3–5 small flat white water droplets in graduated 100/60/30 sizes follow one arc from the spout toward the plants; add 2–3 minimal white hand-drawn ripple strokes in the open roof area.
+Constraints: preserve vertical 3:4, face, identity, and source greenhouse geometry; exactly one impossible giant element; tomatoes remain normal scale; no giant fruit or second oversized tool; bright and airy; no frame; no gradients; no dimensional shadows on flat color shapes; no dark horror; no text; no logo; no watermark; no imported photographic material.

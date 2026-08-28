@@ -1,0 +1,10 @@
+Use case: style-transfer
+Asset type: final vertical theatrical one-sheet, 2:3
+Input images: Image 1 is the sole CONTENT SOURCE. Preserve its colossal cracked wet bronze bell, adult dark-robed archivist seen from behind/profile, distant adult lantern-bearer, elderly abbess on timber stairs, rain, ropes, ravens, and alpine cliff monastery. Recompose the relationships.
+Primary request: Transform this source into a classic high-concept gothic poster titled exactly "THE HOLLOW BELL".
+Format and title zone: warm-gray paper margin; exact title aligned low across a clean lower 14% rather than the top; aged matte one-sheet.
+Monument: the bell is the single object-monument, shown frontally as a vast black-bronze arch occupying 64% height; its crack becomes a moon-ivory lightning path and its hollow opening contains the tiny lantern-bearer. The archivist's dark profile forms one edge of the bell; the abbess remains a small witness.
+Narrative and color: one raven flight and a tiny winding monastery stair form a diagonal frieze through the upper side, no bottom procession. Midnight blue cool field 42%, cold bronze/charcoal monument 30%, warm lantern amber field 17%, ivory crack and paper 16%, black core 12%; opaque tempera, ink wash, lithographic grain.
+Typography and finish: exact title "THE HOLLOW BELL" in tall gothic-leaning high-contrast serif, no other readable text; uneven ink, fine halftone, subtle plate misregistration; solemn mystery and gothic dread.
+Constraints: source recognition through bell crack, three figures, lantern, wet timber, mountain setting; extreme scale contrast; original vertical composition.
+Avoid: gore, generic horror face, source landscape tracing, modern photo collage, CGI, fake credits, logos, equal floating heads, framed mockup, watermark.

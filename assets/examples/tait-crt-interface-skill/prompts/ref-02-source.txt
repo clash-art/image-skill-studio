@@ -1,0 +1,9 @@
+Use case: photorealistic-natural
+Asset type: source reference for an image-to-image transformation benchmark
+Primary request: Create one original editorial photograph of exactly two adult jazz musicians rehearsing together in a plain daylight studio.
+Subject: S1 on the left is a short Black woman saxophonist with a compact rounded afro, triangular amber glasses, cobalt blue sleeveless jumpsuit, holding a brass alto saxophone with both hands; S2 on the right is a tall East Asian man with a straight chin-length black bob, narrow face, mustard yellow shirt, playing an upright double bass with left hand on neck and right hand near strings. They turn toward each other and share eye contact; preserve clear separate bodies, instruments, and hands.
+Scene/backdrop: simple warm gray rehearsal room, one low wooden stool and one broad window, no other people.
+Composition/framing: landscape 4:3, three-quarter bodies, S1 left and smaller, S2 right and taller, instruments fully legible, natural spacing and overlap.
+Lighting/mood: soft side daylight, candid concentrated mood.
+Color palette: cobalt, mustard, brass, warm gray, natural skin tones.
+Constraints: original realistic photograph; exactly two people; anatomically plausible hands; no text, logo, watermark, CRT, pixels, interface, illustration, audience, or extra instruments.

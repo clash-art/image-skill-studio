@@ -1,0 +1,9 @@
+Use case: style-transfer
+Asset type: strict Travel Memory Card Duo complete-card example
+Input images: Image 1: source reference photo; use only this source
+Primary request: rebuild the Iceland volcanic-ridge scene as one finished horizontal collectible travel memory card. Identification anchor: the rust-red and mustard hiker pair facing the cobalt crater and smoking cone. Select exactly six right-column sticker motifs: (1) the paired hikers as one grouped sticker, (2) volcanic cone with white plume, (3) cobalt crater lake, (4) arctic fox, (5) orange trail marker, (6) basalt outcrop.
+Style/medium: opaque matte gouache and cut paper with fine uniform paper tooth, chalky hand-cut edges, light pigment variation, soft misregistration; 5-8 broad source-derived color families
+Composition/framing: exact 3:2 horizontal canvas on warm off-white uncoated paper with continuous 4-5% outer margin; left 67% is one large near-square completely unframed illustration above a shallow paper footer; right 31% contains exactly six separate die-cut stickers using full height, uneven hierarchy, relaxed spacing, thick irregular warm-white borders, subtle flat paper shadows
+Text (verbatim): "Crater Blue · Smoke Cone · Quiet Ridge" centered exactly once beneath the left illustration
+Constraints: scene reads first as 3-6 oversized blunt shapes and quiet space; preserve hiker pairing, crater sweep, cone silhouette, plume, fox and orange marker through placement and signature colors; only footer phrases readable; no title, caption, date, watermark, signature, photo patches, inner frame, gradient, fantasy lava, or extra sticker
+Avoid: photorealism, marker strokes, watercolor washes, wet blooms, glossy 3D, detailed geology or anatomy, polished vectors, anime, clip art

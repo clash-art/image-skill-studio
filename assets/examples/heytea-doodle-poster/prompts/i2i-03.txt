@@ -1,0 +1,10 @@
+Use case: style-transfer
+Asset type: strict I2I example, typography-led vertical object-and-doodle poster
+Input images: Image 1 is the sole source reference and subject anchor.
+Primary request: Transform the source strawberry tart photo into a quiet typography-led poster while preserving the exact photographed tart, strawberry arrangement, irregular cream, pastry texture, crumbs, ceramic plate, and recognizable silhouette. Do not redraw the food.
+Scene/backdrop: remove the breakfast-table surroundings and isolate the real tart and plate on a clean warm-white field with a believable delicate contact shadow.
+Composition/framing: 3:4 portrait. Place the tart and plate lower-center at about 30 percent of canvas height. Make a large upper-left title block the first visual signal.
+Doodle action: add exactly one tiny primitive faceless black-line micro worker near the plate rim, quietly sprinkling two crumb dots from a small paddle hand. Use broken blunt marker strokes, lumpy open head, stiff segmented limbs, bad joins; figure height about 9 percent of tart height.
+Text (verbatim): "小小补给站"
+Lettering: render only that title as large rough crooked childlike Chinese blunt-marker lettering, two loose staggered vertical groupings, uneven sizes, awkward spacing, malformed but readable skeletons, flat black ink. No subtitle.
+Constraints: preserve the real photographed tart and plate; only change background, placement, lettering, and minimal doodle overlay. No official HEYTEA logo or mascot, no brand mark, no extra text, no English, no numbers, no watermark, no cute sticker style, no polished vector, no gradients, no dense decoration, no realistic person, no full-cartoon conversion.

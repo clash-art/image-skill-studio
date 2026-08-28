@@ -1,0 +1,6 @@
+Use case: stylized-concept
+Asset type: final example for Minimal Zine Poster v0.1, pure T2I with no reference image.
+Tall vertical 3:5 faded cream paper, full-frame and borderless; 80% empty paper; a dual-panel cluster occupies 16% in the lower-middle, with two small adjacent fragments and a narrow breathing gap.
+Two tiny panels show an old printed moth wing and a translucent window of night-sky grain, slightly overlapping like a field note; halftone degradation, ink bleed, and worn clipped corners suggest fragile nocturnal memory.
+A tiny serif caption exactly "NIGHT LEARNS THE WING" runs along the panel seam, with fragmented floating letters and one date. A fully saturated magenta-pink wing fragment is the only chromatic anchor, about 1.6% of the canvas and 22% of the cluster; all other marks are gray-black.
+Flat orthographic scan on matte paper, diffuse dim-neutral light without shadows, sparse poetic archival zine mood. Avoid a full scene, commercial poster hierarchy, branding, CTA, glossy paper, dimensional mockup, 3D, cinematic glow, neon palette, cartoon moth, decorative sticker collage, extra colors, and long readable blocks.

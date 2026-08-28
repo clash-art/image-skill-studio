@@ -1,0 +1,10 @@
+Use case: style-transfer
+Asset type: final vertical theatrical one-sheet, 2:3
+Input images: Image 1 is the sole CONTENT SOURCE. Preserve its original adult Black woman lead diver, navy-and-copper practical suit, circular helmet lamps, older adult dive partner, small empty antique brass diving suit, luminous green starfish, submerged art-deco theater, red seats, drifting curtains, fish, coral, and ultramarine water.
+Primary request: Transform this source into a classic hand-painted adventure poster titled exactly "BELOW THE GREEN STAR".
+Format and title zone: vertical one-sheet with narrow ivory edge; title curves across the upper 13% in a tall theatrical serif; aged matte stock.
+Monument: object-monument composition: the giant five-point green starfish becomes a luminous containing shape occupying 57% height, with the lead diver's determined painted face and circular helmet nested inside its central disc; the art-deco proscenium becomes a black arch behind it.
+Narrative and color: older dive partner and small brass suit are tiny witnesses embedded in separate star arms; a school of silver fish and row of red theater seats sweep diagonally across the lower 9%. Emerald warm-luminous field 38%, ultramarine cool field 36%, ivory 16%, ink-black core 11%, tiny coral-red accent under 3%; opaque gouache, tempera highlights, visible lithograph plate grain.
+Typography and finish: exact title "BELOW THE GREEN STAR", no other readable text; fine halftone, uneven ink density, subtle misregistration; surreal spectacle, awe, and mysterious discovery.
+Constraints: preserve the source lead identity, diving gear, starfish, theater, partner, and small suit; new vertical hierarchy with one unmistakable monument; thumbnail clarity.
+Avoid: glossy underwater CGI, existing franchise imagery, source-frame tracing, photo collage, equal floating heads, neon cyberpunk, fake credits, logos, framed mockup, watermark.

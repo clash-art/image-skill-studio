@@ -1,0 +1,9 @@
+Use case: product-mockup
+Asset type: source reference for an image-to-image transformation benchmark
+Primary request: Create one original realistic product photograph of a vintage manual lever espresso machine on a workshop counter.
+Subject: exactly one freestanding espresso machine; tall brushed stainless-steel rectangular body; one oversized black lever angled up toward the right; round cream pressure gauge near upper left; turquoise enamel drip tray; two short dark wooden portafilter handles pointing in different directions; visible group head and one small red indicator lamp.
+Scene/backdrop: plain charcoal plaster wall and dark wood workbench, no cups, no people, no other appliances.
+Composition/framing: landscape 16:9, three-quarter front view, machine slightly right of center with clean negative space on left, entire machine and lever visible.
+Lighting/mood: controlled soft studio side light, utilitarian and tactile.
+Color palette: brushed steel, charcoal, turquoise, cream, dark wood, tiny red accent.
+Constraints: original realistic product photo; exactly one machine; mechanically coherent; no text, logo, brand, watermark, CRT, pixels, interface, illustration, cup, steam, or extra object.

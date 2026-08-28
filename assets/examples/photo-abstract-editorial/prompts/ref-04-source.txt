@@ -1,0 +1,10 @@
+Use case: photorealistic-natural
+Asset type: source reference photograph for a strict image-to-image editorial transformation
+Primary request: Create one original, standalone architectural photograph looking downward into a modern concrete spiral staircase inside a quiet museum.
+Scene/backdrop: pale mineral concrete walls, one curved stair ribbon circling a dark central oval void, a small patch of cool daylight entering from upper left.
+Subject: the staircase geometry itself; one tiny anonymous visitor in a muted burgundy coat on a lower landing, face invisible.
+Style/medium: precise realistic architectural photography, natural materials, no surrealism or graphic stylization.
+Composition/framing: vertical portrait photograph, high-angle view, dominant sweeping curve and nested negative space, strong asymmetric crop.
+Lighting/mood: soft cool daylight and subtle warm reflected shadow, contemplative institutional calm.
+Color palette: chalk gray, warm concrete beige, charcoal void, tiny burgundy accent.
+Constraints: source photograph only; no panel, border, title, typography, collage, filters, graphic overlays, watermark, signage, logos, or impossible architecture.

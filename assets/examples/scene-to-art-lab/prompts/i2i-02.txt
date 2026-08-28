@@ -1,0 +1,6 @@
+Use case: style-transfer
+Asset type: finished vertical editorial art poster
+Source fidelity: Image 1 is the sole source photograph and reference. Preserve the recognizable cobalt-blue vintage tram, rounded windshield, paired circular headlights, overhead collector, front-three-quarter direction, and wet curved rails. Add no people, logos, signs, or vehicles.
+Poster direction: vertical 3:4. Use an asymmetric hard-edged cut-paper and screenprint construction. Crop the tram nose huge so it enters from the lower-left and exits the right edge; reduce the city to three angular rain-silver paper planes; turn the rail into one broad cobalt sweep across exposed pale gray paper. Palette only cobalt, charcoal, rain silver, warm white, and one tiny amber headlight accent. Use crisp stencil edges, torn-paper fibers, selective rough overprint, and large empty space.
+Text: exact title "BLUE CURRENT" once only as a small horizontal charcoal caption near the upper-left margin. No other text.
+Avoid: beige vintage template, centered full tram, side-column title, border, photorealistic background, watercolor, extra or misspelled lettering, signature, logo, or watermark.

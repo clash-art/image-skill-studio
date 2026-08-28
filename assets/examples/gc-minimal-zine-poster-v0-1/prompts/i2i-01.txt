@@ -1,0 +1,9 @@
+Use case: style-transfer
+Asset type: final Minimal Zine Poster v0.1 I2I example.
+Input image: Image 1 is the sole source reference. Preserve its recognizable rainy rural railway platform, foreground wooden bench, and single yellow gingko leaf as the semantic anchor; do not invent another scene.
+
+Recompose the source into a tall vertical 3:5 full-frame warm ivory aged-paper poster, no border or mockup; 80% plain paper; place one small center-fragment cluster occupying 18% near the lower-middle. Reduce the source photograph to a tiny grayscale torn crop featuring the bench edge, wet platform perspective, and leaf, with xerox softness and halftone wear.
+
+Add sparse typewriter phrase exactly "THE LAST TRAIN WAS RAIN" pressed beside the crop, plus faint archive date and weather microtext. Convert only the preserved leaf into fully saturated cobalt-blue risograph ink, the sole high-chroma hue, about 1.5% of the canvas and 20% of the cluster; subdued gray-black elsewhere, slight misregistration and paper fibers.
+
+Flat orthographic scanned-paper appearance, matte diffuse light, quiet distant diary-like Japanese/Korean indie zine. Avoid full-bleed source photo, commercial headline, logos, CTA, glossy mockup, hard shadows, 3D, cinematic lighting, neon, cartoon, dense collage, extra colors, and long clean text.

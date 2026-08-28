@@ -1,0 +1,102 @@
+[
+  {
+    "id": "i2i-01",
+    "prompt": "Use case: style-transfer\nAsset type: strict Photo Revival image-to-image example\nInput images: Image 1: source reference photo; use only this source\nPrimary request: redraw the elderly man watering the red geranium on his balcony as a fresh poetic hand-made illustration, preserving his bowed pose, navy cardigan, green watering can, red flower, and balcony rail in simplified recognizable form\nStyle/medium: delicate transparent watercolor washes with fine graphite edges on warm white cotton paper\nComposition/framing: vertical 3:4 page; place one tiny illustrated cluster in the lower-left occupying about 12% of the page; leave 84-88% untouched white-paper negative space\nColor palette: strongest color only in the red geranium, moss-green can, and navy cardigan; all color confined to the tiny cluster\nText (verbatim): \"morning, again\" as one very tiny faint handwritten pencil note directly beneath the cluster\nConstraints: transform the source into an illustration, not a photo filter; sparse handmade texture; preserve the memorable source details; no other text; no watermark\nAvoid: full bleed, subject larger than 16%, dense layout, flat vector art, large collage, photorealistic retouching, color spreading into blank paper",
+    "aspectRatio": "3:4",
+    "mode": "image-to-image",
+    "referenceImage": "references/ref-01-source.png",
+    "referenceRole": "source-reference-photo",
+    "promptFile": "prompts/i2i-01.txt",
+    "image": "i2i-01.png"
+  },
+  {
+    "id": "i2i-02",
+    "prompt": "Use case: style-transfer\nAsset type: strict Photo Revival image-to-image example\nInput images: Image 1: source reference photo; use only this source\nPrimary request: reinterpret the balcony memory as a tiny hand-drawn vignette, preserving the elderly man's bent posture, glasses, navy cardigan, green watering can, red geranium, and angular balcony rail\nStyle/medium: loose graphite contour with small opaque gouache dabs and one tiny torn-paper shadow, all on crisp cool-white sketchbook paper\nComposition/framing: vertical 3:4 page; compact focal cluster near the lower-right occupying 10-13% of the page; leave at least 86% blank white paper\nColor palette: restrained navy and gray with two vivid accents, geranium red and watering-can green, contained entirely inside the cluster\nText (verbatim): \"APR 12\" handwritten exactly once, very tiny, beside the flower pot\nConstraints: render exactly those five characters and one space once only; no duplicate date fragments or other marks resembling text; freshly redrawn illustration, not filtered photography; simplified but recognizable; collage hint no larger than the flower pot; no watermark\nAvoid: full bleed, large subject, dense scenery, heavy typography, flat vector shapes, large collage blocks, realism",
+    "aspectRatio": "3:4",
+    "mode": "image-to-image",
+    "referenceImage": "references/ref-01-source.png",
+    "referenceRole": "source-reference-photo",
+    "promptFile": "prompts/i2i-02.txt",
+    "image": "i2i-02.png"
+  },
+  {
+    "id": "i2i-03",
+    "prompt": "Use case: style-transfer\nAsset type: strict Photo Revival image-to-image example\nInput images: Image 1: source reference photo; use only this source\nPrimary request: redraw the rainy bus-stop snapshot as a poetic handmade illustration, preserving the waiting woman's mustard hooded coat, turquoise bicycle, folded ticket, shelter frame, and wet road\nStyle/medium: fine waterproof ink lines with translucent watercolor rain blooms on bright white cold-press paper\nComposition/framing: vertical 3:4 page; tiny narrow scene near the upper-right occupying 11-14% of the page; leave 84-88% clean white-paper negative space\nColor palette: mustard yellow and turquoise as vivid localized accents, with only pale gray rain; all pigment stays inside the tiny scene\nText (verbatim): \"still waiting\" exactly once as a very small handwritten note under the bicycle wheel\nConstraints: freshly redrawn and simplified yet recognizable; no photo-filter look; no extra text; no watermark\nAvoid: full bleed, subject larger than 16%, dense landscape, heavy typography, flat vector treatment, large collage, photorealism",
+    "aspectRatio": "3:4",
+    "mode": "image-to-image",
+    "referenceImage": "references/ref-02-source.png",
+    "referenceRole": "source-reference-photo",
+    "promptFile": "prompts/i2i-03.txt",
+    "image": "i2i-03.png"
+  },
+  {
+    "id": "i2i-04",
+    "prompt": "Use case: style-transfer\nAsset type: strict Photo Revival image-to-image example\nInput images: Image 1: source reference photo; use only this source\nPrimary request: make an extremely small memory sketch of the woman waiting with her bicycle, retaining the mustard raincoat, turquoise bicycle, tiny ticket, shelter frame, and a hint of curved wet road\nStyle/medium: sparse wax-pencil hatching, dry watercolor, and one minute ticket-paper clipping on lightly flecked ivory paper\nComposition/framing: vertical 3:4 page; place the entire vignette at middle-left; it must fit within one fifth of page width and one quarter of page height, about 10% of total page area; leave at least 88% uninterrupted blank ivory paper\nColor palette: two localized accents only, ochre and turquoise; pale graphite-gray elsewhere; absolutely no pigment outside the tiny vignette\nText (verbatim): \"7:20\" exactly once, microscopic handwriting on the ticket\nConstraints: hand-redrawn illustration, recognizable but deliberately miniaturized; no extra text; no watermark\nAvoid: enlarged portrait, full scene, full bleed, focal area over 14%, dense marks, large collage, poster typography, vector polish, photorealism",
+    "aspectRatio": "3:4",
+    "mode": "image-to-image",
+    "referenceImage": "references/ref-02-source.png",
+    "referenceRole": "source-reference-photo",
+    "promptFile": "prompts/i2i-04.txt",
+    "image": "i2i-04.png"
+  },
+  {
+    "id": "i2i-05",
+    "prompt": "Use case: style-transfer\nAsset type: strict Photo Revival image-to-image example\nInput images: Image 1: source reference photo; use only this source\nPrimary request: create a miniaturized hand-drawn memory of the curled ginger cat asleep inside the open dark-blue suitcase, with the handle and lone striped sock still recognizable\nStyle/medium: airy sumi-ink contour, translucent watercolor, dry-brush grain on luminous white washi-like paper\nComposition/framing: vertical 3:4 page; tiny cluster centered near bottom; the entire suitcase including open lid and sock must fit inside a box one quarter of page width by one fifth of page height, about 5% of page area; leave over 90% blank white paper\nColor palette: concentrated ginger orange and deep indigo only within that tiny cluster; two short sepia floor strokes\nText (verbatim): \"packed already\" exactly once, microscopic handwriting immediately below the sock\nConstraints: poetic handmade redraw, not filtered photography; no other text; no watermark\nAvoid: wide suitcase, enlarged objects, full bleed, scene over 10%, dense room detail, large typography, vector art, collage blocks, photorealism",
+    "aspectRatio": "3:4",
+    "mode": "image-to-image",
+    "referenceImage": "references/ref-03-source.png",
+    "referenceRole": "source-reference-photo",
+    "promptFile": "prompts/i2i-05.txt",
+    "image": "i2i-05.png"
+  },
+  {
+    "id": "i2i-06",
+    "prompt": "Use case: style-transfer\nAsset type: strict Photo Revival image-to-image example\nInput images: Image 1: source reference photo; use only this source\nPrimary request: distill the bedroom snapshot into a tiny hand-drawn keepsake of the sleeping ginger cat, open blue suitcase, and striped sock\nStyle/medium: delicate colored-pencil crosshatching with pale watercolor softness and three tiny indigo thread-stitch marks integrated along the suitcase edge\nComposition/framing: vertical 3:4 page; small circular focal cluster in the upper-left quadrant occupying 10-12% of the page; leave 86-88% unmarked warm-white paper\nColor palette: vivid but controlled ginger, indigo, and one black-and-cream stripe detail, all confined to the cluster\nText (verbatim): \"SUN\" exactly once as a tiny penciled label under the cat\nConstraints: preserve the curled pose and suitcase silhouette; handmade redraw, never a photo filter; stitch accents remain minute; no other text; no watermark\nAvoid: full bleed, focal area over 15%, bed filling the page, large collage, dense layout, heavy type, flat vector shapes, photorealistic retouching",
+    "aspectRatio": "3:4",
+    "mode": "image-to-image",
+    "referenceImage": "references/ref-03-source.png",
+    "referenceRole": "source-reference-photo",
+    "promptFile": "prompts/i2i-06.txt",
+    "image": "i2i-06.png"
+  },
+  {
+    "id": "i2i-07",
+    "prompt": "Use case: style-transfer\nAsset type: strict Photo Revival image-to-image example\nInput images: Image 1: source reference photo; use only this source\nPrimary request: make a postage-stamp-scale hand-drawn vignette of the snowy sweet-potato vendor, preserving the bundled vendor, green apron, red cart, warm bulb, paper bag, and a few potatoes\nStyle/medium: soft opaque gouache with scratchy pencil edges on cool white watercolor paper\nComposition/framing: vertical 3:4 page; mini cluster at bottom-left; the entire vendor and cart canopy must fit within one fifth of page width and one quarter of page height, no more than 8% total area; leave over 90% blank paper\nColor palette: tiny localized brick red, apron green, amber lamp, two pale blue-gray snow marks; no pigment elsewhere\nText (verbatim): \"warm hands\" exactly once, microscopic pencil below the wheel\nConstraints: recognizable handmade illustration; white paper overwhelmingly dominates; no other text; no watermark\nAvoid: enlarged cart, full street, full bleed, cluster over 10%, dense snow, large type, vector finish, collage blocks, photorealism",
+    "aspectRatio": "3:4",
+    "mode": "image-to-image",
+    "referenceImage": "references/ref-04-source.png",
+    "referenceRole": "source-reference-photo",
+    "promptFile": "prompts/i2i-07.txt",
+    "image": "i2i-07.png"
+  },
+  {
+    "id": "i2i-08",
+    "prompt": "Use case: style-transfer\nAsset type: strict Photo Revival image-to-image example\nInput images: Image 1: source reference photo; use only this source\nPrimary request: isolate and redraw only the winter vendor and cart as a miniature charcoal keepsake, preserving knit cap, green apron, red cart, glowing bulb, paper bag, and steam\nStyle/medium: loose charcoal contour, sparse watercolor pencil, one pinhead-sized faded vermilion stamp on warm white handmade paper\nComposition/framing: vertical 3:4 page; tiny upper-center cluster fitting inside one fifth page width by one fifth page height, about 5-7% area; leave more than 90% blank paper\nColor palette: localized vermilion, olive, amber; whisper-gray charcoal only inside the cluster\nText (verbatim): \"FIRST SNOW\" exactly once, microscopic handwriting directly beside the tiny stamp\nConstraints: no street, wall, tree, canopy surroundings, or background scenery beyond two tiny snow strokes; source-recognizable hand drawing; no other text; no watermark\nAvoid: branches, detailed environment, enlarged cart, full bleed, focal area over 9%, heavy typography, large stamp, collage block, vector finish, photorealism",
+    "aspectRatio": "3:4",
+    "mode": "image-to-image",
+    "referenceImage": "references/ref-04-source.png",
+    "referenceRole": "source-reference-photo",
+    "promptFile": "prompts/i2i-08.txt",
+    "image": "i2i-08.png"
+  },
+  {
+    "id": "i2i-09",
+    "prompt": "Use case: style-transfer\nAsset type: strict Photo Revival image-to-image example\nInput images: Image 1: source reference photo; use only this source\nPrimary request: redraw the older woman mending her fishing net as a tiny poetic illustration, preserving her seated working pose, coral headscarf, cobalt net, weathered yellow boat, and small wooden crate\nStyle/medium: translucent sea-washed watercolor with delicate pencil and threadlike ink lines on bright white deckled paper\nComposition/framing: vertical 3:4 page; tiny cluster at lower-right fitting within 24% page width and 26% page height, about 8-10% area; leave at least 88% blank white paper\nColor palette: vivid cobalt net, weathered yellow boat, coral scarf, all concentrated inside the cluster; two very pale gray-green sea strokes only\nText (verbatim): \"mend the blue\" exactly once as a tiny handwritten note below her hands\nConstraints: handmade redraw, not filtered photography; preserve the action and color anchors; no other text; no watermark\nAvoid: full beach, horizon across page, full bleed, focal area over 13%, large net mass, dense layout, heavy type, vectors, photorealism",
+    "aspectRatio": "3:4",
+    "mode": "image-to-image",
+    "referenceImage": "references/ref-05-source.png",
+    "referenceRole": "source-reference-photo",
+    "promptFile": "prompts/i2i-09.txt",
+    "image": "i2i-09.png"
+  },
+  {
+    "id": "i2i-10",
+    "prompt": "Use case: style-transfer\nAsset type: strict Photo Revival image-to-image example\nInput images: Image 1: source reference photo; use only this source\nPrimary request: create a sticker-scale field-note drawing of the older woman mending net, preserving coral headscarf, working hands, a small fold of cobalt net, one short yellow boat-edge line, and a miniature wooden crate\nStyle/medium: fine drypoint-like pencil, chalky watercolor accents, one postage-stamp-small translucent mesh clipping on ivory paper\nComposition/framing: vertical 3:4 page; tiny cluster at middle-right fitting within one fifth of page width and one quarter of page height, no more than 8% total area; leave over 90% blank ivory paper\nColor palette: localized cobalt, coral, and ochre only inside the tiny cluster\nText (verbatim): \"TIDE 3\" exactly once in microscopic penciled capitals beside the crate\nConstraints: show no full boat and no sprawling net; hand-redrawn and source-recognizable; mesh clipping smaller than the woman's torso; no other text; no watermark\nAvoid: ocean, horizon, complete boat, large net, full bleed, focal area over 9%, large collage, dense composition, heavy type, vector treatment, photorealism",
+    "aspectRatio": "3:4",
+    "mode": "image-to-image",
+    "referenceImage": "references/ref-05-source.png",
+    "referenceRole": "source-reference-photo",
+    "promptFile": "prompts/i2i-10.txt",
+    "image": "i2i-10.png"
+  }
+]

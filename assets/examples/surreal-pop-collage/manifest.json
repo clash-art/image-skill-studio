@@ -1,0 +1,102 @@
+[
+  {
+    "id": "i2i-01",
+    "prompt": "Fisherman and village in black-and-white against cobalt, pale-turquoise, and mustard flat shapes, with one monumental source-derived blue fishing boat.",
+    "aspectRatio": "3:4",
+    "mode": "image-to-image",
+    "referenceImage": "references/ref-01-source.png",
+    "referenceRole": "sole source photograph and reality anchor",
+    "promptFile": "prompts/i2i-01.txt",
+    "image": "i2i-01.png"
+  },
+  {
+    "id": "i2i-02",
+    "prompt": "Fisherman, normal boat, and village in black-and-white with flat coastal color fields and one rope continuing into an enormous sailor's knot.",
+    "aspectRatio": "3:4",
+    "mode": "image-to-image",
+    "referenceImage": "references/ref-01-source.png",
+    "referenceRole": "sole source photograph and reality anchor",
+    "promptFile": "prompts/i2i-02.txt",
+    "image": "i2i-02.png"
+  },
+  {
+    "id": "i2i-03",
+    "prompt": "Cyclist and desert road in black-and-white with teal, terracotta, and coral flat planes and one enormous bicycle wheel behind the cliff.",
+    "aspectRatio": "3:4",
+    "mode": "image-to-image",
+    "referenceImage": "references/ref-02-source.png",
+    "referenceRole": "sole source photograph and reality anchor",
+    "promptFile": "prompts/i2i-03.txt",
+    "image": "i2i-03.png"
+  },
+  {
+    "id": "i2i-04",
+    "prompt": "Cyclist and receding road in black-and-white against ultramarine, cream, and coral shapes, with the source scarf extending into one giant teal ribbon.",
+    "aspectRatio": "3:4",
+    "mode": "image-to-image",
+    "referenceImage": "references/ref-02-source.png",
+    "referenceRole": "sole source photograph and reality anchor",
+    "promptFile": "prompts/i2i-04.txt",
+    "image": "i2i-04.png"
+  },
+  {
+    "id": "i2i-05",
+    "prompt": "Cafe reader in black-and-white against orange, mint, and yellow flat architecture with one building-scale espresso cup above the awning.",
+    "aspectRatio": "3:4",
+    "mode": "image-to-image",
+    "referenceImage": "references/ref-03-source.png",
+    "referenceRole": "sole source photograph and reality anchor",
+    "promptFile": "prompts/i2i-05.txt",
+    "image": "i2i-05.png"
+  },
+  {
+    "id": "i2i-06",
+    "prompt": "Cafe reader and furniture in black-and-white with coral-orange, cream, mint, and cobalt fields and one monumental open book spanning the street.",
+    "aspectRatio": "3:4",
+    "mode": "image-to-image",
+    "referenceImage": "references/ref-03-source.png",
+    "referenceRole": "sole source photograph and reality anchor",
+    "promptFile": "prompts/i2i-06.txt",
+    "image": "i2i-06.png"
+  },
+  {
+    "id": "i2i-07",
+    "prompt": "Alpine station and peaks in black-and-white against red, cyan, white, and yellow shapes with one monumental gondola on the source cables.",
+    "aspectRatio": "3:4",
+    "mode": "image-to-image",
+    "referenceImage": "references/ref-04-source.png",
+    "referenceRole": "sole source photograph and reality anchor",
+    "promptFile": "prompts/i2i-07.txt",
+    "image": "i2i-07.png"
+  },
+  {
+    "id": "i2i-08",
+    "prompt": "Alpine station, normal gondola, and mountains in black-and-white against cyan, yellow, and red shapes with one enormous source-derived cable pulley.",
+    "aspectRatio": "3:4",
+    "mode": "image-to-image",
+    "referenceImage": "references/ref-04-source.png",
+    "referenceRole": "sole source photograph and reality anchor",
+    "promptFile": "prompts/i2i-08.txt",
+    "image": "i2i-08.png"
+  },
+  {
+    "id": "i2i-09",
+    "prompt": "Greenhouse gardener in black-and-white against turquoise, emerald, and terracotta planes with one enormous coral tomato on the source vine.",
+    "aspectRatio": "3:4",
+    "mode": "image-to-image",
+    "referenceImage": "references/ref-05-source.png",
+    "referenceRole": "sole source photograph and reality anchor",
+    "promptFile": "prompts/i2i-09.txt",
+    "image": "i2i-09.png"
+  },
+  {
+    "id": "i2i-10",
+    "prompt": "Greenhouse gardener in black-and-white with coral, turquoise, emerald, and cream flat shapes, holding one monumental source-derived terracotta watering can.",
+    "aspectRatio": "3:4",
+    "mode": "image-to-image",
+    "referenceImage": "references/ref-05-source.png",
+    "referenceRole": "sole source photograph and reality anchor",
+    "promptFile": "prompts/i2i-10.txt",
+    "image": "i2i-10.png"
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "skillId": "photo-abstract-editorial",
+    "id": "photo-abstract-editorial-diversity-v5",
+    "title": "After the Last Aisle",
+    "prompt": "Create one complete vertical 2:3 Photo Abstract Editorial artwork from the supplied late-night convenience-store photograph. Keep the full original 4:3 photo faithful and uncropped in the upper 43%: preserve the crouching night clerk, waiting commuter, refrigerator doors, shelf rhythm, fluorescent light, floor, colors, and ordinary phone-camera character without redrawing, filtering, extending, or retouching it. Join it directly to a perfectly flat neutral-ivory #F3F0E8 panel below with no frame, shadow, tape, texture, gradient, grain, or mockup. Distill only source facts into sparse abstraction: cool-gray horizontal shelf bars, two irregular short vertical human marks, one thin charcoal umbrella diagonal, and four muted-orange juice-carton blocks, leaving about 70% panel whitespace. Set the exact title 'After the Last Aisle' once in a restrained dark green-gray editorial serif at lower left. No subtitle, extra text, labels, logos, watermark, generic icons, illustration, or dense decoration.",
+    "preview": "/catalog/diversity-20260826/photo-abstract-editorial/result.png",
+    "referenceImage": "/catalog/diversity-20260826/photo-abstract-editorial/reference.png",
+    "referencePreview": "/catalog/diversity-20260826/photo-abstract-editorial/reference.png",
+    "referenceResourceUri": "/catalog/diversity-20260826/photo-abstract-editorial/reference.png",
+    "aspectRatio": "2:3",
+    "mediaType": "image"
+  },
+  {
+    "skillId": "photo-revival",
+    "id": "photo-revival-diversity-v5",
+    "title": "Fort Escaped",
+    "prompt": "Redraw the supplied playful family snapshot as one miniature 3:4 Photo Revival memory on luminous warm-white cotton paper. Preserve the older sister reaching from the left, younger brother kneeling at the right, complete tricolor beagle trotting between them with the bright yellow sock, teal blanket fort, wooden chair, and red floor cushion in simplified recognizable form. Use delicate colored pencil, translucent watercolor, and fine graphite edges; never apply a photo filter. Fit the entire scene inside a compact lower-right box no wider than 30% and no taller than 24% of the page, occupying roughly 8-10% total area, with no cropped subject. Leave at least 88% blank paper. Confine teal, yellow, red, navy, and beagle brown to the tiny cluster. Add 'fort escaped' exactly once as microscopic pencil beneath the dog's paws. No other text, date, logo, watermark, full bleed, large focal scene, dense room detail, vector treatment, collage block, or photorealism.",
+    "preview": "/catalog/diversity-20260826/photo-revival/result.png",
+    "referenceImage": "/catalog/diversity-20260826/photo-revival/reference.png",
+    "referencePreview": "/catalog/diversity-20260826/photo-revival/reference.png",
+    "referenceResourceUri": "/catalog/diversity-20260826/photo-revival/reference.png",
+    "aspectRatio": "3:4",
+    "mediaType": "image"
+  },
+  {
+    "skillId": "reality-restaged",
+    "id": "reality-restaged-diversity-v5",
+    "title": "Learning the Fold",
+    "prompt": "Restage the supplied civic-plaza roller-skating lesson as a complete 4:3 Reality Restaged documentary tableau. Preserve the three distinct people, the plum-jacket teenager steadying the helmeted child, the mustard-hoodie teenager looking back, their natural proportions, realistic skates, caring gestures, and exactly four orange cones. Remove the building, benches, bicycle racks, trees, and plaza clutter. Rebuild the world from one enormous matte marigold ground plane, one monumental deep-aubergine wall, and a pale-apricot void. Establish one impossible logic only: a narrow cream skating path begins flat beneath the trio, folds upward through a ninety-degree seam, and carries continuous wheel tracks while all people retain believable upright gravity. Keep the complete trio small in the lower-right third and let huge color fields dominate. Render as believable analog documentary photography with realistic skin, fabric, skate hardware, contact shadows, subtle 35mm grain, restrained sharpness, and no text, logo, watermark, giant props, portals, spheres, cobalt formula, cloned faces, illustration, CGI, or HDR.",
+    "preview": "/catalog/diversity-20260826/reality-restaged/result.png",
+    "referenceImage": "/catalog/diversity-20260826/reality-restaged/reference.png",
+    "referencePreview": "/catalog/diversity-20260826/reality-restaged/reference.png",
+    "referenceResourceUri": "/catalog/diversity-20260826/reality-restaged/reference.png",
+    "aspectRatio": "4:3",
+    "mediaType": "image"
+  }
+]

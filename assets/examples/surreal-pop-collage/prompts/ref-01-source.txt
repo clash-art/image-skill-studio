@@ -1,0 +1,10 @@
+Use case: photorealistic-natural
+Asset type: source reference photograph for an image-to-image art example
+Primary request: create a believable candid editorial photograph of a lone elderly fisherman pulling a small cobalt-blue wooden boat onto a bright ochre beach beside a modest white fishing village.
+Scene/backdrop: windy Atlantic coast, pale turquoise sea, whitewashed cottages, a few small gulls far away.
+Subject: one elderly fisherman in a mustard rain jacket and knit cap, fully visible, recognizable silhouette, natural working pose.
+Style/medium: natural documentary photography, realistic textures and proportions.
+Composition/framing: vertical 3:4, fisherman and boat in the lower-middle, broad clean sky and shoreline boundaries, strong diagonal rope line.
+Lighting/mood: bright overcast daylight, humane and calm.
+Color palette: cobalt blue boat, mustard jacket, pale turquoise water, ochre sand, white cottages.
+Constraints: exactly one main person; ordinary plausible reality; no surreal objects; no text; no logos; no watermark; no collage; no illustration.

@@ -1,0 +1,9 @@
+Use case: style-transfer
+Asset type: strict Travel Memory Card Duo complete-card example
+Input images: Image 1: source reference photo; use only this source
+Primary request: rebuild the Himalayan monastery tea scene as one finished horizontal collectible travel memory card. Identification anchor: the teal-coated woman pouring from the red thermos beside the cream mountain dog. Select exactly six right-column sticker motifs: (1) woman pouring red thermos into brass cup, (2) cream mountain dog, (3) three rust-red prayer wheels as one grouped sticker, (4) stone arch with snow peaks, (5) mustard satchel, (6) one irregular blue-gray paving-stone fragment.
+Style/medium: opaque matte gouache and cut paper with fine uniform paper tooth, chalky hand-cut edges, light pigment variation, soft misregistration; 5-8 broad source-derived color families
+Composition/framing: exact 3:2 horizontal canvas on warm off-white uncoated paper with continuous 4-5% outer margin; left 67% is one large near-square completely unframed illustration above a shallow paper footer; right 31% contains exactly six separate die-cut stickers using full height, uneven hierarchy, relaxed spacing, thick irregular warm-white borders, subtle flat paper shadows
+Text (verbatim): "High Tea · Red Wheels · Snow Arch" centered exactly once beneath the left illustration
+Constraints: scene reads first as 3-6 oversized blunt shapes and quiet space; preserve pouring pose, dog silhouette, prayer-wheel rhythm, arch/peaks, satchel and stone plane through placement and signature colors; only footer phrases readable; remove all prayer-wheel lettering; no title, caption, date, watermark, signature, photo patches, inner frame, gradient, or extra sticker
+Avoid: photorealism, marker strokes, watercolor washes, wet blooms, glossy 3D, detailed face, fur or ornament, polished vectors, anime, clip art

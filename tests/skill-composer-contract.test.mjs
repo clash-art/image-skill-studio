@@ -14,7 +14,7 @@ test("the Skill route is a full-width two-tab feed beneath one floating Composer
   ]);
 
   assert.match(studio, /type DetailTab = "feed" \| "creations"/);
-  assert.match(studio, /role="tablist"[^>]*aria-label="Skill 内容"/);
+  assert.match(studio, /role="tablist"[^>]*aria-label=\{copy\.skillContent\}/);
   assert.match(studio, /function DetailTabPanel\([\s\S]{0,720}?role="tabpanel"/);
   assert.match(studio, /<DetailTabPanel[\s\S]{0,220}?id="detail-panel-feed"/);
   assert.match(studio, /<DetailTabPanel[\s\S]{0,220}?id="detail-panel-creations"/);
@@ -49,6 +49,16 @@ test("Remix and generate-same seed the shared Composer without dispatching gener
   assert.match(studio, /runtime\.installSkill/);
 });
 
+test("Remix uses an I2I example's source reference instead of its generated result", async () => {
+  const studio = await readFile(studioUrl, "utf8");
+
+  assert.match(studio, /referencePreview\?: string/);
+  assert.match(studio, /referenceResourceUri\?: string/);
+  assert.match(studio, /const preview = example\.referencePreview/);
+  assert.match(studio, /role: example\.referenceRole \?\? "reference"/);
+  assert.doesNotMatch(studio, /const preview = examplePreview\(example, skill!\);/);
+});
+
 test("both collection kinds move their first four cards and images into matching Skill panels", async () => {
   const [studio, fanCollection, css] = await Promise.all([
     readFile(studioUrl, "utf8"),
@@ -56,7 +66,7 @@ test("both collection kinds move their first four cards and images into matching
     readFile(cssUrl, "utf8"),
   ]);
 
-  assert.match(fanCollection, /visibleItems\s*=\s*items\.slice\(0,\s*4\)/);
+  assert.match(fanCollection, /visibleItems\s*=\s*selectRenderableFanItems\(items, failedSources\)/);
   assert.match(fanCollection, /layoutId=\{item\.layoutId\}/);
   assert.match(fanCollection, /layout="position"[\s\S]{0,100}?layoutId=\{item\.imageLayoutId\}/);
   assert.match(studio, /kind === "run" \? "feed-runs" : "feed-examples"/);
@@ -177,11 +187,19 @@ test("the Codex pill uses one mature bidirectional morph for open and close", as
   assert.match(studio, /<MorphingComposer[\s\S]{0,420}?open=\{composerOpen\}/);
   assert.match(studio, /const \[composerOpen, setComposerOpen\] = useState\(false\)/);
   assert.doesNotMatch(studio, /ComposerPhase|composerPhase|composerBodyVisible|composerOrigin|"closing"|composerCollapseSpring|finishComposerClose/);
-  assert.match(studio, /const closeComposer = useCallback\([\s\S]{0,360}?setComposerOpen\(false\)/);
+  assert.match(studio, /setHandoffSent\(true\)[\s\S]{0,80}?closeComposer\(\)/);
+  assert.match(studio, /status=\{busy \? copy\.handingOff : handoffSent \? copy\.composerHandedOff : copy\.composerReady\}/);
+  assert.match(studio, /sent=\{handoffSent\}/);
+  assert.match(studio, /\{busy \? copy\.handingOff : copy\.handOff\}/);
+  assert.match(morphingComposer, /sent && !open && "is-sent"/);
+  assert.match(morphingComposer, /sent \? <CheckIcon size=\{15\} weight="bold" \/> : <ChatIcon size=\{15\} weight="bold" \/>/);
+  assert.match(morphingComposer, /from "@phosphor-icons\/react"/);
+  assert.match(css, /\.morphing-composer__surface\.is-compact\.is-sent/);
+  assert.match(css, /@keyframes composer-sent/);
 
   assert.match(morphingComposer, /const MORPHING_COMPOSER_TRANSITION = \{[\s\S]{0,160}?type: "spring"[\s\S]{0,160}?duration: 0\.4/);
   assert.match(morphingComposer, /<MotionConfig transition=\{transition\}>/);
-  assert.match(morphingComposer, /<motion\.section[\s\S]{0,360}?className=\{cn\("morphing-composer__surface"[\s\S]{0,220}?layout/);
+  assert.match(morphingComposer, /<motion\.section[\s\S]{0,500}?className=\{cn\([\s\S]{0,280}?morphing-composer__surface[\s\S]{0,280}?layout/);
   assert.match(morphingComposer, /animate=\{\{[\s\S]{0,220}?backgroundColor: open \? MORPHING_COMPOSER_OPEN_BACKGROUND : MORPHING_COMPOSER_CLOSED_BACKGROUND/);
   assert.match(morphingComposer, /const collapsedInteractive = !open && settledOpen === false/);
   assert.match(morphingComposer, /onAnimationStart=\{handleSurfaceAnimationStart\}/);

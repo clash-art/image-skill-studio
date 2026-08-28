@@ -1,0 +1,10 @@
+Use case: style-transfer
+Asset type: final vertical theatrical one-sheet, 2:3
+Input images: Image 1 is the sole CONTENT SOURCE. Preserve the original adult queen's indigo drapery, bronze collar, braided hair, rolled maps, black horses, chariot, adult mapmaker, carved lion tablet, sandstone canyon, obelisk, and traveler procession. Do not preserve the landscape crop.
+Primary request: Recompose the source as a classic hand-painted epic poster titled exactly "LION OF KADESH".
+Format and title zone: vertical one-sheet with exposed ivory paper edge; centered title fills the upper 16% in an elegant condensed serif; matte aged stock.
+Monument: monumental three-quarter queen rising vertically from the canyon wall, her indigo cloak containing the carved lion relief as a bold gold emblem; retain her profile, braids, collar, and maps. She occupies 61% height, not a photoreal portrait.
+Narrative and color: mapmaker and paired black horses are small conflict-free witnesses on opposite lower edges; a narrow diagonal chariot-and-traveler path climbs from lower left toward the obelisk. Golden ochre warm field 48%, deep indigo filled monument 31%, ivory 16%, ink-black core 10%; opaque gouache, dry-brush edges, illustrated lithograph.
+Typography and finish: exact title "LION OF KADESH", no secondary copy; fine halftone, uneven ink, slight registration drift; epic adventure and regal resolve.
+Constraints: preserve source-specific faces, costume, lion tablet, horses, canyon, and obelisk; new vertical monument-to-witness hierarchy; readable at thumbnail size.
+Avoid: source-frame tracing, fake credits, logos, weapons, conflict, photographic collage, CGI, equal floating heads, muddy sepia, framed mockup, watermark, existing film imagery.

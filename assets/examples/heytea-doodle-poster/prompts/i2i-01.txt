@@ -1,0 +1,10 @@
+Use case: style-transfer
+Asset type: strict I2I example, typography-led vertical object-and-doodle poster
+Input images: Image 1 is the sole source reference and subject anchor.
+Primary request: Transform the source citrus iced-tea photo into a quiet typography-led poster while preserving the exact photographed ribbed glass, amber liquid, ice, orange wheel, condensation, material, and recognizable silhouette. Do not redraw the drink.
+Scene/backdrop: remove the kitchen surroundings and isolate the real glass on a clean warm-white field with its believable soft contact shadow.
+Composition/framing: 3:4 portrait. Place the glass lower-right at about 34 percent of canvas height. Make a large upper-left title block the first visual signal, with generous breathing room.
+Doodle action: add exactly one tiny primitive faceless black-line micro worker beside the glass, quietly inspecting the orange wheel with one short pointer. Use broken blunt marker strokes, lumpy open head, stiff segmented limbs, bad joins; figure height about 10 percent of glass height.
+Text (verbatim): "慢慢喝一口"
+Lettering: render only that title as large rough crooked childlike Chinese blunt-marker lettering, loose vertical arrangement, uneven sizes and spacing, malformed but readable skeletons, flat black ink, off-grid placement. No subtitle.
+Constraints: preserve the real photographed glass; only change background, placement, lettering, and minimal doodle overlay. No official HEYTEA logo or mascot, no brand mark, no extra text, no English, no numbers, no watermark, no cute sticker style, no polished vector, no gradients, no dense decoration, no realistic person, no full-cartoon conversion.

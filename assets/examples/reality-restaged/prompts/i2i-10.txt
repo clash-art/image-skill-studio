@@ -1,0 +1,11 @@
+Use case: style-transfer
+Asset type: strict Reality Restaged image-to-image example
+Input images: Image 1 is the sole source photograph and documentary reality anchor.
+Primary request: Preserve the woman mechanic's recognizable face, natural crouched anatomy, grease-marked indigo clothing and wheel-repair gesture; preserve the boy, normal round mirror, tools, bus wheel and faded cream-vermilion vehicle identity. Rebuild the road and vehicle as an enormous quiet stage: a narrow matte-black road begins under the wheel, runs across a cream floor, then bends straight upward through a monumental vermilion wall while its center line continues without interruption. The boy stands naturally on the vertical section while still aiming the mirror toward the mechanic below. The continuous road across floor and wall is the one impossible relational logic.
+Scene/backdrop: cream floor, vermilion wall, black road ribbon, deep blue rectangular void; remove desert mesas, poles, realistic sky and roadside clutter
+Style/medium: photographed analog documentary realism, believable face, hands, cloth, tire, old painted metal and subtle grain; restrained sharpness
+Composition/framing: 3:4 portrait, mechanic and wheel low-right, boy much smaller high-left on the vertical road, wall occupies most of the frame, strong cream negative space
+Lighting/mood: warm dusty daylight with coherent directional shadows, practical care across impossible distance
+Color palette: dominant vermilion and cream, supporting matte black and deep blue, indigo clothing
+Constraints: substantial spatial recomposition; preserve mother-child cooperation and source specificity; human proportions remain natural; one impossible continuity only; no readable plates, text, logo or watermark
+Avoid: giant mirror or wheel, upside-down bus, floating tools, portal, moon, extra surreal props, spectacle, fantasy art, illustration, CGI, HDR, distorted hands, duplicated child

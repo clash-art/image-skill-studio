@@ -1,0 +1,10 @@
+Use case: photorealistic-natural
+Asset type: source reference photograph for a later image-to-image editorial poster
+Primary request: Create a truthful vertical street photograph of a lone adult holding a translucent umbrella while waiting beside an old cream-and-green tram moving from left to right on a rain-darkened city street.
+Scene/backdrop: blue-hour rain, wet asphalt reflecting warm tram windows, narrow facades receding in perspective, overhead wires forming a strong diagonal, quiet empty foreground.
+Subject: anonymous adult in profile at lower right, vintage tram occupying middle-left, rain and reflections.
+Style/medium: natural documentary photography, realistic optics, subdued urban color, no stylization.
+Composition/framing: vertical 3:5, tram cropped by left edge, figure lower right facing left, tracks and wires converge upward, ample rainy negative space.
+Lighting/mood: diffuse blue dusk with practical window light, patient and hushed.
+Constraints: plausible anatomy and tram geometry; no readable signage; no text, collage, illustration, torn paper, graphic overlays, logos, watermark.
+Avoid: cyberpunk neon, cinematic spectacle, heavy bokeh, fashion styling, crowds, extra bright colors.

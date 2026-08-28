@@ -1,0 +1,9 @@
+Use case: style-transfer
+Asset type: strict I2I example, no-text narrative vertical object-and-doodle poster
+Input images: Image 1 is the sole source reference and subject anchor.
+Primary request: Transform the source mushroom-shaped ceramic table lamp photo into a complete tiny action scene while preserving the exact photographed lamp, ochre dome, cream ceramic base, matte glaze, warm illumination, and recognizable silhouette. Do not redraw the lamp and do not turn it into a drink product.
+Scene/backdrop: remove all bedside surroundings and isolate the real switched-on lamp on a clean soft off-white field with its subtle warm pool and believable contact shadow.
+Composition/framing: 3:4 portrait. Place the lamp slightly right of center at about 48 percent of canvas height. Do not reserve a title area.
+Doodle action: one primitive faceless black-line micro worker climbs a crude three-rung ladder leaning against the ceramic base and reaches up with a tiny straight tool as if repairing the light. Add one rough ground line only. Worker height about 15 percent of lamp height. Use separate uneven blunt marker segments, lumpy open head, stiff limbs, blocky paddle ends, gaps and bad joins; functional, not cute.
+Text constraints: no text anywhere, no Chinese characters, no English letters, no numbers, labels, captions, random glyphs, logo text, or watermark.
+Constraints: preserve the real photographed lamp; only change background, placement, primitive worker, ladder, tool, ground line, and natural light pool. No official HEYTEA logo or mascot, no brand mark, no sticker collage, no polished vector, no gradients except real lamp light, no dense decoration, no faces, no full-cartoon conversion.

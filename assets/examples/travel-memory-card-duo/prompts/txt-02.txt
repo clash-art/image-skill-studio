@@ -1,0 +1,9 @@
+Use case: photorealistic-natural
+Asset type: original source reference photograph for a travel-memory-card transformation
+Primary request: a candid horizontal travel photograph of an elderly woman in a coral headscarf mending a cobalt-blue fishing net beside a weathered ochre wooden boat in a quiet Greek island harbor, with a small wooden crate, coiled rope, pale seawall, and one white cat nearby
+Style/medium: natural documentary photography, authentic sun-faded textures, no stylization
+Composition/framing: 3:2 horizontal, woman and net near center-left, boat edge making a strong diagonal, harbor water and whitewashed steps opening behind her
+Lighting/mood: gentle late-morning Mediterranean light, observational, humane, slow
+Color palette: chalk white, cobalt, coral, ochre, sea green, rope tan
+Constraints: fully original scene; no readable text, boat names, signs, logos, watermark, signature, border, collage, or printed-card treatment
+Avoid: illustration, fashion posing, postcard typography, dramatic HDR, glossy commercial travel photography

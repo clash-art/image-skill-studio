@@ -1,0 +1,11 @@
+Use case: style-transfer
+Asset type: strict Reality Restaged image-to-image example
+Input images: Image 1 is the sole source photograph and documentary reality anchor.
+Primary request: Preserve the elderly shellfish gatherer's recognizable age, face, natural anatomy, red cape, woven basket and practical boots, plus exactly two realistic egrets. Radically recompose the scene as an enormous quiet theatrical coast built from the visual logic of her windblown cape: a monumental curved vermilion architectural plane sweeps from foreground floor into a vertical wall, dividing a deep cyan void from a narrow wet cream path. Do not enlarge the cape itself. The woman walks on the cream path while the egrets stand beyond the curve in the cyan field; the impossible relationship is that one continuous curved surface functions simultaneously as floor, seawall and horizon.
+Scene/backdrop: remove all huts, fencing, mud texture and ordinary sky; retain only three clean spatial fields and a small reflective strip
+Style/medium: photorealistic analog documentary image, not illustration or rendering; realistic face, hands, fabric, basket fibers, feathers, shadows, subtle film grain
+Composition/framing: 3:4 portrait, woman at lower center-right, curved red plane occupying nearly half the frame, vast cyan negative space, egrets as small secondary rhythm
+Lighting/mood: soft dawn light with restrained natural shadow falloff, serene tension
+Color palette: dominant vermilion and deep cyan, supporting warm cream and charcoal clothing
+Constraints: preserve documentary dignity and source-specific details; color is architecture; visibly new camera composition; one impossible spatial logic only; normal human and bird scale; no text, logo or watermark
+Avoid: literal giant scarf, decorative surreal props, floating objects, portals, celestial objects, generic fantasy, clutter, painterly texture, CGI gloss, HDR, plastic face, distorted hands, extra birds

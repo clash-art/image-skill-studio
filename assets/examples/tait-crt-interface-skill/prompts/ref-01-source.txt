@@ -1,0 +1,9 @@
+Use case: photorealistic-natural
+Asset type: source reference for an image-to-image transformation benchmark
+Primary request: Create one original editorial photograph of a middle-aged bicycle mechanic standing in a compact street workshop, holding one large open-end wrench diagonally across the torso.
+Subject: exactly one person; wiry build; angular salt-and-pepper hair swept upward; long narrow face; heavy straight eyebrows; one rolled-sleeve burnt-orange work jacket over a plain cream shirt; dark teal work trousers; both hands visibly and plausibly gripping the wrench.
+Scene/backdrop: weathered pale mint workshop wall, a single bicycle wheel hanging high behind the subject, sparse tools, no other people.
+Composition/framing: portrait 3:4, waist-up, subject slightly left of center, clear silhouette and both hands visible.
+Lighting/mood: overcast natural window light, grounded documentary mood.
+Color palette: burnt orange, pale mint, cream, dark teal, natural skin tones.
+Constraints: original image; realistic photo; one person only; anatomically correct hands; no text, no logo, no watermark; no CRT, no pixels, no retro computer interface, no illustration.

@@ -1,0 +1,11 @@
+Use case: style-transfer
+Asset type: strict Reality Restaged image-to-image example
+Input images: Image 1 is the sole source photograph and documentary reality anchor.
+Primary request: Preserve both sisters as distinct photographically real people, their natural working postures, coordinated pull, bamboo pole, translucent sheet, seedlings and green bucket. Recompose the flooded field into a monumental indigo wall intersecting a flat mustard-yellow water plane. A sparse row of realistic seedlings grows continuously from the horizontal water up the vertical wall without bending, while the sisters stand at opposite ends of the intersection and stretch the sheet across it. This continuous crop row across floor and wall is the one impossible spatial logic.
+Scene/backdrop: remove houses, banana trees, realistic horizon and storm clutter; only mustard water plane, indigo wall, narrow cream strip, seedlings and documentary subjects
+Style/medium: natural analog documentary photograph in an impossible installation, believable rain, faces, hands, wet fabric, bamboo, plants and reflections; subtle grain
+Composition/framing: 4:3 landscape, intersection line runs diagonally, sisters unequal in scale through depth, large indigo negative space, bucket as tiny green counterweight
+Lighting/mood: soft post-storm illumination, purposeful and visually silent
+Color palette: dominant indigo and mustard yellow, supporting cream, vivid leaf green
+Constraints: environment must be radically simplified; color fields are architecture; preserve individuality and anatomy; one surreal continuity only; no text, logo or watermark
+Avoid: giant bucket, giant people, decorative portals, floating plants, random moons, surreal clutter, duplicated women, invented costume, illustration, 3D render, HDR, plastic skin, malformed hands

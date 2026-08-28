@@ -1,0 +1,12 @@
+Use case: identity-preserve
+Asset type: 1:1 sparse article illustration for Studio curation
+Input images: Image 1 is the sole source reference for Asha's identity; never use any generated result as a reference
+Primary request: Show Asha leaning happily over a tiny wooden board, pressing a round piece of dough with both palms while the rolling pin lies beside the board. This article illustration communicates patient hands-on practice.
+Scene/backdrop: pure white only
+Style/medium: mini pen-doodle illustration, tiny subject on a large pure-white canvas, hesitant wobbly black pen contours with clearly visible irregular breaks, awkward hand-drawn shapes, internally clean flat color shapes deliberately slightly misregistered from the outlines with tiny white slivers or small edge overhangs, normal clear saturation, sparse composition, childlike messy-cute charm; limited color count, not desaturated color; broken but not uniformly dashed, misregistered but still legible
+Composition/framing: square 1:1, complete character-and-prop group occupies 25–30% of canvas, abundant white space, nothing cropped
+Identity invariants: preserve Asha's exact medium-brown skin, long silver braid over her right shoulder, arched brows, gold hoop earrings, plum kurta, saffron waist apron, cream trousers, turquoise shoes, chibi proportions and signature colors from Image 1
+Action/expression: warm wide smile, body leaning forward, both palms clearly pressing dough
+Props: one tiny wooden board, one dough round, one wooden rolling pin only
+Constraints: change only pose and scene purpose; keep identity unchanged; no shadow
+Avoid: text, labels, letters, numbers, logos, watermark, dense scenery, gradients, glossy shading, vector-perfect curves, painterly or grainy texture, faded beige or gray cast, extra people or props

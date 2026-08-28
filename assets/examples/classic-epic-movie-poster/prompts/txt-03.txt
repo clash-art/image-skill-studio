@@ -1,0 +1,11 @@
+Use case: stylized-concept
+Asset type: final vertical theatrical one-sheet, 2:3
+Primary request: Create an original classic hand-painted epic movie poster for a maritime fantasy titled exactly "THE TIDAL CROWN". An exiled queen returns through a drowned kingdom where a lighthouse beam reveals a crown beneath the sea.
+Scene/backdrop: immense teal ocean and pale cyan lighthouse beam meeting a coral-orange storm sky.
+Subject: a monumental crown-shaped lighthouse rising from a queen's dark profile, with waves carved into her cloak; recognition cues are the silver sea-crown, braided royal hair, drowned cathedral spires, and three-masted rescue ship.
+Style/medium: 1940s-1960s hand-painted theatrical art, opaque tempera, ink-and-wash details, visible lithographic plate grain and softened paper.
+Composition/framing: narrow ivory margin; exact title centered in a clean upper 14%; profile-horizon monument occupies 62% height; two small sailor and child witness vignettes embedded within the cloak; a tiny rescue fleet climbs diagonally at the lower right rather than a centered procession. Coral warm field 42%, teal/cyan filled cool monument 38%, ivory 17%, black core 9%.
+Lighting/mood: romantic sweep, mythic return, storm-lit hope.
+Text (verbatim): "THE TIDAL CROWN"
+Constraints: tall high-contrast serif, minimal secondary marks, coherent monument-to-witness hierarchy, substantial separate warm and cool fields, matte one-sheet.
+Avoid: fake credits, review quotes, modern sans serif, photo collage, glossy fantasy concept art, CGI, equal floating heads, muddy blending, framed mockup, real franchise imagery, watermark.

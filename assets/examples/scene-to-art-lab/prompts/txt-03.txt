@@ -1,0 +1,11 @@
+Use case: photorealistic-natural
+Asset type: source reference photograph for an art-poster transformation example
+Primary request: a solitary mustard-yellow sea kayak gliding across a glassy alpine lake at dawn
+Scene/backdrop: layered slate mountains fading into low silver mist, dark fir shoreline, broad calm water with a narrow wake; no buildings or signs
+Subject: one small mustard-yellow kayak in side-three-quarter view with one adult paddler wearing a dark teal jacket and plain safety vest, paddle held naturally
+Style/medium: photorealistic natural landscape and outdoor editorial photography
+Composition/framing: wide horizontal vista, kayak low and off-center, large atmospheric distance and clear reflection
+Lighting/mood: cool blue-gray dawn, hushed and contemplative, soft diffused light
+Materials/textures: realistic rippled water, damp nylon, matte kayak hull, atmospheric mist, distant rock
+Constraints: exactly one paddler, credible body and paddle geometry, no logos, no brands, no readable text, no watermark, no poster typography, no illustration, no extra boats or wildlife
+

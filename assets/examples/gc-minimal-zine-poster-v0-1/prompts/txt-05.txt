@@ -1,0 +1,6 @@
+Use case: stylized-concept
+Asset type: final example for Minimal Zine Poster v0.1, pure T2I with no reference image.
+Vertical 3:5 full-frame tan recycled paper with subtle fibers and age specks, no border or mockup; 76% clear negative space; a type-led cluster occupies 20% around the upper-middle.
+The main anchor is rough letterpress typography shaped around a tiny old-print illustration of a matchbox with one spent match, isolated like an archive specimen; soft ink crush, offset baseline, and slight paper abrasion.
+The exact phrase "A SMALL FIRE, REMEMBERED" is broken into three sparse lines as the visual object, with almost illegible catalog numbers. One clean tomato-red printed block behind the match head is the sole high-chroma anchor, about 2% of the canvas and 18% of the cluster; black-gray supporting type only.
+Flat orthographic scanned-paper appearance, matte and absorbent, diffuse light, low-to-medium contrast, quiet intimate memory-zine atmosphere. Avoid full bleed, advertising typography, product branding, logos, CTA, clean digital layout, glossy mockup, shadows, 3D, cinematic lighting, neon, cute cartoon, dense scrapbook, multiple colors, and long perfect copy.

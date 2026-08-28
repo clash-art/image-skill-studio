@@ -1,0 +1,9 @@
+Use case: style-transfer
+Asset type: finished vertical photo-abstract editorial example
+Input images: Image 1 is the sole visual source and must remain faithful as the upper photographic region.
+Primary request: Create one complete vertical editorial artwork with Image 1 unchanged above and a sparse abstract memory panel below. Do not redraw, reconstruct, extend, replace, retouch, recolor, or filter the photograph; allow only proportional scaling or a slight necessary crop.
+Observed facts: exactly five balloons at different heights ascending from lower left to upper right; irregular intervals and scales; layered blue-green ridges; one silver river counter-curve; pale peach dawn void.
+Composition/framing: horizontal photo about 45% of total height and completely uniform ivory #F3F0E8 panel about 55%; direct clean join, no border, frame, shadow, tape, collage, gap, or mockup.
+Abstract system: primary family is exactly five soft-edged organic planar color masses in muted forest green, cream, coral, mustard, and dusty teal, varied in size and placed along a loose ascending diagonal with natural unequal pauses and slight overlap. They must not be realistic balloons: no baskets, strings, highlights, stripes, or outlines. Supporting family is one thin muted blue-gray S curve low beneath them derived from the river, plus two low interrupted blue-green ridge bands. Motif compact and airy, at most 42% panel width and 32% height, preserving at least 68% whitespace.
+Text: render exactly "Five Into Morning" once in an elegant thin humanist serif, deep blue-green, aligned lower left. No subtitle or other text.
+Constraints: every color and mark from Image 1 only, desaturated; panel flat and untextured; no gradients, grain, noise, glow, shadow, vignette, stains, paper texture, decorative symbols, invented objects, symmetry, logos, labels, dates, numbers, signature, or watermark. Return only the completed composition.

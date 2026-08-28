@@ -1,0 +1,9 @@
+Use case: style-transfer
+Asset type: final Minimal Zine Poster v0.1 I2I example.
+Input image: Image 1 is the sole source reference. Preserve the unmistakable single empty metal chair seen from behind, concrete seawall, open sea horizon, and quiet unoccupied coastal mood; do not introduce people or another location.
+
+Recompose it as a tall vertical 3:5 full-frame pale oatmeal aged-paper poster, no border or mockup; 82% plain paper; an upper-right-block cluster occupies 16%, inset from edges. Use a tiny torn monochrome photo crop containing the chair silhouette and horizon, overlapping one rough geometric cutout, with film grain and halftone degradation.
+
+Place the exact monospaced phrase "SEA, AFTER EVERYONE" partially inside the crop, with loose microtype drifting downward. Make the chair silhouette and one adjoining rectangular block fully saturated ultramarine risograph ink, the sole high-chroma hue, about 2.3% of the canvas and 28% of the cluster; muted charcoal source-photo details elsewhere, slight blue misregistration.
+
+Flat orthographic matte paper scan, diffuse light with no dimensional shadow, quiet seaside nostalgia and distant Japanese/Korean indie editorial mood. Avoid full-bleed landscape, tourism ad, commercial headline, logos, CTA, glossy mockup, cinematic lighting, 3D, neon, cartoon, fashion drama, dense scrapbook, multiple colors, and long clean text.

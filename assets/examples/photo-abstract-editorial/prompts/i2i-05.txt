@@ -1,0 +1,9 @@
+Use case: style-transfer
+Asset type: finished vertical photo-abstract editorial example
+Input images: Image 1 is the sole content source and must be retained faithfully as the upper photographic region.
+Primary request: Produce one complete vertical editorial artwork: unchanged source photo above, sparse abstract memory panel below. Never redraw, extend, reconstruct, replace, retouch, recolor, or filter Image 1; only proportional scaling or slight crop for fit.
+Observed facts: one asymmetric flattened tree canopy left of center; slender dark trunk; low ochre dune axis; extraordinarily long rightward shadow; immense clear blue negative space.
+Composition/framing: photograph approximately 52% of final height and perfectly uniform ivory #F3F0E8 panel 48%, direct flat join without frame, border, shadow, tape, collage, or mockup.
+Abstract system: primary family is one low, soft-edged, irregular muted-olive horizontal mass left of center, with one narrow charcoal-brown tapered vertical stroke descending from it. Supporting family is one very long, thin dusty-sienna horizontal wedge extending right with a fading but solid planar endpoint, derived from the shadow; add one short ochre horizon interruption only. Keep motif low, asymmetric, no literal tree illustration, no branches or leaves, and at least 75% empty ivory.
+Text: render exactly "Shade Travels" once in a quiet humanist serif, dark olive-charcoal, lower left with wide margins. No subtitle and no other text.
+Constraints: palette only from Image 1, muted; panel absolutely flat and continuous; no gradients, texture, grain, noise, glow, shadow effects, stains, paper, watercolor, symbols, decoration, symmetry, invented content, logos, labels, dates, numbers, signature, or watermark. Return only the finished composition.

@@ -1,0 +1,9 @@
+Use case: style-transfer
+Asset type: strict Travel Memory Card Duo transparent sticker PNG example
+Input images: Image 1: source reference photo; use only this source
+Primary request: create exactly six separate die-cut stickers matching the Irish memory-card motif specification: (1) saffron-jacket cyclist with turquoise bicycle, (2) white stone cottage, (3) dry-stone wall fragment, (4) curving wet road, (5) three seabirds together as one grouped motif, (6) one windswept grass tuft. Do not split, merge, duplicate, replace, or add motifs.
+Style/medium: opaque matte gouache and cut paper with fine uniform paper tooth, chalky hand-cut edges, restrained source-derived moss, slate, warm white, saffron, turquoise and charcoal; thick irregular warm-white die-cut border around every sticker
+Composition/framing: exact 3:2 horizontal transparent canvas; arrange six fully visible separated stickers in two relaxed rows with generous empty transparent space and uneven size hierarchy; nothing cropped or touching
+Constraints: output a real PNG with alpha transparency; background fully transparent including all four corners; sticker interiors opaque except antialiased edges; no card paper, overall sheet, panel, frame, floor, reflection, cast/contact shadow, footer, keywords, title, labels, readable text, watermark, signature, checkerboard, black background, white background, or extra fragment
+Avoid: photorealism, marker strokes, watercolor washes, gradients, glossy 3D, detailed anatomy, polished vectors, clip art, fake transparency
+Chroma-key execution: render the entire background as perfectly uniform flat #ff00ff magenta with no lighting variation, texture, gradient, checkerboard, shadow, reflection, or near-magenta color inside any sticker; this flat key will be removed locally to create the final alpha PNG

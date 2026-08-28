@@ -1,0 +1,92 @@
+[
+  {
+    "id": "txt-01",
+    "prompt": "THE GLASS ORCHARD: a polar botanist profile containing a crystal tree and shattered greenhouse.",
+    "aspectRatio": "2:3",
+    "mode": "t2i",
+    "promptFile": "prompts/txt-01.txt",
+    "image": "txt-01.png"
+  },
+  {
+    "id": "txt-02",
+    "prompt": "ASHES OF THE SUN: an eclipsed desert courier carrying a forbidden flame toward a buried city.",
+    "aspectRatio": "2:3",
+    "mode": "t2i",
+    "promptFile": "prompts/txt-02.txt",
+    "image": "txt-02.png"
+  },
+  {
+    "id": "txt-03",
+    "prompt": "THE TIDAL CROWN: an exiled queen, crown-shaped lighthouse, drowned cathedral, and rescue fleet.",
+    "aspectRatio": "2:3",
+    "mode": "t2i",
+    "promptFile": "prompts/txt-03.txt",
+    "image": "txt-03.png"
+  },
+  {
+    "id": "txt-04",
+    "prompt": "IRON CHOIR: a conductor's raised glove becomes five smokestacks over a besieged steel city.",
+    "aspectRatio": "2:3",
+    "mode": "t2i",
+    "promptFile": "prompts/txt-04.txt",
+    "image": "txt-04.png"
+  },
+  {
+    "id": "txt-05",
+    "prompt": "MOON OVER VESPER: opposed lovers, an eclipse, telescope, and memory-erasing observatory.",
+    "aspectRatio": "2:3",
+    "mode": "t2i",
+    "promptFile": "prompts/txt-05.txt",
+    "image": "txt-05.png"
+  },
+  {
+    "id": "i2i-01",
+    "prompt": "Transform the flooded orbital railway engineer scene into the classic epic poster CINDER STATION.",
+    "aspectRatio": "2:3",
+    "mode": "i2i",
+    "referenceImage": "references/ref-01-source.png",
+    "referenceRole": "sole content source for the original engineer, orange pressure coat, brass signal lamp, silver train, flooded station, curved windows, and ringed planet; never a generated result",
+    "promptFile": "prompts/i2i-01.txt",
+    "image": "i2i-01.png"
+  },
+  {
+    "id": "i2i-02",
+    "prompt": "Transform the queen, chariot, lion tablet, black horses, canyon, and obelisk into LION OF KADESH.",
+    "aspectRatio": "2:3",
+    "mode": "i2i",
+    "referenceImage": "references/ref-02-source.png",
+    "referenceRole": "sole content source for the original queen, indigo drapery, bronze collar, mapmaker, lion tablet, black horses, chariot, canyon, obelisk, and travelers; never a generated result",
+    "promptFile": "prompts/i2i-02.txt",
+    "image": "i2i-02.png"
+  },
+  {
+    "id": "i2i-03",
+    "prompt": "Transform the cracked bell, three figures, lantern, rain, ravens, and cliff monastery into THE HOLLOW BELL.",
+    "aspectRatio": "2:3",
+    "mode": "i2i",
+    "referenceImage": "references/ref-03-source.png",
+    "referenceRole": "sole content source for the cracked bronze bell, archivist, lantern-bearer, abbess, rain, ropes, ravens, timber tower, and alpine monastery; never a generated result",
+    "promptFile": "prompts/i2i-03.txt",
+    "image": "i2i-03.png"
+  },
+  {
+    "id": "i2i-04",
+    "prompt": "Transform the snowbound reunion, green coat, cream envelope, violin case, steam train, and signals into WINTER TELEGRAM.",
+    "aspectRatio": "2:3",
+    "mode": "i2i",
+    "referenceImage": "references/ref-04-source.png",
+    "referenceRole": "sole content source for the original woman and violinist, green coat, silver hair streak, envelope, violin case, snowy station, steam train, and semaphore signals; never a generated result",
+    "promptFile": "prompts/i2i-04.txt",
+    "image": "i2i-04.png"
+  },
+  {
+    "id": "i2i-05",
+    "prompt": "Transform the divers, green starfish, small brass suit, red seats, fish, and submerged theater into BELOW THE GREEN STAR.",
+    "aspectRatio": "2:3",
+    "mode": "i2i",
+    "referenceImage": "references/ref-05-source.png",
+    "referenceRole": "sole content source for the original lead diver and partner, navy-and-copper suits, small brass suit, green starfish, submerged art-deco theater, red seats, curtains, fish, and coral; never a generated result",
+    "promptFile": "prompts/i2i-05.txt",
+    "image": "i2i-05.png"
+  }
+]

@@ -1,0 +1,11 @@
+Use case: style-transfer
+Asset type: strict Reality Restaged image-to-image example
+Input images: Image 1 is the sole source photograph and documentary reality anchor.
+Primary request: Preserve the two adult sisters as distinct real individuals, their opposing working gestures, wet practical clothing, bamboo pole, translucent sheet and vivid green bucket. Remove the literal field, banana trees, houses and storm detail. Abstract the bowed sheet's tension into one monumental translucent cream membrane that begins as a roof above the left sister, curves down between them, and becomes a reflective floor beneath the right sister. A saturated cyan void and terracotta ground create the rest of the stage. The one impossible logic is that this single continuous membrane functions as roof, divider and walkable ground while both women keep natural gravity and continue pulling it taut.
+Scene/backdrop: cyan negative-space field, terracotta ground, giant quiet cream membrane, one green bucket; no realistic landscape
+Style/medium: believable rainy analog documentary photograph, realistic individual faces, hands, wet cloth, bamboo and translucent material, subtle grain
+Composition/framing: 4:3 landscape, sisters small at opposite lower edges, membrane sweeping through center and occupying half the frame, large cyan silence above
+Lighting/mood: diffuse monsoon light, calm effort, restrained monumentality
+Color palette: dominant cyan and terracotta, cream membrane, leaf-green bucket accent, charcoal clothing
+Constraints: preserve documentary relationship and realistic anatomy; color builds space; substantial recomposition; one surreal spatial proposition only; no text, logo or watermark
+Avoid: literal giant plastic object spectacle, floating debris, portals, moons, random props, cloned faces, fashion poses, generic fantasy, painterly style, CGI gloss, HDR, extra fingers

@@ -1,0 +1,10 @@
+Use case: style-transfer
+Asset type: strict Photo Revival image-to-image example
+Input images: Image 1: source reference photo; use only this source
+Primary request: create a miniaturized hand-drawn memory of the curled ginger cat asleep inside the open dark-blue suitcase, with the handle and lone striped sock still recognizable
+Style/medium: airy sumi-ink contour, translucent watercolor, dry-brush grain on luminous white washi-like paper
+Composition/framing: vertical 3:4 page; tiny cluster centered near bottom; the entire suitcase including open lid and sock must fit inside a box one quarter of page width by one fifth of page height, about 5% of page area; leave over 90% blank white paper
+Color palette: concentrated ginger orange and deep indigo only within that tiny cluster; two short sepia floor strokes
+Text (verbatim): "packed already" exactly once, microscopic handwriting immediately below the sock
+Constraints: poetic handmade redraw, not filtered photography; no other text; no watermark
+Avoid: wide suitcase, enlarged objects, full bleed, scene over 10%, dense room detail, large typography, vector art, collage blocks, photorealism

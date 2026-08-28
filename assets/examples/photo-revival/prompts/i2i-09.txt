@@ -1,0 +1,10 @@
+Use case: style-transfer
+Asset type: strict Photo Revival image-to-image example
+Input images: Image 1: source reference photo; use only this source
+Primary request: redraw the older woman mending her fishing net as a tiny poetic illustration, preserving her seated working pose, coral headscarf, cobalt net, weathered yellow boat, and small wooden crate
+Style/medium: translucent sea-washed watercolor with delicate pencil and threadlike ink lines on bright white deckled paper
+Composition/framing: vertical 3:4 page; tiny cluster at lower-right fitting within 24% page width and 26% page height, about 8-10% area; leave at least 88% blank white paper
+Color palette: vivid cobalt net, weathered yellow boat, coral scarf, all concentrated inside the cluster; two very pale gray-green sea strokes only
+Text (verbatim): "mend the blue" exactly once as a tiny handwritten note below her hands
+Constraints: handmade redraw, not filtered photography; preserve the action and color anchors; no other text; no watermark
+Avoid: full beach, horizon across page, full bleed, focal area over 13%, large net mass, dense layout, heavy type, vectors, photorealism

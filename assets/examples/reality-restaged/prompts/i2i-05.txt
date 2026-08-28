@@ -1,0 +1,11 @@
+Use case: style-transfer
+Asset type: strict Reality Restaged image-to-image example
+Input images: Image 1 is the sole source photograph and documentary reality anchor.
+Primary request: Preserve the young shepherd's face, natural full-body proportions, worn wool clothing, hand resting on the mule's neck, the mule's exact believable anatomy, ochre blanket and cobalt rope. Aggressively remove the literal mountain scenery. Restage them at the junction of two incompatible but clean spaces: the mule stands naturally on a broad ochre floor while the shepherd stands naturally on an upright cobalt plane, yet their touching hand and aligned walking stride cross the ninety-degree seam without distortion. A single monumental matte-black ridge cuts diagonally across the distant cream void. This contact across incompatible gravity is the one impossible relational logic.
+Scene/backdrop: ochre floor, cobalt vertical field, black diagonal ridge, cream negative-space sky; no grass, rocks or clouds
+Style/medium: analog documentary photography inside an impossible stage, realistic skin, wool, leather, rope and animal hair; fine grain, restrained contrast
+Composition/framing: 3:4 portrait, small human-animal pair near lower center, huge cream and cobalt fields, ridge occupying upper-left diagonal
+Lighting/mood: cold high-altitude sidelight with coherent shadows on both planes, calm companionship
+Color palette: dominant cobalt and ochre, supporting matte black and cream
+Constraints: preserve the touch as emotional anchor; human and mule normal-sized and anatomically correct; visibly rebuilt composition; one spatial contradiction only; no text, logo or watermark
+Avoid: giant mule, literal giant rope or blanket, floating props, portal, moon, fantasy landscape, decorative surrealism, extra limbs, malformed hooves, painterly art, glossy CGI, HDR

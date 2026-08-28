@@ -33,10 +33,10 @@ test("the MCP App has a feed route and a focused Skill route without an event ti
   assert.doesNotMatch(css, /\.skill-detail__workspace\s*\{[^}]*grid-template-columns:/s);
   assert.match(studio, /run\.snapshot\.skill\.id\s*===\s*skill\?\.id/);
   assert.match(studio, /skill-examples/);
-  assert.match(studio, />生成同款</);
-  assert.match(studio, />Remix</);
+  assert.match(studio, /\{copy\.generateSame\}/);
+  assert.match(studio, /\{copy\.remix\}/);
   assert.match(studio, /example\.prompt/);
-  assert.match(studio, />我的生成</);
+  assert.match(studio, />\{copy\.myGenerations\}</);
   assert.match(css, /\.skill-example-card/);
   assert.doesNotMatch(studio, /run-inspector|events\.map\(/);
   assert.doesNotMatch(css, /\.run-inspector/);
@@ -56,6 +56,57 @@ test("the product keeps a lightweight brand signature without restoring a global
   assert.doesNotMatch(css, /\.brand-signature\s*\{[^}]*(?:position:\s*(?:fixed|sticky)|border:)/s);
 });
 
+test("closing fullscreen can be restored from the Feed chrome without fighting the host", async () => {
+  const [studio, widget] = await Promise.all([
+    readFile(new URL("../components/image-skill-studio.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../web/widget.tsx", import.meta.url), "utf8"),
+  ]);
+
+  assert.match(studio, /aria-label=\{copy\.openFullscreen\}/);
+  assert.match(studio, /runtime\.requestFullscreen/);
+  assert.match(studio, /displayMode === "inline"/);
+  assert.match(widget, /requestFullscreen\(\) \{\s*return adoptWorkbenchSurface\(\);/);
+  assert.doesNotMatch(widget, /displayMode !== "fullscreen"\) void adoptWorkbenchSurface/);
+});
+
+test("an empty generated-work rail uses the original blue card to pick a random Skill", async () => {
+  const [studio, settings, css] = await Promise.all([
+    readFile(new URL("../components/image-skill-studio.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../components/studio-settings.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../web/widget.css", import.meta.url), "utf8"),
+  ]);
+
+  assert.doesNotMatch(studio, /生成第一张/);
+  assert.doesNotMatch(studio, /点击随机选一个 skill/);
+  assert.doesNotMatch(studio, /SkillShowcaseCarousel|skill-showcase-carousel/);
+  assert.match(studio, /recent-card recent-card--empty/);
+  assert.match(studio, /copy\.writeAScene/);
+  assert.match(studio, /copy\.handoffRejected/);
+  assert.match(studio, /copy\.uploadUnsupported/);
+  assert.match(studio, /copy\.uploadFailed/);
+  assert.equal((studio.match(/<StudioSettings/g) ?? []).length, 1);
+  assert.match(studio, /studio-corner/);
+  assert.doesNotMatch(studio, /studio-feed-chrome__actions|skill-detail__settings/);
+  assert.match(studio, /Math\.random\(\) \* snapshot\.skills\.length/);
+  assert.match(studio, /openSkillWithoutProjection\(entry\.id, "feed"\)/);
+  assert.doesNotMatch(studio, /recent-card--empty[\s\S]{0,500}?skillRouteLayoutId/);
+  assert.match(css, /\.recent-card--empty strong[\s\S]{0,220}?white-space:\s*nowrap/s);
+  assert.match(css, /\.recent-card--empty strong[\s\S]{0,220}?overflow:\s*visible/s);
+  assert.match(css, /\[data-theme="dark"\]/);
+  assert.match(css, /\[data-theme="dark"\] \.hero-back-action/);
+  assert.match(css, /:root\s*\{[^}]*color-scheme:\s*light/s);
+  assert.doesNotMatch(css, /prefers-color-scheme:\s*dark/);
+  assert.match(css, /\.studio-settings__panel/);
+  assert.match(css, /\.studio-settings__segment--3/);
+  assert.doesNotMatch(css, /\.studio-settings__field select/);
+  assert.match(settings, />\s*Auto\s*</);
+  assert.match(settings, />\s*EN\s*</);
+  assert.doesNotMatch(settings, /copy\.languageSystem|copy\.languageEnglish|<select/);
+  assert.match(css, /\.studio-corner\s*\{[^}]*position:\s*absolute[^}]*right:\s*17px/s);
+  assert.doesNotMatch(css, /\.skill-showcase-carousel/);
+  assert.doesNotMatch(css, /\.recent-work__invite/);
+});
+
 test("recent work is grouped into per-Skill collections that fan on hover, focus, or click", async () => {
   const [studio, fanCollection, css] = await Promise.all([
     readFile(new URL("../components/image-skill-studio.tsx", import.meta.url), "utf8"),
@@ -69,11 +120,30 @@ test("recent work is grouped into per-Skill collections that fan on hover, focus
   assert.match(fanCollection, /const \[interaction, setInteraction\] = useState<FanInteraction>\(idleFanInteraction\)/);
   assert.match(fanCollection, /aria-expanded=/);
   assert.match(fanCollection, /fan-collection__trigger/);
+  assert.match(css, /\.fan-collection__trigger[\s\S]{0,360}?color:\s*var\(--on-blue\)/s);
+  assert.doesNotMatch(css, /\.fan-collection__trigger[\s\S]{0,360}?color:\s*var\(--paper\)/s);
   assert.match(css, /\.fan-collection:not\(\.is-transition-locked\):hover\s+\.fan-collection__card/);
   assert.match(css, /\.fan-collection:focus-within\s+\.fan-collection__card/);
   assert.match(css, /\.fan-collection\.is-open\s+\.fan-collection__card/);
   assert.match(css, /prefers-reduced-motion:\s*reduce/);
   assert.doesNotMatch(studio, /recentRunsBySkill/);
+});
+
+test("feed cards avoid broken fallbacks, align rails, and expose upstream GitHub links", async () => {
+  const [studio, fanCollection, css] = await Promise.all([
+    readFile(new URL("../components/image-skill-studio.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../components/ui/fan-collection.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../web/widget.css", import.meta.url), "utf8"),
+  ]);
+
+  assert.doesNotMatch(studio, /const previewFallbacks/);
+  assert.match(studio, /sourceUrl=\{entry\.upstream\?\.homepage \|\| entry\.author\?\.url\}/);
+  assert.match(fanCollection, /sourceUrl\?: string/);
+  assert.match(fanCollection, /fan-collection__source/);
+  assert.match(fanCollection, /onError=/);
+  assert.match(css, /\.recent-work__rail\s*\{[^}]*margin-inline:\s*0/s);
+  assert.match(css, /\.recent-card--empty:hover\s*\{[^}]*box-shadow:\s*none/s);
+  assert.match(css, /\.fan-collection__source\s*\{/);
 });
 
 test("hovering an individual fan card lifts that exact card to the front", async () => {

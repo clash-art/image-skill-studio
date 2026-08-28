@@ -1,0 +1,9 @@
+Use case: style-transfer
+Asset type: strict I2I example, no-text narrative vertical object-and-doodle poster
+Input images: Image 1 is the sole source reference and subject anchor.
+Primary request: Transform the source citrus iced-tea photo into a complete tiny action scene while preserving the exact photographed ribbed glass, amber liquid, ice, orange wheel, condensation, material, and recognizable silhouette. Do not redraw the drink.
+Scene/backdrop: remove all kitchen surroundings and isolate the real glass on a clean soft off-white field with a believable contact shadow.
+Composition/framing: 3:4 portrait. Place the glass slightly left of center at about 40 percent of canvas height. Do not reserve any title area; use negative space as part of the action path.
+Doodle action: one primitive faceless black-line micro worker stands on a crude two-rung ladder and tips a tiny unlabelled kettle toward the top of the glass. Add one rough liquid arc and exactly three drops. Worker height about 14 percent of glass height. Use separate uneven blunt marker segments, lumpy open head, stiff limbs, blocky paddle ends, gaps and bad joins; functional, not cute.
+Text constraints: no text anywhere, no Chinese characters, no English letters, no numbers, labels, captions, random glyphs, logo text, or watermark.
+Constraints: preserve the real photographed glass; only change background, placement, primitive worker, ladder, and liquid marks. No official HEYTEA logo or mascot, no brand mark, no sticker collage, no polished vector, no gradients, no dense decoration, no faces, no full-cartoon conversion.

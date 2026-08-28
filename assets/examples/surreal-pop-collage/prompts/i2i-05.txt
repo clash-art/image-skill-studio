@@ -1,0 +1,9 @@
+Use case: style-transfer
+Asset type: strict surreal-pop-collage example, vertical 3:4
+Input images: Image 1 is the sole source reference and reality anchor.
+Primary request: transform this exact sidewalk cafe photograph into a bright surreal pop collage while preserving the seated reader, open book, table, chairs, facade, awning, and street perspective as instantly recognizable.
+Reality anchor: keep the reader and cafe architecture clearly recognizable but desaturated to black and white with photographic texture; preserve his face, hands, and the book he is reading unobstructed.
+Flat world: turn the awning region into one huge flat matte orange trapezoid derived from its source stripes; replace the cream wall with a flat pale-mint plane derived from the chairs and the street opening with a flat sunny-yellow shape derived from the scooter; crisp cut-paper boundaries; no gradients or shadows on flat color.
+One impossible giant element: one enormous white espresso cup, unmistakably derived from the small cup on the source table, sits above the awning at building scale with its handle visible; it is the only impossible giant object.
+Small elements: 3–5 tiny coffee-bean silhouettes in graduated sizes follow one arc toward the giant cup; add 2–3 sparse white hand-drawn steam curls away from the reader's face.
+Constraints: vertical 3:4; preserve source person and layout; exactly one impossible giant element; source book, scooter, furniture stay ordinary scale; no second oversized object; bright and playful; no frame; no gradients; no dimensional shadow on color shapes; no dark mood; no readable text; no logo; no watermark; no imported photographic subject.

@@ -1,0 +1,9 @@
+Use case: photorealistic-natural
+Asset type: source reference photo for an image-to-image illustration example
+Primary request: create an ordinary candid snapshot of an elderly East Asian man in a navy cardigan watering a single bright red geranium on a narrow apartment balcony
+Scene/backdrop: modest lived-in concrete balcony at early morning, pale neighboring buildings softly out of focus
+Subject: the man, a green metal watering can, and the red geranium are the memorable focal details
+Style/medium: natural unretouched smartphone photography with believable skin, fabric, concrete, and plant texture
+Composition/framing: vertical 3:4, eye-level medium-wide snapshot, subject clearly recognizable
+Lighting/mood: quiet cool morning light, tender everyday mood
+Constraints: realistic photo only; no illustration, no text, no logos, no watermark; do not stylize or beautify

@@ -1,0 +1,11 @@
+Use case: photorealistic-natural
+Asset type: source documentary photograph for an image-to-image visual-style example
+Primary request: Create an original documentary photograph of a young shepherd walking beside a dark brown mule across a high mountain pass, one hand resting on the mule's neck. A rolled ochre blanket and a cobalt rope are tied to the saddle. The bond between person and animal must feel quiet and habitual, not staged.
+Scene/backdrop: windswept high-altitude grassland, distant stone ridge, sparse low clouds
+Subject: one young adult shepherd and one anatomically correct mule, practical wool layers and worn boots
+Style/medium: believable analog travel documentary photography, subtle film grain, natural exposure, realistic fabric and animal hair
+Composition/framing: 3:4 portrait, full figures crossing lower third, enormous mountain sky and empty slope above
+Lighting/mood: clear cold late-afternoon sidelight, solitary, calm, unsentimental
+Color palette: muted grass, dark umber, ochre blanket, cobalt rope, pale blue-gray
+Constraints: realistic human proportions; correct mule anatomy; culturally non-specific practical clothing; no logos; no text; no watermark
+Avoid: surrealism, fantasy costume, heroic posing, alpine tourism advertising, theatrical stage, giant objects, illustration, painterly rendering, extra limbs, malformed animal

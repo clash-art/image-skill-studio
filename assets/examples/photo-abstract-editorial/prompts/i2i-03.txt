@@ -1,0 +1,9 @@
+Use case: style-transfer
+Asset type: finished vertical photo-abstract editorial example
+Input images: Image 1 is the sole source photograph, used faithfully as the upper principal region.
+Primary request: Create a clean vertical editorial artwork with Image 1 above and an abstract memory panel below. Keep Image 1 photographically unchanged: do not redraw, reconstruct, extend, recolor, filter, retouch, or replace anything; use only proportional scaling or a slight necessary crop.
+Observed facts to distill: three unevenly spaced waiting figures at different heights; a shelter roof horizontal; one central amber lamp; deep blue-black rain; a narrow red reflection to the right.
+Composition/framing: photograph about 62% of the final height, perfectly flat uniform ivory #F3F0E8 panel about 38%, direct planar join, no border, frame, shadow, tape, collage, or mockup.
+Abstract system: primary family is exactly three continuous irregular tapered vertical marks in charcoal-blue, varied in height and spacing, with no separate heads or limbs. Supporting family: one thin dark horizontal shelter axis above them and one small muted amber disk suspended from that axis. Add a single short muted-red vertical accent far right. Motif compact, asymmetric, placed in the upper-middle of the panel and no taller than 30% of panel height, leaving at least 70% blank ivory.
+Text: render exactly "Waiting in Rain" once, in a restrained elegant serif, dark petrol blue, aligned lower left with generous safe margins. No subtitle or other text.
+Constraints: use only muted colors present in Image 1; panel must have no gradient, texture, grain, glow, shadow, vignette, stain, fibers, watercolor wash, or scan effect; no illustration, realistic miniature objects, decoration, symbols, symmetry, logo, date, number, label, signature, or watermark. Return only the completed composition.

@@ -56,7 +56,13 @@
     "must": [],
     "avoid": []
   },
-  "decisions": [],
+  "decisions": [
+    {
+      "id": "empty-feed-random-skill",
+      "choice": "When generated-work is empty, show copy that randomly opens a Skill. Closed fullscreen is restored from an explicit 打开全屏 control, not by fighting the host.",
+      "date": "2026-08-15"
+    }
+  ],
   "evidence": [
     {
       "fact": "components.installed",

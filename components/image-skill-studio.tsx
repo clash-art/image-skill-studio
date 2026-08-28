@@ -8,6 +8,7 @@ import {
   Download,
   FolderDown,
   ImagePlus,
+  Maximize2,
   Plus,
   RefreshCw,
   Sparkles,
@@ -26,9 +27,15 @@ import {
 } from "react";
 
 import { Button } from "@/components/ui/button";
+import { ArtworkLightbox, type ArtworkViewerItem } from "@/components/ui/artwork-lightbox";
 import { FanCollection, type FanCollectionItem, type FanCollectionPhase } from "@/components/ui/fan-collection";
 import { MorphingComposer } from "@/components/ui/morphing-composer";
+import { InteractiveTiltCard } from "@/components/ui/tilt-card";
+import { StudioSettings } from "@/components/studio-settings";
+import { useStudioCopy } from "@/hooks/use-studio-copy";
 import { groupRecentRunsBySkill } from "@/lib/fan-collection.mjs";
+import { isPublishedRun } from "@/lib/published-run.mjs";
+import { studioPreviewUrl } from "@/lib/studio-image-url.mjs";
 import { fanCollectionPhase, isRouteTransitioning, rankViewportCards } from "@/lib/studio-interaction-state.mjs";
 
 export type StudioSkillExample = {
@@ -37,6 +44,27 @@ export type StudioSkillExample = {
   aspectRatio: string;
   preview?: string;
   previewResourceUri?: string;
+  mode?: "text-to-image" | "image-to-image";
+  referencePreview?: string;
+  referenceResourceUri?: string;
+  referenceRole?: "subject" | "style" | "composition" | "reference";
+  promptFile?: string;
+};
+
+export type StudioSkillGalleryItem = {
+  id: string;
+  caption?: string;
+  aspectRatio?: string;
+  preview?: string;
+  previewResourceUri?: string;
+};
+
+export type StudioSkillLicense = {
+  spdx?: string | null;
+  name: string;
+  redistribute?: boolean;
+  commercial?: boolean;
+  note?: string;
 };
 
 export type StudioSkill = {
@@ -44,14 +72,20 @@ export type StudioSkill = {
   displayName: string;
   description: string;
   category: string;
-  availability: "ready" | "missing" | "invalid" | string;
-  origin?: "host" | "bundled" | "registered" | "local" | string;
+  availability: "ready" | "available" | "missing" | "invalid" | string;
+  origin?: "host" | "bundled" | "remote" | "registered" | "local" | string;
   canInstall?: boolean;
+  needsFetch?: boolean;
   contentHash?: string;
   skillPath?: string;
+  stars?: number | null;
+  license?: StudioSkillLicense;
+  author?: { name?: string; url?: string };
+  upstream?: { repo?: string; commit?: string; homepage?: string };
   preview?: string;
   previewResourceUri?: string;
   examples?: StudioSkillExample[];
+  gallery?: StudioSkillGalleryItem[];
   capabilities: {
     references: boolean;
     maxReferences: number;
@@ -130,6 +164,7 @@ type ImageSkillStudioProps = {
   initialState: StudioSnapshot;
   bridge?: StudioBridge;
   previewMode?: boolean;
+  initialLoading?: boolean;
 };
 
 type ComposerOrigin = "agent" | "remix" | "same";
@@ -177,13 +212,6 @@ const statusLabels: Record<string, string> = {
   unknown: "未完成",
 };
 
-const previewFallbacks = [
-  "/previews/classic-epic-demo.png",
-  "/previews/minimal-zine-demo.jpeg",
-  "/previews/infographic-demo.png",
-  "/previews/imagegen-demo.png",
-];
-
 function artifactUrl(run: StudioRun) {
   return run.artifacts?.[0]?.dataUrl || run.artifacts?.[0]?.downloadUrl || "";
 }
@@ -192,12 +220,116 @@ function referenceUrl(run: StudioRun) {
   return run.snapshot.references?.[0]?.downloadUrl || "";
 }
 
-function skillPreview(skill: StudioSkill, index = 0) {
-  return skill.preview || previewFallbacks[index % previewFallbacks.length];
+function skillPreview(skill: StudioSkill, _index = 0) {
+  return skill.preview || "";
 }
 
-function examplePreview(example: StudioSkillExample, skill: StudioSkill, index = 0) {
-  return example.preview || skillPreview(skill, index);
+function examplePreview(example: StudioSkillExample, _skill: StudioSkill, _index = 0) {
+  return example.preview || "";
+}
+
+// Curated Skills carry promptable examples. Upstream Skills usually only ship
+// finished work, so their gallery fills the same image slots read-only, and a
+// Skill with neither still gets one card from its cover.
+function skillDisplaySlots(skill: StudioSkill, index = 0): StudioSkillExample[] {
+  if (skill.examples?.length) return skill.examples;
+  const ratio = skill.capabilities.aspectRatios[0] ?? "3:4";
+  if (skill.gallery?.length) {
+    return skill.gallery.map((item) => ({
+      id: item.id,
+      prompt: item.caption || skill.description,
+      aspectRatio: item.aspectRatio || ratio,
+      preview: item.preview,
+      previewResourceUri: item.previewResourceUri,
+    }));
+  }
+  return [{
+    id: `skill-${skill.id}`,
+    prompt: skill.description,
+    aspectRatio: ratio,
+    preview: skillPreview(skill, index),
+  }];
+}
+
+function interleaveExampleModes(examples: StudioSkillExample[]) {
+  const textToImage = examples.filter((example) => example.mode === "text-to-image");
+  const imageToImage = examples.filter((example) => example.mode === "image-to-image");
+  if (!textToImage.length || !imageToImage.length) return examples;
+  const interleaved: StudioSkillExample[] = [];
+  for (let index = 0; index < Math.max(textToImage.length, imageToImage.length); index += 1) {
+    if (textToImage[index]) interleaved.push(textToImage[index]);
+    if (imageToImage[index]) interleaved.push(imageToImage[index]);
+  }
+  return [
+    ...interleaved,
+    ...examples.filter((example) => !example.mode),
+  ];
+}
+
+const WEB_PROMPT_HEADING = "Image Skill generation context";
+
+function buildWebGenerationPrompt({
+  skill,
+  prompt,
+  aspectRatio,
+  references,
+}: {
+  skill: StudioSkill;
+  prompt: string;
+  aspectRatio: string;
+  references: StudioFile[];
+}) {
+  const repository = skill.upstream?.repo;
+  const skillUrl = skill.upstream?.homepage
+    || (repository ? `https://github.com/${repository}` : skill.author?.url)
+    || `https://studio.clash.video/#skill/${encodeURIComponent(skill.id)}`;
+  const installCommand = repository ? `npx skills add https://github.com/${repository}` : null;
+  const referenceLines = references.length
+    ? references.map((reference, index) => {
+        const url = reference.download_url || reference.preview_url || reference.data_url || "URL unavailable; attach this local file manually";
+        const details = [reference.role, reference.file_name].filter(Boolean).join(", ");
+        return `${index + 1}. ${details ? `${details}: ` : ""}${url}`;
+      })
+    : ["None"];
+
+  return [
+    WEB_PROMPT_HEADING,
+    "",
+    `Skill: ${skill.displayName} (${skill.id})`,
+    `Skill URL: ${skillUrl}`,
+    ...(installCommand ? [`Install: ${installCommand}`] : []),
+    ...(skill.upstream?.commit ? [`Pinned commit: ${skill.upstream.commit}`] : []),
+    "",
+    "Generation request:",
+    prompt.trim(),
+    "",
+    `Aspect ratio: ${aspectRatio}`,
+    "Reference images:",
+    ...referenceLines,
+    "",
+    "Follow the linked Skill instructions and use the reference images above as the declared inputs.",
+  ].join("\n");
+}
+
+async function copyText(text: string, fallbackError: string) {
+  if (navigator.clipboard?.writeText) {
+    await navigator.clipboard.writeText(text);
+    return;
+  }
+  const textarea = document.createElement("textarea");
+  textarea.value = text;
+  textarea.style.position = "fixed";
+  textarea.style.opacity = "0";
+  document.body.append(textarea);
+  textarea.select();
+  const copied = document.execCommand("copy");
+  textarea.remove();
+  if (!copied) throw new Error(fallbackError);
+}
+
+function isLandscapeRatio(aspectRatio: string) {
+  const [width, height] = aspectRatio.split(":").map(Number);
+  return Number.isFinite(width) && Number.isFinite(height) && width > height;
 }
 
 function skillRouteLayoutId(kind: SkillRouteItemKind, skillId: string, itemId: string) {
@@ -221,8 +353,6 @@ function skillIdFromHash(hash: string) {
 function reverseRouteOrigin(origin: SkillRouteOrigin): SkillRouteOrigin {
   return { ...origin, fromSurface: origin.toSurface, toSurface: origin.fromSurface };
 }
-
-const routeSpring = { type: "spring", stiffness: 160, damping: 18, mass: 1 } as const;
 
 function BrandSymbol() {
   return (
@@ -331,9 +461,29 @@ function createPreviewBridge(initial: StudioSnapshot): StudioBridge {
   };
 }
 
-export function ImageSkillStudio({ initialState, bridge, previewMode = false }: ImageSkillStudioProps) {
+function readHostDisplayMode() {
+  return document.documentElement.dataset.displayMode || "fullscreen";
+}
+
+function useHostDisplayMode() {
+  const [displayMode, setDisplayMode] = useState(readHostDisplayMode);
+  useEffect(() => {
+    const root = document.documentElement;
+    const sync = () => setDisplayMode(readHostDisplayMode());
+    sync();
+    const observer = new MutationObserver(sync);
+    observer.observe(root, { attributes: true, attributeFilter: ["data-display-mode"] });
+    return () => observer.disconnect();
+  }, []);
+  return displayMode;
+}
+
+export function ImageSkillStudio({ initialState, bridge, previewMode = false, initialLoading = false }: ImageSkillStudioProps) {
   const previewBridge = useMemo(() => createPreviewBridge(initialState), [initialState]);
   const runtime = bridge ?? previewBridge;
+  const displayMode = useHostDisplayMode();
+  const copy = useStudioCopy();
+  const restoreFullscreen = displayMode === "inline" || displayMode === "pip";
   const firstSkill = initialState.skills[0];
   const reduceRouteMotion = useReducedMotion();
   const [routePhase, setRoutePhase] = useState<RouteTransitionPhase>("idle");
@@ -357,11 +507,14 @@ export function ImageSkillStudio({ initialState, bridge, previewMode = false }: 
     exit: guiOpacityMotion(true),
   };
   const [snapshot, setSnapshot] = useState<StudioSnapshot>(initialState);
+  const [initialDataLoading, setInitialDataLoading] = useState(initialLoading);
   const [route, setRoute] = useState<StudioRoute>("feed");
   const [activeDetailTab, setActiveDetailTab] = useState<DetailTab>("feed");
   const [selectedSkillId, setSelectedSkillId] = useState(firstSkill?.id ?? "");
   const [, setSelectedRunId] = useState<string | null>(initialState.runs[0]?.id ?? null);
   const [selectedExampleId, setSelectedExampleId] = useState<string | null>(null);
+  const [referenceLightbox, setReferenceLightbox] = useState<{ src: string; alt: string } | null>(null);
+  const [artworkViewer, setArtworkViewer] = useState<{ items: ArtworkViewerItem[]; index: number } | null>(null);
   const [routeOrigin, setRouteOrigin] = useState<SkillRouteOrigin | null>(null);
   const [feedCardOrderByCollection, setFeedCardOrderByCollection] = useState<Record<string, string[]>>({});
   const [composerOpen, setComposerOpen] = useState(false);
@@ -371,6 +524,7 @@ export function ImageSkillStudio({ initialState, bridge, previewMode = false }: 
   );
   const [references, setReferences] = useState<StudioFile[]>([]);
   const [busy, setBusy] = useState(false);
+  const [handoffSent, setHandoffSent] = useState(false);
   const [error, setError] = useState("");
   const [registerOpen, setRegisterOpen] = useState(false);
   const [registerPath, setRegisterPath] = useState("");
@@ -380,7 +534,6 @@ export function ImageSkillStudio({ initialState, bridge, previewMode = false }: 
   const [installBusy, setInstallBusy] = useState(false);
   const [installNotice, setInstallNotice] = useState("");
   const [installCanOverwrite, setInstallCanOverwrite] = useState(false);
-  const pollRef = useRef<number | null>(null);
   const promptRef = useRef<HTMLTextAreaElement>(null);
   const composerReturnFocusRef = useRef<HTMLElement | null>(null);
   const feedScrollRef = useRef<HTMLDivElement>(null);
@@ -398,10 +551,7 @@ export function ImageSkillStudio({ initialState, bridge, previewMode = false }: 
   const routeForwardSettleMs = reduceRouteMotion ? 0 : 480;
   const routeReturnMorphMs = reduceRouteMotion ? 0 : 280;
   const routeReturnRevealMs = reduceRouteMotion ? 0 : 280;
-  const detailChromeHidden = routeGuiLeaving || routeInteractionLocked;
-  const detailProjectionTransition = routeInteractionLocked
-    ? routeSpring
-    : { duration: 0 } as const;
+  const detailChromeHidden = false;
 
   const closeComposer = useCallback(() => {
     if (!composerOpen) return;
@@ -430,7 +580,7 @@ export function ImageSkillStudio({ initialState, bridge, previewMode = false }: 
     (node: HTMLDivElement | null) => restoreDetailRail("creations", node),
     [restoreDetailRail],
   );
-  const feedRuns = useMemo(() => [...snapshot.runs].sort(
+  const feedRuns = useMemo(() => snapshot.runs.filter(isPublishedRun).sort(
     (left, right) => new Date(right.createdAt).getTime() - new Date(left.createdAt).getTime(),
   ), [snapshot.runs]);
   const selectedSkillRuns = useMemo(
@@ -482,10 +632,6 @@ export function ImageSkillStudio({ initialState, bridge, previewMode = false }: 
       && (activeRouteOrigin?.fromSurface === surface || activeRouteOrigin?.toSurface === surface);
   }
 
-  function routeSurfaceOwns(surface: ProjectionSurface) {
-    return routeInteractionLocked && routeSurfaceHasIdentity(surface);
-  }
-
   function routeItemForSkill(
     surface: ProjectionSurface,
     kind: SkillRouteItemKind,
@@ -501,22 +647,6 @@ export function ImageSkillStudio({ initialState, bridge, previewMode = false }: 
     return routeItemForSkill(surface, kind, skill.id, itemId);
   }
 
-  function detailIdentityEnabled(kind: SkillRouteItemKind) {
-    if (routePhase === "idle") return true;
-    const surface: ProjectionSurface = kind === "run" ? "skill-runs" : "skill-examples";
-    return activeRouteOrigin?.kind === kind && routeSurfaceHasIdentity(surface);
-  }
-
-  function detailLayoutIdFor(kind: SkillRouteItemKind, itemId: string) {
-    if (!skill || !detailIdentityEnabled(kind)) return undefined;
-    return skillRouteLayoutId(kind, skill.id, itemId);
-  }
-
-  function detailImageLayoutIdFor(kind: SkillRouteItemKind, itemId: string) {
-    if (!skill || !detailIdentityEnabled(kind)) return undefined;
-    return skillRouteImageLayoutId(kind, skill.id, itemId);
-  }
-
   function collectionPhase(kind: SkillRouteItemKind, skillId: string): FanCollectionPhase {
     return fanCollectionPhase({
       route,
@@ -527,25 +657,10 @@ export function ImageSkillStudio({ initialState, bridge, previewMode = false }: 
     });
   }
 
-  function detailCardHidden(surface: ProjectionSurface, kind: SkillRouteItemKind, itemId: string) {
-    if (!routeInteractionLocked) return false;
-    if (!routeSurfaceOwns(surface) || !activeRouteOrigin || activeRouteOrigin.skillId !== skill?.id || activeRouteOrigin.kind !== kind) return true;
-    return !activeRouteOrigin.items.some((item) => item.id === itemId);
-  }
-
   const detailExamples: StudioSkillExample[] = skill
-    ? skill.examples?.length
-      ? skill.examples
-      : [{
-          id: `skill-${skill.id}`,
-          prompt: skill.description,
-          aspectRatio: skill.capabilities.aspectRatios[0] ?? "3:4",
-          preview: skillPreview(skill, snapshot.skills.indexOf(skill)),
-        }]
+    ? interleaveExampleModes(skillDisplaySlots(skill, snapshot.skills.indexOf(skill)))
     : [];
   const detailExampleEntries = detailExamples.map((example, index) => ({ example, index }));
-  const detailExampleIdentityEnabled = detailIdentityEnabled("example");
-  const detailRunIdentityEnabled = detailIdentityEnabled("run");
   const detailRunEntries: Array<{ run: StudioRun; origin: SkillRouteItem | undefined }> = selectedSkillRuns.map((run) => ({
     run,
     origin: routeItemFor("skill-runs", "run", run.id),
@@ -592,15 +707,29 @@ export function ImageSkillStudio({ initialState, bridge, previewMode = false }: 
 
   useEffect(() => {
     return runtime.subscribe?.((next) => {
+      setInitialDataLoading(false);
       setSnapshot((current) => ({
         skills: next.skills?.length ? next.skills : current.skills,
-        runs: next.runs ?? current.runs,
+        runs: (next.runs ?? current.runs).filter(isPublishedRun),
       }));
     });
   }, [runtime]);
 
+  useEffect(() => {
+    if (!referenceLightbox) return;
+    const previousOverflow = document.body.style.overflow;
+    const closeOnEscape = (event: globalThis.KeyboardEvent) => {
+      if (event.key === "Escape") setReferenceLightbox(null);
+    };
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", closeOnEscape);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", closeOnEscape);
+    };
+  }, [referenceLightbox]);
+
   useEffect(() => () => {
-    if (pollRef.current) window.clearInterval(pollRef.current);
     if (routeChangeTimerRef.current) window.clearTimeout(routeChangeTimerRef.current);
     if (routeUnlockTimerRef.current) window.clearTimeout(routeUnlockTimerRef.current);
   }, []);
@@ -609,6 +738,26 @@ export function ImageSkillStudio({ initialState, bridge, previewMode = false }: 
     const transitionEpoch = ++routeTransitionEpochRef.current;
     if (routeChangeTimerRef.current) window.clearTimeout(routeChangeTimerRef.current);
     if (routeUnlockTimerRef.current) window.clearTimeout(routeUnlockTimerRef.current);
+    if (targetRoute === "skill") {
+      if (reduceRouteMotion) {
+        commit();
+        setRoutePhase("idle");
+        return;
+      }
+      setRoutePhase("exiting");
+      routeChangeTimerRef.current = window.setTimeout(() => {
+        if (transitionEpoch !== routeTransitionEpochRef.current) return;
+        commit();
+        setRoutePhase("morphing");
+        routeChangeTimerRef.current = null;
+        routeUnlockTimerRef.current = window.setTimeout(() => {
+          if (transitionEpoch !== routeTransitionEpochRef.current) return;
+          setRoutePhase("idle");
+          routeUnlockTimerRef.current = null;
+        }, routeForwardSettleMs);
+      }, routeChangeDelayMs);
+      return;
+    }
     setRoutePhase("exiting");
     routeChangeTimerRef.current = window.setTimeout(() => {
       if (transitionEpoch !== routeTransitionEpochRef.current) return;
@@ -691,31 +840,6 @@ export function ImageSkillStudio({ initialState, bridge, previewMode = false }: 
     window.addEventListener("popstate", onPopState);
     return () => window.removeEventListener("popstate", onPopState);
   }, [runAfterRouteGuiExit]);
-
-  const updateRun = useCallback((run: StudioRun) => {
-    setSnapshot((current) => ({
-      ...current,
-      runs: [run, ...current.runs.filter((entry) => entry.id !== run.id)],
-    }));
-    setSelectedRunId(run.id);
-  }, []);
-
-  const beginPolling = useCallback((runId: string) => {
-    if (pollRef.current) window.clearInterval(pollRef.current);
-    pollRef.current = window.setInterval(async () => {
-      try {
-        const run = await runtime.getRun(runId);
-        if (!run) return;
-        updateRun(run);
-        if (["succeeded", "failed", "cancelled"].includes(run.status) && pollRef.current) {
-          window.clearInterval(pollRef.current);
-          pollRef.current = null;
-        }
-      } catch {
-        // Keep the last authoritative card until a later poll succeeds.
-      }
-    }, 2_500);
-  }, [runtime, updateRun]);
 
   function chooseSkill(skillId: string) {
     const next = snapshot.skills.find((entry) => entry.id === skillId);
@@ -1013,13 +1137,20 @@ export function ImageSkillStudio({ initialState, bridge, previewMode = false }: 
     const nextAspectRatio = draft?.aspectRatio ?? aspectRatio;
     const nextReferences = draft?.references ?? references;
     if (!nextPrompt) {
-      setError("写下想生成的画面");
+      setError(copy.writeAScene);
       document.querySelector<HTMLTextAreaElement>("#studio-prompt")?.focus();
       return;
     }
     setBusy(true);
     setError("");
+    setHandoffSent(false);
     try {
+      if (previewMode) {
+        await copyText(nextPrompt, copy.copyFailed);
+        setHandoffSent(true);
+        closeComposer();
+        return;
+      }
       const result = await runtime.generate({
         skillId: skill.id,
         prompt: nextPrompt,
@@ -1027,14 +1158,15 @@ export function ImageSkillStudio({ initialState, bridge, previewMode = false }: 
         clientRequestId: crypto.randomUUID(),
         references: nextReferences,
       });
-      updateRun(result.run);
       if (result.instruction && result.dispatchMode === "host_message") {
         const sent = await runtime.sendInstruction?.(result.instruction, { runId: result.run.id, references: nextReferences });
-        if (sent?.isError) setError("Codex 没有接收到这次 handoff");
+        if (sent?.isError) {
+          setError(copy.handoffRejected);
+          return;
+        }
       }
-      if (!previewMode && !["succeeded", "failed", "cancelled"].includes(result.run.status)) {
-        beginPolling(result.run.id);
-      }
+      setHandoffSent(true);
+      closeComposer();
     } catch (reason) {
       setError(reason instanceof Error ? reason.message : String(reason));
     } finally {
@@ -1043,7 +1175,7 @@ export function ImageSkillStudio({ initialState, bridge, previewMode = false }: 
   }
 
   function referencesForExample(example: StudioSkillExample): StudioFile[] {
-    const preview = examplePreview(example, skill!);
+    const preview = example.referencePreview;
     if (!skill?.capabilities.references || !preview) return [];
     return [{
       file_id: `example-${skill.id}-${example.id}`,
@@ -1052,19 +1184,25 @@ export function ImageSkillStudio({ initialState, bridge, previewMode = false }: 
       data_url: preview.startsWith("data:") ? preview : undefined,
       file_name: `${example.id}.png`,
       mime_type: preview.startsWith("data:image/jpeg") ? "image/jpeg" : "image/png",
-      role: "style",
+      role: example.referenceRole ?? "reference",
     }];
   }
 
   function openComposer(origin: ComposerOrigin, example?: StudioSkillExample) {
     composerReturnFocusRef.current = document.activeElement instanceof HTMLElement ? document.activeElement : null;
     if (example) {
-      setPrompt(example.prompt);
+      const nextReferences = origin === "remix" ? referencesForExample(example) : [];
+      setPrompt(previewMode
+        ? buildWebGenerationPrompt({ skill, prompt: example.prompt, aspectRatio: example.aspectRatio, references: nextReferences })
+        : example.prompt);
       setAspectRatio(example.aspectRatio);
-      setReferences(origin === "remix" ? referencesForExample(example) : []);
+      setReferences(nextReferences);
       setSelectedExampleId(example.id);
+    } else if (previewMode && !prompt.startsWith(WEB_PROMPT_HEADING)) {
+      setPrompt(buildWebGenerationPrompt({ skill, prompt, aspectRatio, references }));
     }
     setError("");
+    setHandoffSent(false);
     setComposerOpen(true);
     requestAnimationFrame(() => {
       promptRef.current?.focus();
@@ -1074,7 +1212,7 @@ export function ImageSkillStudio({ initialState, bridge, previewMode = false }: 
 
   async function addReference(file: File) {
     if (!skill?.capabilities.references || !runtime.uploadFile) {
-      setError("当前宿主不支持参考图上传");
+      setError(copy.uploadUnsupported);
       return;
     }
     try {
@@ -1085,7 +1223,7 @@ export function ImageSkillStudio({ initialState, bridge, previewMode = false }: 
         { ...uploaded, role: uploaded.role ?? "reference", preview_url: uploaded.preview_url ?? URL.createObjectURL(file) },
       ].slice(0, skill.capabilities.maxReferences));
     } catch (reason) {
-      setError(reason instanceof Error ? reason.message : "参考图上传失败");
+      setError(reason instanceof Error ? reason.message : copy.uploadFailed);
     }
   }
 
@@ -1121,6 +1259,19 @@ export function ImageSkillStudio({ initialState, bridge, previewMode = false }: 
           data-route={route}
           data-route-transitioning={routeInteractionLocked ? "" : undefined}
         >
+      <div className="studio-corner">
+        {restoreFullscreen && runtime.requestFullscreen ? (
+          <button
+            type="button"
+            className="icon-action"
+            aria-label={copy.openFullscreen}
+            onClick={() => void runtime.requestFullscreen?.()}
+          >
+            <Maximize2 size={16} />
+          </button>
+        ) : null}
+        <StudioSettings />
+      </div>
       <motion.div
         ref={feedScrollRef}
         key="feed"
@@ -1129,22 +1280,51 @@ export function ImageSkillStudio({ initialState, bridge, previewMode = false }: 
         aria-hidden={route !== "feed"}
         inert={route !== "feed" ? true : undefined}
       >
+            <div className="studio-feed-chrome">
             <motion.div {...routeGuiMotion} animate={guiOpacityMotion(feedRouteGuiHidden)} className="brand-signature" role="img" aria-label="Image Skill Studio">
               <BrandSymbol />
               <span>Image Skill</span>
             </motion.div>
+            </div>
             <section className="recent-work" aria-labelledby="recent-work-title">
               <motion.div {...routeGuiMotion} animate={guiOpacityMotion(feedRouteGuiHidden)} className="route-heading">
-                <h1 id="recent-work-title">生成记录</h1>
+                <h1 id="recent-work-title">{copy.creations}</h1>
                 <span>{feedRuns.length}</span>
               </motion.div>
-              <motion.div className="recent-work__rail" layoutScroll>
-                {recentCollectionsBySkill.length ? recentCollectionsBySkill.map(({ skill: entry, runs, total }, index) => {
+              <motion.div
+                className="recent-work__rail"
+                layoutScroll
+                aria-busy={initialDataLoading}
+                aria-live="polite"
+                aria-label={initialDataLoading ? "正在加载作品" : undefined}
+              >
+                <button
+                  type="button"
+                  className="recent-card recent-card--empty"
+                  disabled={initialDataLoading || !snapshot.skills.length}
+                  aria-label={copy.tryLuckAria}
+                  onClick={() => {
+                    const entry = snapshot.skills[Math.floor(Math.random() * snapshot.skills.length)];
+                    if (!entry) return;
+                    openSkillWithoutProjection(entry.id, "feed");
+                  }}
+                >
+                  <span><Sparkles size={22} /><strong>{copy.tryLuck}</strong></span>
+                </button>
+                {initialDataLoading
+                  ? Array.from({ length: 2 }, (_, index) => (
+                      <div className="recent-work__skeleton is-single" aria-hidden="true" key={`creation-skeleton-${index}`}>
+                        <span className="recent-work__skeleton-card" />
+                        <span className="recent-work__skeleton-label" />
+                      </div>
+                    ))
+                  : recentCollectionsBySkill.map(({ skill: entry, runs, total }, index) => {
                   const latest = runs.at(-1);
                   const items: FanCollectionItem[] = orderCollectionItems("run", entry.id, runs).map((run) => {
                     return {
                       id: run.id,
                       src: artifactUrl(run) || skillPreview(entry, index),
+                      referenceSrc: referenceUrl(run) || undefined,
                       alt: run.snapshot.prompt,
                       meta: statusLabels[run.status] ?? "作品",
                       status: run.status === "succeeded" ? "succeeded" : run.status === "failed" ? "failed" : "running",
@@ -1152,12 +1332,21 @@ export function ImageSkillStudio({ initialState, bridge, previewMode = false }: 
                       imageLayoutId: skillRouteImageLayoutId("run", entry.id, run.id),
                     };
                   });
+                  const renderableItems = items.filter((item) => item.src);
+                  if (!renderableItems.length) {
+                    return (
+                      <div className="recent-work__skeleton is-single is-static" role="img" aria-label={`${entry.displayName} 暂无预览`} key={entry.id}>
+                        <span className="recent-work__skeleton-card" />
+                        <span className="recent-work__skeleton-label"><strong>{entry.displayName}</strong></span>
+                      </div>
+                    );
+                  }
                   return (
                     <FanCollection
                       key={entry.id}
                       className="recent-collection"
                       label={entry.displayName}
-                      items={items}
+                      items={renderableItems}
                       total={total}
                       meta={latest ? statusLabels[latest.status] ?? "作品" : undefined}
                       phase={collectionPhase("run", entry.id)}
@@ -1166,41 +1355,35 @@ export function ImageSkillStudio({ initialState, bridge, previewMode = false }: 
                       onSelect={(item, visibleItems) => openSkill(entry.id, "run", item, visibleItems, "creations")}
                     />
                   );
-                }) : (
-                  <button type="button" className="recent-card recent-card--empty" onClick={() => {
-                    const entry = snapshot.skills[0];
-                    if (!entry) return;
-                    openSkillWithoutProjection(entry.id, "feed");
-                  }}>
-                    <span><Sparkles size={22} /><strong>生成第一张</strong></span>
-                  </button>
-                )}
+                })}
               </motion.div>
             </section>
 
             <section className="skill-feed" aria-labelledby="skill-feed-title">
               <motion.div {...routeGuiMotion} animate={guiOpacityMotion(feedRouteGuiHidden)} className="route-heading">
-                <h2 id="skill-feed-title">Skills</h2>
+                <h2 id="skill-feed-title">Skills <span className="skill-feed__count">{snapshot.skills.length}</span></h2>
                 <div className="route-heading__actions">
-                  <button
-                    type="button"
-                    className="icon-action"
-                    aria-label="注册 Skill"
-                    aria-expanded={registerOpen}
-                    aria-controls="skill-register-form"
-                    onClick={() => {
-                      setRegisterOpen((open) => !open);
-                      setRegisterNotice("");
-                    }}
-                  >
-                    <Plus size={16} />
-                  </button>
+                  {!previewMode ? (
+                    <button
+                      type="button"
+                      className="icon-action"
+                      aria-label="注册 Skill"
+                      aria-expanded={registerOpen}
+                      aria-controls="skill-register-form"
+                      onClick={() => {
+                        setRegisterOpen((open) => !open);
+                        setRegisterNotice("");
+                      }}
+                    >
+                      <Plus size={16} />
+                    </button>
+                  ) : null}
                   <button type="button" className="icon-action" aria-label="刷新 Skill" onClick={async () => setSnapshot(await runtime.refresh())}>
                     <RefreshCw size={16} />
                   </button>
                 </div>
               </motion.div>
-              {registerOpen ? (
+              {!previewMode && registerOpen ? (
                 <form
                   id="skill-register-form"
                   className="skill-register-form"
@@ -1234,31 +1417,61 @@ export function ImageSkillStudio({ initialState, bridge, previewMode = false }: 
                 </form>
               ) : null}
               <div className="skill-feed__cards">
-                {snapshot.skills.map((entry, index) => {
-                  const examples = entry.examples?.length
-                    ? entry.examples
-                    : [{ id: `skill-${entry.id}`, prompt: entry.description, aspectRatio: entry.capabilities.aspectRatios[0], preview: skillPreview(entry, index) }];
+                {initialDataLoading
+                  ? Array.from({ length: 4 }, (_, index) => (
+                      <div className="recent-work__skeleton skill-feed-collection" aria-hidden="true" key={`skill-skeleton-${index}`}>
+                        <span className="recent-work__skeleton-card" />
+                        <span className="recent-work__skeleton-label" />
+                      </div>
+                    ))
+                  : snapshot.skills.map((entry, index) => {
+                  const displayExamples = skillDisplaySlots(entry, index);
+                  const distinctReferenceExamples: StudioSkillExample[] = [];
+                  const repeatedReferenceExamples: StudioSkillExample[] = [];
+                  const seenReferences = new Set<string>();
+                  for (const example of displayExamples) {
+                    const referenceKey = example.mode === "image-to-image" ? example.referencePreview : undefined;
+                    if (referenceKey && seenReferences.has(referenceKey)) {
+                      repeatedReferenceExamples.push(example);
+                      continue;
+                    }
+                    if (referenceKey) seenReferences.add(referenceKey);
+                    distinctReferenceExamples.push(example);
+                  }
+                  const examples = [...distinctReferenceExamples, ...repeatedReferenceExamples].slice(0, 4);
                   const items: FanCollectionItem[] = orderCollectionItems("example", entry.id, examples).map((example) => {
                     return {
                       id: example.id,
                       src: examplePreview(example, entry, index),
+                      referenceSrc: example.referencePreview,
                       alt: example.prompt,
                       meta: example.aspectRatio,
                       layoutId: skillRouteLayoutId("example", entry.id, example.id),
                       imageLayoutId: skillRouteImageLayoutId("example", entry.id, example.id),
                     };
                   });
+                  const renderableItems = items.filter((item) => item.src);
+                  if (!renderableItems.length) {
+                    return (
+                      <div className="recent-work__skeleton skill-feed-collection is-static" role="img" aria-label={`${entry.displayName} 暂无预览`} key={entry.id}>
+                        <span className="recent-work__skeleton-card" />
+                        <span className="recent-work__skeleton-label"><strong>{entry.displayName}</strong></span>
+                      </div>
+                    );
+                  }
                   return (
                     <FanCollection
                       key={entry.id}
                       className="skill-feed-collection"
                       label={entry.displayName}
-                      items={items}
-                      total={entry.examples?.length || 1}
+                      items={renderableItems}
+                      total={entry.examples?.length || entry.gallery?.length || 1}
                       meta={entry.category}
+                      showSummary={false}
                       phase={collectionPhase("example", entry.id)}
                       revealOrder={recentCollectionsBySkill.length + index}
                       routeKey={collectionOrderKey("example", entry.id)}
+                      sourceUrl={entry.upstream?.homepage || entry.author?.url}
                       onSelect={(item, visibleItems) => openSkill(entry.id, "example", item, visibleItems, "feed")}
                     />
                   );
@@ -1281,8 +1494,8 @@ export function ImageSkillStudio({ initialState, bridge, previewMode = false }: 
                   inert={detailChromeHidden ? true : undefined}
                 >
                   <h1 className="sr-only" tabIndex={-1}>{skill.displayName}</h1>
-                  <button type="button" className="hero-back-action" aria-label="返回 Feed" onClick={openFeed}><ArrowLeft size={19} /></button>
-                  <div className="skill-detail-tabs" role="tablist" aria-label="Skill 内容">
+                  <button type="button" className="hero-back-action" aria-label={copy.backToFeed} onClick={openFeed}><ArrowLeft size={19} /></button>
+                  <div className="skill-detail-tabs" role="tablist" aria-label={copy.skillContent}>
                     <button
                       id="detail-tab-feed"
                       type="button"
@@ -1304,9 +1517,9 @@ export function ImageSkillStudio({ initialState, bridge, previewMode = false }: 
                       disabled={routeInteractionLocked}
                       onClick={() => selectDetailTab("creations")}
                       onKeyDown={handleDetailTabKeyDown}
-                    >我的生成</button>
+                    >{copy.myGenerations}</button>
                   </div>
-                  {skill.canInstall !== false && skill.origin !== "host" ? (
+                  {!previewMode && skill.canInstall !== false && skill.origin !== "host" ? (
                     <div className="skill-install">
                       <button
                         type="button"
@@ -1331,60 +1544,88 @@ export function ImageSkillStudio({ initialState, bridge, previewMode = false }: 
                 >
                     <motion.div ref={restoreFeedRail} className="skill-examples__rail skill-image-feed" layoutScroll>
                       {detailExampleEntries.map(({ example, index }) => {
-                        const selected = selectedExampleId === example.id;
                         const originItem = routeItemFor("skill-examples", "example", example.id);
+                        const referencePreview = example.referencePreview || example.referenceResourceUri;
                         return (
                           <motion.article
                             data-route-item-kind="example"
                             data-route-item-id={example.id}
                             layout
-                            layoutId={detailLayoutIdFor("example", example.id)}
-                            transition={detailProjectionTransition}
+                            layoutId={originItem?.layoutId}
                             initial={false}
-                            key={`${example.id}-${detailExampleIdentityEnabled ? "projected" : "static"}`}
-                            className={`skill-example-card${selected ? " is-selected" : ""}`}
-                            animate={{
-                              opacity: detailCardHidden("skill-examples", "example", example.id) ? 0 : 1,
-                              transition: {
-                                duration: reduceRouteMotion ? 0 : detailCardHidden("skill-examples", "example", example.id) ? 0.045 : 0.11,
-                                delay: reduceRouteMotion || detailCardHidden("skill-examples", "example", example.id) ? 0 : 0.075,
-                              },
-                            }}
+                            key={example.id}
+                            className="skill-example-card"
                           >
-                            <button
-                              type="button"
-                              className="skill-example-card__visual"
-                              aria-expanded={selected}
-                              disabled={routeInteractionLocked}
-                              onClick={() => setSelectedExampleId(selected ? null : example.id)}
-                            >
-                              <motion.span
-                                className="skill-example-card__media"
-                                layout="position"
-                                layoutId={detailImageLayoutIdFor("example", example.id)}
-                                transition={detailProjectionTransition}
+                            <InteractiveTiltCard disabled={routeInteractionLocked || detailChromeHidden}>
+                              <div
+                                className="skill-example-card__flip"
+                                style={{ aspectRatio: "3 / 4" }}
                               >
-                                <img src={originItem?.src ?? examplePreview(example, skill, index)} alt={example.prompt} />
-                              </motion.span>
-                              <motion.span className="skill-example-card__shade" animate={guiOpacityMotion(detailChromeHidden)} />
-                              <motion.span className="skill-example-card__prompt" animate={guiOpacityMotion(detailChromeHidden)}>{example.prompt}</motion.span>
-                            </button>
-                            <AnimatePresence initial={false}>
-                              {selected ? (
-                                <motion.div
-                                  className="skill-example-card__details"
-                                  initial={{ opacity: 0, y: 7 }}
-                                  animate={{ ...guiOpacityMotion(detailChromeHidden), y: 0 }}
-                                  exit={{ opacity: 0, y: 7 }}
-                                >
-                                  <p>{example.prompt}</p>
-                                  <div>
-                                    <Button variant="ghost" size="sm" disabled={busy} onClick={() => openComposer("remix", example)}><span>Remix</span></Button>
-                                    <Button size="sm" disabled={busy} onClick={() => openComposer("same", example)}><span>生成同款</span></Button>
-                                  </div>
-                                </motion.div>
-                              ) : null}
-                            </AnimatePresence>
+                                <div className="skill-example-card__face skill-example-card__front">
+                                  <button
+                                    type="button"
+                                    className="skill-example-card__visual"
+                                    aria-label={copy.viewArtwork(skill.displayName)}
+                                    disabled={routeInteractionLocked}
+                                    onClick={() => setArtworkViewer({
+                                      index,
+                                      items: skill.examples.map((entry, entryIndex) => ({
+                                        id: entry.id,
+                                        src: examplePreview(entry, skill, entryIndex),
+                                        alt: entry.prompt,
+                                        prompt: entry.prompt,
+                                        aspectRatio: entry.aspectRatio,
+                                        mode: entry.mode,
+                                      })),
+                                    })}
+                                  >
+                                    <motion.span
+                                      className="skill-example-card__media"
+                                      layout="position"
+                                      layoutId={originItem?.imageLayoutId}
+                                    >
+                                      <img
+                                        src={studioPreviewUrl(originItem?.src ?? examplePreview(example, skill, index), "card")}
+                                        alt={example.prompt}
+                                        loading={index < 2 ? "eager" : "lazy"}
+                                        decoding="async"
+                                        fetchPriority={index === 0 ? "high" : "auto"}
+                                        onLoad={(event) => {
+                                          const image = event.currentTarget;
+                                          image.closest<HTMLElement>(".skill-example-card__media")?.classList.add("is-loaded");
+                                          if (!image.naturalWidth || !image.naturalHeight) return;
+                                          const ratio = image.naturalWidth / image.naturalHeight;
+                                          const flip = image.closest<HTMLElement>(".skill-example-card__flip");
+                                          const card = image.closest<HTMLElement>(".skill-example-card");
+                                          if (flip) flip.style.aspectRatio = `${image.naturalWidth} / ${image.naturalHeight}`;
+                                          card?.classList.toggle("is-landscape", ratio > 1.12);
+                                        }}
+                                        onError={(event) => event.currentTarget.closest<HTMLElement>(".skill-example-card__media")?.classList.add("is-failed")}
+                                      />
+                                    </motion.span>
+                                  </button>
+                                  {example.mode === "image-to-image" && referencePreview && skill.id !== "ip-illustration-character-system" ? (
+                                    <motion.button
+                                      type="button"
+                                      className="skill-example-card__reference"
+                                      animate={guiOpacityMotion(detailChromeHidden)}
+                                      aria-label={copy.enlargeReference(skill.displayName)}
+                                      onClick={() => setReferenceLightbox({ src: referencePreview, alt: copy.referenceAlt(skill.displayName) })}
+                                    >
+                                      <img
+                                        src={studioPreviewUrl(referencePreview, "reference")}
+                                        alt=""
+                                        loading="lazy"
+                                        decoding="async"
+                                        onLoad={(event) => event.currentTarget.closest<HTMLElement>(".skill-example-card__reference")?.classList.add("is-loaded")}
+                                        onError={(event) => event.currentTarget.closest<HTMLElement>(".skill-example-card__reference")?.classList.add("is-failed")}
+                                      />
+                                      <small><Maximize2 size={8} /> REF</small>
+                                    </motion.button>
+                                  ) : null}
+                                </div>
+                              </div>
+                            </InteractiveTiltCard>
                           </motion.article>
                         );
                       })}
@@ -1404,22 +1645,30 @@ export function ImageSkillStudio({ initialState, bridge, previewMode = false }: 
                     }}
                     onExitComplete={restoreComposerFocus}
                     brand={<BrandSymbol />}
+                    title={previewMode ? copy.webPromptTitle : "Codex"}
+                    status={previewMode
+                      ? busy ? copy.webPromptCopying : handoffSent ? copy.webPromptCopied : prompt.trim() || copy.webPromptIdle
+                      : busy ? copy.handingOff : handoffSent ? copy.composerHandedOff : copy.composerReady}
+                    sent={handoffSent}
+                    openLabel={previewMode ? copy.openGenerator : copy.composerOpenAria}
+                    closeLabel={previewMode ? copy.closeGenerator : copy.composerCloseAria}
+                    regionLabel={previewMode ? copy.webPromptTitle : undefined}
                     disabled={busy || detailChromeHidden}
                   >
-                    <label className="sr-only" htmlFor="studio-prompt">提示词</label>
+                    <label className="sr-only" htmlFor="studio-prompt">{copy.prompt}</label>
                     <textarea
                       ref={promptRef}
                       id="studio-prompt"
                       value={prompt}
                       onChange={(event) => setPrompt(event.target.value)}
-                      placeholder="描述你想看见的画面…"
+                      placeholder={copy.promptPlaceholder}
                       rows={5}
                     />
 
                     <div className="compose-toolbar">
                       {skill.capabilities.references ? (
                         <div className="reference-strip">
-                          <label className="reference-add" title="添加参考图">
+                          <label className="reference-add" title={copy.addReference}>
                             <ImagePlus size={18} />
                             <input
                               type="file"
@@ -1432,15 +1681,15 @@ export function ImageSkillStudio({ initialState, bridge, previewMode = false }: 
                           </label>
                           {references.map((reference) => (
                             <figure className="reference-thumb" key={reference.file_id}>
-                              <img src={reference.preview_url || reference.download_url} alt="参考图" />
-                              <button type="button" aria-label="移除参考图" onClick={() => setReferences((current) => current.filter((entry) => entry.file_id !== reference.file_id))}><X size={11} /></button>
+                              <img src={reference.preview_url || reference.download_url} alt={copy.referenceImage} />
+                              <button type="button" aria-label={copy.removeReference} onClick={() => setReferences((current) => current.filter((entry) => entry.file_id !== reference.file_id))}><X size={11} /></button>
                             </figure>
                           ))}
                         </div>
                       ) : <span className="compose-toolbar__spacer" />}
                       <Button className="handoff-button" onClick={() => generate()} disabled={busy}>
                         {busy ? <CircleDashed className="spin" size={16} /> : <Sparkles size={16} />}
-                        {busy ? "Handing off…" : "Hand off to Codex"}
+                        {busy ? (previewMode ? copy.webPromptCopying : copy.handingOff) : (previewMode ? copy.copyPrompt : copy.handOff)}
                         <ArrowUpRight size={16} />
                       </Button>
                     </div>
@@ -1460,26 +1709,18 @@ export function ImageSkillStudio({ initialState, bridge, previewMode = false }: 
                         {detailRunEntries.map(({ run, origin }, index) => {
                           const image = artifactUrl(run);
                           const running = !["succeeded", "failed", "cancelled"].includes(run.status);
-                          const hidden = detailCardHidden("skill-runs", "run", run.id);
+                          const fallbackImage = image && origin?.src && image !== origin.src ? origin.src : "";
                           return (
                             <motion.article
-                              key={`${run.id}-${detailRunIdentityEnabled ? "projected" : "static"}`}
+                              key={run.id}
                               data-route-item-kind="run"
                               data-route-item-id={run.id}
                               className={`skill-result-card is-${run.status}`}
                               role="listitem"
                               aria-busy={running}
                               layout
-                              layoutId={detailLayoutIdFor("run", run.id)}
-                              transition={detailProjectionTransition}
+                              layoutId={origin?.layoutId}
                               initial={false}
-                              animate={{
-                                opacity: hidden ? 0 : 1,
-                                transition: {
-                                  duration: reduceRouteMotion ? 0 : hidden ? 0.045 : 0.16,
-                                  delay: reduceRouteMotion || hidden ? 0 : Math.min(index, 5) * 0.024,
-                                },
-                              }}
                             >
                               <button
                                 type="button"
@@ -1491,15 +1732,34 @@ export function ImageSkillStudio({ initialState, bridge, previewMode = false }: 
                                 <motion.span
                                   className="skill-result-card__media"
                                   layout="position"
-                                  layoutId={detailImageLayoutIdFor("run", run.id)}
-                                  transition={detailProjectionTransition}
+                                  layoutId={origin?.imageLayoutId}
                                 >
+                                  {fallbackImage ? (
+                                    <img
+                                      src={fallbackImage}
+                                      alt=""
+                                      loading="eager"
+                                      decoding="async"
+                                      data-progressive-thumbnail="true"
+                                    />
+                                  ) : null}
                                   {image || origin?.src ? (
                                     <img
                                       src={image || origin?.src}
                                       alt=""
                                       loading={index < 2 ? "eager" : "lazy"}
                                       decoding="async"
+                                      data-progressive-detail="true"
+                                      onLoad={async (event) => {
+                                        const loadedImage = event.currentTarget;
+                                        try {
+                                          await loadedImage.decode();
+                                        } catch {
+                                          // The load event still guarantees a renderable image in browsers without decode support.
+                                        }
+                                        loadedImage.closest<HTMLElement>(".skill-result-card__media")?.classList.add("is-loaded");
+                                      }}
+                                      onError={(event) => event.currentTarget.closest<HTMLElement>(".skill-result-card__media")?.classList.add("is-failed")}
                                     />
                                   ) : null}
                                 </motion.span>
@@ -1528,7 +1788,7 @@ export function ImageSkillStudio({ initialState, bridge, previewMode = false }: 
                         })}
                       </motion.div>
                     ) : (
-                      <div className="minimal-empty"><Sparkles size={24} /><span>还没有生成</span></div>
+                      <div className="minimal-empty"><Sparkles size={24} /><span>{copy.noGenerations}</span></div>
                     )}
                 </DetailTabPanel>
               </div>
@@ -1537,6 +1797,56 @@ export function ImageSkillStudio({ initialState, bridge, previewMode = false }: 
             )}
           </motion.section>
         ) : null}
+          <AnimatePresence>
+              {artworkViewer ? (
+                <ArtworkLightbox
+                  items={artworkViewer.items}
+                  index={artworkViewer.index}
+                  onIndexChange={(index) => setArtworkViewer((current) => current ? { ...current, index } : current)}
+                  onClose={() => setArtworkViewer(null)}
+                  onRemix={(item) => {
+                    const example = skill?.examples.find((entry) => entry.id === item.id);
+                    if (!example) return;
+                    setArtworkViewer(null);
+                    openComposer("remix", example);
+                  }}
+                  onCopyPrompt={(item) => copyText(item.prompt, "Unable to copy prompt")}
+                  labels={{
+                    close: copy.closeArtwork,
+                    previous: copy.previousArtwork,
+                    next: copy.nextArtwork,
+                    position: copy.artworkPosition,
+                    remix: copy.remix,
+                    copyPrompt: copy.copyPrompt,
+                  }}
+                />
+              ) : null}
+              {referenceLightbox ? (
+              <motion.div
+                className="reference-lightbox"
+                role="dialog"
+                aria-modal="true"
+                aria-label={referenceLightbox.alt}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                onPointerDown={(event) => {
+                  if (event.target === event.currentTarget) setReferenceLightbox(null);
+                }}
+              >
+                <motion.figure
+                  initial={{ opacity: 0, scale: 0.94, y: 12 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.96, y: 8 }}
+                  transition={{ duration: reduceRouteMotion ? 0 : 0.2, ease: [0.22, 1, 0.36, 1] }}
+                >
+                  <button type="button" autoFocus aria-label={copy.closeReference} onClick={() => setReferenceLightbox(null)}><X size={18} /></button>
+                  <img src={referenceLightbox.src} alt={referenceLightbox.alt} />
+                  <figcaption>{referenceLightbox.alt}</figcaption>
+                </motion.figure>
+              </motion.div>
+            ) : null}
+          </AnimatePresence>
         </main>
       </LayoutGroup>
     </MotionConfig>

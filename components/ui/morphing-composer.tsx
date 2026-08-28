@@ -1,6 +1,6 @@
 "use client";
 
-import { Sparkles, X } from "lucide-react";
+import { ChatIcon, CheckIcon, XIcon } from "@phosphor-icons/react";
 import { AnimatePresence, MotionConfig, motion, useReducedMotion, type Transition } from "motion/react";
 import { useId, useState, type ReactNode } from "react";
 
@@ -30,9 +30,13 @@ export type MorphingComposerProps = {
   brand: ReactNode;
   title?: string;
   status?: string;
+  sent?: boolean;
   children: ReactNode;
   className?: string;
   disabled?: boolean;
+  openLabel?: string;
+  closeLabel?: string;
+  regionLabel?: string;
 };
 
 export function MorphingComposer({
@@ -42,9 +46,13 @@ export function MorphingComposer({
   brand,
   title = "Codex",
   status = "Ready to create",
+  sent = false,
   children,
   className,
   disabled = false,
+  openLabel = "Open Codex agent",
+  closeLabel = "Collapse Codex agent",
+  regionLabel,
 }: MorphingComposerProps) {
   const uniqueId = useId();
   const shouldReduceMotion = useReducedMotion();
@@ -69,7 +77,7 @@ export function MorphingComposer({
     <MotionConfig transition={transition}>
       <div className={cn("morphing-composer", className)}>
         <motion.section
-          className={cn("morphing-composer__surface", open ? "is-open" : "is-compact")}
+          className={cn("morphing-composer__surface", open ? "is-open" : "is-compact", sent && !open && "is-sent")}
           layout
           initial={false}
           animate={{
@@ -83,12 +91,12 @@ export function MorphingComposer({
           onAnimationStart={handleSurfaceAnimationStart}
           onAnimationComplete={handleSurfaceAnimationComplete}
           role="region"
-          aria-label={`${title} Agent`}
+          aria-label={regionLabel ?? `${title} Agent`}
         >
           <button
             type="button"
             className="morphing-composer__open-hit"
-            aria-label="打开 Codex Agent"
+            aria-label={openLabel}
             aria-expanded={open}
             aria-controls={contentId}
             disabled={disabled || !collapsedInteractive}
@@ -112,7 +120,7 @@ export function MorphingComposer({
                 transition={transition}
                 aria-hidden="true"
               >
-                <Sparkles size={15} />
+                {sent ? <CheckIcon size={15} weight="bold" /> : <ChatIcon size={15} weight="bold" />}
               </motion.span>
               <motion.button
                 type="button"
@@ -120,12 +128,12 @@ export function MorphingComposer({
                 initial={false}
                 animate={{ opacity: open ? 1 : 0, scale: open ? 1 : 0.72 }}
                 transition={transition}
-                aria-label="收起 Codex Agent"
+                aria-label={closeLabel}
                 disabled={!open}
                 tabIndex={open ? 0 : -1}
                 onClick={() => onOpenChange(false)}
               >
-                <X size={16} />
+                <XIcon size={16} weight="bold" />
               </motion.button>
             </span>
           </motion.header>

@@ -1,0 +1,69 @@
+RUNTIME GATE
+
+Direct generation is permitted by ip-illustration-character-system only through a callable route that explicitly supports or uses GPT Image 2. The current built-in imagegen metadata does not identify its model, so the prompts below are prepared but have not been run. After the source photograph is generated, confirm the visible anchor traits against the actual image before running the result prompt; visible source evidence overrides the planned traits below.
+
+SOURCE PHOTOGRAPH PROMPT
+
+Use case: photorealistic-natural
+Asset type: ordinary documentary source photograph for a character-based illustration
+Primary request: Create a believable candid square documentary photograph of a neighborhood school-crossing volunteer helping one first-grade child re-zip a loose backpack at the curb before they step onto a zebra crossing.
+Scene/backdrop: A modest residential primary-school entrance on an overcast weekday morning just after light rain. Damp asphalt, a few ordinary bicycles and indistinct parents far in the background, and only enough of the zebra crossing and curb to establish the place. No tourist landmark, no staged set, no glossy advertising setup.
+Primary subject: A late-50s East Asian woman volunteering at the crossing. She has a short chin-length silver-gray bob tucked behind her ears, round amber tortoiseshell glasses, a kind lived-in face, and a focused half-smile. She wears a clean orange reflective safety vest over a navy quilted jacket, a mustard-yellow knitted scarf, straight dark trousers, and practical white sneakers. A small blank yellow crossing flag is tucked under one arm while she bends slightly to close the child's blue backpack zipper.
+Secondary subject: One elementary-school child seen mostly from the side, wearing a simple light-blue rain jacket and the small cobalt-blue backpack. The child is secondary and naturally engaged with the volunteer, not posing for the camera.
+Composition/framing: 1:1 square, eye-level sidewalk perspective, medium full-body candid framing. The volunteer is the clear human center; preserve her complete silhouette, outfit colors, face, glasses, hair, scarf, vest, shoes, yellow flag, bent helping posture, and relationship to the child. Slightly imperfect handheld framing, with natural background separation rather than dramatic blur.
+Lighting/mood: Soft cool overcast daylight with realistic skin and fabric texture; gentle, observant, ordinary, and unperformed.
+Color palette: Natural documentary color. Keep the orange vest, mustard scarf, navy jacket, yellow flag, and blue backpack clearly distinguishable without ad-like saturation or a cinematic color grade.
+Materials/textures: Real quilted nylon, reflective vest strips, knitted scarf, damp pavement, everyday backpack fabric.
+Constraints: No readable school name, text, letters, numbers, logos, brands, watermarks, or license plates. The flag is blank. The moment must feel caught during a real school morning, not directed or commercial.
+Avoid: tram, pottery, kayak, designer chair, monstera, lighthouse, tourist vista, glossy ad setup, fashion editorial, heroic pose, dramatic lighting, pristine studio wardrobe, staged smiles, crowds, visual clutter, surreal elements.
+
+PLANNED CHARACTER ANCHOR
+
+- Primary identity: late-50s East Asian neighborhood volunteer with a kind lived-in face and tiny focused smile.
+- Hair: short chin-length silver-gray bob tucked behind both ears.
+- Face and accessory: round amber tortoiseshell glasses; natural skin tone.
+- Signature outfit: orange reflective safety vest over a navy quilted jacket, mustard-yellow knitted scarf, straight dark trousers, practical white sneakers.
+- Signature prop: small blank yellow crossing flag.
+- Must not change: age impression, silver bob, amber round glasses, orange vest, navy jacket, mustard scarf, white sneakers, yellow flag, compact sturdy silhouette.
+- May vary only if the generated source visibly differs: exact hand position, jacket quilting, scarf fold, facial angle, and the child's backpack details.
+
+SINGLE-IMAGE STORYBOARD
+
+- Source idea: quiet neighborhood care makes an ordinary school morning safer.
+- Visual scene: the volunteer bends slightly at the curb to close a child's loose backpack zipper while keeping the blank yellow crossing flag tucked under one arm; two short zebra-stripe marks establish the crossing.
+- Character action/expression: concentrated helping gesture with a small warm half-smile; candid rather than heroic.
+- Essential props: blank yellow crossing flag, cobalt-blue backpack, two short zebra-crossing marks.
+- Output: one 1:1 sparse article illustration, text-free.
+
+FULL SOURCE-DERIVED RESULT PROMPT
+
+Create a 1:1 article illustration using GPT Image 2.
+
+INPUT IMAGE ROLES: Use the generated source photograph as the only scene and character-identity source. Preserve the primary volunteer's recognizable visible anchors, candid helping action, outfit colors, body proportions, and relationship to the child. The approved packaged images from ip-illustration-character-system may be used only as the skill's required mark-making and geometry references: style_ref_01_user_docs_reader.png and style_ref_02_user_searcher.png control sparse scene composition, broken pen contours, and loose line-to-fill registration; style_ref_03_user_catgirl_anchor.png controls mini proportions and facial simplification only. Never borrow cat ears, green hair, school uniform, outfit, facial identity, props, scene content, or muted palette from those references. Do not use any generated catalog example, unrelated photograph, or other skill.
+
+STYLE: mini pen-doodle illustration, tiny subject on a large pure-white canvas, hesitant wobbly black pen contours with clearly visible irregular breaks, awkward hand-drawn shapes, internally clean flat color shapes deliberately slightly misregistered from the outlines with tiny white slivers or small edge overhangs, normal clear saturation, sparse composition, childlike messy-cute charm; limited color count, not desaturated color; broken but not uniformly dashed, misregistered but still legible.
+
+MARK-MAKING LOCK: Keep forms readable but do not fully seal every contour. Place several short irregular breaks across the volunteer, child, and essential props, especially at silver hair tips, scarf turns, vest corners, sleeves, hands, shoes, flag corners, backpack seams, and overlaps. Vary break lengths and positions so the line never becomes uniformly dotted or dashed. Let selected flat fills stop slightly short, leave a narrow white sliver, or cross the outline by a tiny amount. Make this loose registration clearly visible at normal viewing size without becoming sloppy or weakening identity. Use thin-to-medium black pen-like lines with natural wobble, hesitation, uneven pressure, and slightly awkward asymmetry. Do not use vector-perfect closed contours or perfectly clipped fills.
+
+COLOR LOCK: Match the source photograph's identity colors closely while keeping every local color clean and normally saturated: natural skin, silver-gray hair, amber tortoiseshell glasses, fresh orange safety vest, neutral navy jacket, mustard-yellow scarf, dark trousers, white sneakers, blank yellow flag, light-blue rain jacket, and cobalt-blue backpack. Limit the number of colors without fading them. Keep blacks neutral. No dusty, muddy, gray-brown, beige-tinted, vintage-filtered, washed-out, or uniformly desaturated cast.
+
+CHARACTER IDENTITY: Preserve the source volunteer as a compact late-50s East Asian woman with a kind lived-in face, short chin-length silver-gray bob tucked behind her ears, round amber tortoiseshell glasses, tiny focused half-smile, orange reflective vest over a navy quilted jacket, mustard-yellow knitted scarf, straight dark trousers, practical white sneakers, and a small blank yellow crossing flag tucked under one arm. Preserve the source child's light-blue rain jacket, side-facing relationship to the volunteer, and cobalt-blue backpack. If any planned trait conflicts with the actual generated source photograph, follow the visible source exactly rather than inventing or normalizing it.
+
+ARTICLE IDEA: Quiet, practical neighborhood care makes the everyday walk to school safer.
+
+SCENE: Re-stage the source moment faithfully as one immediately readable mini scene. The volunteer bends slightly at the curb and uses both attentive hands to close the child's loose backpack zipper while the blank yellow crossing flag remains tucked under one arm. The child stands patiently beside her. Include only two short, imperfect zebra-crossing marks beneath them to establish place; remove the photographic background, bicycles, parents, school facade, wet-pavement detail, and all other scenery.
+
+EXPRESSION: The volunteer has a tiny concentrated half-smile and caring eye direction toward the zipper; the child has a simple calm, trusting expression. No heroic stance and no posed smile toward the viewer.
+
+PROPS: One blank yellow crossing flag, one cobalt-blue backpack, and two short zebra-crossing marks only.
+
+COMPOSITION: Pure 1:1 square. Keep the complete volunteer-child-prop group small, occupying about 25-30% of the canvas, with abundant pure-white space on every side. Place the group slightly below center as a compact candid vignette. Nothing cropped. The volunteer remains the clear primary character and the child remains secondary.
+
+No text, letters, numbers, labels, logos, brands, watermarks, UI, school signage, dense background, random decorations, shadows, gradients, dramatic lighting, painterly texture, crayon texture, oil-pastel texture, chalk, watercolor, dry-brush texture, mottled or grainy fills, glossy anime rendering, 3D rendering, commercial polish, continuous perfectly closed outlines, uniform dashed outlines, large paint spills, severe registration errors, missing facial features, cat ears, green hair, school-uniform borrowing, tram, pottery, kayak, designer chair, monstera, lighthouse, tourist vista, or glossy ad setup.
+
+VALIDATION PRIORITY: The image must first communicate the caring crossing-helper action, then preserve the volunteer's source identity. Confirm the complete group stays tiny with generous white space; confirm multiple irregular contour breaks; confirm visible but controlled loose line-to-fill registration; confirm normal clean saturation; confirm no unwanted text or clutter.
+
+OFFICIAL GPT IMAGE 2 HANDOFF LINKS
+
+GPT Image 2 model: https://developers.openai.com/api/docs/models/gpt-image-2
+Image generation API guide: https://developers.openai.com/api/docs/guides/image-generation

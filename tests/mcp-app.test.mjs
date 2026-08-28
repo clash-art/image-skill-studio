@@ -8,6 +8,7 @@ import { Client } from "@modelcontextprotocol/sdk/client/index.js";
 import { InMemoryTransport } from "@modelcontextprotocol/sdk/inMemory.js";
 
 import { STUDIO_RESOURCE_URI, createStudioServer } from "../server/studio-server.mjs";
+import { createStudioIdentity } from "../lib/studio-identity.mjs";
 
 async function createHarness() {
   const root = await mkdtemp(path.join(os.tmpdir(), "image-studio-mcp-"));
@@ -89,7 +90,43 @@ test("MCP server exposes a standards-first app resource and useful tools", async
   assert.match(example.previewResourceUri, /^image-skill-studio:\/\/examples\//);
   const exampleResource = await client.readResource({ uri: example.previewResourceUri });
   assert.equal(exampleResource.contents[0].mimeType, "image/png");
-  assert.deepEqual(resource.contents[0]._meta.ui.availableDisplayModes, ["fullscreen"]);
+  assert.deepEqual(resource.contents[0]._meta.ui.availableDisplayModes, ["fullscreen", "inline"]);
+});
+
+test("the live edition namespaces tools and the workbench URI away from the GitHub plugin", async (t) => {
+  const root = await mkdtemp(path.join(os.tmpdir(), "image-studio-dev-identity-"));
+  const skillDir = path.join(root, "skill");
+  await mkdir(skillDir);
+  await writeFile(path.join(skillDir, "SKILL.md"), `---\nname: test-image-skill\ndescription: Makes a test image.\n---\nUse imagegen.`);
+  const identity = createStudioIdentity("dev");
+  const server = await createStudioServer({
+    dataRoot: path.join(root, "data"),
+    identity,
+    widgetHtml: "<!doctype html>",
+    catalogEntries: [{
+      id: "test-image-skill",
+      path: skillDir,
+      capabilities: { references: false, maxReferences: 0, aspectRatios: ["3:4"] },
+    }],
+  });
+  const [clientTransport, serverTransport] = InMemoryTransport.createLinkedPair();
+  await server.connect(serverTransport);
+  const client = new Client({ name: "dev-identity-test", version: "1.0.0" });
+  await client.connect(clientTransport);
+  t.after(async () => {
+    await client.close();
+    await server.close();
+  });
+
+  const listed = await client.listTools();
+  const names = listed.tools.map((tool) => tool.name);
+  assert.ok(names.includes("open_image_skill_studio_dev"));
+  assert.ok(names.includes("record_image_generation_dev"));
+  assert.ok(!names.includes("open_image_skill_studio"));
+  const openTool = listed.tools.find((tool) => tool.name === "open_image_skill_studio_dev");
+  assert.equal(openTool._meta.ui.resourceUri, identity.resourceUri);
+  const resource = await client.readResource({ uri: identity.resourceUri });
+  assert.match(resource.contents[0].text, /open_image_skill_studio_dev/);
 });
 
 test("createStudioServer can supply workbench HTML as a string or loader", async (t) => {
@@ -120,63 +157,43 @@ test("createStudioServer can supply workbench HTML as a string or loader", async
   assert.match(second.contents[0].text, /__WIDGET_VERSION__ = 2/);
 });
 
-test("an empty MCP App store is seeded once from distinct generated-work assets", async (t) => {
-  const root = await mkdtemp(path.join(os.tmpdir(), "image-studio-seed-"));
+test("an empty MCP App store stays empty until a successful record", async (t) => {
+  const root = await mkdtemp(path.join(os.tmpdir(), "image-studio-empty-"));
   const skillDir = path.join(root, "skill");
   await mkdir(skillDir);
   await writeFile(
     path.join(skillDir, "SKILL.md"),
-    `---\nname: seeded-image-skill\ndescription: Makes seeded images.\n---\nUse imagegen.`,
+    `---\nname: live-image-skill\ndescription: Makes live images.\n---\nUse imagegen.`,
   );
-  const examplePath = path.join(root, "example.png");
-  const generatedPath = path.join(root, "generated.png");
-  await writeFile(examplePath, Buffer.from("89504e470d0a1a0a0000000d4948445201", "hex"));
-  await writeFile(generatedPath, Buffer.from("89504e470d0a1a0a0000000d4948445202", "hex"));
-  const dataRoot = path.join(root, "data");
-  const options = {
-    dataRoot,
+  const server = await createStudioServer({
+    dataRoot: path.join(root, "data"),
     widgetHtml: "<!doctype html>",
-    runSeeds: [{
-      id: "real-seed",
-      skillId: "seeded-image-skill",
-      prompt: "A distinct generated cold-start work",
-      aspectRatio: "3:4",
-      artifactPath: generatedPath,
-      createdAt: "2026-08-12T12:00:00.000Z",
-    }],
     catalogEntries: [{
-      id: "seeded-image-skill",
+      id: "live-image-skill",
       path: skillDir,
-      examples: [{ id: "seed", prompt: "A real cold-start seed", aspectRatio: "3:4", previewPath: examplePath }],
+      examples: [{ id: "seed", prompt: "An official example", aspectRatio: "3:4" }],
       capabilities: { references: false, maxReferences: 0, aspectRatios: ["3:4"] },
     }],
-  };
+  });
+  const [clientTransport, serverTransport] = InMemoryTransport.createLinkedPair();
+  await server.connect(serverTransport);
+  const client = new Client({ name: "empty-store-test", version: "1.0.0" });
+  await client.connect(clientTransport);
+  t.after(async () => {
+    await client.close();
+    await server.close();
+  });
 
-  async function openServer() {
-    const server = await createStudioServer(options);
-    const [clientTransport, serverTransport] = InMemoryTransport.createLinkedPair();
-    await server.connect(serverTransport);
-    const client = new Client({ name: "seed-test", version: "1.0.0" });
-    await client.connect(clientTransport);
-    return { server, client };
-  }
+  const opened = await client.callTool({ name: "open_image_skill_studio", arguments: {} });
+  assert.equal(opened.structuredContent.runs.length, 0);
+  assert.equal(opened.structuredContent.skills[0].examples[0].id, "seed");
 
-  const first = await openServer();
-  const firstOpen = await first.client.callTool({ name: "open_image_skill_studio", arguments: {} });
-  assert.equal(firstOpen.structuredContent.runs.length, 1);
-  assert.equal(firstOpen.structuredContent.runs[0].id, "seed-seeded-image-skill-real-seed");
-  assert.equal(firstOpen.structuredContent.runs[0].snapshot.prompt, "A distinct generated cold-start work");
-  assert.equal(firstOpen.structuredContent.runs[0].artifacts[0].resourceUri, "image-skill-studio://runs/seeded-image-skill/real-seed");
-  assert.ok(!firstOpen.structuredContent.runs[0].artifacts[0].resourceUri.includes("/examples/"));
-  const generatedResource = await first.client.readResource({ uri: firstOpen.structuredContent.runs[0].artifacts[0].resourceUri });
-  assert.deepEqual(Buffer.from(generatedResource.contents[0].blob, "base64"), await readFile(generatedPath));
-  await first.client.close();
-  await first.server.close();
-
-  const second = await openServer();
-  t.after(async () => { await second.client.close(); await second.server.close(); });
-  const secondOpen = await second.client.callTool({ name: "open_image_skill_studio", arguments: {} });
-  assert.equal(secondOpen.structuredContent.runs.length, 1, "reopening must not duplicate cold-start runs");
+  await client.callTool({
+    name: "prepare_image_generation",
+    arguments: { skillId: "live-image-skill", prompt: "paper moon", aspectRatio: "3:4", references: [] },
+  });
+  const afterPrepare = await client.callTool({ name: "open_image_skill_studio", arguments: {} });
+  assert.equal(afterPrepare.structuredContent.runs.length, 0, "preparing a prompt must not occupy a gallery slot");
 });
 
 test("prepared work can be handed to a Codex runner without blocking the MCP App", async (t) => {
@@ -251,13 +268,38 @@ test("prepare_image_generation snapshots input and returns an agent instruction"
   assert.match(result.structuredContent.instruction, /record_image_generation/);
   assert.match(result.structuredContent.instruction, /A red paper kite/);
   assert.match(result.structuredContent.instruction, /生成失败时不要调用这个工具/);
+  assert.match(result.structuredContent.instruction, /其他生图 Skill、工具或手段/);
   assert.doesNotMatch(result.structuredContent.instruction, /记录 failed/);
+  assert.doesNotMatch(result.structuredContent.instruction, /出图必须/);
   const skillPath = result.structuredContent.run.snapshot.skill.skillPath;
   assert.match(skillPath, /SKILL\.md$/);
   assert.equal(result.structuredContent.instruction.includes(skillPath), true);
   const listed = await client.listTools();
   const prepare = listed.tools.find((tool) => tool.name === "prepare_image_generation");
   assert.equal(prepare._meta["openai/fileParams"], undefined);
+});
+
+test("prepare_image_generation localizes the agent instruction", async (t) => {
+  const { client, server } = await createHarness();
+  t.after(async () => {
+    await client.close();
+    await server.close();
+  });
+
+  const result = await client.callTool({
+    name: "prepare_image_generation",
+    arguments: {
+      skillId: "test-image-skill",
+      prompt: "A red paper kite",
+      aspectRatio: "3:4",
+      locale: "en",
+      references: [],
+    },
+  });
+  assert.match(result.structuredContent.instruction, /Scene: A red paper kite/);
+  assert.match(result.structuredContent.instruction, /another image skill, tool, or method/);
+  assert.doesNotMatch(result.structuredContent.instruction, /画面要求/);
+  assert.doesNotMatch(result.structuredContent.instruction, /出图必须/);
 });
 
 test("record_image_generation persists a real saved image as an MCP resource", async (t) => {
@@ -318,8 +360,10 @@ test("record_image_generation ignores failed status instead of storing an error 
     name: "record_image_generation",
     arguments: { runId, status: "failed", error: "OPENAI_API_KEY is not set" },
   });
-  assert.equal(recorded.structuredContent.run.status, "awaiting_agent");
+  assert.deepEqual(recorded.structuredContent.run, {});
   assert.match(recorded.content[0].text, /不收录/);
+  const opened = await client.callTool({ name: "open_image_skill_studio", arguments: {} });
+  assert.equal(opened.structuredContent.runs.length, 0);
 });
 
 test("record_image_generation is bound to the MCP App so the widget receives the recorded run", async (t) => {

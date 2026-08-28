@@ -1,0 +1,9 @@
+Use case: illustration-story
+Asset type: original character source reference for Studio curation
+Primary request: Create one original front-facing full-body character anchor: Asha, a lively older South Asian baker with medium-brown skin, a long silver braid draped over her right shoulder, arched dark brows, tiny dot eyes, a wide friendly smile, small gold hoop earrings, a plum-purple kurta with rolled sleeves, a saffron-yellow waist apron, loose cream trousers, and turquoise slip-on shoes. She holds one small wooden rolling pin vertically against her apron.
+Scene/backdrop: pure white only
+Style/medium: mini pen-doodle illustration, tiny subject on a large pure-white canvas, hesitant wobbly black pen contours with clearly visible irregular breaks, awkward hand-drawn shapes, internally clean flat color shapes deliberately slightly misregistered from the outlines with tiny white slivers or small edge overhangs, normal clear saturation, sparse composition, childlike messy-cute charm; limited color count, not desaturated color; broken but not uniformly dashed, misregistered but still legible
+Composition/framing: square canvas, centered full body, complete silhouette, character and rolling pin occupy about 30% of canvas, generous white space
+Identity lock: silver side braid, gold hoops, plum kurta, saffron apron, cream trousers, turquoise shoes, wooden rolling pin, chibi proportions
+Constraints: one character only; readable face and hands; clean flat fills; no shadow
+Avoid: text, letters, numbers, labels, logo, watermark, scenery, gradients, glossy anime, 3D, vector-perfect curves, closed perfect contours, painterly or grainy texture, faded beige or gray cast

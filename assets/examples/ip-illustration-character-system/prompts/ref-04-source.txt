@@ -1,0 +1,9 @@
+Use case: illustration-story
+Asset type: original character source reference for Studio curation
+Primary request: Create one original front-facing full-body character anchor: Rowan, a focused freckled red-haired bicycle mechanic with fair skin, short tousled copper curls under a navy cycling cap, one eyebrow slightly raised, tiny dot eyes, a small determined mouth, a pale mint bandana, ochre-yellow mechanic coveralls with rolled cuffs, a dark navy utility belt, striped blue socks, and green work boots. They hold one silver bicycle wrench diagonally across the torso.
+Scene/backdrop: pure white only
+Style/medium: mini pen-doodle illustration, tiny subject on a large pure-white canvas, hesitant wobbly black pen contours with clearly visible irregular breaks, awkward hand-drawn shapes, internally clean flat color shapes deliberately slightly misregistered from the outlines with tiny white slivers or small edge overhangs, normal clear saturation, sparse composition, childlike messy-cute charm; limited color count, not desaturated color; broken but not uniformly dashed, misregistered but still legible
+Composition/framing: square canvas, centered full body, complete silhouette, character and wrench occupy about 30% of canvas, generous white space
+Identity lock: copper curls, freckles, navy cycling cap, mint bandana, ochre coveralls, navy belt, striped blue socks, green boots, silver wrench, chibi proportions
+Constraints: one character only; readable face and hands; clean flat fills; no shadow
+Avoid: text, letters, numbers, labels, logo, watermark, scenery, gradients, glossy anime, 3D, vector-perfect curves, closed perfect contours, painterly or grainy texture, faded beige or gray cast

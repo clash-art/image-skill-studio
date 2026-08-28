@@ -1,0 +1,9 @@
+Use case: photorealistic-natural
+Asset type: source reference photo for an image-to-image illustration example
+Primary request: create an ordinary candid snapshot of a young woman in a mustard raincoat waiting beside a turquoise bicycle at a small rural bus shelter during light rain
+Scene/backdrop: wet roadside, simple glass shelter, misty green fields and gray sky
+Subject: the woman, turquoise bicycle, mustard coat, and one folded paper ticket are the memorable focal details
+Style/medium: natural unretouched smartphone photography, rain-speckled surfaces and believable fabric
+Composition/framing: vertical 3:4, full-body environmental snapshot, clearly readable silhouette
+Lighting/mood: soft overcast daylight, patient and slightly wistful
+Constraints: realistic photo only; no illustration, no text, no logos, no watermark; do not stylize or beautify

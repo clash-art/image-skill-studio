@@ -1,0 +1,11 @@
+Use case: photorealistic-natural
+Asset type: source reference photograph for an art-poster transformation example
+Primary request: a candid documentary photograph of a vintage cobalt-blue tram turning through a rain-wet old-city intersection just after a shower
+Scene/backdrop: pale stone corner buildings, overhead tram wires, reflective asphalt, soft overcast sky; no readable storefronts
+Subject: one cobalt-blue tram seen from a low three-quarter front angle, recognizable rounded windshield, paired headlights, and wet metal body
+Style/medium: photorealistic natural street photography
+Composition/framing: horizontal environmental view with the tram entering diagonally, enough surrounding street geometry to support later recomposition
+Lighting/mood: cool post-rain daylight with one warm reflection in a window, quiet and lyrical
+Materials/textures: wet asphalt, weathered stone, rain-beaded painted metal, real glass reflections
+Constraints: no people in foreground, no logos, no brands, no readable text, no watermark, no poster typography, no illustration or painterly treatment
+

@@ -1,0 +1,11 @@
+Use case: photorealistic-natural
+Asset type: original source reference for a later fictional vinyl-release transformation
+Primary request: Create a quiet documentary still life at low tide: a pale green shard of sea glass, a loop of red cotton thread, and a small white shell resting in three separate shallow pools carved into dark wet basalt, with a thin line of retreating foam beyond.
+Scene/backdrop: overcast volcanic shoreline at dawn, intimate ground-level detail
+Subject: sea glass, red thread, shell, tide pools; no people
+Style/medium: natural medium-format color photography, precise mineral texture, not an album cover or mockup
+Composition/framing: 4:3 landscape, restrained top-down editorial composition with ample dark negative space
+Lighting/mood: diffuse silver morning light, meditative but slightly uneasy
+Color palette: charcoal, salt white, pale celadon, one muted red accent
+Materials/textures: wet porous basalt, translucent worn glass, damp cotton fiber, shell ridges, sea foam
+Constraints: one standalone source photograph only; no record, sleeve, typography, logo, watermark, collage, border, litter, hands or people

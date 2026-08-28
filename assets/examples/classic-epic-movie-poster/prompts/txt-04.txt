@@ -1,0 +1,11 @@
+Use case: historical-scene
+Asset type: final vertical theatrical one-sheet, 2:3
+Primary request: Create an original classic hand-painted epic movie poster for an industrial wartime drama titled exactly "IRON CHOIR". In a besieged steel city, a deaf conductor organizes factory workers to transmit a warning through synchronized hammer strikes.
+Scene/backdrop: rust-red furnace field divided from a broad blue-green factory architecture mass and bone-white smoke.
+Subject: one monumental raised conductor's glove whose fingers become five smokestacks, enclosing the shadowed face of the conductor; recognition cues are the white glove, tuning fork, riveted gantries, workers' signal lamps.
+Style/medium: austere 1930s-1950s theatrical lithograph, simplified gouache geometry, dry tempera highlights, coarse offset grain.
+Composition/framing: warm paper margin; title spans the upper 17% as a heavy elegant slab-serif theatrical mass; symbol-within-figure monument fills 55%; three tiny worker witnesses form a one-sided cascade; a miniature evacuation train and hammering line cut across the lower 8%. Rust/ochre warm field 46%, teal filled structural field 31%, bone ivory 17%, ink-black core 11%.
+Lighting/mood: political tension, tragic grandeur, collective resolve.
+Text (verbatim): "IRON CHOIR"
+Constraints: one dominant symbol, restrained/no secondary copy, graphic value separation, aged matte poster stock, readable at thumbnail size.
+Avoid: propaganda logos, fake credits, modern photographic montage, glossy airbrush, steampunk clutter, equal floating heads, comic panels, sepia wash, framed presentation, watermark.

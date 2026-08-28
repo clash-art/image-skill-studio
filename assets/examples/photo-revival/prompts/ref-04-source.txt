@@ -1,0 +1,9 @@
+Use case: photorealistic-natural
+Asset type: source reference photo for an image-to-image illustration example
+Primary request: create an ordinary candid snapshot of a middle-aged street vendor serving roasted sweet potatoes from a small red cart on a snowy neighborhood corner
+Scene/backdrop: quiet winter side street, low brick wall, a few bare branches, thin fresh snow
+Subject: bundled vendor in a dark green apron, red cart, paper bag, and glowing sweet potatoes are the memorable focal details
+Style/medium: natural documentary smartphone photography with realistic snow, wool, metal, and steam
+Composition/framing: vertical 3:4, environmental medium-wide view with cart fully visible
+Lighting/mood: blue winter dusk with warm amber cart light, humble and welcoming
+Constraints: realistic photo only; no readable signage, no illustration, no logos, no watermark; do not stylize

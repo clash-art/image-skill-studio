@@ -1,0 +1,10 @@
+Use case: photorealistic-natural
+Asset type: original source reference photo for an image-to-image poster example
+Primary request: Create one completely original vertical still-life photograph of a squat transparent glass bottle filled with sparkling pale green melon soda, sealed with a plain metal cap.
+Scene/backdrop: cool-toned stainless cafe counter with a softly blurred tiled wall and a small pool of condensation.
+Subject: exactly one fully unbranded bottle with no label or embossed lettering; bubbles and wet glass clearly visible; no people.
+Style/medium: realistic commercial-lifestyle photography with believable refraction, condensation, and imperfect metal reflections.
+Composition/framing: 3:4 portrait, bottle centered slightly right, full silhouette visible, environmental context retained.
+Lighting/mood: cool diffused cafe light with a narrow bright rim, crisp and playful.
+Color palette: pale mint green, silver, chalk white.
+Constraints: wholly new image; no text, letters, numbers, labels, logos, watermarks, illustrations, doodles, fruit garnish, extra bottles, or packaging.

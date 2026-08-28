@@ -1,0 +1,11 @@
+Use case: photorealistic-natural
+Asset type: source documentary photograph for an image-to-image visual-style example
+Primary request: Create an original, believable documentary photograph of an elderly woman shellfish gatherer standing ankle-deep on a tidal flat at dawn, holding a woven basket while a small red rain cape catches the sea wind. Two white egrets wait several meters behind her. This must look like an unstaged real-world photograph, not art direction.
+Scene/backdrop: broad wet tidal flats, low fishing huts far away, pale overcast horizon
+Subject: one elderly coastal worker, weathered face, practical boots, woven basket, authentic layered work clothing
+Style/medium: natural analog documentary photography, realistic skin and fabric, subtle 35mm grain, restrained sharpness
+Composition/framing: 3:4 portrait, full body, subject low-left with open sky and reflective mud as negative space
+Lighting/mood: cool dawn light, quiet, observant, humane
+Color palette: slate blue, wet gray, muted cream, one small vermilion-red garment accent
+Constraints: anatomically correct person and birds; culturally neutral and non-stereotyped; no posed fashion look; no readable text; no logos; no watermark
+Avoid: surrealism, impossible scale, theatrical color fields, illustration, painterly effects, glossy CGI, HDR, extra limbs, duplicated birds

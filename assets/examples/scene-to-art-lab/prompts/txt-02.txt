@@ -1,0 +1,11 @@
+Use case: photorealistic-natural
+Asset type: source reference photograph for an art-poster transformation example
+Primary request: a candid environmental portrait of an older East Asian woman shaping a clay bowl on a pottery wheel in a quiet workshop
+Scene/backdrop: shelves of unfinished earthenware, soft plaster wall, one high side window; no readable labels
+Subject: one woman with short silver hair, calm focused expression, rust-orange linen apron over a charcoal shirt, both hands visibly and naturally cupping a spinning clay bowl
+Style/medium: photorealistic natural editorial photography
+Composition/framing: medium three-quarter portrait, seated figure and pottery wheel visible, hands unobstructed, slightly off-center
+Lighting/mood: warm side daylight, intimate concentration, gentle shadow
+Materials/textures: real skin texture, linen weave, wet terracotta clay, dusty wood, imperfect plaster
+Constraints: exactly one person, two anatomically correct hands, preserve plausible pottery posture, no jewelry emphasis, no logos, no brands, no readable text, no watermark, no poster typography, no illustration
+

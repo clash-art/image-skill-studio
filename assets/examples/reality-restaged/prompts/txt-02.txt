@@ -1,0 +1,11 @@
+Use case: photorealistic-natural
+Asset type: source documentary photograph for an image-to-image visual-style example
+Primary request: Create an original, believable documentary photograph of a night-shift street food vendor closing a small noodle cart after rain, lifting a blue plastic stool while his teenage daughter holds a folded yellow umbrella. Their tired but affectionate glance is the central relationship. This must look observed, not staged.
+Scene/backdrop: narrow urban side street after rain, corrugated shutters, wet pavement, dim cart canopy
+Subject: middle-aged vendor and teenage daughter, distinct faces and ages, ordinary practical clothing, natural gestures
+Style/medium: candid analog documentary photography, subtle 35mm grain, realistic skin, fabric and wet surfaces
+Composition/framing: 4:3 landscape, pair clustered at far right, long wet street receding left as negative space
+Lighting/mood: one warm fluorescent cart light against cool rainy night, intimate and restrained
+Color palette: deep teal, charcoal, warm amber, small clear yellow umbrella accent
+Constraints: anatomically correct distinct people and hands; believable cart; no readable signs; no logos; no watermark
+Avoid: surrealism, fashion posing, neon cyberpunk, theatrical sets, color-field abstraction, illustration, HDR, plastic skin, cloned faces, extra fingers

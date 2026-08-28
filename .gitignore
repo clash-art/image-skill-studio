@@ -40,3 +40,15 @@ yarn-error.log*
 /work/
 /dev-marketplace/plugins/image-skill-studio-dev/.mcp.json
 *.tsbuildinfo
+
+# Catalog media is uploaded to Cloudflare R2. Keep only manifests and prompts in Git.
+/assets/examples/**/*.png
+/assets/examples/**/*.jpg
+/assets/examples/**/*.jpeg
+/assets/examples/**/*.webp
+/assets/previews/**/*.{png,jpg,jpeg,webp}
+/assets/runs/**/*.{png,jpg,jpeg,webp}
+/public/catalog/**/*.png
+/public/catalog/**/*.jpg
+/public/catalog/**/*.jpeg
+/public/catalog/**/*.webp

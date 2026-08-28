@@ -1,0 +1,10 @@
+Use case: style-transfer
+Asset type: strict Travel Memory Card Duo transparent sticker PNG example
+Input images: Image 1: source reference photo; use only this source
+Primary request: create exactly six separate die-cut stickers matching the snowy vendor memory-card motif specification: (1) bundled vendor with vermilion cart as one motif, (2) indigo canopy with amber bulb as one grouped motif, (3) paper bag of roasted potatoes, (4) brass kettle, (5) snow-dusted bicycle wheel, (6) black-and-white sparrow. Do not split, merge, duplicate, replace, or add motifs.
+Style/medium: opaque matte gouache and cut paper with fine uniform paper tooth, chalky hand-cut edges, restrained snow-blue, indigo, vermilion, olive, amber and charcoal palette; thick irregular warm-white die-cut border around every sticker
+Composition/framing: exact 3:2 horizontal transparent canvas; arrange six fully visible separated stickers in two relaxed rows with generous empty transparent space and uneven size hierarchy; nothing cropped or touching
+Constraints: output a real PNG with alpha transparency; background fully transparent including all four corners; sticker interiors opaque except antialiased edges; no card paper, overall sheet, panel, frame, floor, reflection, cast/contact shadow, footer, keywords, title, labels, readable text, watermark, signature, checkerboard, black background, white background, or extra fragment
+Avoid: photorealism, marker strokes, watercolor washes, gradients, glossy 3D, detailed anatomy or mechanics, polished vectors, clip art, fake transparency
+Chroma-key execution: render the entire background as perfectly uniform flat #ff00ff magenta with no lighting variation, texture, gradient, checkerboard, shadow, reflection, or near-magenta color inside any sticker; this flat key will be removed locally to create the final alpha PNG
+Execution override: generate an opaque RGB chroma source, not a transparent image; ignore earlier transparency wording during rendering; use solid #ff00ff for every background pixel and never draw or preview a checkerboard

@@ -1,0 +1,10 @@
+Use case: photorealistic-natural
+Asset type: source reference photograph for an image-to-image art example
+Primary request: create a believable candid photograph of a young man reading alone at a tiny sidewalk cafe table on a lively old-city corner.
+Scene/backdrop: cream stucco cafe facade, striped orange awning, mint-green metal chairs, window reflections, a parked yellow delivery scooter in the background.
+Subject: one young man in a denim jacket, seated in three-quarter view with an open book and a small white espresso cup.
+Style/medium: authentic street photography, realistic skin, fabric, glass, and pavement texture.
+Composition/framing: vertical 3:4, subject in center-left, facade and street form clear large regions, eye-level perspective.
+Lighting/mood: bright late-afternoon daylight, sociable city warmth.
+Color palette: orange awning, mint chairs, yellow scooter, cream wall, denim blue.
+Constraints: one main person; ordinary plausible cafe scene; no surreal objects; no text; no readable signage; no watermark; no collage; no illustration.

@@ -1,0 +1,11 @@
+Use case: style-transfer
+Asset type: strict Reality Restaged image-to-image example
+Input images: Image 1 is the sole source photograph and documentary reality anchor.
+Primary request: Preserve the middle-aged street-food vendor and teenage daughter as two distinct believable individuals, their tired affectionate glance, natural hands, ordinary rain clothing, the folded yellow umbrella and one blue plastic stool. Remove the literal alley, shutters and cart clutter. Rebuild the scene as a monumental midnight stage: the stool's rectangular rhythm becomes three vast cobalt architectural steps rising into a deep teal wall, while a single wet black street plane climbs those steps without changing orientation. The pair stand together on the lowest step beneath one thin amber ceiling plane. The one impossible logic is a rain-wet street continuing upward through the architecture while its puddle reflections remain vertical.
+Scene/backdrop: vast teal void, cobalt stepped structure, glossy black street ribbon, one amber overhead plane
+Style/medium: realistic analog documentary night photograph, natural faces and wet fabric, believable fluorescent light, restrained 35mm grain, slight optical softness
+Composition/framing: 4:3 landscape, pair small at lower right, steps dominate center, two-thirds dark negative space to left and above
+Lighting/mood: intimate warm pool surrounded by quiet cool darkness
+Color palette: deep teal and cobalt dominant, amber support, yellow umbrella accent
+Constraints: color fields construct architecture; visibly recompose; preserve age difference, gaze and source-specific objects; one surreal spatial contradiction only; no readable text, logo or watermark
+Avoid: literal giant stool, neon cyberpunk, floating objects, portals, random props, clutter, duplicated people, plastic skin, malformed hands, illustration, CGI, HDR

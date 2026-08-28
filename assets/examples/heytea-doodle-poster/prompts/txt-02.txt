@@ -1,0 +1,10 @@
+Use case: photorealistic-natural
+Asset type: original source reference photo for an image-to-image poster example
+Primary request: Create one completely original vertical lifestyle food photograph of a small strawberry cream tart on a plain handmade ceramic plate.
+Scene/backdrop: lived-in wooden breakfast table near a window, softly blurred folded newspaper and neutral linen in the distant background.
+Subject: exactly one unbranded tart with glossy fresh strawberries and irregular whipped cream as the clear anchor; no people.
+Style/medium: realistic editorial food photography, true pastry crumbs, ceramic glaze, natural imperfections.
+Composition/framing: 3:4 portrait, plate slightly lower-left, entire tart visible, ordinary photographic setting rather than a poster.
+Lighting/mood: overcast morning window light, intimate and gentle.
+Color palette: cream, muted red, pale wood, soft gray.
+Constraints: wholly new image; no text, letters, numbers, labels, logos, watermarks, illustrations, doodles, packaging, or extra desserts.

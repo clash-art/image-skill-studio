@@ -1,0 +1,10 @@
+Use case: photorealistic-natural
+Asset type: original source reference for a later fictional vinyl-release transformation
+Primary request: Create a candid documentary photograph seen through a rain-streaked late-night tram window: an empty blue vinyl seat in the near foreground, blurred amber apartment windows and a single red crossing signal outside, quiet urban loneliness after the last passenger has left.
+Scene/backdrop: interior fragment of an older city tram at night, exterior reduced to reflections and soft bokeh
+Subject: empty seat, wet glass, reflected signal light; no people
+Style/medium: natural 35mm color photography, restrained grain, not an album cover or product mockup
+Composition/framing: 4:3 landscape, asymmetric editorial framing, seat low left, broad dark window area
+Lighting/mood: sodium-amber city light against cool cobalt interior, intimate and solitary
+Materials/textures: rain beads, worn woven seat fabric, brushed metal window trim
+Constraints: one standalone source photograph only; no record, no sleeve, no typography, no logo, no watermark, no collage, no borders

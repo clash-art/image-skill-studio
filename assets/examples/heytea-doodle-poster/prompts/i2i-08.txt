@@ -1,0 +1,9 @@
+Use case: style-transfer
+Asset type: strict I2I example, no-text narrative vertical object-and-doodle poster
+Input images: Image 1 is the sole source reference and subject anchor.
+Primary request: Transform the source worn ivory canvas sneaker photo into a complete tiny action scene while preserving the exact photographed shoe, canvas weave, creases, scuffs, rubber texture, untied laces, and recognizable silhouette. Do not redraw the shoe and do not turn it into a drink product.
+Scene/backdrop: remove all entryway surroundings and isolate the real sneaker on a clean soft off-white field with a believable contact shadow.
+Composition/framing: 3:4 portrait. Place the sneaker center-left on a diagonal at about 45 percent of canvas height. Do not reserve a title area.
+Doodle action: one primitive faceless black-line micro worker pulls the loose lace backward with both blocky paddle hands as if hauling a rope, feet braced against one rough ground line. Add one broken pull-motion arc only. Worker height about 16 percent of shoe height. Use separate uneven blunt marker segments, lumpy open head, stiff limbs, gaps and bad joins; functional, not cute.
+Text constraints: no text anywhere, no Chinese characters, no English letters, no numbers, labels, captions, random glyphs, logo text, or watermark.
+Constraints: preserve the real photographed sneaker; only change background, placement, primitive worker, ground line, and one motion arc. No official HEYTEA logo or mascot, no brand mark, no sticker collage, no polished vector, no gradients, no dense decoration, no faces, no full-cartoon conversion.

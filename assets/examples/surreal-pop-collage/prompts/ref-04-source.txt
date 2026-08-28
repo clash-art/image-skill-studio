@@ -1,0 +1,10 @@
+Use case: photorealistic-natural
+Asset type: source reference photograph for an image-to-image art example
+Primary request: create a believable architectural travel photograph of a small red cable-car station perched on a snowy alpine ridge.
+Scene/backdrop: jagged gray mountain peaks, clean white snowfields, one yellow cable car approaching on dark cables, pale cyan winter sky.
+Subject: compact red station building with one ordinary yellow cable car; no people prominent.
+Style/medium: high-detail natural landscape and architectural photography, realistic snow and metal.
+Composition/framing: vertical 3:4, station anchored in lower center, cables create a strong rising diagonal, broad mountain and sky regions.
+Lighting/mood: bright clear winter daylight, crisp and optimistic.
+Color palette: signal red station, golden yellow gondola, cyan sky, white snow, charcoal rock.
+Constraints: plausible real-world mountain infrastructure; exactly one visible cable car; no surreal scale; no text; no logos; no watermark; no collage; no illustration.

@@ -1,0 +1,20 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "image-skill-studio",
+  "account_id": "44af79e51582ca20c9003eb926540242",
+  "main": "./worker/index.ts",
+  "compatibility_date": "2026-08-22",
+  "compatibility_flags": ["nodejs_compat"],
+  "routes": [
+    {
+      "pattern": "studio.clash.video",
+      "custom_domain": true
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "STUDIO_ASSETS",
+      "bucket_name": "image-skill-studio-assets"
+    }
+  ]
+}

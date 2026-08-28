@@ -1,0 +1,6 @@
+Use case: stylized-concept
+Asset type: official upstream example for Minimal Zine Poster v0.1, pure T2I with no reference image.
+Tall vertical 3:5 poster on warm gray-beige fibrous paper, no frame or mockup; more than 80% untouched paper; a compact lower-middle cluster remains safely inset from every edge.
+A faded grayscale stair photograph sits beside one flat vivid-yellow rectangular fragment and a hairline step diagram, turning an ordinary landing into a quiet pause marker.
+Tiny low-contrast archive type and date-like notation remain subordinate to the image cluster. Saturated yellow is the only high-chroma hue; charcoal print wear, scan noise, and paper fibers stay visible elsewhere.
+Flat orthographic paper scan, matte diffuse lighting, restrained grayscale contrast, sparse diary-like Japanese/Korean indie editorial mood. Avoid full bleed, ad layout, logo or CTA, glossy stock, drop shadows, 3D, cinematic depth, neon, cute illustration, dense collage, extra colors, and paragraphs of perfect text.

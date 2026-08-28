@@ -1,0 +1,11 @@
+Use case: photorealistic-natural
+Asset type: original source reference for a later fictional vinyl-release transformation
+Primary request: Create a sparse documentary landscape of a thin weathered radio mast standing on a vast chalk-white dry lakebed; a short strip of faded vermilion survey cloth is tied near the mast base and streams sideways in strong wind; distant low mauve hills under a bleached cyan sky.
+Scene/backdrop: remote high-desert salt flat at noon, no buildings or roads
+Subject: solitary mast, red cloth, cracked mineral ground, distant hills; no people
+Style/medium: natural large-format landscape photography, restrained color, not an album cover or mockup
+Composition/framing: 4:3 landscape, mast one-third from left, huge negative sky and ground, perfectly level horizon
+Lighting/mood: hard clean daylight, dry silence, transmission without listener
+Color palette: chalk white, pale cyan, weathered steel, mauve, faded vermilion
+Materials/textures: cracked salt crust, oxidized metal, frayed cotton strip, airborne dust
+Constraints: one standalone source photograph only; no record, sleeve, typography, logo, watermark, collage, border, people, vehicles or props

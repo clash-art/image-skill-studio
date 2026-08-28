@@ -10,3 +10,9 @@ body {
   background: var(--background);
   color: var(--foreground);
 }
+
+/* The hosted catalog has no generation runtime or persisted generation history. */
+.recent-work,
+.skill-detail-tabs > button:last-child {
+  display: none !important;
+}

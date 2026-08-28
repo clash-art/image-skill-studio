@@ -1,0 +1,10 @@
+Use case: style-transfer
+Asset type: strict Photo Revival image-to-image example
+Input images: Image 1: source reference photo; use only this source
+Primary request: distill the bedroom snapshot into a tiny hand-drawn keepsake of the sleeping ginger cat, open blue suitcase, and striped sock
+Style/medium: delicate colored-pencil crosshatching with pale watercolor softness and three tiny indigo thread-stitch marks integrated along the suitcase edge
+Composition/framing: vertical 3:4 page; small circular focal cluster in the upper-left quadrant occupying 10-12% of the page; leave 86-88% unmarked warm-white paper
+Color palette: vivid but controlled ginger, indigo, and one black-and-cream stripe detail, all confined to the cluster
+Text (verbatim): "SUN" exactly once as a tiny penciled label under the cat
+Constraints: preserve the curled pose and suitcase silhouette; handmade redraw, never a photo filter; stitch accents remain minute; no other text; no watermark
+Avoid: full bleed, focal area over 15%, bed filling the page, large collage, dense layout, heavy type, flat vector shapes, photorealistic retouching

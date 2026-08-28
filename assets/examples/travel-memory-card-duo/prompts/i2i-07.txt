@@ -1,0 +1,9 @@
+Use case: style-transfer
+Asset type: strict Travel Memory Card Duo complete-card example
+Input images: Image 1: source reference photo; use only this source
+Primary request: rebuild the snowy sweet-potato vendor scene as one finished horizontal collectible travel memory card. Identification anchor: the bundled vendor at the vermilion cart under the indigo canopy and amber bulb. Select exactly six right-column sticker motifs: (1) vendor with vermilion cart as one motif, (2) indigo canopy with amber bulb as one grouped motif, (3) paper bag of roasted potatoes, (4) brass kettle, (5) snow-dusted bicycle wheel, (6) black-and-white sparrow.
+Style/medium: opaque matte gouache and cut paper with fine uniform paper tooth, chalky hand-cut edges, light pigment variation, soft misregistration; 5-8 broad source-derived color families
+Composition/framing: exact 3:2 horizontal canvas on warm off-white uncoated paper with continuous 4-5% outer margin; left 67% is one large near-square completely unframed illustration above a shallow paper footer; right 31% contains exactly six separate die-cut stickers using full height, uneven hierarchy, relaxed spacing, thick irregular warm-white borders, subtle flat paper shadows
+Text (verbatim): "Blue Snow · Amber Steam · Warm Cart" centered exactly once beneath the left illustration
+Constraints: scene reads first as 3-6 oversized blunt shapes and quiet space; preserve cart/canopy silhouette, vendor pose, lamp, potatoes, kettle, wheel and sparrow through placement and signature colors; only footer phrases readable; no title, caption, date, signage, watermark, signature, photo patches, inner frame, gradient, or extra sticker
+Avoid: photorealism, marker strokes, watercolor washes, wet blooms, glossy 3D, detailed anatomy or mechanics, polished vectors, anime, clip art

@@ -22,6 +22,17 @@ test("validateGenerationRequest rejects blank prompts before dispatch", () => {
   assert.deepEqual(result, { ok: false, field: "prompt", message: "先写下你想生成的画面。" });
 });
 
+test("validateGenerationRequest localizes rejection messages", () => {
+  const result = validateGenerationRequest({
+    skill,
+    prompt: "   ",
+    references: [],
+    aspectRatio: "3:4",
+    locale: "en",
+  });
+  assert.deepEqual(result, { ok: false, field: "prompt", message: "Write the scene you want to generate." });
+});
+
 test("validateGenerationRequest rejects unsupported reference images", () => {
   const noReferenceSkill = {
     ...skill,
@@ -57,6 +68,10 @@ test("buildGenerationPrompt binds the exact skill snapshot and artifact contract
   assert.match(prompt, /reference-0\.png/);
   assert.match(prompt, /\/tmp\/run-42\/artifacts/);
   assert.match(prompt, /不要使用 CLI/);
+  assert.match(prompt, /其他生图 Skill、工具或手段/);
+  assert.doesNotMatch(prompt, /出图必须/);
+  assert.doesNotMatch(prompt, /不要用其他生图工具代替/);
+  assert.doesNotMatch(prompt, /必须同时使用两个 Skill/);
 });
 
 test("MCP App handoff instructions record only successful images", () => {
@@ -72,10 +87,49 @@ test("MCP App handoff instructions record only successful images", () => {
   assert.match(prompt, /record_image_generation/);
   assert.match(prompt, /\$imagegen/);
   assert.match(prompt, /生成失败时不要调用这个工具/);
+  assert.match(prompt, /其他生图 Skill、工具或手段/);
   assert.doesNotMatch(prompt, /记录 failed/);
+  assert.doesNotMatch(prompt, /出图必须/);
 });
 
-test("ImageGen-only runs mention $imagegen once and still require the built-in tool", () => {
+test("MCP App handoff instructions can name the live record tool", () => {
+  const prompt = buildGenerationPrompt({
+    runId: "run-42",
+    skill,
+    prompt: "A quiet studio",
+    aspectRatio: "3:4",
+    artifactDir: "/tmp/run-42/artifacts",
+    transport: "mcp-app",
+    recordToolName: "record_image_generation_dev",
+  });
+
+  assert.match(prompt, /record_image_generation_dev/);
+  assert.doesNotMatch(prompt, /本插件的 record_image_generation，/);
+});
+
+test("MCP App handoff instructions follow the Studio locale", () => {
+  const prompt = buildGenerationPrompt({
+    runId: "run-42",
+    skill,
+    prompt: "A quiet studio",
+    aspectRatio: "3:4",
+    artifactDir: "/tmp/run-42/artifacts",
+    transport: "mcp-app",
+    locale: "en",
+  });
+
+  assert.match(prompt, /You are completing one Image Skill Studio image generation task/);
+  assert.match(prompt, /Creative method: use the `\$paper-poster` skill/);
+  assert.match(prompt, /Scene: A quiet studio/);
+  assert.match(prompt, /References:/);
+  assert.match(prompt, /another image skill, tool, or method/);
+  assert.match(prompt, /Do not modify project source code/);
+  assert.doesNotMatch(prompt, /画面要求/);
+  assert.doesNotMatch(prompt, /出图必须/);
+  assert.doesNotMatch(prompt, /must use two skills/i);
+});
+
+test("ImageGen-only runs mention $imagegen without requiring it as the only renderer", () => {
   const prompt = buildGenerationPrompt({
     runId: "run-7",
     skill: {
@@ -93,8 +147,11 @@ test("ImageGen-only runs mention $imagegen once and still require the built-in t
   assert.doesNotMatch(prompt, /\.system\/imagegen\/SKILL\.md/);
   assert.doesNotMatch(prompt, /imghash12ab/);
   assert.doesNotMatch(prompt, /必须同时使用两个 Skill/);
+  assert.doesNotMatch(prompt, /创作方法：/);
   assert.match(prompt, /内置 image_gen/);
   assert.match(prompt, /不要使用 CLI/);
+  assert.match(prompt, /其他生图 Skill、工具或手段/);
+  assert.doesNotMatch(prompt, /出图必须/);
 });
 
 test("buildCodexInvocation attaches every immutable reference without shell interpolation", () => {

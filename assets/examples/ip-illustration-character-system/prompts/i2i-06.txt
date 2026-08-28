@@ -1,0 +1,16 @@
+Use case: identity-preserve
+Asset type: 3:4 portrait knowledge infographic for Studio curation
+Input images: Image 1 is the sole source reference for Asha's identity; never use any generated result as a reference
+Primary request: Create a compact hand-drawn guide to three visible signs that bread dough has fermented, with Asha as a small guide character inspecting a bowl.
+Scene/backdrop: clean pure-white portrait canvas
+House style: cute mini pen-doodle infographic; narrow fine colored-pencil title strokes with subtle dry gaps and baseline drift; readable loose black marker handwriting; hesitant wobbly black pen contours with irregular breaks; individually hand-drawn boxes and arrows with uneven corners, tiny openings and overshoots; internally clean flat fills slightly misregistered on selected edges; normal clear saturation; three to five accent colors; no faded cast
+Composition/framing: exact 3:4 portrait layout, top title, central bowl diagram with three annotated callouts, Asha at bottom occupying 12–15% of page, clear reading order and breathing room
+Identity invariants: preserve Asha's exact medium-brown skin, long silver braid over her right shoulder, arched brows, gold hoop earrings, plum kurta, saffron waist apron, cream trousers, turquoise shoes, chibi proportions and signature colors from Image 1
+Information blocks: growing bowl silhouette for volume, three small bubbles for air, fingertip dent icon for elasticity
+Render this text exactly, with no extra words:
+面团发酵 3 个信号
+体积变大
+气泡增多
+按压回弹
+Constraints: change only pose and page purpose; keep identity unchanged; keep text legible and unbroken; no invented labels or facts
+Avoid: extra text, logo, watermark, digital-font perfection, identical rounded cards, dense paragraphs, gradients, shadows, paper grain, glossy rendering, vector-perfect geometry, washed-out beige or gray cast

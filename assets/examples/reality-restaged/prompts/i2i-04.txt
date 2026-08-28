@@ -1,0 +1,11 @@
+Use case: style-transfer
+Asset type: strict Reality Restaged image-to-image example
+Input images: Image 1 is the sole source photograph and documentary reality anchor.
+Primary request: Keep the street vendor and his teenage daughter photographically real and individually recognizable, preserving their mutual glance, work clothes, towel, folded yellow umbrella, and the blue stool as a small documentary detail. Recompose them on opposite sides of one monumental folded street: a saturated ochre ground plane rises vertically between them like a wall, yet their bodies remain naturally upright and their glance crosses a clean rectangular cut in the fold. A deep teal field and one vermilion floor strip complete the stage. The one impossible relational logic is that the same wet street surface both separates them as a wall and supports them as a floor.
+Scene/backdrop: remove the cart, shops, signs, alley clutter and realistic city; use only ochre folded plane, teal void, vermilion strip and one small amber light source
+Style/medium: convincing analog documentary night photography, realistic skin, clothes, stool and umbrella, fine grain, subdued sharpness, natural shadow density
+Composition/framing: 4:3 landscape, father low-left and daughter low-right with a large architectural fold between them; broad negative space above; their eyes align through the cut
+Lighting/mood: restrained amber night light, tender distance, cinematic silence
+Color palette: dominant ochre and deep teal, supporting vermilion, blue stool and yellow umbrella retained
+Constraints: strong environmental reduction; color fields organize space; preserve realistic anatomy and distinct faces; one impossible relationship only; no typography, logo or watermark
+Avoid: giant umbrella or stool, decorative portal, floating items, surreal clutter, cyberpunk neon, generic dream haze, fantasy, illustration, CGI, HDR, wax faces, duplicated limbs

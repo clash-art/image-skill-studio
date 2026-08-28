@@ -1,0 +1,9 @@
+Use case: style-transfer
+Asset type: final Minimal Zine Poster v0.1 I2I example.
+Input image: Image 1 is the sole source reference. Preserve the recognizable plain red matchbox, its partly open tray of matches, the separate burned match with blackened tip, and scratched wooden-surface memory; do not add unrelated objects or branding.
+
+Recompose as a tall vertical 3:5 full-frame tan recycled-paper poster, no border or mockup; 74% empty paper; make a type-led cluster occupying 22% in the upper-middle. Reduce the source objects to a small old-print matchbox specimen and one isolated burned-match silhouette, with xerox wear, rough letterpress edges, and slight baseline offset.
+
+Break the exact phrase "A SMALL FIRE, REMEMBERED" into three sparse rough-serif lines wrapping around the matchbox, plus nearly illegible catalog numbers. Preserve the matchbox red as one clean tomato-red opaque printed block, the sole high-chroma hue, about 2.4% of the canvas and 20% of the cluster; all other source details become subdued black-gray with paper abrasion and ink crush.
+
+Flat orthographic scanned-paper appearance, matte diffuse light, low-to-medium grayscale contrast, quiet intimate archival zine mood. Avoid full-bleed tabletop photo, product ad, branding, commercial headline, logo, CTA, glossy mockup, hard shadows, 3D, cinematic lighting, neon, cartoon, dense scrapbook, extra colors, and long perfect copy.

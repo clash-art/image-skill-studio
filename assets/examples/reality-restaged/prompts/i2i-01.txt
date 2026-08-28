@@ -1,0 +1,11 @@
+Use case: style-transfer
+Asset type: strict Reality Restaged image-to-image example
+Input images: Image 1 is the sole source photograph and documentary reality anchor.
+Primary request: Preserve the elderly shellfish gatherer, her weathered individuality, natural full-body proportions, woven basket, practical boots, vermilion rain cape, and the two anatomically believable egrets. Rebuild the entire tidal setting as a radically simplified cinematic stage. The wet slate tidal plane rises at the horizon and continues upward as one monumental vertical cobalt wall, while the woman stands naturally at the impossible ninety-degree seam. The two egrets remain normal-sized but stand far apart on the vertical wet plane as if it were level ground: this is the one impossible spatial logic.
+Scene/backdrop: no fishing huts or realistic coast; only a broad reflective charcoal floor, a monumental cobalt wall, and one thin cream horizon cut
+Style/medium: believable analog documentary photograph taken inside an impossible world; natural skin, fabric, basket fiber and bird feathers; subtle 35mm grain and optical softness
+Composition/framing: 3:4 portrait, woman small at lower left, huge uninterrupted cobalt field above and right, strong negative space, low seam
+Lighting/mood: cool overcast directional light with believable contact shadows, quiet and monumental
+Color palette: dominant cobalt blue and wet charcoal, supporting cream, source vermilion cape
+Constraints: visibly recompose rather than replace the background; color fields must construct space; preserve human identity and anatomy; exactly two egrets; one surreal proposition only; no text, logo or watermark
+Avoid: upside-down objects, floating props, portals, moons, spheres, giant animals, literal oversized cape, clutter, fantasy illustration, CGI, HDR, plastic skin, compressed body, extra limbs

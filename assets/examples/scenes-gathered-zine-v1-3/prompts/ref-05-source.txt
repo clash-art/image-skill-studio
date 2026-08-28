@@ -1,0 +1,10 @@
+Use case: photorealistic-natural
+Asset type: source reference photograph for a later image-to-image editorial poster
+Primary request: Create a truthful vertical winter photograph of a small dark timber cabin on a snow-covered hillside, with a single warm window and a narrow footpath curving uphill to the door.
+Scene/backdrop: pale blue-white snowfield, sparse black birch trunks leaning across the upper left, distant frozen lake and low gray mountain ridge under an overcast sky.
+Subject: compact cabin in the middle-right, curved path entering at lower left, five or six sparse birch trunks, no people.
+Style/medium: natural quiet landscape photography, realistic snow, timber and winter atmosphere.
+Composition/framing: vertical 3:5, cabin offset right, path creates an S-curve, birch trunks form a sparse diagonal rhythm, large uninterrupted snow and sky areas.
+Lighting/mood: soft late-afternoon winter light, one restrained amber window, isolated but sheltered.
+Constraints: realistic structure and landscape; no footprints except the single path; no text, collage, illustration, torn paper, graphic overlays, logos, watermark.
+Avoid: Christmas decoration, smoke plume, fantasy snow, dramatic sunset, cinematic lighting, dense forest, extra cabins or people.

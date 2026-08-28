@@ -1,0 +1,102 @@
+[
+  {
+    "id": "i2i-01",
+    "prompt": "Bicycle mechanic rebuilt as a light-field 复古02 angular terminal caricature with four asymmetric windows and two unequal detail extractions.",
+    "aspectRatio": "3:4",
+    "mode": "image-to-image",
+    "referenceImage": "references/ref-01-source.png",
+    "referenceRole": "sole source reference for semantic identity and action anchors; never a generated result",
+    "promptFile": "prompts/i2i-01.txt",
+    "image": "i2i-01.png"
+  },
+  {
+    "id": "i2i-02",
+    "prompt": "Bicycle mechanic rebuilt as a dark 极客01 industrial grotesque with three counter-corner warning windows and one tall extraction.",
+    "aspectRatio": "3:4",
+    "mode": "image-to-image",
+    "referenceImage": "references/ref-01-source.png",
+    "referenceRole": "sole source reference for semantic identity and action anchors; never a generated result",
+    "promptFile": "prompts/i2i-02.txt",
+    "image": "i2i-02.png"
+  },
+  {
+    "id": "i2i-03",
+    "prompt": "Two jazz musicians preserved as distinct identities in a 游戏01 six-window waveform cascade with three descending extractions.",
+    "aspectRatio": "4:3",
+    "mode": "image-to-image",
+    "referenceImage": "references/ref-02-source.png",
+    "referenceRole": "sole source reference for roster, spatial order, instrument ownership, and interaction; never a generated result",
+    "promptFile": "prompts/i2i-03.txt",
+    "image": "i2i-03.png"
+  },
+  {
+    "id": "i2i-04",
+    "prompt": "Two jazz musicians reduced to a strict 粉黛 two-color symbolic group beneath four split-diagnostic table windows.",
+    "aspectRatio": "4:3",
+    "mode": "image-to-image",
+    "referenceImage": "references/ref-02-source.png",
+    "referenceRole": "sole source reference for roster, spatial order, instrument ownership, and interaction; never a generated result",
+    "promptFile": "prompts/i2i-04.txt",
+    "image": "i2i-04.png"
+  },
+  {
+    "id": "i2i-05",
+    "prompt": "Greyhound rebuilt as an 80-percent 经典 two-color spear-mask silhouette with three sparse file windows.",
+    "aspectRatio": "9:16",
+    "mode": "image-to-image",
+    "referenceImage": "references/ref-03-source.png",
+    "referenceRole": "sole source reference for creature identity, ear asymmetry, markings, and limb roster; never a generated result",
+    "promptFile": "prompts/i2i-05.txt",
+    "image": "i2i-05.png"
+  },
+  {
+    "id": "i2i-06",
+    "prompt": "Greyhound rebuilt as a low-rise 游戏02 kite-chested creature surrounded by five corner-burst settings windows.",
+    "aspectRatio": "9:16",
+    "mode": "image-to-image",
+    "referenceImage": "references/ref-03-source.png",
+    "referenceRole": "sole source reference for creature identity, ear asymmetry, markings, and limb roster; never a generated result",
+    "promptFile": "prompts/i2i-06.txt",
+    "image": "i2i-06.png"
+  },
+  {
+    "id": "i2i-07",
+    "prompt": "Lever espresso machine exaggerated into an 80-percent 复古01 mechanical monolith with a sparse terminal underlay.",
+    "aspectRatio": "16:9",
+    "mode": "image-to-image",
+    "referenceImage": "references/ref-04-source.png",
+    "referenceRole": "sole source reference for machine identity and mechanical anchor relationships; never a generated result",
+    "promptFile": "prompts/i2i-07.txt",
+    "image": "i2i-07.png"
+  },
+  {
+    "id": "i2i-08",
+    "prompt": "Lever espresso machine collapsed into a low 极客02 chassis with six asymmetric pressure-chart and diagnostic windows.",
+    "aspectRatio": "16:9",
+    "mode": "image-to-image",
+    "referenceImage": "references/ref-04-source.png",
+    "referenceRole": "sole source reference for machine identity and mechanical anchor relationships; never a generated result",
+    "promptFile": "prompts/i2i-08.txt",
+    "image": "i2i-08.png"
+  },
+  {
+    "id": "i2i-09",
+    "prompt": "Botanist and giant leaf re-authored as a 复古02 geometric interaction beneath five botanical warning windows.",
+    "aspectRatio": "1:1",
+    "mode": "image-to-image",
+    "referenceImage": "references/ref-05-source.png",
+    "referenceRole": "sole source reference for person identity, hand contact, and leaf interaction; never a generated result",
+    "promptFile": "prompts/i2i-09.txt",
+    "image": "i2i-09.png"
+  },
+  {
+    "id": "i2i-10",
+    "prompt": "Botanist and split leaf rebuilt as a high-saturation 游戏01 data-table composition with four corner-burst windows.",
+    "aspectRatio": "1:1",
+    "mode": "image-to-image",
+    "referenceImage": "references/ref-05-source.png",
+    "referenceRole": "sole source reference for person identity, hand contact, and leaf interaction; never a generated result",
+    "promptFile": "prompts/i2i-10.txt",
+    "image": "i2i-10.png"
+  }
+]

@@ -1,0 +1,9 @@
+Use case: style-transfer
+Asset type: strict I2I example, no-text narrative vertical object-and-doodle poster
+Input images: Image 1 is the sole source reference and subject anchor.
+Primary request: Transform the source strawberry tart photo into a complete tiny action scene while preserving the exact photographed tart, strawberries, cream, pastry texture, ceramic plate, crumbs, and recognizable silhouette. Do not redraw the food.
+Scene/backdrop: remove all table surroundings and isolate the real tart and plate on a clean soft off-white field with a believable contact shadow.
+Composition/framing: 3:4 portrait. Place the tart center-right at about 42 percent of canvas height. Do not reserve a title area.
+Doodle action: one primitive faceless black-line micro worker pushes a single oversized real-looking loose strawberry up the tart edge using one short rough ramp line. Add one broken motion arc only. Worker height about 15 percent of tart height. Use separate uneven blunt marker segments, lumpy open head, stiff limbs, blocky paddle ends, gaps and bad joins; functional, not cute.
+Text constraints: no text anywhere, no Chinese characters, no English letters, no numbers, labels, captions, random glyphs, logo text, or watermark.
+Constraints: preserve the real photographed tart and plate; only change background, placement, primitive worker, strawberry action, and minimal motion marks. No official HEYTEA logo or mascot, no brand mark, no sticker collage, no polished vector, no gradients, no dense decoration, no faces, no full-cartoon conversion.

@@ -1,0 +1,11 @@
+Use case: style-transfer
+Asset type: strict Reality Restaged image-to-image example
+Input images: Image 1 is the sole source photograph and documentary reality anchor.
+Primary request: Preserve the woman mechanic and school-age boy as distinct, believable people, their practical cooperation, natural anatomy and hands, indigo workwear, wheel repair gesture, normal-sized round metal mirror, tools, and the faded cream-vermilion bus identity. Radically simplify the desert into a terracotta floor and deep cobalt wall. The mirror's reflected sunlight becomes one monumental solid cream plane that leaves the small mirror, crosses the empty space like architecture, and supports the mechanic's working hands at the wheel. Light behaving as a physical structural plane is the single impossible logic.
+Scene/backdrop: terracotta ground, cobalt vertical field, a cropped cream bus slab with vermilion band, one cream light-plane; remove road, poles, mesas and dust clutter
+Style/medium: convincing analog documentary photograph, realistic skin, cloth, grease, metal, tire and subdued film grain; no rendered gloss
+Composition/framing: 3:4 portrait, mechanic low-right, boy smaller low-left, cream light-plane creates a strong diagonal across large cobalt negative space, cropped bus edge as monumental form
+Lighting/mood: hard desert light with soft dusty falloff, resourceful and quiet
+Color palette: cobalt and terracotta dominant, cream and faded vermilion supporting, indigo clothing
+Constraints: preserve age difference and cooperation; color constructs space; normal mirror and wheel scale; one impossible proposition; realistic proportions; no readable plates, text, logo or watermark
+Avoid: giant mirror, giant wheel, floating tools, portals, celestial objects, random surreal props, heroic advertising, illustration, CGI, HDR, wax skin, distorted fingers

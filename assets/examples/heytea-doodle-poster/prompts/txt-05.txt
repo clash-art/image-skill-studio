@@ -1,0 +1,10 @@
+Use case: photorealistic-natural
+Asset type: original source reference photo for an image-to-image poster example
+Primary request: Create one completely original vertical interior still-life photograph of a small mushroom-shaped ceramic table lamp with a matte ochre dome shade and cream base.
+Scene/backdrop: slightly cluttered bedside shelf against a shadowy warm-gray wall, with one blurred folded blanket edge in the distance.
+Subject: exactly one unbranded ceramic lamp as the clear anchor; tactile matte glaze and realistic cord hidden behind it; no people.
+Style/medium: realistic design-editorial photography, natural imperfections and believable room atmosphere.
+Composition/framing: 3:4 portrait, lamp slightly above lower center, full silhouette visible, environmental setting clearly distinct from a clean poster.
+Lighting/mood: lamp switched on at dusk, warm local glow against cool room shadow, comforting and quiet.
+Color palette: ochre, cream, warm gray, muted charcoal.
+Constraints: wholly new image; no text, letters, numbers, labels, logos, watermarks, illustrations, doodles, extra lamps, books, or branded objects.

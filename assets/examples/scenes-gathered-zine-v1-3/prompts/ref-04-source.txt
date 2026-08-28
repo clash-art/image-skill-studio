@@ -1,0 +1,10 @@
+Use case: photorealistic-natural
+Asset type: source reference photograph for a later image-to-image editorial poster
+Primary request: Create a truthful vertical photograph inside an old glass greenhouse: a weathered wooden potting table holds one terracotta pot and silver pruning shears, while a dense fig canopy leans in from the upper right.
+Scene/backdrop: fogged greenhouse panes with white condensation, tiled floor, pale morning beyond the glass; a narrow aisle recedes toward the lower-left background.
+Subject: empty potting table, single pot, pruning shears, one large fig tree with broad leaves and a distinctive arcing branch.
+Style/medium: quiet natural interior photography, realistic plant, glass, wood and soil texture.
+Composition/framing: vertical 3:5, table across lower middle, foliage mass upper right, left half comparatively open and luminous, arcing branch as dominant gesture.
+Lighting/mood: diffuse milky morning light, humid, intimate, still.
+Constraints: botanically plausible broad leaves grouped naturally; no people; no labels; no text, collage, illustration, torn paper, graphic overlays, logos, watermark.
+Avoid: lifestyle staging, lush jungle excess, flowers, tiny leaf clutter across the whole frame, dramatic sunbeams, shallow depth of field.

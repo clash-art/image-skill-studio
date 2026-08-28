@@ -1,0 +1,9 @@
+Use case: illustration-story
+Asset type: original character source reference for Studio curation
+Primary request: Create one original front-facing full-body character anchor: Nia, an energetic young dark-skinned astronomy educator with two round black puff buns, a tiny gold star earring on the left ear, tiny dot eyes, a bright open smile, a violet hoodie with a small plain crescent-shaped patch and no text, a mint-green pleated midi skirt, mustard leggings, and white high-top sneakers with blue soles. She holds one compact navy telescope tube tucked under her left arm.
+Scene/backdrop: pure white only
+Style/medium: mini pen-doodle illustration, tiny subject on a large pure-white canvas, hesitant wobbly black pen contours with clearly visible irregular breaks, awkward hand-drawn shapes, internally clean flat color shapes deliberately slightly misregistered from the outlines with tiny white slivers or small edge overhangs, normal clear saturation, sparse composition, childlike messy-cute charm; limited color count, not desaturated color; broken but not uniformly dashed, misregistered but still legible
+Composition/framing: square canvas, centered full body, complete silhouette, character and telescope occupy about 30% of canvas, generous white space
+Identity lock: two round puff buns, left gold star earring, violet hoodie with plain crescent patch, mint pleated skirt, mustard leggings, white-and-blue high-tops, navy telescope, chibi proportions
+Constraints: one character only; readable face and hands; clean flat fills; no shadow
+Avoid: text, letters, numbers, labels, logo, watermark, scenery, gradients, glossy anime, 3D, vector-perfect curves, closed perfect contours, painterly or grainy texture, faded beige or gray cast

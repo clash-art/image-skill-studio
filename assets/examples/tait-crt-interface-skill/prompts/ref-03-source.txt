@@ -1,0 +1,9 @@
+Use case: photorealistic-natural
+Asset type: source reference for an image-to-image transformation benchmark
+Primary request: Create one original realistic editorial photograph of exactly one black greyhound standing alert on a windswept coastal path.
+Subject: one very slender black greyhound; extremely long narrow snout; one ear upright and one ear folded sideways; small white lightning-shaped chest patch; thin red fabric collar with one plain round brass tag; front legs planted apart; head turned slightly toward camera.
+Scene/backdrop: pale concrete sea wall, muted overcast ocean and wind-bent dune grass, no people or other animals.
+Composition/framing: tall portrait 9:16, compact full-body view, dog fills most of height but paws remain visible, asymmetrical negative space above the sea wall.
+Lighting/mood: cool overcast daylight, alert and slightly uncanny.
+Color palette: black fur, cool gray, straw grass, muted red collar, natural brass.
+Constraints: original realistic photograph; exactly one dog; anatomically plausible four legs and paws; no text, logo, watermark, CRT, pixels, interface, illustration, costume, or extra objects.

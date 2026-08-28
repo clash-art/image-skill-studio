@@ -1,0 +1,11 @@
+Use case: photorealistic-natural
+Asset type: original source reference for a later fictional vinyl-release transformation
+Primary request: Create a lonely all-night laundromat photograph: a row of round chrome washer doors under pale mint fluorescent tubes, one machine glowing warm peach from within, and a single mustard-yellow sock lying on clean blue-grey terrazzo.
+Scene/backdrop: modest urban self-service laundromat just before dawn, no visible brand or readable signage
+Subject: repeating circular washer doors, one warm-lit drum, solitary sock; no people
+Style/medium: candid 35mm color photography with realistic mixed lighting, not an album cover or product mockup
+Composition/framing: 4:3 landscape, low eye level, strong receding rhythm and broad empty floor
+Lighting/mood: cool fluorescent stillness interrupted by one warm machine, mundane tenderness and insomnia
+Color palette: mint, chrome, blue-grey, peach, mustard
+Materials/textures: brushed steel, convex glass, terrazzo chips, knitted cotton
+Constraints: one standalone source photograph only; no records, sleeves, typography, logos, watermarks, collage, borders, hands or people

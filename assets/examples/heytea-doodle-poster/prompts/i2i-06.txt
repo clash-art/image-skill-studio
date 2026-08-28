@@ -1,0 +1,9 @@
+Use case: style-transfer
+Asset type: strict I2I example, no-text narrative vertical object-and-doodle poster
+Input images: Image 1 is the sole source reference and subject anchor.
+Primary request: Transform the source pale-green soda bottle photo into a complete tiny action scene while preserving the exact photographed transparent bottle, metal cap, green liquid, bubbles, condensation, glass refraction, and recognizable silhouette. Do not redraw the bottle.
+Scene/backdrop: remove all cafe surroundings and isolate the real bottle on a clean soft off-white field with a believable contact shadow.
+Composition/framing: 3:4 portrait. Place the bottle slightly left of center at about 46 percent of canvas height. Do not reserve a title area.
+Doodle action: one primitive faceless black-line micro worker braces against the bottle cap with a short crude wrench as if repairing a bubble machine. Add one rough ground line and exactly three small bubble circles rising from the cap. Worker height about 13 percent of bottle height. Use separate uneven blunt marker segments, lumpy open head, stiff limbs, blocky paddle ends, gaps and bad joins; functional, not cute.
+Text constraints: no text anywhere, no Chinese characters, no English letters, no numbers, labels, captions, random glyphs, logo text, or watermark.
+Constraints: preserve the real photographed bottle; only change background, placement, primitive worker, wrench, ground line, and three bubble marks. No official HEYTEA logo or mascot, no brand mark, no sticker collage, no polished vector, no gradients, no dense decoration, no faces, no full-cartoon conversion.

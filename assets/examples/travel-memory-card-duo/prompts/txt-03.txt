@@ -1,0 +1,9 @@
+Use case: photorealistic-natural
+Asset type: original source reference photograph for a travel-memory-card transformation
+Primary request: a horizontal travel photograph of two hikers in rust-red and mustard parkas standing at a black volcanic ridge in Iceland, watching a distant cone vent a small white plume, with a cobalt crater lake, one orange trail marker, rough basalt outcrop, and a compact arctic fox at the ridge edge
+Style/medium: natural documentary landscape photography, realistic scale and weather, no stylization
+Composition/framing: 3:2 horizontal, paired hikers small in lower center, crater lake sweeping left, smoking cone upper-right, broad cool sky and strong ridge diagonal
+Lighting/mood: clear cold morning after fog, spacious, quiet, elemental
+Color palette: basalt black, cobalt blue, fog white, rust red, mustard, muted moss
+Constraints: fully original scene; no readable text, signs, logos, watermark, signature, border, collage, or printed-card treatment
+Avoid: illustration, fantasy lava, disaster scene, dramatic HDR, cinematic teal-orange grading, fake postcard

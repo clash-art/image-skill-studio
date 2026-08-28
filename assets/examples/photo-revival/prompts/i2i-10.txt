@@ -1,0 +1,10 @@
+Use case: style-transfer
+Asset type: strict Photo Revival image-to-image example
+Input images: Image 1: source reference photo; use only this source
+Primary request: create a sticker-scale field-note drawing of the older woman mending net, preserving coral headscarf, working hands, a small fold of cobalt net, one short yellow boat-edge line, and a miniature wooden crate
+Style/medium: fine drypoint-like pencil, chalky watercolor accents, one postage-stamp-small translucent mesh clipping on ivory paper
+Composition/framing: vertical 3:4 page; tiny cluster at middle-right fitting within one fifth of page width and one quarter of page height, no more than 8% total area; leave over 90% blank ivory paper
+Color palette: localized cobalt, coral, and ochre only inside the tiny cluster
+Text (verbatim): "TIDE 3" exactly once in microscopic penciled capitals beside the crate
+Constraints: show no full boat and no sprawling net; hand-redrawn and source-recognizable; mesh clipping smaller than the woman's torso; no other text; no watermark
+Avoid: ocean, horizon, complete boat, large net, full bleed, focal area over 9%, large collage, dense composition, heavy type, vector treatment, photorealism

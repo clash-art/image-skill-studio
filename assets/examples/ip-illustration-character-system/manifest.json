@@ -1,0 +1,102 @@
+[
+  {
+    "id": "i2i-01",
+    "prompt": "Lin plants one seed in a sparse 1:1 article illustration about starting small.",
+    "aspectRatio": "1:1",
+    "mode": "image-to-image",
+    "referenceImage": "references/ref-01-source.png",
+    "referenceRole": "sole source reference for Lin's face, hair, leaf clip, clothing, palette, proportions, and identity; never a generated result",
+    "promptFile": "prompts/i2i-01.txt",
+    "image": "i2i-01.png"
+  },
+  {
+    "id": "i2i-02",
+    "prompt": "Lin guides a three-step balcony planting infographic in a 3:4 portrait layout.",
+    "aspectRatio": "3:4",
+    "mode": "image-to-image",
+    "referenceImage": "references/ref-01-source.png",
+    "referenceRole": "sole source reference for Lin's face, hair, leaf clip, clothing, palette, proportions, and identity; never a generated result",
+    "promptFile": "prompts/i2i-02.txt",
+    "image": "i2i-02.png"
+  },
+  {
+    "id": "i2i-03",
+    "prompt": "Malik compares blank contrast cards in a sparse 1:1 accessibility-testing article illustration.",
+    "aspectRatio": "1:1",
+    "mode": "image-to-image",
+    "referenceImage": "references/ref-02-source.png",
+    "referenceRole": "sole source reference for Malik's face, skin tone, hair, glasses, clothing, cane, palette, proportions, and identity; never a generated result",
+    "promptFile": "prompts/i2i-03.txt",
+    "image": "i2i-03.png"
+  },
+  {
+    "id": "i2i-04",
+    "prompt": "Malik presents a three-point interface readability infographic in a 3:4 portrait layout.",
+    "aspectRatio": "3:4",
+    "mode": "image-to-image",
+    "referenceImage": "references/ref-02-source.png",
+    "referenceRole": "sole source reference for Malik's face, skin tone, hair, glasses, clothing, cane, palette, proportions, and identity; never a generated result",
+    "promptFile": "prompts/i2i-04.txt",
+    "image": "i2i-04.png"
+  },
+  {
+    "id": "i2i-05",
+    "prompt": "Asha kneads dough in a sparse 1:1 article illustration about patient practice.",
+    "aspectRatio": "1:1",
+    "mode": "image-to-image",
+    "referenceImage": "references/ref-03-source.png",
+    "referenceRole": "sole source reference for Asha's face, skin tone, silver braid, earrings, clothing, palette, proportions, and identity; never a generated result",
+    "promptFile": "prompts/i2i-05.txt",
+    "image": "i2i-05.png"
+  },
+  {
+    "id": "i2i-06",
+    "prompt": "Asha explains three visible fermentation signals in a 3:4 portrait infographic.",
+    "aspectRatio": "3:4",
+    "mode": "image-to-image",
+    "referenceImage": "references/ref-03-source.png",
+    "referenceRole": "sole source reference for Asha's face, skin tone, silver braid, earrings, clothing, palette, proportions, and identity; never a generated result",
+    "promptFile": "prompts/i2i-06.txt",
+    "image": "i2i-06.png"
+  },
+  {
+    "id": "i2i-07",
+    "prompt": "Rowan adjusts a bicycle chain in a sparse 1:1 article illustration about methodical repair.",
+    "aspectRatio": "1:1",
+    "mode": "image-to-image",
+    "referenceImage": "references/ref-04-source.png",
+    "referenceRole": "sole source reference for Rowan's face, freckles, curls, cap, clothing, wrench, palette, proportions, and identity; never a generated result",
+    "promptFile": "prompts/i2i-07.txt",
+    "image": "i2i-07.png"
+  },
+  {
+    "id": "i2i-08",
+    "prompt": "Rowan leads a three-point pre-ride bicycle checklist in a 3:4 portrait infographic.",
+    "aspectRatio": "3:4",
+    "mode": "image-to-image",
+    "referenceImage": "references/ref-04-source.png",
+    "referenceRole": "sole source reference for Rowan's face, freckles, curls, cap, clothing, wrench, palette, proportions, and identity; never a generated result",
+    "promptFile": "prompts/i2i-08.txt",
+    "image": "i2i-08.png"
+  },
+  {
+    "id": "i2i-09",
+    "prompt": "Nia demonstrates an eclipse with simple objects in a sparse 1:1 science article illustration.",
+    "aspectRatio": "1:1",
+    "mode": "image-to-image",
+    "referenceImage": "references/ref-05-source.png",
+    "referenceRole": "sole source reference for Nia's face, skin tone, puff buns, earring, clothing, telescope, palette, proportions, and identity; never a generated result",
+    "promptFile": "prompts/i2i-09.txt",
+    "image": "i2i-09.png"
+  },
+  {
+    "id": "i2i-10",
+    "prompt": "Nia presents a three-point stargazing preparation checklist in a 3:4 portrait infographic.",
+    "aspectRatio": "3:4",
+    "mode": "image-to-image",
+    "referenceImage": "references/ref-05-source.png",
+    "referenceRole": "sole source reference for Nia's face, skin tone, puff buns, earring, clothing, telescope, palette, proportions, and identity; never a generated result",
+    "promptFile": "prompts/i2i-10.txt",
+    "image": "i2i-10.png"
+  }
+]

@@ -1,0 +1,10 @@
+Use case: photorealistic-natural
+Asset type: source reference photograph for a strict image-to-image editorial transformation
+Primary request: Create one original, standalone fine-art documentary photograph of a single wind-shaped acacia tree on a vast ochre desert plain after dawn.
+Scene/backdrop: low dune ridges, an immense clear washed-blue sky, one long cool shadow cast diagonally from the tree, no people or structures.
+Subject: one asymmetrical acacia tree with a broad flattened canopy and slender dark trunk, positioned off center.
+Style/medium: faithful natural landscape photography, realistic botanical and ground texture, no stylization.
+Composition/framing: near-square landscape photograph, extremely sparse composition, low horizon, tree small-to-medium in frame, strong negative space and a single diagonal shadow axis.
+Lighting/mood: crisp early morning side light, dry stillness, restrained clarity.
+Color palette: natural ochre, dusty sienna, washed blue, charcoal-brown, muted olive.
+Constraints: source photograph only; no frame, no panel, no typography, no collage, no painted treatment, no graphic marks, no watermark; no animals, roads, buildings, or invented objects.

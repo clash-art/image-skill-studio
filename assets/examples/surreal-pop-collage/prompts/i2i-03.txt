@@ -1,0 +1,9 @@
+Use case: style-transfer
+Asset type: strict surreal-pop-collage example, vertical 3:4
+Input images: Image 1 is the sole source reference and reality anchor.
+Primary request: transform this exact desert cycling photograph into a bright surreal pop collage while preserving the cyclist, ordinary bicycle, road, and cliff silhouette as immediately recognizable.
+Reality anchor: keep the cyclist, her normal-size bicycle, road, shrubs, and cliffs clearly recognizable but desaturated to black and white, preserving photographic texture; keep her head and body unobstructed.
+Flat world: replace the huge sky region with a single flat matte teal plane purified from the source scarf; replace the desert around the road with two broad flat terracotta and coral-red cut-paper shapes derived from the earth and bicycle; crisp boundaries aligned to horizon and road; no gradients, no shadows on the color shapes.
+One impossible giant element: one enormous coral-red bicycle wheel rises behind the cliff like a monumental halo, visibly derived from the source bicycle wheel; it is the only impossible giant element.
+Small elements: 3–5 tiny desert swallows in graduated sizes follow a single arc around the wheel; add 2–3 sparse white hand-drawn speed-line strokes away from the cyclist.
+Constraints: preserve source composition and vertical 3:4; exactly one impossible giant element; keep source bicycle ordinary scale; no second giant or floating object; bright editorial mood; no frame; no gradient; no dimensional shading on flat shapes; no dark horror; no text; no logo; no watermark; no imported photographic subject.

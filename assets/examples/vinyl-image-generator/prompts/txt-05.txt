@@ -1,0 +1,11 @@
+Use case: photorealistic-natural
+Asset type: original source reference for a later fictional vinyl-release transformation
+Primary request: Create an intimate architectural photograph of a quiet apartment stairwell landing: glossy bottle-green square wall tiles, cream terrazzo steps turning out of view, a small circular wired-glass window casting a sharp oval of afternoon light, and one closed coral-orange umbrella leaning in the corner.
+Scene/backdrop: modest mid-century residential stairwell, no people and no readable numbers or signs
+Subject: turning stair geometry, circular window light, umbrella
+Style/medium: natural editorial architectural photography, subtle film grain, not an album cover or mockup
+Composition/framing: 4:3 landscape, slightly elevated angle, strong diagonals and layered rectangles, umbrella small but distinct
+Lighting/mood: hard warm afternoon sun against cool green tile, homecoming mixed with hesitation
+Color palette: bottle green, cream, coral orange, honey light
+Materials/textures: glossy glazed tile with grout, speckled terrazzo, wired glass, damp umbrella fabric
+Constraints: one standalone source photograph only; no records, sleeves, typography, logo, watermark, collage, borders, people or hands

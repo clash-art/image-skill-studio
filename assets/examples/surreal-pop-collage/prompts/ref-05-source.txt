@@ -1,0 +1,10 @@
+Use case: photorealistic-natural
+Asset type: source reference photograph for an image-to-image art example
+Primary request: create a believable environmental portrait of a middle-aged woman gardener carrying a terracotta watering can inside a glass greenhouse.
+Scene/backdrop: repeating glass roof ribs, dense tomato vines, broad emerald leaves, ripe coral-red tomatoes, turquoise painted workbench.
+Subject: one woman gardener in a straw hat and light linen overalls, standing naturally in the central aisle, face clear and unobstructed.
+Style/medium: bright natural editorial photography with realistic plant, glass, skin, and soil textures.
+Composition/framing: vertical 3:4, centered aisle perspective, roof lines converge upward, subject occupies middle third with breathing room.
+Lighting/mood: luminous diffused morning light, fresh and cheerful.
+Color palette: emerald foliage, coral tomatoes, turquoise bench, terracotta can, warm straw.
+Constraints: one main person; ordinary plausible greenhouse; no surreal objects; no text; no logos; no watermark; no collage; no illustration.

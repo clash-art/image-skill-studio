@@ -1,0 +1,10 @@
+Use case: style-transfer
+Asset type: strict Photo Revival image-to-image example
+Input images: Image 1: source reference photo; use only this source
+Primary request: isolate and redraw only the winter vendor and cart as a miniature charcoal keepsake, preserving knit cap, green apron, red cart, glowing bulb, paper bag, and steam
+Style/medium: loose charcoal contour, sparse watercolor pencil, one pinhead-sized faded vermilion stamp on warm white handmade paper
+Composition/framing: vertical 3:4 page; tiny upper-center cluster fitting inside one fifth page width by one fifth page height, about 5-7% area; leave more than 90% blank paper
+Color palette: localized vermilion, olive, amber; whisper-gray charcoal only inside the cluster
+Text (verbatim): "FIRST SNOW" exactly once, microscopic handwriting directly beside the tiny stamp
+Constraints: no street, wall, tree, canopy surroundings, or background scenery beyond two tiny snow strokes; source-recognizable hand drawing; no other text; no watermark
+Avoid: branches, detailed environment, enlarged cart, full bleed, focal area over 9%, heavy typography, large stamp, collage block, vector finish, photorealism

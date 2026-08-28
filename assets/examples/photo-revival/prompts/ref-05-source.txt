@@ -1,0 +1,9 @@
+Use case: photorealistic-natural
+Asset type: source reference photo for an image-to-image illustration example
+Primary request: create an ordinary candid snapshot of an older woman repairing a cobalt-blue fishing net beside a small weathered yellow boat on a quiet beach
+Scene/backdrop: pale sand, low tide, gray-green sea, simple wooden crate, distant hazy horizon
+Subject: seated woman in a coral headscarf, cobalt net, yellow boat, and her working hands are the memorable focal details
+Style/medium: natural documentary smartphone photography with realistic rope, weathered paint, skin, and sand
+Composition/framing: vertical 3:4, environmental medium-wide view from slightly above, full focal cluster visible
+Lighting/mood: soft late-morning coastal light, patient and contemplative
+Constraints: realistic photo only; no illustration, no text, no logos, no watermark; do not stylize or romanticize

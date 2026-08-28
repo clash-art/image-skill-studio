@@ -1,0 +1,102 @@
+[
+  {
+    "id": "heytea-doodle-poster-i2i-01",
+    "prompt": "Use case: style-transfer\nAsset type: strict I2I example, typography-led vertical object-and-doodle poster\nInput images: Image 1 is the sole source reference and subject anchor.\nPrimary request: Transform the source citrus iced-tea photo into a quiet typography-led poster while preserving the exact photographed ribbed glass, amber liquid, ice, orange wheel, condensation, material, and recognizable silhouette. Do not redraw the drink.\nScene/backdrop: remove the kitchen surroundings and isolate the real glass on a clean warm-white field with its believable soft contact shadow.\nComposition/framing: 3:4 portrait. Place the glass lower-right at about 34 percent of canvas height. Make a large upper-left title block the first visual signal, with generous breathing room.\nDoodle action: add exactly one tiny primitive faceless black-line micro worker beside the glass, quietly inspecting the orange wheel with one short pointer. Use broken blunt marker strokes, lumpy open head, stiff segmented limbs, bad joins; figure height about 10 percent of glass height.\nText (verbatim): \"慢慢喝一口\"\nLettering: render only that title as large rough crooked childlike Chinese blunt-marker lettering, loose vertical arrangement, uneven sizes and spacing, malformed but readable skeletons, flat black ink, off-grid placement. No subtitle.\nConstraints: preserve the real photographed glass; only change background, placement, lettering, and minimal doodle overlay. No official HEYTEA logo or mascot, no brand mark, no extra text, no English, no numbers, no watermark, no cute sticker style, no polished vector, no gradients, no dense decoration, no realistic person, no full-cartoon conversion.",
+    "aspectRatio": "3:4",
+    "mode": "i2i",
+    "referenceImage": "references/ref-01-source.png",
+    "referenceRole": "subject",
+    "promptFile": "prompts/i2i-01.txt",
+    "image": "i2i-01.png"
+  },
+  {
+    "id": "heytea-doodle-poster-i2i-02",
+    "prompt": "Use case: style-transfer\nAsset type: strict I2I example, no-text narrative vertical object-and-doodle poster\nInput images: Image 1 is the sole source reference and subject anchor.\nPrimary request: Transform the source citrus iced-tea photo into a complete tiny action scene while preserving the exact photographed ribbed glass, amber liquid, ice, orange wheel, condensation, material, and recognizable silhouette. Do not redraw the drink.\nScene/backdrop: remove all kitchen surroundings and isolate the real glass on a clean soft off-white field with a believable contact shadow.\nComposition/framing: 3:4 portrait. Place the glass slightly left of center at about 40 percent of canvas height. Do not reserve any title area; use negative space as part of the action path.\nDoodle action: one primitive faceless black-line micro worker stands on a crude two-rung ladder and tips a tiny unlabelled kettle toward the top of the glass. Add one rough liquid arc and exactly three drops. Worker height about 14 percent of glass height. Use separate uneven blunt marker segments, lumpy open head, stiff limbs, blocky paddle ends, gaps and bad joins; functional, not cute.\nText constraints: no text anywhere, no Chinese characters, no English letters, no numbers, labels, captions, random glyphs, logo text, or watermark.\nConstraints: preserve the real photographed glass; only change background, placement, primitive worker, ladder, and liquid marks. No official HEYTEA logo or mascot, no brand mark, no sticker collage, no polished vector, no gradients, no dense decoration, no faces, no full-cartoon conversion.",
+    "aspectRatio": "3:4",
+    "mode": "i2i",
+    "referenceImage": "references/ref-01-source.png",
+    "referenceRole": "subject",
+    "promptFile": "prompts/i2i-02.txt",
+    "image": "i2i-02.png"
+  },
+  {
+    "id": "heytea-doodle-poster-i2i-03",
+    "prompt": "Use case: style-transfer\nAsset type: strict I2I example, typography-led vertical object-and-doodle poster\nInput images: Image 1 is the sole source reference and subject anchor.\nPrimary request: Transform the source strawberry tart photo into a quiet typography-led poster while preserving the exact photographed tart, strawberry arrangement, irregular cream, pastry texture, crumbs, ceramic plate, and recognizable silhouette. Do not redraw the food.\nScene/backdrop: remove the breakfast-table surroundings and isolate the real tart and plate on a clean warm-white field with a believable delicate contact shadow.\nComposition/framing: 3:4 portrait. Place the tart and plate lower-center at about 30 percent of canvas height. Make a large upper-left title block the first visual signal.\nDoodle action: add exactly one tiny primitive faceless black-line micro worker near the plate rim, quietly sprinkling two crumb dots from a small paddle hand. Use broken blunt marker strokes, lumpy open head, stiff segmented limbs, bad joins; figure height about 9 percent of tart height.\nText (verbatim): \"小小补给站\"\nLettering: render only that title as large rough crooked childlike Chinese blunt-marker lettering, two loose staggered vertical groupings, uneven sizes, awkward spacing, malformed but readable skeletons, flat black ink. No subtitle.\nConstraints: preserve the real photographed tart and plate; only change background, placement, lettering, and minimal doodle overlay. No official HEYTEA logo or mascot, no brand mark, no extra text, no English, no numbers, no watermark, no cute sticker style, no polished vector, no gradients, no dense decoration, no realistic person, no full-cartoon conversion.",
+    "aspectRatio": "3:4",
+    "mode": "i2i",
+    "referenceImage": "references/ref-02-source.png",
+    "referenceRole": "subject",
+    "promptFile": "prompts/i2i-03.txt",
+    "image": "i2i-03.png"
+  },
+  {
+    "id": "heytea-doodle-poster-i2i-04",
+    "prompt": "Use case: style-transfer\nAsset type: strict I2I example, no-text narrative vertical object-and-doodle poster\nInput images: Image 1 is the sole source reference and subject anchor.\nPrimary request: Transform the source strawberry tart photo into a complete tiny action scene while preserving the exact photographed tart, strawberries, cream, pastry texture, ceramic plate, crumbs, and recognizable silhouette. Do not redraw the food.\nScene/backdrop: remove all table surroundings and isolate the real tart and plate on a clean soft off-white field with a believable contact shadow.\nComposition/framing: 3:4 portrait. Place the tart center-right at about 42 percent of canvas height. Do not reserve a title area.\nDoodle action: one primitive faceless black-line micro worker pushes a single oversized real-looking loose strawberry up the tart edge using one short rough ramp line. Add one broken motion arc only. Worker height about 15 percent of tart height. Use separate uneven blunt marker segments, lumpy open head, stiff limbs, blocky paddle ends, gaps and bad joins; functional, not cute.\nText constraints: no text anywhere, no Chinese characters, no English letters, no numbers, labels, captions, random glyphs, logo text, or watermark.\nConstraints: preserve the real photographed tart and plate; only change background, placement, primitive worker, strawberry action, and minimal motion marks. No official HEYTEA logo or mascot, no brand mark, no sticker collage, no polished vector, no gradients, no dense decoration, no faces, no full-cartoon conversion.",
+    "aspectRatio": "3:4",
+    "mode": "i2i",
+    "referenceImage": "references/ref-02-source.png",
+    "referenceRole": "subject",
+    "promptFile": "prompts/i2i-04.txt",
+    "image": "i2i-04.png"
+  },
+  {
+    "id": "heytea-doodle-poster-i2i-05",
+    "prompt": "Use case: style-transfer\nAsset type: strict I2I example, typography-led vertical object-and-doodle poster\nInput images: Image 1 is the sole source reference and subject anchor.\nPrimary request: Transform the source pale-green soda bottle photo into a quiet typography-led poster while preserving the exact photographed transparent bottle, squat proportions, metal cap, green liquid, bubbles, condensation, glass refraction, and recognizable silhouette. Do not redraw the bottle.\nScene/backdrop: remove the cafe surroundings and isolate the real bottle on a clean chalk-white field with its believable cool contact shadow.\nComposition/framing: 3:4 portrait. Place the bottle lower-right at about 38 percent of canvas height. Make a large left-side title block the first visual signal with open white space around it.\nDoodle action: add exactly one tiny primitive faceless black-line micro worker near the cap, quietly pointing upward as if inspecting bubbles. Use broken blunt marker strokes, lumpy open head, stiff segmented limbs, bad joins; figure height about 10 percent of bottle height.\nText (verbatim): \"轻轻冒个泡\"\nLettering: render only that title as large rough crooked childlike Chinese blunt-marker lettering in one loose vertical column that drifts off-grid, uneven sizes and gaps, malformed but readable skeletons, flat black ink. No subtitle.\nConstraints: preserve the real photographed bottle; only change background, placement, lettering, and minimal doodle overlay. No official HEYTEA logo or mascot, no brand mark, no extra text, no English, no numbers, no watermark, no cute sticker style, no polished vector, no gradients, no dense decoration, no realistic person, no full-cartoon conversion.",
+    "aspectRatio": "3:4",
+    "mode": "i2i",
+    "referenceImage": "references/ref-03-source.png",
+    "referenceRole": "subject",
+    "promptFile": "prompts/i2i-05.txt",
+    "image": "i2i-05.png"
+  },
+  {
+    "id": "heytea-doodle-poster-i2i-06",
+    "prompt": "Use case: style-transfer\nAsset type: strict I2I example, no-text narrative vertical object-and-doodle poster\nInput images: Image 1 is the sole source reference and subject anchor.\nPrimary request: Transform the source pale-green soda bottle photo into a complete tiny action scene while preserving the exact photographed transparent bottle, metal cap, green liquid, bubbles, condensation, glass refraction, and recognizable silhouette. Do not redraw the bottle.\nScene/backdrop: remove all cafe surroundings and isolate the real bottle on a clean soft off-white field with a believable contact shadow.\nComposition/framing: 3:4 portrait. Place the bottle slightly left of center at about 46 percent of canvas height. Do not reserve a title area.\nDoodle action: one primitive faceless black-line micro worker braces against the bottle cap with a short crude wrench as if repairing a bubble machine. Add one rough ground line and exactly three small bubble circles rising from the cap. Worker height about 13 percent of bottle height. Use separate uneven blunt marker segments, lumpy open head, stiff limbs, blocky paddle ends, gaps and bad joins; functional, not cute.\nText constraints: no text anywhere, no Chinese characters, no English letters, no numbers, labels, captions, random glyphs, logo text, or watermark.\nConstraints: preserve the real photographed bottle; only change background, placement, primitive worker, wrench, ground line, and three bubble marks. No official HEYTEA logo or mascot, no brand mark, no sticker collage, no polished vector, no gradients, no dense decoration, no faces, no full-cartoon conversion.",
+    "aspectRatio": "3:4",
+    "mode": "i2i",
+    "referenceImage": "references/ref-03-source.png",
+    "referenceRole": "subject",
+    "promptFile": "prompts/i2i-06.txt",
+    "image": "i2i-06.png"
+  },
+  {
+    "id": "heytea-doodle-poster-i2i-07",
+    "prompt": "Use case: style-transfer\nAsset type: strict I2I example, typography-led vertical object-and-doodle poster\nInput images: Image 1 is the sole source reference and subject anchor.\nPrimary request: Transform the source worn ivory canvas sneaker photo into a quiet typography-led daily-object poster while preserving the exact photographed shoe, canvas weave, creases, scuffs, rubber texture, untied cotton laces, and recognizable silhouette. Do not redraw or beautify the shoe and do not turn it into a drink product.\nScene/backdrop: remove the entryway surroundings and isolate the real sneaker on a clean warm-white field with its believable soft contact shadow.\nComposition/framing: 3:4 portrait. Place the sneaker lower-right on a shallow diagonal at about 32 percent of canvas height. Make a large upper-left title block the first visual signal.\nDoodle action: add exactly one tiny primitive faceless black-line micro worker near the loose lace end, quietly holding it like a rope. Use broken blunt marker strokes, lumpy open head, stiff segmented limbs, bad joins; figure height about 11 percent of shoe height.\nText (verbatim): \"慢慢走就好\"\nLettering: render only that title as large rough crooked childlike Chinese blunt-marker lettering in loose staggered vertical placement, uneven sizes and spacing, malformed but readable skeletons, flat black ink. No subtitle.\nConstraints: preserve the real photographed sneaker; only change background, placement, lettering, and minimal doodle overlay. No official HEYTEA logo or mascot, no brand mark, no extra text, no English, no numbers, no watermark, no cute sticker style, no polished vector, no gradients, no dense decoration, no realistic person, no full-cartoon conversion.",
+    "aspectRatio": "3:4",
+    "mode": "i2i",
+    "referenceImage": "references/ref-04-source.png",
+    "referenceRole": "subject",
+    "promptFile": "prompts/i2i-07.txt",
+    "image": "i2i-07.png"
+  },
+  {
+    "id": "heytea-doodle-poster-i2i-08",
+    "prompt": "Use case: style-transfer\nAsset type: strict I2I example, no-text narrative vertical object-and-doodle poster\nInput images: Image 1 is the sole source reference and subject anchor.\nPrimary request: Transform the source worn ivory canvas sneaker photo into a complete tiny action scene while preserving the exact photographed shoe, canvas weave, creases, scuffs, rubber texture, untied laces, and recognizable silhouette. Do not redraw the shoe and do not turn it into a drink product.\nScene/backdrop: remove all entryway surroundings and isolate the real sneaker on a clean soft off-white field with a believable contact shadow.\nComposition/framing: 3:4 portrait. Place the sneaker center-left on a diagonal at about 45 percent of canvas height. Do not reserve a title area.\nDoodle action: one primitive faceless black-line micro worker pulls the loose lace backward with both blocky paddle hands as if hauling a rope, feet braced against one rough ground line. Add one broken pull-motion arc only. Worker height about 16 percent of shoe height. Use separate uneven blunt marker segments, lumpy open head, stiff limbs, gaps and bad joins; functional, not cute.\nText constraints: no text anywhere, no Chinese characters, no English letters, no numbers, labels, captions, random glyphs, logo text, or watermark.\nConstraints: preserve the real photographed sneaker; only change background, placement, primitive worker, ground line, and one motion arc. No official HEYTEA logo or mascot, no brand mark, no sticker collage, no polished vector, no gradients, no dense decoration, no faces, no full-cartoon conversion.",
+    "aspectRatio": "3:4",
+    "mode": "i2i",
+    "referenceImage": "references/ref-04-source.png",
+    "referenceRole": "subject",
+    "promptFile": "prompts/i2i-08.txt",
+    "image": "i2i-08.png"
+  },
+  {
+    "id": "heytea-doodle-poster-i2i-09",
+    "prompt": "Use case: style-transfer\nAsset type: strict I2I example, typography-led vertical object-and-doodle poster\nInput images: Image 1 is the sole source reference and subject anchor.\nPrimary request: Transform the source mushroom-shaped ceramic table lamp photo into a quiet typography-led daily-object poster while preserving the exact photographed lamp, ochre dome, cream ceramic base, matte glaze, warm illumination, and recognizable silhouette. Do not redraw the lamp and do not turn it into a drink product.\nScene/backdrop: remove the bedside surroundings and isolate the real switched-on lamp on a clean warm-white field with a subtle pool of warm light and believable contact shadow.\nComposition/framing: 3:4 portrait. Place the lamp lower-right at about 38 percent of canvas height. Make a large upper-left title block the first visual signal.\nDoodle action: add exactly one tiny primitive faceless black-line micro worker near the base, quietly pointing toward the warm pool of light. Use broken blunt marker strokes, lumpy open head, stiff segmented limbs, bad joins; figure height about 10 percent of lamp height.\nText (verbatim): \"留一盏小灯\"\nLettering: render only that title as large rough crooked childlike Chinese blunt-marker lettering in loose staggered vertical placement, uneven sizes and awkward spacing, malformed but readable skeletons, flat black ink. No subtitle.\nConstraints: preserve the real photographed lamp; only change background, placement, lettering, light pool, and minimal doodle overlay. No official HEYTEA logo or mascot, no brand mark, no extra text, no English, no numbers, no watermark, no cute sticker style, no polished vector, no gradients beyond the lamp's natural light falloff, no dense decoration, no realistic person, no full-cartoon conversion.",
+    "aspectRatio": "3:4",
+    "mode": "i2i",
+    "referenceImage": "references/ref-05-source.png",
+    "referenceRole": "subject",
+    "promptFile": "prompts/i2i-09.txt",
+    "image": "i2i-09.png"
+  },
+  {
+    "id": "heytea-doodle-poster-i2i-10",
+    "prompt": "Use case: style-transfer\nAsset type: strict I2I example, no-text narrative vertical object-and-doodle poster\nInput images: Image 1 is the sole source reference and subject anchor.\nPrimary request: Transform the source mushroom-shaped ceramic table lamp photo into a complete tiny action scene while preserving the exact photographed lamp, ochre dome, cream ceramic base, matte glaze, warm illumination, and recognizable silhouette. Do not redraw the lamp and do not turn it into a drink product.\nScene/backdrop: remove all bedside surroundings and isolate the real switched-on lamp on a clean soft off-white field with its subtle warm pool and believable contact shadow.\nComposition/framing: 3:4 portrait. Place the lamp slightly right of center at about 48 percent of canvas height. Do not reserve a title area.\nDoodle action: one primitive faceless black-line micro worker climbs a crude three-rung ladder leaning against the ceramic base and reaches up with a tiny straight tool as if repairing the light. Add one rough ground line only. Worker height about 15 percent of lamp height. Use separate uneven blunt marker segments, lumpy open head, stiff limbs, blocky paddle ends, gaps and bad joins; functional, not cute.\nText constraints: no text anywhere, no Chinese characters, no English letters, no numbers, labels, captions, random glyphs, logo text, or watermark.\nConstraints: preserve the real photographed lamp; only change background, placement, primitive worker, ladder, tool, ground line, and natural light pool. No official HEYTEA logo or mascot, no brand mark, no sticker collage, no polished vector, no gradients except real lamp light, no dense decoration, no faces, no full-cartoon conversion.",
+    "aspectRatio": "3:4",
+    "mode": "i2i",
+    "referenceImage": "references/ref-05-source.png",
+    "referenceRole": "subject",
+    "promptFile": "prompts/i2i-10.txt",
+    "image": "i2i-10.png"
+  }
+]

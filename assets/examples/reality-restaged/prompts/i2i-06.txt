@@ -1,0 +1,11 @@
+Use case: style-transfer
+Asset type: strict Reality Restaged image-to-image example
+Input images: Image 1 is the sole source photograph and documentary reality anchor.
+Primary request: Preserve the young shepherd, mule, gentle hand-on-neck gesture, practical wool layers, ochre blanket and cobalt rope with photographic credibility. Rebuild the mountain from its directional strata rather than reproducing it: a vast suspended matte-black slab hangs overhead, its underside a saturated cobalt curve; below is an empty terracotta floor ending in a thin cream horizon. The pair walk small beneath it. The one impossible logic is that the slab's curved underside becomes a second walkable horizon, where a tiny repeated silhouette of the same pair appears one step ahead, like the journey continuing on the ceiling. Use only one repetition.
+Scene/backdrop: no realistic mountains, grass, stones or clouds; only suspended slab, terracotta plane, cobalt underside and cream void
+Style/medium: believable analog documentary photograph, realistic human and mule anatomy, tactile hair, wool and leather, subtle grain, natural exposure
+Composition/framing: 3:4 portrait, main pair low-left and small, slab occupying upper half, broad cream negative space at right, repeated pair tiny and secondary
+Lighting/mood: restrained late-afternoon sidelight, solitude and continuity
+Color palette: terracotta and cobalt dominant, matte black and cream supporting, ochre blanket retained
+Constraints: color and monumental form structure the image; preserve individual identity and animal anatomy; exactly one meaningful repetition; one surreal proposition; no text, logo or watermark
+Avoid: giant animal, floating random objects, literal giant blanket or rope, portal, moon, many clones, fantasy concept art, painterly surfaces, CGI, HDR, malformed legs, extra heads

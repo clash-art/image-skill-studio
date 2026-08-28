@@ -1,0 +1,9 @@
+Use case: style-transfer
+Asset type: strict surreal-pop-collage example, vertical 3:4
+Input images: Image 1 is the sole source reference and reality anchor.
+Primary request: transform this exact alpine cable-car photograph into a bright surreal pop collage while keeping the station, snow ridge, jagged peaks, diagonal cables, and their perspective recognizable within three seconds.
+Reality anchor: preserve the station, snow, mountain peaks, rocks, and cables as detailed black-and-white photography; keep the red station's architecture identifiable through shape and texture.
+Flat world: replace the broad sky with one huge flat matte signal-red plane purified from the source station; replace snowfield regions with flat warm-white and pale-cyan shapes derived from snow and sky; add one narrow flat golden-yellow horizon wedge from the source gondola; hard clean edges, no gradients, no shadows on color shapes.
+One impossible giant element: enlarge the source yellow cable car into one monumental golden gondola suspended from the same diagonal cables, larger than the station but still clearly a single cable car; it is the only impossible giant object.
+Small elements: 3–5 tiny black alpine birds in graduated sizes follow the cable diagonal; add 2–3 restrained white hand-drawn zigzag wind strokes in open sky.
+Constraints: vertical 3:4; preserve original station and mountain composition; exactly one impossible giant element; no second gondola; no giant sun or moon; bright crisp mood; no frame; no gradients; no dimensional shadow on flat color shapes; no dark horror; no text; no logo; no watermark; no imported photographic material.

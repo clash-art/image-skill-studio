@@ -1,0 +1,9 @@
+Use case: style-transfer
+Asset type: finished vertical photo-abstract editorial example
+Input images: Image 1 is the only source photograph and remains faithful in the upper section.
+Primary request: Create one minimal vertical editorial diptych, preserving Image 1 as original photography above and translating only its spatial relationships into an abstract ivory panel below. No redraw, reconstruction, expansion, replacement, retouch, recolor, or filter; proportional scaling or slight crop only.
+Observed facts: a very low undulating horizon; enormous blue upper void; one dark vertical anchor left of center; flattened olive mass crossing it; long cool-dark cast shadow to the right; warm ochre ground.
+Composition/framing: source photograph 49% of final height and flat neutral ivory #F3F0E8 panel 51%, joined with a clean direct edge and no frame, border, gap, shadow, collage, tape, or mockup.
+Abstract system: primary family is three thin layered horizontal bands with irregular lengths: pale washed blue at top, muted ochre below, charcoal-brown low line stretching right. Supporting family is one short off-center tapered dark vertical block intersecting the ochre band and one compressed muted-olive arc above it. Use relationships, not a recognizable tree silhouette; motif extends up to 55% panel width but remains very low, with generous 75% whitespace.
+Text: render exactly "The Long Shade" once, centered at the bottom in a sober book serif, dark brown-gray. No subtitle and no other text.
+Constraints: every mark and color must be traceable to Image 1; uniform ivory with no gradient, texture, noise, grain, glow, shadows, vignette, stains, fibers, scan effect; no illustration, decorative geometry, invented symmetry, logo, date, number, label, signature, or watermark. Return only the completed composition.

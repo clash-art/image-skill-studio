@@ -1,0 +1,10 @@
+Use case: photorealistic-natural
+Asset type: source reference photograph for an image-to-image art example
+Primary request: create a believable editorial travel photograph of a solitary woman cyclist paused beside a coral-red touring bicycle on an empty desert road.
+Scene/backdrop: wide terracotta desert, distant chalk cliffs, sparse silver-green shrubs, cloudless ultramarine sky.
+Subject: one woman cyclist wearing a cream shirt and teal scarf, profile view, ordinary realistic proportions.
+Style/medium: natural documentary photography, crisp real-world texture, no stylization.
+Composition/framing: vertical 3:4, low horizon, long road receding diagonally, cyclist and bicycle in lower third, generous sky.
+Lighting/mood: bright dry morning sun, adventurous but quiet.
+Color palette: terracotta earth, coral bicycle, teal scarf, ultramarine sky, cream clothing.
+Constraints: exactly one person and one normal bicycle; plausible reality; no surreal elements; no text; no logos; no watermark; no collage; no illustration.

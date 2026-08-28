@@ -1,0 +1,38 @@
+[
+  {
+    "skillId": "gc-minimal-zine-poster-v0-1",
+    "id": "gc-minimal-zine-poster-v0-1-diversity-v5",
+    "title": "Still Waiting / Lost-Item Corner",
+    "prompt": "Transform the supplied neighborhood-library lost-and-found shelf into exactly one complete vertical 3:5 Minimal Zine Poster v0.1. Use full-frame warm gray aged uncoated paper with 78%-84% negative space and one compact upper-right archival specimen cluster. Preserve the transparent umbrella, canvas tote, striped glove, shelf label, and autumn doorway as recognizable evidence, but translate the shelf into a soft grayscale torn-edge xerox fragment. Isolate the striped glove as one saturated opaque vermilion-orange risograph silhouette occupying roughly 2% of the canvas. Add the exact typewriter phrase 'STILL WAITING' and tiny 'LIBRARY / 08:42 / DRY', sparse fragmented letters, paper fibers, scanlines, ink bleed, and slight misregistration. Flat scanned-paper view; no border, mockup, full-bleed scene, commercial hierarchy, logo, CTA, glossy finish, 3D, cinematic lighting, neon, cartoon, dense scrapbook, many colors, long text, crop, or watermark.",
+    "preview": "/catalog/diversity-20260826/gc-minimal-zine-poster-v0-1/result.png",
+    "referenceImage": "/catalog/diversity-20260826/gc-minimal-zine-poster-v0-1/reference.png",
+    "referencePreview": "/catalog/diversity-20260826/gc-minimal-zine-poster-v0-1/reference.png",
+    "referenceResourceUri": "/catalog/diversity-20260826/gc-minimal-zine-poster-v0-1/reference.png",
+    "aspectRatio": "3:5",
+    "mediaType": "image"
+  },
+  {
+    "skillId": "classic-epic-movie-poster",
+    "id": "classic-epic-movie-poster-diversity-v5",
+    "title": "The Last Serve",
+    "prompt": "Recompose the supplied apartment-courtyard table-tennis photograph as exactly one complete vertical 2:3 classic 1930s-1970s hand-painted theatrical one-sheet titled 'THE LAST SERVE'. Preserve the brick courtyard, green table, serving player, waiting opponent, scorekeeper, laundry line, and blue-dusk versus porch-amber atmosphere. Use an object-monument composition: a colossal green paddle in profile occupies about 55% of poster height, the serving neighbor crosses its lower edge, the opponent and scorekeeper descend as small right-edge witness vignettes, and folding chairs, thermos, brick steps, laundry, and table form a tiny bottom action frieze. Use large separate burnt-orange, deep green, cobalt, warm ivory, and ink-black masses with opaque gouache and tempera planes, dry-brush edges, lithograph grain, fine halftone, uneven ink density, and slight plate misregistration. Exact title in a tall theatrical serif; no photo collage, glossy airbrush, hyperreal portrait, sans-serif lockup, comic panels, anime, neon, 3D CGI, dense credits, logos, ratings, CTA, sepia dominance, frame, glare, crop, or watermark.",
+    "preview": "/catalog/diversity-20260826/classic-epic-movie-poster/result.png",
+    "referenceImage": "/catalog/diversity-20260826/classic-epic-movie-poster/reference.png",
+    "referencePreview": "/catalog/diversity-20260826/classic-epic-movie-poster/reference.png",
+    "referenceResourceUri": "/catalog/diversity-20260826/classic-epic-movie-poster/reference.png",
+    "aspectRatio": "2:3",
+    "mediaType": "image"
+  },
+  {
+    "skillId": "vinyl-image-generator",
+    "id": "vinyl-image-generator-diversity-v5",
+    "title": "After the Chair Moved",
+    "prompt": "Turn the supplied quiet post-breakfast kitchen photograph into exactly one complete 4:3 landscape fictional vinyl-release archive image with exactly four non-overlapping objects in a strict 2-by-2 arrangement: full front sleeve, full back sleeve, full Side A record, full Side B record. Use the tea ring and blood-orange crescent as the primary anchor; carry the pulled-chair diagonal, newspaper fold, cream laminate, terracotta, and pale window light into a contemporary ambient-folk design. Fictional artist 'Cup Ring Atlas', title 'After the Chair Moved', label 'Open Window Editions', catalog OWE-017. The front uses a cup-ring interrupted by a citrus crescent and chair-leg diagonal; the back uses a distinct modular newspaper-fold grid with Side A tracks 'Tea Ring' and 'Chair Left Open' and Side B tracks 'Crumbs at Eleven' and 'Curtain Weather'. Use translucent tea-amber Side A vinyl and smoke-clear Side B vinyl with citrus-red center crescents. Uncoated cream board, offset ink, blind-debossed ring, subtle edges, natural contact shadows, solid soft sky-blue background, generous whitespace. No room scenery, people, hands, extra props, overlap, missing objects, raw source photo as cover, real artist, generic type, automatic vintage distress, shrink wrap, plastic, crop, or watermark.",
+    "preview": "/catalog/diversity-20260826/vinyl-image-generator/result.png",
+    "referenceImage": "/catalog/diversity-20260826/vinyl-image-generator/reference.png",
+    "referencePreview": "/catalog/diversity-20260826/vinyl-image-generator/reference.png",
+    "referenceResourceUri": "/catalog/diversity-20260826/vinyl-image-generator/reference.png",
+    "aspectRatio": "4:3",
+    "mediaType": "image"
+  }
+]
