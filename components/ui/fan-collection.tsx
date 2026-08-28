@@ -91,6 +91,31 @@ export function FanCollection({
   const [loadedSources, setLoadedSources] = useState<Set<string>>(() => new Set());
   const [sourceRatios, setSourceRatios] = useState<Record<string, number>>({});
   const [referenceRatios, setReferenceRatios] = useState<Record<string, number>>({});
+  const settleArtwork = useCallback((source: string, image: HTMLImageElement) => {
+    if (!image.complete) return;
+    if (!image.naturalWidth || !image.naturalHeight) {
+      setFailedSources((current) => {
+        if (current.has(source)) return current;
+        const next = new Set(current);
+        next.add(source);
+        return next;
+      });
+      return;
+    }
+    const ratio = image.naturalWidth / image.naturalHeight;
+    setSourceRatios((current) => current[source] === ratio ? current : { ...current, [source]: ratio });
+    setLoadedSources((current) => {
+      if (current.has(source)) return current;
+      const next = new Set(current);
+      next.add(source);
+      return next;
+    });
+  }, []);
+  const settleReference = useCallback((source: string, image: HTMLImageElement) => {
+    if (!image.complete || !image.naturalWidth || !image.naturalHeight) return;
+    const ratio = image.naturalWidth / image.naturalHeight;
+    setReferenceRatios((current) => current[source] === ratio ? current : { ...current, [source]: ratio });
+  }, []);
   // Keep the collection geometry stable while media loads or fails. Removing a
   // failed item caused whole collections to disappear after the skeleton pass.
   const visibleItems = selectRenderableFanItems(items, new Set()) as FanCollectionItem[];
@@ -117,7 +142,8 @@ export function FanCollection({
   }, [phase, resetFanState]);
 
   if (!visibleItems.length) return null;
-  const canFan = visibleItems.length > 1;
+  const displayItems = visibleItems.filter((item) => loadedSources.has(item.src));
+  const canFan = displayItems.length > 1;
   const interactionLocked = phase !== "idle";
   const cardsHidden = phase === "hidden";
   const guiHidden = phase === "hidden" || phase === "origin";
@@ -126,14 +152,15 @@ export function FanCollection({
     phase === "origin" || phase === "origin-revealing"
     || phase === "idle" && (interaction.pinned || interaction.hovered || interaction.focused)
   );
-  const ratios = visibleItems.map((item) => sourceRatios[item.src] ?? parseAspectRatio(item.meta) ?? 3 / 4);
+  const ratios = displayItems.map((item) => sourceRatios[item.src] ?? parseAspectRatio(item.meta) ?? 3 / 4);
   const displayRatios = ratios.map((ratio, index) => {
-    const referenceSrc = visibleItems[index]?.referenceSrc;
+    const referenceSrc = displayItems[index]?.referenceSrc;
     if (!referenceSrc || ratio < 1.15) return ratio;
     const referenceRatio = referenceRatios[referenceSrc] ?? ratio;
     return 1 / (1 / referenceRatio + 1 / ratio);
   });
-  const tallestRatio = Math.min(...displayRatios);
+  const pendingRatio = parseAspectRatio(visibleItems[0]?.meta) ?? 3 / 4;
+  const tallestRatio = displayRatios.length ? Math.min(...displayRatios) : pendingRatio;
 
   function selectItem(event: MouseEvent<HTMLButtonElement>, item: FanCollectionItem) {
     const directTouch = lastPointerType.current && lastPointerType.current !== "mouse";
@@ -142,7 +169,7 @@ export function FanCollection({
       setInteraction((current) => ({ ...current, pinned: true }));
       return;
     }
-    onSelect(item, visibleItems);
+    onSelect(item, displayItems);
   }
 
   function handleEscape(event: KeyboardEvent<HTMLButtonElement>) {
@@ -170,6 +197,7 @@ export function FanCollection({
       className={cn(
         "fan-collection",
         interaction.pinned && "is-open",
+        !displayItems.length && "is-loading",
         !canFan && "is-single",
         sourceUrl && "has-source",
         interactionLocked && "is-transition-locked",
@@ -193,17 +221,18 @@ export function FanCollection({
         className="fan-collection__trigger"
         aria-expanded={canFan ? interaction.pinned : false}
         aria-controls={cardsId}
-        aria-label={canFan ? `${label}，${total} 件，${interaction.pinned ? "收起" : "展开"}` : `打开 ${label}`}
+        aria-label={!displayItems.length ? `${label}，图片加载中` : canFan ? `${label}，${total} 件，${interaction.pinned ? "收起" : "展开"}` : `打开 ${label}`}
         onClick={() => {
+          if (!displayItems.length) return;
           if (!canFan) {
-            onSelect(visibleItems[0], visibleItems);
+            onSelect(displayItems[0], displayItems);
             return;
           }
           if (interaction.pinned) resetFanState();
           else setInteraction((current) => ({ ...current, pinned: true }));
         }}
         onKeyDown={handleEscape}
-        disabled={interactionLocked || guiHidden}
+        disabled={interactionLocked || guiHidden || !displayItems.length}
         animate={{
           opacity: guiHidden ? 0 : 1,
           transition: {
@@ -237,6 +266,43 @@ export function FanCollection({
         </a>
       ) : null}
 
+      <span className="fan-collection__preload" aria-hidden="true">
+        {visibleItems.map((item) => (
+          <span key={`preload-${item.id}`}>
+            <img
+              src={studioPreviewUrl(item.src, "card")}
+              alt=""
+              loading={revealOrder < 3 ? "eager" : "lazy"}
+              decoding="async"
+              ref={(image) => {
+                if (image) settleArtwork(item.src, image);
+              }}
+              onLoad={(event) => settleArtwork(item.src, event.currentTarget)}
+              onError={() => {
+                setFailedSources((current) => {
+                  if (current.has(item.src)) return current;
+                  const next = new Set(current);
+                  next.add(item.src);
+                  return next;
+                });
+              }}
+            />
+            {item.referenceSrc ? (
+              <img
+                src={studioPreviewUrl(item.referenceSrc, "thumb")}
+                alt=""
+                loading={revealOrder < 3 ? "eager" : "lazy"}
+                decoding="async"
+                ref={(image) => {
+                  if (image) settleReference(item.referenceSrc!, image);
+                }}
+                onLoad={(event) => settleReference(item.referenceSrc!, event.currentTarget)}
+              />
+            ) : null}
+          </span>
+        ))}
+      </span>
+
       <motion.div
         initial={false}
         id={cardsId}
@@ -255,9 +321,9 @@ export function FanCollection({
           },
         }}
       >
-        {visibleItems.map((item, index) => {
-          const placement = fanPlacement(index, visibleItems.length);
-          const stackDepth = visibleItems.length - 1 - index;
+        {!displayItems.length ? <span className="fan-collection__pending-card" /> : displayItems.map((item, index) => {
+          const placement = fanPlacement(index, displayItems.length);
+          const stackDepth = displayItems.length - 1 - index;
           const baseY = isFanned ? placement.y : stackDepth * -3;
           const hoverLiftY = shouldReduceMotion ? baseY : baseY - 12;
           const hoverScale = shouldReduceMotion ? 1 : 1.05;
@@ -331,19 +397,10 @@ export function FanCollection({
                   alt=""
                   loading="lazy"
                   decoding="async"
-                  onLoad={(event) => {
-                    const image = event.currentTarget;
-                    if (image.naturalWidth && image.naturalHeight) {
-                      const ratio = image.naturalWidth / image.naturalHeight;
-                      setSourceRatios((current) => current[item.src] === ratio ? current : { ...current, [item.src]: ratio });
-                    }
-                    setLoadedSources((current) => {
-                      if (current.has(item.src)) return current;
-                      const next = new Set(current);
-                      next.add(item.src);
-                      return next;
-                    });
+                  ref={(image) => {
+                    if (image) settleArtwork(item.src, image);
                   }}
+                  onLoad={(event) => settleArtwork(item.src, event.currentTarget)}
                   onError={() => {
                     setFailedSources((current) => {
                       if (current.has(item.src)) return current;
@@ -360,14 +417,10 @@ export function FanCollection({
                       alt=""
                       loading="lazy"
                       decoding="async"
-                      onLoad={(event) => {
-                        const image = event.currentTarget;
-                        if (!image.naturalWidth || !image.naturalHeight) return;
-                        const referenceRatio = image.naturalWidth / image.naturalHeight;
-                        setReferenceRatios((current) => current[item.referenceSrc!] === referenceRatio
-                          ? current
-                          : { ...current, [item.referenceSrc!]: referenceRatio });
+                      ref={(image) => {
+                        if (image) settleReference(item.referenceSrc!, image);
                       }}
+                      onLoad={(event) => settleReference(item.referenceSrc!, event.currentTarget)}
                     />
                   </span>
                 ) : null}

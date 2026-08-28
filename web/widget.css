@@ -328,23 +328,54 @@ select:focus-visible {
 }
 .fan-collection__card:active { filter: brightness(0.97); }
 .fan-collection.is-transition-locked .fan-collection__card { pointer-events: none; }
+.fan-collection__preload {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+.fan-collection__preload img { width: 1px; height: 1px; }
+.fan-collection__pending-card {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border: 5px solid rgba(255, 253, 248, 0.74);
+  border-radius: 25px;
+  background:
+    radial-gradient(circle at 28% 22%, rgba(255, 255, 255, 0.5), transparent 38%),
+    linear-gradient(145deg, #e8e2d8, #d9d2c7);
+  box-shadow: 0 12px 30px rgba(40, 48, 54, 0.08);
+}
+.fan-collection__pending-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.16);
+  animation: collection-media-breathe 1.8s ease-in-out infinite alternate;
+}
+.fan-collection.is-loading .fan-collection__trigger { opacity: 0.72; }
 .fan-collection__media {
   position: absolute;
   inset: 0;
   display: block;
   overflow: hidden;
   border-radius: inherit;
-  background: #e4ded3;
+  background:
+    radial-gradient(circle at 28% 22%, rgba(255, 255, 255, 0.52), transparent 38%),
+    linear-gradient(145deg, #e8e2d8, #d9d2c7);
 }
 .fan-collection__media::before {
   content: "";
   position: absolute;
   z-index: 1;
   inset: 0;
-  transform: translateX(-100%);
-  background: linear-gradient(100deg, transparent 25%, rgba(255, 255, 255, 0.72) 50%, transparent 75%);
-  animation: creation-skeleton-shimmer 1.35s ease-in-out infinite;
-  transition: opacity 160ms ease;
+  background:
+    radial-gradient(circle at 50% 42%, rgba(255, 255, 255, 0.3), transparent 34%),
+    rgba(237, 232, 222, 0.28);
+  animation: collection-media-breathe 1.8s ease-in-out infinite alternate;
+  transition: opacity 260ms ease;
 }
 .fan-collection__media.is-loaded::before { opacity: 0; animation: none; }
 .fan-collection__media.is-failed::before {
@@ -357,10 +388,21 @@ select:focus-visible {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0;
-  transition: opacity 180ms ease;
+  opacity: 0.16;
+  filter: blur(16px) saturate(0.72);
+  transform: scale(1.035);
+  transition: opacity 280ms ease, filter 360ms ease, transform 420ms cubic-bezier(0.22, 1, 0.36, 1);
 }
-.fan-collection__media.is-loaded img { opacity: 1; }
+.fan-collection__media.is-loaded img {
+  opacity: 1;
+  filter: none;
+  transform: none;
+}
+
+@keyframes collection-media-breathe {
+  from { opacity: 0.42; }
+  to { opacity: 0.72; }
+}
 .fan-collection__media.has-reference.is-collage {
   display: grid;
   grid-template-rows: minmax(0, 0.86fr) minmax(0, 1.37fr);
