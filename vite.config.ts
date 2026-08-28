@@ -9,7 +9,7 @@ import { defineConfig } from "vite";
 const isCodexSeatbeltSandbox = process.env.CODEX_SANDBOX === "seatbelt";
 
 const catalogAssetRoot = resolve(process.cwd(), "assets");
-const catalogAssetPrefix = "/studio-assets/";
+const catalogAssetPrefix = "/studio/image/assets/";
 const assetContentTypes: Record<string, string> = {
   ".gif": "image/gif",
   ".jpeg": "image/jpeg",

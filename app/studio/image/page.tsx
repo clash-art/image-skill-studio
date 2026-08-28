@@ -1,5 +1,23 @@
 import { ImageSkillStudio, type StudioSnapshot } from "@/components/image-skill-studio";
 import registry from "@/catalog/registry.json";
+import { jsonLd, SEO_IMAGE_URL, seoSkills, skillPageUrl, STUDIO_URL } from "@/lib/studio-seo";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "AI 图像 Skill 工作台与创作案例",
+  description: "浏览 15 个可复用的 AI 图像创作 Skill，比较文生图、图生图、海报、拼贴、插画与复古界面案例。",
+  alternates: { canonical: STUDIO_URL },
+  openGraph: {
+    url: STUDIO_URL,
+    title: "AI 图像 Skill 工作台与创作案例",
+    description: "浏览真实生成案例、参考图与提示词方法，在 Codex 中继续创作。",
+    images: [{ url: SEO_IMAGE_URL, width: 1200, height: 630, alt: "Image Skill Studio 创意图像案例" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: [SEO_IMAGE_URL],
+  },
+};
 
 type RegistryImageSlot = {
   id: string;
@@ -87,5 +105,54 @@ const previewState: StudioSnapshot = {
 };
 
 export default function Home() {
-  return <ImageSkillStudio initialState={previewState} previewMode />;
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://clash.art/#website",
+        name: "Image Skill Studio",
+        alternateName: "Clash Image Skill Studio",
+        url: "https://clash.art",
+        inLanguage: ["zh-CN", "en"],
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": `${STUDIO_URL}#application`,
+        name: "Image Skill Studio",
+        url: STUDIO_URL,
+        description: "用于发现、比较和使用可复用 AI 图像创作方法的工作台。",
+        applicationCategory: "DesignApplication",
+        operatingSystem: "Web, Codex",
+        isAccessibleForFree: true,
+        offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+        featureList: ["文生图 Skill", "图生图 Skill", "真实生成案例", "参考图工作流", "提示词复用"],
+      },
+      {
+        "@type": "CollectionPage",
+        "@id": `${STUDIO_URL}#collection`,
+        name: "AI 图像 Skill 合集",
+        url: STUDIO_URL,
+        mainEntity: {
+          "@type": "ItemList",
+          numberOfItems: seoSkills.length,
+          itemListElement: seoSkills.map((skill, index) => ({
+            "@type": "ListItem",
+            position: index + 1,
+            name: skill.displayName,
+            url: skillPageUrl(skill.id),
+          })),
+        },
+      },
+    ],
+  };
+
+  return (
+    <>
+      <h1 className="sr-only">Image Skill Studio：AI 图像创作方法与真实案例</h1>
+      <p className="sr-only">浏览文生图、图生图、海报、插画、拼贴和复古界面等可复用 Image Skill。</p>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(structuredData) }} />
+      <ImageSkillStudio initialState={previewState} previewMode />
+    </>
+  );
 }
