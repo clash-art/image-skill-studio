@@ -51,6 +51,10 @@ export default function SkillsPage() {
             <p className={styles.eyebrow}>Curated image methods</p>
             <h1 className={styles.title}>AI 图像 Skill 目录</h1>
             <p className={styles.lede}>每个 Skill 都是一套可复用的创作方法，包含明确输入、比例约束、真实参考图和生成案例。</p>
+            <div className={styles.actions}>
+              <Link className={styles.primary} href="/studio/image/plugin">安装 Codex 插件</Link>
+              <Link className={styles.secondary} href="/studio/image">打开网页版</Link>
+            </div>
           </div>
         </header>
         <section aria-labelledby="skill-directory-title">

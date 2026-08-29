@@ -74,6 +74,7 @@ export default function HomePage() {
 
   return (
     <main className={styles.page}>
+      <link rel="prefetch" href="/studio/image" as="document" />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(structuredData) }} />
 
       <nav className={styles.nav} aria-label="Main navigation">
@@ -84,6 +85,7 @@ export default function HomePage() {
         <div className={styles.navLinks}>
           <a href="#workspace">Workspace</a>
           <a href="#community">Community</a>
+          <Link href="/studio/image/plugin">Plugin</Link>
         </div>
       </nav>
 
@@ -120,19 +122,22 @@ export default function HomePage() {
         </article>
 
         <article className={`${styles.product} ${styles.communityProduct}`} id="community">
-          <Link className={styles.imageStage} href="/studio/image" aria-label="打开 Image Skill Studio">
+          <a className={styles.imageStage} href="/studio/image#feed" aria-label="打开 Image Skill Studio">
             {imagePreviews.map((preview, index) => (
               <figure data-position={index} key={preview.name}>
                 <img src={preview.image} alt={`${preview.name} 示例`} fetchPriority={index === 0 ? "high" : "auto"} />
                 <figcaption>{preview.name}</figcaption>
               </figure>
             ))}
-          </Link>
+          </a>
           <div className={styles.productCopy}>
             <span>COMMUNITY PRODUCT</span>
             <h3>Image Skill<br />Studio</h3>
             <p>社区驱动的 AI 图像 Skill 工作台。用真实参考图、提示词和生成结果分享可复用的视觉方法。</p>
-            <Link href="/studio/image">打开 Image Skill Studio <b aria-hidden="true">↗</b></Link>
+            <div className={styles.productActions}>
+              <a href="/studio/image#feed">打开 Image Skill Studio <b aria-hidden="true">↗</b></a>
+              <Link className={styles.secondaryProductLink} href="/studio/image/plugin">安装 Codex 插件</Link>
+            </div>
           </div>
         </article>
       </section>
@@ -150,7 +155,8 @@ export default function HomePage() {
         <p>A creative workspace for agents.</p>
         <div>
           <a href="#workspace">Workspace</a>
-          <Link href="/studio/image">Community</Link>
+          <a href="/studio/image#feed">Community</a>
+          <Link href="/studio/image/plugin">Plugin</Link>
         </div>
       </footer>
     </main>

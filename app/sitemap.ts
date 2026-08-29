@@ -21,6 +21,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.9,
     },
+    {
+      url: `${STUDIO_URL}/plugin`,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
     ...seoSkills.map((skill) => ({
       url: skillPageUrl(skill.id),
       changeFrequency: "weekly" as const,

@@ -110,6 +110,7 @@ export default async function SkillPage({ params }: SkillPageProps) {
             </ul>
             <div className={styles.actions}>
               <a className={styles.primary} href={studioSkillUrl(skill.id)}>在 Studio 中打开</a>
+              <Link className={styles.secondary} href="/studio/image/plugin">安装 Codex 插件</Link>
               {sourceUrl ? <a className={styles.secondary} href={sourceUrl} target="_blank" rel="noopener noreferrer">查看 Skill 来源</a> : null}
             </div>
           </div>

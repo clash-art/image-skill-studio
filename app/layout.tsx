@@ -6,11 +6,10 @@ const seoImageUrl = "https://clash.art/studio/image/assets/seo/og-image.png";
 export const metadata: Metadata = {
   metadataBase: new URL("https://clash.art"),
   title: {
-    default: "Image Skill Studio | AI 图像创作方法与案例",
-    template: "%s | Image Skill Studio",
+    default: "Clash | Creative Workspace for Agents",
   },
-  description: "发现可复用的 AI 图像创作 Skill，浏览真实生成案例、参考图与提示词方法，并在 Codex 中继续创作。",
-  applicationName: "Image Skill Studio",
+  description: "Clash 是面向创作者与 Agents 的统一创意工作台，在同一个空间中组织灵感、素材、工具与创作流程。",
+  applicationName: "Clash",
   keywords: [
     "AI 图像生成",
     "Image Skill",
@@ -25,26 +24,26 @@ export const metadata: Metadata = {
   publisher: "Clash",
   category: "design",
   alternates: {
-    canonical: "/studio/image",
+    canonical: "/",
   },
   openGraph: {
     type: "website",
     locale: "zh_CN",
-    url: "/studio/image",
-    siteName: "Image Skill Studio",
-    title: "Image Skill Studio | AI 图像创作方法与案例",
-    description: "发现可复用的 AI 图像创作 Skill，浏览真实案例、参考图与提示词方法。",
+    url: "/",
+    siteName: "Clash",
+    title: "Clash | Creative Workspace for Agents",
+    description: "One workspace for ideas, media, tools, and agent-native creative workflows.",
     images: [{
       url: seoImageUrl,
       width: 1200,
       height: 630,
-      alt: "Image Skill Studio 创意图像案例",
+      alt: "Clash creative workspace",
     }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Image Skill Studio | AI 图像创作方法与案例",
-    description: "发现可复用的 AI 图像创作 Skill，浏览真实案例、参考图与提示词方法。",
+    title: "Clash | Creative Workspace for Agents",
+    description: "One workspace for ideas, media, tools, and agent-native creative workflows.",
     images: [seoImageUrl],
   },
   robots: {

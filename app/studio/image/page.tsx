@@ -3,6 +3,8 @@ import registry from "@/catalog/registry.json";
 import { jsonLd, SEO_IMAGE_URL, seoSkills, skillPageUrl, STUDIO_URL } from "@/lib/studio-seo";
 import type { Metadata } from "next";
 
+export const dynamic = "force-static";
+
 export const metadata: Metadata = {
   title: "AI 图像 Skill 工作台与创作案例",
   description: "浏览 15 个可复用的 AI 图像创作 Skill，比较文生图、图生图、海报、拼贴、插画与复古界面案例。",

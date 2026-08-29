@@ -46,6 +46,8 @@ One more Skill ships inside the workbench itself: `classic-epic-movie-poster`.
 
 Image Skill Studio installs as a Codex plugin. You do not need to clone this repository or install Node.js.
 
+See the public installation guide at [clash.art/studio/image/plugin](https://clash.art/studio/image/plugin), or run the commands below.
+
 1. Add the plugin marketplace:
 
 ```bash
