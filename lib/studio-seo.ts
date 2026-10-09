@@ -1,8 +1,9 @@
 import registry from "@/catalog/registry.json";
 
-export const SITE_URL = "https://clash.art";
-export const STUDIO_PATH = "/studio/image";
-export const STUDIO_URL = `${SITE_URL}${STUDIO_PATH}`;
+import { absoluteSiteUrl, localizedPath, skillSitePath, type SiteLocale } from "@/lib/site-i18n";
+import { SITE_URL, STUDIO_PATH, STUDIO_URL } from "@/lib/site-urls";
+
+export { SITE_URL, STUDIO_PATH, STUDIO_URL };
 export const SEO_IMAGE_URL = `${STUDIO_URL}/assets/seo/og-image.png`;
 
 export type SeoExample = {
@@ -34,12 +35,12 @@ export type SeoSkill = {
 
 export const seoSkills = registry.skills as unknown as SeoSkill[];
 
-export function skillPageUrl(id: string) {
-  return `${STUDIO_URL}/skill/${encodeURIComponent(id)}`;
+export function skillPageUrl(id: string, locale: SiteLocale = "en") {
+  return absoluteSiteUrl(locale, skillSitePath(id));
 }
 
-export function studioSkillUrl(id: string) {
-  return `${STUDIO_URL}#skill/${encodeURIComponent(id)}`;
+export function studioSkillUrl(id: string, locale: SiteLocale = "en") {
+  return `${localizedPath(locale, "/studio/image")}#skill/${encodeURIComponent(id)}`;
 }
 
 export function findSeoSkill(id: string) {

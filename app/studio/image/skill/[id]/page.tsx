@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
+import { absoluteSiteUrl, localizedPath, metadataAlternates, skillSitePath } from "@/lib/site-i18n";
+import { getRequestSiteLocale } from "@/lib/site-locale-server";
 import {
   findSeoSkill,
   jsonLd,
@@ -10,7 +12,6 @@ import {
   skillPageUrl,
   skillSummary,
   studioSkillUrl,
-  STUDIO_URL,
 } from "@/lib/studio-seo";
 
 import styles from "../../seo.module.css";
@@ -23,16 +24,17 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: SkillPageProps): Promise<Metadata> {
   const { id } = await params;
+  const locale = await getRequestSiteLocale();
   const skill = findSeoSkill(id);
   if (!skill) return { title: "Skill 未找到", robots: { index: false, follow: false } };
-  const canonical = skillPageUrl(skill.id);
+  const canonical = skillPageUrl(skill.id, locale);
   const image = skillImage(skill, skill.cover);
   const description = skillSummary(skill);
   return {
     title: `${skill.displayName} — AI 图像 Skill`,
     description,
     keywords: [skill.displayName, skill.category, "AI 图像生成", "Image Skill", "提示词", ...skill.capabilities.aspectRatios],
-    alternates: { canonical },
+    alternates: metadataAlternates(locale, skillSitePath(skill.id)),
     openGraph: {
       type: "website",
       url: canonical,
@@ -51,10 +53,13 @@ export async function generateMetadata({ params }: SkillPageProps): Promise<Meta
 
 export default async function SkillPage({ params }: SkillPageProps) {
   const { id } = await params;
+  const locale = await getRequestSiteLocale();
   const skill = findSeoSkill(id);
   if (!skill) notFound();
 
-  const canonical = skillPageUrl(skill.id);
+  const canonical = skillPageUrl(skill.id, locale);
+  const studioUrl = absoluteSiteUrl(locale, "/studio/image");
+  const skillsUrl = absoluteSiteUrl(locale, "/studio/image/skills");
   const cover = skillImage(skill, skill.cover);
   const examples = (skill.examples || []).slice(0, 6);
   const sourceUrl = skill.source?.homepage || (skill.source?.repo ? `https://github.com/${skill.source.repo}` : undefined);
@@ -64,8 +69,8 @@ export default async function SkillPage({ params }: SkillPageProps) {
       {
         "@type": "BreadcrumbList",
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Image Skill Studio", item: STUDIO_URL },
-          { "@type": "ListItem", position: 2, name: "Skills", item: `${STUDIO_URL}/skills` },
+          { "@type": "ListItem", position: 1, name: "Image Skill Studio", item: studioUrl },
+          { "@type": "ListItem", position: 2, name: "Skills", item: skillsUrl },
           { "@type": "ListItem", position: 3, name: skill.displayName, item: canonical },
         ],
       },
@@ -95,7 +100,7 @@ export default async function SkillPage({ params }: SkillPageProps) {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(structuredData) }} />
       <div className={styles.shell}>
         <nav className={styles.crumbs} aria-label="面包屑">
-          <Link href="/studio/image">Studio</Link><span>/</span><Link href="/studio/image/skills">Skills</Link><span>/</span><span>{skill.displayName}</span>
+          <Link href={localizedPath(locale, "/studio/image")}>Studio</Link><span>/</span><Link href={localizedPath(locale, "/studio/image/skills")}>Skills</Link><span>/</span><span>{skill.displayName}</span>
         </nav>
         <header className={styles.hero}>
           <div>
@@ -109,7 +114,7 @@ export default async function SkillPage({ params }: SkillPageProps) {
               {skill.stars ? <li>{skill.stars.toLocaleString()} GitHub stars</li> : null}
             </ul>
             <div className={styles.actions}>
-              <a className={styles.primary} href={studioSkillUrl(skill.id)}>在 Studio 中打开</a>
+              <a className={styles.primary} href={studioSkillUrl(skill.id, locale)}>在 Studio 中打开</a>
               {sourceUrl ? <a className={styles.secondary} href={sourceUrl} target="_blank" rel="noopener noreferrer">查看 Skill 来源</a> : null}
             </div>
           </div>
